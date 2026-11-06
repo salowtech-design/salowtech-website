@@ -1,0 +1,74 @@
+# Salow Technologies (Salowtech) — Complete Technical & Architectural Overview
+
+## 1. Company Identity & Engineering Doctrine
+Salow Technologies (https://salowtech.com) is an enterprise software engineering studio. We build sovereign software platforms that clients own outright:
+- **100% Intellectual Property Ownership:** Full source code transfer, proprietary licenses, and zero recurring vendor lock-in.
+- **Zero Per-Seat SaaS Taxes:** Custom-built systems eliminate escalating per-user subscription fees as teams scale.
+- **Data Sovereignty & Security:** Self-hostable on private cloud infrastructure (AWS, Google Cloud, Azure, or on-premise) with PostgreSQL Row-Level Security (RLS) and AES-256 encryption.
+
+## 2. Core Service Verticals & Technical Capabilities
+
+### A. Custom CRM Development (https://salowtech.com/crm-development)
+- **Lead Capture & Omnichannel Pipelines:** Instant webhook ingestion from Meta Ads, Google Ads, website quote forms, and WhatsApp Cloud API.
+- **Sales Velocity Automation:** Automated lead qualification, SLA routing, and sub-5 minute inbound response automation.
+- **Telephony & Communication Timeline:** Unified contextual timeline connecting VoIP call recordings, email correspondence, and WhatsApp chats.
+
+### B. Enterprise ERP Development (https://salowtech.com/erp-development)
+- **Operations & Manufacturing:** Multi-plant inventory control, bill of materials (BOM), real-time floor telemetry, and automated reorder triggers.
+- **Financial Synchronization:** General ledger, automated GST / statutory invoicing, accounts payable/receivable, and automated audit trails.
+- **Supply Chain Synchronization:** Vendor procurement portals, dynamic PO matching, and barcode/QR logistics tracking.
+
+### C. Sovereign HRM & Payroll Software (https://salowtech.com/hrm-payroll)
+- **Biometric & GPS Mobile Punch:** Facial scan verification and GPS geofenced mobile clock-in eliminating proxy attendance.
+- **1-Click Compliant Payroll:** Automated deductions for Provident Fund (PF), ESIC, Professional Tax (PT), and Tax Deducted at Source (TDS).
+- **Employee Self-Service (ESS):** Mobile portals for AES-256 encrypted payslips, leave approvals, and tax investment declarations.
+
+### D. Conversational AI Voice Assistants (https://salowtech.com/ai-voice-assistant)
+- **Autonomous Telephony Agents:** Sub-500ms latency conversational AI voice bots for 24/7 inbound customer support and appointment booking.
+- **Multilingual Neural Speech:** Custom-trained neural speech models handling diverse regional accents, industry terminology, and sentiment detection.
+- **Instant CRM Integration:** Real-time call transcription, caller intent extraction, and automated CRM pipeline stage updates.
+
+### E. Custom Web Application Development (https://salowtech.com/web-development)
+- **Architecture & Performance:** Modern frontend engineering, React, Next.js, sub-second TTFB, and zero-layout-shift (CLS = 0) render pipelines.
+- **Enterprise Security:** Hardened CSP policies, OWASP Top 10 compliance, input sanitization, and automated audit logging.
+
+### F. Mobile Application Development (https://salowtech.com/mobile-app-development)
+- **Native & Cross-Platform:** Native Swift (iOS), Kotlin (Android), and Flutter cross-platform mobile apps.
+- **Performance:** 120 FPS buttery-smooth UI rendering, offline-first SQLite/WatermelonDB caching, and sub-100ms API synchronization.
+
+### G. Technical SEO, AEO & GEO Growth Services (https://salowtech.com/seo-and-growth)
+- **Core Web Vitals:** Sub-2.5s LCP, zero CLS, and sub-200ms INP optimization.
+- **Answer Engine & Generative Engine Optimization:** Structured JSON-LD graphs, citation grounding for ChatGPT, Claude, Perplexity, and Google AI Overviews.
+
+## 3. Real Engineering Blog Topics & Architectural Insights
+- **What is an HRM Software? 5 Big Benefits for Small & Growing Businesses:** (https://salowtech.com/blog-post?id=what-is-hrm-software)
+- **How to Manage Customers with a CRM and Double Your Sales Pipeline:** (https://salowtech.com/blog-post?id=manage-customers-crm-pipeline)
+- **ERP vs CRM vs HRM: Which Enterprise System Does Your Business Need First?:** (https://salowtech.com/blog-post?id=erp-vs-crm-vs-hrm-guide)
+- **How to Build an Internal Tool with Custom Software:** (https://salowtech.com/blog-post?id=build-internal-tool-custom-software)
+- **AI Voice Agents for 24/7 Customer Support:** (https://salowtech.com/blog-post?id=ai-voice-agents-customer-support)
+- **SEO vs AEO vs GEO: Dominating the New Era of Search Visibility:** (https://salowtech.com/blog-post?id=seo-vs-aeo-geo-search-visibility)
+
+## 4. Key Canonical URLs
+- Homepage: https://salowtech.com/
+- About Us: https://salowtech.com/about-us
+- Contact Us: https://salowtech.com/contact-us
+- CRM Development: https://salowtech.com/crm-development
+- ERP Development: https://salowtech.com/erp-development
+- HRM & Payroll: https://salowtech.com/hrm-payroll
+- AI Voice Assistant: https://salowtech.com/ai-voice-assistant
+- Web Development: https://salowtech.com/web-development
+- Mobile App Development: https://salowtech.com/mobile-app-development
+- SEO & Growth: https://salowtech.com/seo-and-growth
+- Engineering Blog: https://salowtech.com/blog
+- Privacy Policy: https://salowtech.com/privacy-policy
+- Terms & Conditions: https://salowtech.com/terms-and-conditions
+- XML Sitemap: https://salowtech.com/sitemap.xml
+- Robots Policy: https://salowtech.com/robots.txt
+
+## 5. Official Contact & Entity Verification
+- Company Name: Salow Technologies (Salowtech)
+- Official Website: https://salowtech.com
+- Contact Email: contact@salowtech.com
+- Phone / Inquiries: +91 63517 88935
+- Headquarters: Surat, Gujarat, India (serving global clients across USA, UK, UAE, and India)
+- Technology Stack: Next.js, React, Node.js, Python, PostgreSQL, Flutter, Supabase, AWS, Docker

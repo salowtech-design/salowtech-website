@@ -1,0 +1,13 @@
+{
+  "name": "salowtech",
+  "version": "1.0.0",
+  "description": "Salowtech sovereign software platforms",
+  "main": "server.js",
+  "scripts": {
+    "build": "echo 'Static build ready'",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
