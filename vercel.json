@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/saas-development-cost",
+      "permanent": true
+    },
+    {
+      "source": "/erp-solutions",
+      "destination": "/erp-development",
+      "permanent": true
+    },
+    {
+      "source": "/erp-solutions.html",
+      "destination": "/erp-development",
+      "permanent": true
+    },
+    {
+      "source": "/seo-digital-growth",
+      "destination": "/seo-and-growth",
+      "permanent": true
+    },
+    {
+      "source": "/seo-digital-growth.html",
+      "destination": "/seo-and-growth",
+      "permanent": true
+    },
+    {
+      "source": "/app-development",
+      "destination": "/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/app-development.html",
+      "destination": "/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/tos",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy-policy",
+      "permanent": true
+    }
+  ]
+}

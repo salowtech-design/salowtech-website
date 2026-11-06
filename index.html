@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1423,9 +1423,9 @@
 
         <!-- Video Player Container (Seamless into page background) -->
         <div
-          class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-black aspect-video group">
+          class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#FAF7F2] aspect-video group">
           <!-- HTML5 Video Element -->
-          <video id="salowtechPromoVideo" class="w-full h-full object-cover block" controls playsinline preload="none"
+          <video id="salowtechPromoVideo" class="w-full h-full object-cover block" controls playsinline preload="metadata"
             poster="assets/promo_poster.jpg">
             <source src="assets/Salowtech_Promo_Video_v2.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -1433,7 +1433,7 @@
 
           <!-- Clickable Black Thumbnail Overlay with Center Logo and Play Button -->
           <div id="videoPlayOverlay" onclick="startPromoVideo()"
-            class="absolute inset-0 bg-[#0A0A0A]/90 bg-[radial-gradient(ellipse_at_center,_rgba(28,25,23,0.85)_0%,_rgba(10,10,10,0.95)_75%)] flex flex-col items-center justify-center cursor-pointer z-10 transition-all duration-300">
+            class="absolute inset-0 bg-[#FAF7F2]/90 flex flex-col items-center justify-center cursor-pointer z-10 transition-all duration-300">
 
             <!-- Center Logo + Play Button Wrapper -->
             <div class="flex flex-col items-center select-none text-center px-4">
@@ -1451,7 +1451,7 @@
               </div>
 
               <span id="videoPlayLabel"
-                class="text-xs sm:text-sm font-medium text-white/90 tracking-wide drop-shadow-md">
+                class="text-xs sm:text-sm font-semibold text-neutral-800 tracking-wide drop-shadow-xs">
                 Watch System Overview
               </span>
             </div>
