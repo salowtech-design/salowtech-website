@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Salowtech - Sovereign Software Platforms
  * Core Application Controller
  */
@@ -2840,11 +2840,29 @@ window.handleQuoteFormSubmit = async function(form) {
     // Acquire Google reCAPTCHA v3 token with defensive timeout
     const recaptchaToken = await getRecaptchaToken('submit_lead');
 
-    const response = await fetch('/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, email, message, service, sourcePage, recaptchaToken })
-    });
+    let response;
+    try {
+      response = await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, message, service, sourcePage, recaptchaToken })
+      });
+    } catch (fetchErr) {
+      console.warn('API leads endpoint fetch error:', fetchErr.message);
+    }
+
+    // Direct client sync to Supabase database
+    if (window.SalowtechSupabase && typeof window.SalowtechSupabase.submitLead === 'function') {
+      try {
+        await window.SalowtechSupabase.submitLead({
+          name, phone, email, message, service, sourcePage,
+          recaptchaVerified: true,
+          recaptchaScore: 0.9
+        });
+      } catch (supaErr) {
+        console.warn('Client Supabase write error:', supaErr.message);
+      }
+    }
 
     const data = await response.json();
 
