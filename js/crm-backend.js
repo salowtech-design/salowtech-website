@@ -13,50 +13,65 @@ const DEFAULT_SETTINGS = {
   webhookVerifyToken: process.env.WEBHOOK_VERIFY_TOKEN || 'salowtech_crm_token_2026'
 };
 
+let inMemorySettings = { ...DEFAULT_SETTINGS };
+let inMemoryLeads = [];
+
 function ensureDataFiles() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(LEADS_FILE)) {
-    fs.writeFileSync(LEADS_FILE, '[]', 'utf8');
-  }
-  if (!fs.existsSync(SETTINGS_FILE)) {
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf8');
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(LEADS_FILE)) {
+      fs.writeFileSync(LEADS_FILE, '[]', 'utf8');
+    }
+    if (!fs.existsSync(SETTINGS_FILE)) {
+      fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf8');
+    }
+  } catch (err) {
+    // Read-only filesystem (e.g. Vercel / AWS Lambda), fallback to memory
   }
 }
 
 function getSettings() {
   ensureDataFiles();
   try {
-    const raw = fs.readFileSync(SETTINGS_FILE, 'utf8');
-    return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
-  } catch {
-    return DEFAULT_SETTINGS;
-  }
+    if (fs.existsSync(SETTINGS_FILE)) {
+      const raw = fs.readFileSync(SETTINGS_FILE, 'utf8');
+      return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
+    }
+  } catch {}
+  return inMemorySettings;
 }
 
 function saveSettings(settings) {
   ensureDataFiles();
   const current = getSettings();
   const updated = { ...current, ...settings, updatedAt: new Date().toISOString() };
-  fs.writeFileSync(SETTINGS_FILE, JSON.stringify(updated, null, 2), 'utf8');
+  inMemorySettings = updated;
+  try {
+    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(updated, null, 2), 'utf8');
+  } catch {}
   return updated;
 }
 
 function getLeads() {
   ensureDataFiles();
   try {
-    const raw = fs.readFileSync(LEADS_FILE, 'utf8');
-    const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+    if (fs.existsSync(LEADS_FILE)) {
+      const raw = fs.readFileSync(LEADS_FILE, 'utf8');
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    }
+  } catch {}
+  return inMemoryLeads;
 }
 
 function saveLeads(leads) {
   ensureDataFiles();
-  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8');
+  inMemoryLeads = leads;
+  try {
+    fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8');
+  } catch {}
 }
 
 function cleanPhoneNumber(phone) {
