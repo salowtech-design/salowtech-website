@@ -1052,23 +1052,9 @@ function initLeadForm() {
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (!submitBtn) return;
-
-    const originalContent = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-      </svg>
-      <span>Request Received!</span>
-    `;
-
-    setTimeout(() => {
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalContent;
-    }, 3500);
+    if (typeof window.handleQuoteFormSubmit === 'function') {
+      window.handleQuoteFormSubmit(form);
+    }
   });
 }
 
@@ -2840,18 +2826,7 @@ window.handleQuoteFormSubmit = async function(form) {
     // Acquire Google reCAPTCHA v3 token with defensive timeout
     const recaptchaToken = await getRecaptchaToken('submit_lead');
 
-    let response;
-    try {
-      response = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, message, service, sourcePage, recaptchaToken })
-      });
-    } catch (fetchErr) {
-      console.warn('API leads endpoint fetch error:', fetchErr.message);
-    }
-
-    // Direct client sync to Supabase database
+    // 1. Direct client sync to Supabase cloud database
     if (window.SalowtechSupabase && typeof window.SalowtechSupabase.submitLead === 'function') {
       try {
         await window.SalowtechSupabase.submitLead({
@@ -2859,12 +2834,22 @@ window.handleQuoteFormSubmit = async function(form) {
           recaptchaVerified: true,
           recaptchaScore: 0.9
         });
+        console.log('Lead synced to Supabase successfully');
       } catch (supaErr) {
-        console.warn('Client Supabase write error:', supaErr.message);
+        console.warn('Direct Supabase write notice:', supaErr);
       }
     }
 
-    const data = await response.json();
+    // 2. Also submit to API endpoint (/api/leads) for server-side processing & WhatsApp
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, message, service, sourcePage, recaptchaToken })
+      });
+    } catch (fetchErr) {
+      console.warn('API leads endpoint fetch error:', fetchErr.message);
+    }
 
     if (submitBtn) {
       submitBtn.innerHTML = '<span>✓ SUBMITTED SUCCESSFULLY</span>';
