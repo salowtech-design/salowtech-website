@@ -55,7 +55,7 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   const host = (req.headers.host || '').split(':')[0];
-  if (host.startsWith('www.')) {
+  if (false && host.startsWith('www.')) {
     const nonWwwHost = host.replace(/^www\./, '');
     res.writeHead(301, { 'Location': `https://${nonWwwHost}${req.url}` });
     return res.end();
