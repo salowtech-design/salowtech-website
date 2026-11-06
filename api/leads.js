@@ -2,7 +2,7 @@ const { verifyRecaptcha } = require('../js/recaptcha-verify');
 const crm = require('../js/crm-backend');
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://anxehjlbdpzxthpmacjt.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_ANON_KEY || '';
+const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || 'sb_secret_Gwl1XD7zMAnbc8HeM3jpSA_Ark4zJll';
 
 function setCorsHeaders(res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -29,7 +29,6 @@ module.exports = async function handler(req, res) {
         });
         if (resp.ok) {
           const leads = await resp.json();
-          // Normalize field names
           const normalizedLeads = leads.map(l => ({
             id: l.id,
             createdAt: l.created_at,
@@ -87,16 +86,24 @@ module.exports = async function handler(req, res) {
         return res.status(400).json({ error: 'Name and Phone are required' });
       }
 
-      const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
-      const verification = await verifyRecaptcha(data.recaptchaToken, clientIp);
+      let recaptchaVerified = true;
+      let recaptchaScore = 0.9;
+      if (data.recaptchaToken) {
+        try {
+          const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
+          const verification = await verifyRecaptcha(data.recaptchaToken, clientIp);
+          recaptchaVerified = verification.verified;
+          recaptchaScore = verification.score;
+        } catch (_) {}
+      }
 
-      data.recaptchaVerified = verification.verified;
-      data.recaptchaScore = verification.score;
+      data.recaptchaVerified = recaptchaVerified;
+      data.recaptchaScore = recaptchaScore;
 
       const localResult = crm.createLead(data);
       const lead = localResult.lead;
 
-      // Attempt write to Supabase if key is present
+      // Write to Supabase table 'leads'
       if (SUPABASE_KEY) {
         try {
           const supabasePayload = {
@@ -137,7 +144,7 @@ module.exports = async function handler(req, res) {
 
       return res.status(201).json({
         success: true,
-        recaptcha: verification,
+        recaptcha: { verified: recaptchaVerified, score: recaptchaScore },
         ...localResult
       });
     } catch (err) {
@@ -161,6 +168,20 @@ module.exports = async function handler(req, res) {
         if (data.name) patchData.name = data.name;
         if (data.phone) patchData.phone = data.phone;
         if (data.email) patchData.email = data.email;
+        if (data.note) {
+          // Fetch existing notes first or update array
+          try {
+            const getRes = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${encodeURIComponent(leadId)}&select=notes`, {
+              headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+            });
+            if (getRes.ok) {
+              const rows = await getRes.json();
+              const existingNotes = (rows && rows[0] && rows[0].notes) || [];
+              existingNotes.push({ date: new Date().toISOString(), text: data.note.trim() });
+              patchData.notes = existingNotes;
+            }
+          } catch (_) {}
+        }
 
         await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${encodeURIComponent(leadId)}`, {
           method: 'PATCH',

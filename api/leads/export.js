@@ -7,3 +7,4 @@ module.exports = async function handler(req, res) {
   res.setHeader('Content-Disposition', 'attachment; filename="salowtech-leads.csv"');
   return res.status(200).send(csvData);
 };
+

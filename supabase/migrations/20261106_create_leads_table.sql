@@ -72,3 +72,4 @@ BEGIN
 EXCEPTION WHEN OTHERS THEN
     -- Ignore if publication does not exist or already added
 END $$;
+

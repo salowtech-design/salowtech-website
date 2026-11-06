@@ -5,13 +5,14 @@
 
 (function () {
   const SUPABASE_PROJECT_REF = 'anxehjlbdpzxthpmacjt';
-  const SUPABASE_URL = `https://${SUPABASE_PROJECT_REF}.supabase.co`;
+  const SUPABASE_URL = 'https://anxehjlbdpzxthpmacjt.supabase.co';
+  const DEFAULT_PUBLISHABLE_KEY = 'sb_publishable_jhHLsKKyDHszbtVSvvEftQ_DI8YvTkZ';
   
   // Storage key for client-side persistence
   const STORAGE_KEY = 'salowtech_supabase_anon_key';
   
   function getAnonKey() {
-    return window.SUPABASE_ANON_KEY || localStorage.getItem(STORAGE_KEY) || '';
+    return window.SUPABASE_ANON_KEY || localStorage.getItem(STORAGE_KEY) || DEFAULT_PUBLISHABLE_KEY;
   }
 
   function setAnonKey(key) {
@@ -35,12 +36,9 @@
 
   // Insert lead directly into Supabase table 'leads'
   async function submitLeadToSupabase(lead) {
-    const client = getSupabaseClient();
     const key = getAnonKey();
 
     const payload = {
-      id: lead.id || `LEAD-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`,
-      created_at: lead.createdAt || new Date().toISOString(),
       name: lead.name,
       phone: lead.phone,
       email: lead.email || '',
@@ -55,12 +53,21 @@
       client_chat_url: lead.clientChatUrl || ''
     };
 
+    const client = getSupabaseClient();
     if (client) {
-      const { data, error } = await client.from('leads').insert([payload]).select();
-      if (error) throw error;
-      return data;
-    } else if (key) {
-      // Direct REST fallback if CDN library hasn't initialized
+      try {
+        const { data, error } = await client.from('leads').insert([payload]).select();
+        if (error) {
+          console.warn('Supabase SDK insert error, trying direct REST:', error);
+          throw error;
+        }
+        return data;
+      } catch (sdkErr) {
+        // Fall back to direct REST below
+      }
+    }
+
+    if (key) {
       const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
         method: 'POST',
         headers: {
@@ -73,6 +80,7 @@
       });
       if (!res.ok) {
         const errText = await res.text();
+        console.error('Supabase REST insert failed:', errText);
         throw new Error(errText);
       }
       return await res.json();
@@ -84,6 +92,7 @@
   window.SalowtechSupabase = {
     projectRef: SUPABASE_PROJECT_REF,
     url: SUPABASE_URL,
+    defaultKey: DEFAULT_PUBLISHABLE_KEY,
     getAnonKey,
     setAnonKey,
     getClient: getSupabaseClient,
