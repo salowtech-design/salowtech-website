@@ -1438,8 +1438,8 @@
 
 
 
-      <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 pt-16 sm:pt-20 lg:pt-24 scroll-mt-28" id="showcase-video">
-        <div class="text-center max-w-3xl mx-auto mb-10">
+      <section class="w-full pb-16 pt-16 sm:pt-20 lg:pt-24 scroll-mt-28" id="showcase-video">
+        <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 px-4">
           <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-neutral-600 block mb-2">
             Platform In Action
           </span>
@@ -1449,45 +1449,16 @@
           </h2>
         </div>
 
-        <!-- Video Player Container (Seamless into page background) -->
-        <div
-          class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-[#FAF7F2] aspect-video group">
-          <!-- HTML5 Video Element -->
-          <video id="salowtechPromoVideo" class="w-full h-full object-cover block" controls playsinline preload="metadata"
-            poster="assets/promo_poster.jpg">
-            <source src="assets/Salowtech_Promo_Video_v2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-
-          <!-- Clickable Black Thumbnail Overlay with Center Logo and Play Button -->
-          <div id="videoPlayOverlay" onclick="startPromoVideo()"
-            class="absolute inset-0 bg-[#FAF7F2]/90 flex flex-col items-center justify-center cursor-pointer z-10 transition-all duration-300">
-
-            <!-- Center Logo + Play Button Wrapper -->
-            <div class="flex flex-col items-center select-none text-center px-4">
-              <!-- Official Salowtech Logo in Center -->
-              <img src="assets/salowtech_logo.png" alt="Salowtech"
-                class="w-28 sm:w-36 md:w-44 h-auto object-contain drop-shadow-[0_12px_24px_rgba(0,0,0,0.9)] mb-6 group-hover:scale-105 transition-transform duration-300" loading="lazy" decoding="async">
-
-              <!-- Play Button -->
-              <div
-                class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 backdrop-blur-md shadow-2xl flex items-center justify-center text-neutral-950 group-hover:scale-110 group-hover:bg-white transition-all border border-white/80 mb-3">
-                <svg id="playIconSvg" class="w-6 h-6 sm:w-8 sm:h-8 ml-1 text-neutral-900 fill-current"
-                  viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"></path>
-                </svg>
-              </div>
-
-              <span id="videoPlayLabel"
-                class="text-xs sm:text-sm font-semibold text-neutral-800 tracking-wide drop-shadow-xs">
-                Watch System Overview
-              </span>
-            </div>
+        <!-- 85% Screen Ratio Borderless Video Container -->
+        <div class="w-[85vw] max-w-[85vw] mx-auto">
+          <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 shadow-2xl aspect-video group">
+            <video id="salowtechPromoVideo" class="w-full h-full object-cover block rounded-2xl sm:rounded-3xl" controls playsinline preload="metadata"
+              poster="assets/home_video_cover.jpg">
+              <source src="assets/Salowtech_Promo_Video_v2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
-
-        <!-- Script to toggle overlay and play/pause video seamlessly -->
-
       </section>
 
 
