@@ -10338,3 +10338,40 @@ html {
 }
 
 
+
+
+/* ==========================================================================
+   Ultra-Smooth 120 FPS Performance Engine (Zero Lag / Zero Frame Drop)
+   ========================================================================== */
+html {
+  scroll-behavior: auto !important; /* Prevent double-interpolation conflict with Lenis */
+}
+
+/* GPU Hardware Acceleration for Videos & Animated Cards */
+video,
+.hero__video,
+.roadmap-preview-video {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+#strat,
+#stage,
+.tilt-card,
+.work-row,
+.navbar-brand-wrap {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Off-screen Content Visibility Optimization: skips layout calculations until near viewport */
+#strategic-roadmap,
+#showcase-work,
+#showcase-video,
+#lead-capture,
+#faq-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
