@@ -99,3 +99,4 @@ Automating Indian statutory payroll requires synchronizing biometric punch regis
 4. **Direct Bank File Export**: Formats batch payment text/Excel files for HDFC, ICICI, SBI, and Axis Bank for instant bulk salary disbursement without manual voucher entry.
 5. **Employee Self-Service (ESS)**: Password-protected PDF payslips are automatically published to employee mobile portals.
 ```
+
