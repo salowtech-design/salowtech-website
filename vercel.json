@@ -31,6 +31,11 @@
   ],
   "redirects": [
     {
+      "source": "/SalowTech_video:num.mp4",
+      "destination": "/assets/SalowTech_video:num.mp4",
+      "permanent": false
+    },
+    {
       "source": "/about",
       "destination": "/about-us",
       "permanent": true
@@ -41,8 +46,18 @@
       "permanent": true
     },
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/pricing",
-      "destination": "/saas-development-cost",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/saas-development-cost",
+      "destination": "/contact-us",
       "permanent": true
     },
     {
