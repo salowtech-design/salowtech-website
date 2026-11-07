@@ -87,8 +87,17 @@
       "provider": {
         "@id": "https://salowtech.com/#organization"
       },
-      "description": "Custom enterprise ERP software development by Salowtech. Multi-plant telemetry, automated GST compliance, sovereign ledgers, and real-time inventory control.",
-      "url": "https://salowtech.com/erp-development"
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Worldwide"
+        }
+      ],
+      "description": "Custom enterprise ERP software development by Salowtech. Multi-plant telemetry, automated GST compliance, sovereign ledgers, and real-time inventory control."
     },
     {
       "@type": "WebPage",
@@ -104,8 +113,7 @@
       },
       "publisher": {
         "@id": "https://salowtech.com/#organization"
-      },
-      "inLanguage": "en-IN"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -126,7 +134,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "ERP Solutions",
+          "name": "Enterprise ERP Software Development",
           "item": "https://salowtech.com/erp-development"
         }
       ]
@@ -140,7 +148,7 @@
           "name": "What modules are included in a custom Salowtech ERP system?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our modular ERP architecture can include Inventory & Warehouse Management, Procurement & Vendor Portals, Production & Bill of Materials (BOM), Multi-Warehouse Logistics, Financial Accounting & GST/Tax Invoicing, and Executive BI Analytics."
+            "text": "Core modules include Multi-Plant Inventory, Bill of Materials (BOM), Production Planning & Control, Procurement & Vendor Management, Sales Order Fulfillment, Double-Entry General Ledger, GST e-Invoicing, and Automated Warehouse Management."
           }
         },
         {
@@ -148,7 +156,7 @@
           "name": "Can the ERP handle multi-branch, multi-warehouse, and multi-currency operations?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Our enterprise engine supports distributed multi-plant topology, real-time inter-branch stock transfers, automated currency conversions, and consolidated corporate balance sheets."
+            "text": "Yes. Salowtech ERP natively supports unlimited branches, multi-warehouse stock transfers, real-time inter-branch reconciliation, and automated foreign currency conversion with centralized consolidated reporting."
           }
         },
         {
@@ -156,14 +164,30 @@
           "name": "How do you connect the ERP with factory floor IoT and barcode scanners?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We provide native integrations for thermal barcode/QR printers, handheld RFID scanners, weighbridge automation, and PLC/SCADA industrial controllers via MQTT and industrial IoT gateway protocols."
+            "text": "We engineer hardware integration gateways using standard protocols (Modbus, MQTT, TCP/IP) to capture telemetry directly from CNC machinery, automated scales, barcode scanners, and RFID tags for real-time production tracking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the custom ERP manage Indian statutory GST and e-way bill compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salowtech ERP integrates with authorized GST Suvidha Providers (GSP) to generate IRN e-invoices, QR codes, and e-way bills directly from sales dispatch vouchers with 100% accuracy and one-click filing reconciliations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the ERP be deployed on our own local on-premise servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Because Salowtech provides sovereign software with 100% code ownership, you have complete architectural freedom to deploy on local factory servers, air-gapped private networks, or private cloud environments (AWS, Azure, DigitalOcean)."
           }
         }
       ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 <body class="bg-cream-200 text-slate-800 font-sans antialiased selection:bg-maroon selection:text-white">
 
@@ -435,6 +459,24 @@
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-5">
             Synchronize Operations with <span class="font-serif italic font-bold text-maroon block sm:inline">Modern ERP Solutions</span>
           </h1>
+
+          <!-- BEGIN: AEO Direct Answer / Executive Summary Block -->
+          <div class="aeo-direct-answer my-6 p-4 sm:p-5 rounded-2xl bg-white/95 border border-stone-200/90 shadow-xs backdrop-blur-xs text-left max-w-3xl" data-purpose="aeo-direct-answer">
+            <div class="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wider text-[#8C6D58]">
+              <svg class="w-4 h-4 text-[#8C6D58] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Executive Summary</span>
+            </div>
+          <div class="mt-4 flex items-center gap-2 text-xs text-stone-500 font-medium">
+            <span>Reviewed by Salowtech Senior Architecture Council</span>
+            <span>&bull;</span>
+            <span>Last updated: November 2026</span>
+          </div>
+            <p class="text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
+              Salowtech custom ERP software development synchronizes manufacturing plants, supply chains, inventory, and accounting into a single sovereign platform. Featuring multi-warehouse telemetry, real-time GST compliance, and barcode tracking, Salowtech builds bespoke ERP architectures with 100% source code transfer, zero per-user licensing fees, and full on-premise or private cloud deployment control.
+            </p>
+          </div>
+          <!-- END: AEO Direct Answer / Executive Summary Block -->
+
           <!-- 4 Value Bullets -->
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
@@ -980,24 +1022,27 @@
   </section>
   <!-- END: SalowTech Interactive Mascot Service Guide -->
 
-<section class="faq" id="faq-section" aria-labelledby="faq-title">
-    <div class="head">
-      <span class="eyebrow">+ FAQ</span>
-      <h2 id="faq-title">Enterprise ERP <em>FAQs</em></h2>
-    </div>
 
-    <div class="list">
+      <!-- BEGIN: AEO Comprehensive FAQ Section -->
+      <section class="faq py-16 sm:py-20" id="faq-section" aria-labelledby="faq-title">
+        <div class="head max-w-4xl mx-auto text-center px-4 mb-10">
+          <span class="eyebrow inline-block text-xs font-bold tracking-widest uppercase text-[#8C6D58] mb-2">+ FAQ &amp; EVIDENCE</span>
+          <h2 id="faq-title" class="text-3xl sm:text-4xl font-serif text-neutral-900">ERP Solutions <em>FAQs</em></h2>
+          <p class="text-sm sm:text-base text-neutral-600 mt-2 max-w-2xl mx-auto">Direct, factual answers to key questions about Salowtech engineering, commercial terms, and sovereign technology.</p>
+        </div>
+
+        <div class="list max-w-4xl mx-auto px-4 space-y-4">
         <!-- FAQ 1 -->
         <div class="q open">
           <h3>
-            <button type="button" id="faq-erp-btn-1" aria-expanded="true" aria-controls="faq-erp-ans-1">
+            <button type="button" id="faq-btn-1" aria-expanded="true" aria-controls="faq-ans-1">
               What modules are included in a custom Salowtech ERP system?
               <i class="ic" aria-hidden="true"></i>
             </button>
           </h3>
-          <div class="a" id="faq-erp-ans-1" role="region" aria-labelledby="faq-erp-btn-1">
+          <div class="a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
             <div>
-              <p>Our modular ERP architecture can include Inventory & Warehouse Management, Procurement & Vendor Portals, Production & Bill of Materials (BOM), Multi-Warehouse Logistics, Financial Accounting & GST/Tax Invoicing, and Executive BI Analytics.</p>
+              <p>Core modules include Multi-Plant Inventory, Bill of Materials (BOM), Production Planning & Control, Procurement & Vendor Management, Sales Order Fulfillment, Double-Entry General Ledger, GST e-Invoicing, and Automated Warehouse Management.</p>
             </div>
           </div>
         </div>
@@ -1005,14 +1050,14 @@
         <!-- FAQ 2 -->
         <div class="q">
           <h3>
-            <button type="button" id="faq-erp-btn-2" aria-expanded="false" aria-controls="faq-erp-ans-2">
+            <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
               Can the ERP handle multi-branch, multi-warehouse, and multi-currency operations?
               <i class="ic" aria-hidden="true"></i>
             </button>
           </h3>
-          <div class="a" id="faq-erp-ans-2" role="region" aria-labelledby="faq-erp-btn-2">
+          <div class="a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
             <div>
-              <p>Yes. Our enterprise engine supports distributed multi-plant topology, real-time inter-branch stock transfers, automated currency conversions, and consolidated corporate balance sheets with granular subsidiary reporting.</p>
+              <p>Yes. Salowtech ERP natively supports unlimited branches, multi-warehouse stock transfers, real-time inter-branch reconciliation, and automated foreign currency conversion with centralized consolidated reporting.</p>
             </div>
           </div>
         </div>
@@ -1020,14 +1065,14 @@
         <!-- FAQ 3 -->
         <div class="q">
           <h3>
-            <button type="button" id="faq-erp-btn-3" aria-expanded="false" aria-controls="faq-erp-ans-3">
+            <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
               How do you connect the ERP with factory floor IoT and barcode scanners?
               <i class="ic" aria-hidden="true"></i>
             </button>
           </h3>
-          <div class="a" id="faq-erp-ans-3" role="region" aria-labelledby="faq-erp-btn-3">
+          <div class="a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
             <div>
-              <p>We provide native integrations for thermal barcode/QR printers, handheld RFID scanners, weighbridge automation, and PLC/SCADA industrial controllers via MQTT and industrial IoT gateway protocols.</p>
+              <p>We engineer hardware integration gateways using standard protocols (Modbus, MQTT, TCP/IP) to capture telemetry directly from CNC machinery, automated scales, barcode scanners, and RFID tags for real-time production tracking.</p>
             </div>
           </div>
         </div>
@@ -1035,14 +1080,14 @@
         <!-- FAQ 4 -->
         <div class="q">
           <h3>
-            <button type="button" id="faq-erp-btn-4" aria-expanded="false" aria-controls="faq-erp-ans-4">
-              How do you guarantee statutory compliance and tax reporting?
+            <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+              How does the custom ERP manage Indian statutory GST and e-way bill compliance?
               <i class="ic" aria-hidden="true"></i>
             </button>
           </h3>
-          <div class="a" id="faq-erp-ans-4" role="region" aria-labelledby="faq-erp-btn-4">
+          <div class="a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
             <div>
-              <p>Our accounting modules generate automated e-invoices, e-way bills, GST returns (GSTR-1, GSTR-3B), TDS reconciliation, and audit trails adhering to local statutory commercial laws and IFRS compliance standards.</p>
+              <p>Salowtech ERP integrates with authorized GST Suvidha Providers (GSP) to generate IRN e-invoices, QR codes, and e-way bills directly from sales dispatch vouchers with 100% accuracy and one-click filing reconciliations.</p>
             </div>
           </div>
         </div>
@@ -1050,44 +1095,21 @@
         <!-- FAQ 5 -->
         <div class="q">
           <h3>
-            <button type="button" id="faq-erp-btn-5" aria-expanded="false" aria-controls="faq-erp-ans-5">
-              What is the typical timeline and methodology for enterprise ERP implementation?
+            <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+              Can the ERP be deployed on our own local on-premise servers?
               <i class="ic" aria-hidden="true"></i>
             </button>
           </h3>
-          <div class="a" id="faq-erp-ans-5" role="region" aria-labelledby="faq-erp-btn-5">
+          <div class="a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
             <div>
-              <p>We deploy ERPs using phased modular rollouts over 8 to 16 weeks. Critical modules (Inventory & Invoicing) launch first to deliver immediate operational ROI, followed by manufacturing automation and advanced executive reporting.</p>
+              <p>Yes. Because Salowtech provides sovereign software with 100% code ownership, you have complete architectural freedom to deploy on local factory servers, air-gapped private networks, or private cloud environments (AWS, Azure, DigitalOcean).</p>
             </div>
           </div>
         </div>
-
-        <!-- FAQ 6 -->
-        <div class="q">
-          <h3>
-            <button type="button" id="faq-erp-btn-6" aria-expanded="false" aria-controls="faq-erp-ans-6">
-              What disaster recovery and backup safeguards are built in?
-              <i class="ic" aria-hidden="true"></i>
-            </button>
-          </h3>
-          <div class="a" id="faq-erp-ans-6" role="region" aria-labelledby="faq-erp-btn-6">
-            <div>
-              <p>Every deployment includes automated hourly incremental snapshots, geo-redundant database replication, point-in-time recovery (PITR), and 99.99% uptime SLAs with failover redundancy.</p>
-            </div>
-          </div>
         </div>
-    </div>
+      </section>
+      <!-- END: AEO Comprehensive FAQ Section -->
 
-    <div class="foot">
-      <p>Have questions about your project scope, architecture, or timeline?</p>
-      <a href="/contact-us" class="cta">
-        Talk to Our Senior Engineers
-        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4"/>
-        </svg>
-      </a>
-    </div>
-  </section>
   <!-- END: Canonical FAQ Section -->
 
   <!-- BEGIN: CTA Section (Choose SalowTech - from 2nd screenshot) -->

@@ -112,8 +112,7 @@
       },
       "publisher": {
         "@id": "https://salowtech.com/#organization"
-      },
-      "inLanguage": "en-IN"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -138,10 +137,64 @@
           "item": "https://salowtech.com/contact-us"
         }
       ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://salowtech.com/contact-us#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast can I expect a response after submitting a project inquiry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our senior software architecture team reviews all project inquiries and responds within 24 business hours with an initial architectural perspective, discovery schedule, or preliminary sprint timeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is our intellectual property and project concept protected by an NDA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Salowtech executes a bilateral Non-Disclosure Agreement (NDA) before any proprietary data, workflows, or technical architectures are discussed, guaranteeing complete confidentiality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Salowtech work on fixed-price or time-and-materials contracts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Salowtech works primarily on transparent, fixed-scope milestone sprints. Clients approve deliverables at each stage before funds are released, ensuring total budget certainty with zero hidden billable hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Salowtech take over or rescue an unfinished software codebase?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Salowtech conducts architectural audits on legacy or stalled codebases, assessing security, performance bottlenecks, and technical debt before proposing a refactoring or modernization roadmap."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information should I prepare for the discovery consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Helpful initial details include your core business workflows, target user count, key pain points with current tools, necessary third-party integrations (e.g. WhatsApp, Tally, payment gateways), and your preferred launch timeline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What direct communication channels does Salowtech support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Clients communicate directly with dedicated senior engineering leads via private Slack channels, WhatsApp groups, and bi-weekly sprint video reviews, avoiding account manager layers."
+          }
+        }
+      ]
     }
   ]
 }
-</script>
+  </script>
 </head>
 
 <body class="selection:bg-neutral-900 selection:text-white min-h-screen bg-white">
@@ -410,6 +463,19 @@
 
       <h1 class="cu-title">Contact us</h1>
 
+          <!-- BEGIN: AEO Direct Answer / Executive Summary Block -->
+          <div class="aeo-direct-answer my-6 p-4 sm:p-5 rounded-2xl bg-white/95 border border-stone-200/90 shadow-xs backdrop-blur-xs text-left max-w-3xl" data-purpose="aeo-direct-answer">
+            <div class="flex items-center gap-2 mb-2 text-xs font-semibold uppercase tracking-wider text-[#8C6D58]">
+              <svg class="w-4 h-4 text-[#8C6D58] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Executive Summary</span>
+            </div>
+            <p class="text-sm sm:text-base text-neutral-800 leading-relaxed font-normal">
+              Clients engage with Salowtech through confidential discovery consultations protected by mutual Non-Disclosure Agreements (NDAs). Within 24 hours of receiving project requirements, Salowtech senior software architects deliver a transparent, fixed-price sprint roadmap detailing technical milestones, delivery timelines, and full source code handover guarantees without hidden fees.
+            </p>
+          </div>
+          <!-- END: AEO Direct Answer / Executive Summary Block -->
+
+
       <!-- Top: 2 Columns (Support & Sales) -->
       <div class="cu-top">
         <div>
@@ -481,6 +547,109 @@
       </div>
 
     </div>
+  
+      <!-- BEGIN: AEO Comprehensive FAQ Section -->
+      <section class="faq py-16 sm:py-20" id="faq-section" aria-labelledby="faq-title">
+        <div class="head max-w-4xl mx-auto text-center px-4 mb-10">
+          <span class="eyebrow inline-block text-xs font-bold tracking-widest uppercase text-[#8C6D58] mb-2">+ FAQ &amp; EVIDENCE</span>
+          <h2 id="faq-title" class="text-3xl sm:text-4xl font-serif text-neutral-900">Client Partnership &amp; Engagement <em>FAQs</em></h2>
+          <p class="text-sm sm:text-base text-neutral-600 mt-2 max-w-2xl mx-auto">Direct, factual answers to key questions about Salowtech engineering, commercial terms, and sovereign technology.</p>
+        </div>
+
+        <div class="list max-w-4xl mx-auto px-4 space-y-4">
+        <!-- FAQ 1 -->
+        <div class="q open">
+          <h3>
+            <button type="button" id="faq-btn-1" aria-expanded="true" aria-controls="faq-ans-1">
+              How fast can I expect a response after submitting a project inquiry?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+            <div>
+              <p>Our senior software architecture team reviews all project inquiries and responds within 24 business hours with an initial architectural perspective, discovery schedule, or preliminary sprint timeline.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+              Is our intellectual property and project concept protected by an NDA?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+            <div>
+              <p>Yes. Salowtech executes a bilateral Non-Disclosure Agreement (NDA) before any proprietary data, workflows, or technical architectures are discussed, guaranteeing complete confidentiality.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+              Does Salowtech work on fixed-price or time-and-materials contracts?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+            <div>
+              <p>Salowtech works primarily on transparent, fixed-scope milestone sprints. Clients approve deliverables at each stage before funds are released, ensuring total budget certainty with zero hidden billable hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+              Can Salowtech take over or rescue an unfinished software codebase?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+            <div>
+              <p>Yes. Salowtech conducts architectural audits on legacy or stalled codebases, assessing security, performance bottlenecks, and technical debt before proposing a refactoring or modernization roadmap.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+              What information should I prepare for the discovery consultation?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+            <div>
+              <p>Helpful initial details include your core business workflows, target user count, key pain points with current tools, necessary third-party integrations (e.g. WhatsApp, Tally, payment gateways), and your preferred launch timeline.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
+              What direct communication channels does Salowtech support?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+            <div>
+              <p>Clients communicate directly with dedicated senior engineering leads via private Slack channels, WhatsApp groups, and bi-weekly sprint video reviews, avoiding account manager layers.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+      <!-- END: AEO Comprehensive FAQ Section -->
+
   </main>
   <!-- END: Main Page Content -->
 

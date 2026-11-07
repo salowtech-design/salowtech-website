@@ -1,5 +1,76 @@
+# Salowtech AI & Search Crawler Permissions
+# Retrieval & Search Bots (Powers live AI answers and web search citations)
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+# Training Crawlers (Default to ALLOW; reverse if business policy changes)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+# Default Rule for All Other Crawlers
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /crm-dashboard
 
+# Sitemap Declaration
 Sitemap: https://salowtech.com/sitemap.xml
