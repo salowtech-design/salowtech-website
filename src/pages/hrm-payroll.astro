@@ -1,0 +1,1303 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import mascotExplaining from "../assets/mascot_explaining.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { siteConfig } from "../data/site";
+import { pagesSEO } from "../data/seo";
+import { getServiceSchema } from "../data/schema";
+
+const seo = pagesSEO.hrmPayroll;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "custom HRM software development India, statutory payroll software India PF ESIC TDS, biometric attendance management software, employee lifecycle HRMS platform, cloud HR and payroll management system Surat Bangalore";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "bg-cream-200 text-slate-800 font-sans antialiased selection:bg-maroon selection:text-white";
+const showChatbot = true;
+const schemaJson = getServiceSchema({
+  serviceKey: "hrm-payroll",
+  serviceName: seo.title,
+  serviceType: "Human Resource Management Software",
+  description: seo.description,
+  path: seo.canonicalPath,
+  breadcrumbTitle: "HRM & Payroll"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <Breadcrumb currentPage="HRM & Payroll" />
+
+  <!-- BEGIN: HeroSection -->
+  <section class="relative pt-28 sm:pt-36 pb-16 lg:pt-36 lg:pb-24 overflow-hidden" data-purpose="hero-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Left Column: Value Proposition & Bullet Points -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <span class="text-xs uppercase tracking-widest text-maroon font-bold mb-3 block">
+            Human Resource Management &amp; Payroll Software
+          </span>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-4">
+            Empower Your Workforce with{" "}
+            <span class="font-serif italic font-bold text-maroon block sm:inline">Intelligent HRM &amp; Payroll</span>
+          </h1>
+
+          <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
+            <p class="font-semibold text-neutral-900 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-maroon"></span>
+              <span>Quick Overview:</span>
+            </p>
+            <p>
+              Salowtech Custom HRM &amp; Payroll Software centralizes workforce management with biometric and geo-fenced attendance, automated statutory payroll calculation, leave workflows, and performance tracking. Built for growing companies needing compliant, error-free employee administration without recurring third-party seat costs.
+            </p>
+          </div>
+
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Biometric Attendance, Geo-Fencing &amp; Shift Rostering
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                100% Automated Statutory Compliance (PF, ESIC, PT, TDS &amp; Form 16)
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Self-Service Portals for Leave, Claims, Payslips &amp; Tax Planning
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Seamless Integration with Bank Batch Disbursal &amp; ERP Ledgers
+              </span>
+            </li>
+          </ul>
+          <div class="flex items-center">
+            <div class="inline-flex rounded-full p-1 bg-maroon text-white shadow-lg shadow-maroon/25">
+              <a
+                class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase hover:bg-maroon-dark transition-colors cursor-pointer"
+                href="/contact-us"
+              >
+                Contact Us
+              </a>
+              <span class="flex items-center px-3 text-xs uppercase tracking-wider text-white/70 font-medium">OR</span>
+              <a
+                class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase bg-white/10 hover:bg-white/20 transition-colors"
+                href={siteConfig.contact.phoneTel}
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Lead Capture Card (Exact Reference Style) -->
+        <div class="lg:col-span-5" id="lead-form">
+          <div class="bg-white rounded-2xl shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] p-6 sm:p-7 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                <p class="text-[11px] text-stone-500 mt-0.5">HRM roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span class="w-7 h-7 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-xs border border-[#FFE0CC] shadow-xs">
+                ⚡
+              </span>
+            </div>
+            <form class="space-y-2.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
+              <div>
+                <label class="sr-only" for="hrm-name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="hrm-name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="hrm-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="hrm-phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="hrm-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="hrm-email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="hrm-message">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="hrm-message"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="2"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span>100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-800">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn-salow-submit" type="submit">
+                <span class="btn-salow-logo-mark">
+                  <Image
+                    src={salowtechLogo}
+                    width={24}
+                    height={24}
+                    alt="Salowtech"
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                  />
+                </span>
+                <span class="btn-salow-text">SUBMIT REQUEST</span>
+                <span class="btn-salow-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: BrandPropositionSection -->
+  <section class="py-14 sm:py-16 bg-cream-100 border-y border-cream-300" data-purpose="brand-proposition">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug mb-4">
+        Eliminate Payroll Errors and <span class="font-serif italic font-bold text-maroon">Retain Top Talent</span>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-7">
+        From applicant tracking to lifecycle offboarding, Salowtech HRM centralizes employee profiles, dynamic shift
+        schedules, performance OKRs, and one-click compliant payroll calculations.
+      </p>
+      <div>
+        <a
+          class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide text-white bg-maroon hover:bg-maroon-dark shadow-md hover:shadow-lg transition-all duration-200"
+          href="/contact-us"
+        >
+          Get Free HRM Consultation <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END: BrandPropositionSection -->
+
+  <!-- BEGIN: SmartHrmSolutionsSection (Exact Reference Tiered Design) -->
+  <section class="py-16 lg:py-24" data-purpose="smart-hrm-solutions-grid" id="solutions">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header Matching Reference -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight mb-3">
+          Everything you need to recruit, pay, and retain
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          Compliant automation. Frictionless self-service. Built to scale your workforce.
+        </p>
+      </div>
+
+      <!-- Tier 1: Workforce & Attendance Core -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">1</span>
+          <span class="tier-title">Workforce &amp; Attendance Core</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 1 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Automated Time &amp; Attendance
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Direct integration with biometric fingerprint/face scanners, RFID badges, and geofenced mobile
+                  punch-in with selfie validation.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF1F0] border border-[#F3D5D3] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Leave &amp; Holiday Management
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Multi-tiered leave approval workflows, compensatory off tracking, custom holiday calendars by
+                  state/branch, and annual encashment rules.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 2: Compliant Financial Disbursals -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">2</span>
+          <span class="tier-title">Compliant Financial Disbursals</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 3 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#D97706] transition-colors">
+                  1-Click Statutory Payroll Engine
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Configurable salary structures with automatic deductions for Provident Fund (PF), ESIC, Professional
+                  Tax, TDS slabs, and gratuity calculations.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#CCFBF1] text-[#0F766E]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#0F766E] transition-colors">
+                  Direct Bank Disbursals
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Direct export of encrypted NACH and NEFT/RTGS batch transfer files formatted for major banking
+                  institutions (HDFC, ICICI, SBI, Axis).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 3: Talent & People Intelligence -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">3</span>
+          <span class="tier-title">Talent &amp; People Intelligence</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Card 5 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F5F2EB] border border-[#E2D7CD] text-[#5C2017]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#5C2017] transition-colors">
+                  Employee Self-Service (ESS)
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Dedicated mobile and web portal allowing employees to view digitized payslips, submit reimbursement
+                  bills, and declare tax investments.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 6 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Applicant Tracking &amp; Onboarding
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Job portal pipeline management, resume parser, automated offer letter generation, digital signature
+                  capture, and document verification.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 7 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#DCFCE7] text-[#059669]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#059669] transition-colors">
+                  Performance &amp; 360° Appraisals
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Structured goal setting (OKRs &amp; KPIs), manager review cycles, continuous feedback, and transparent
+                  promotion matrices.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 8 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#D97706] transition-colors">
+                  Executive People Analytics
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Real-time dashboards covering headcount turnover, department-wise payroll expenses, gender diversity
+                  ratios, and overtime expenditure.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SmartHrmSolutionsSection -->
+
+  <!-- BEGIN: Connected Circuit Integration Hub (Exact Reference Design Match) -->
+  <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">+ REAL-TIME WORKFORCE TRANSMISSION</span>
+      <h2
+        id="transmission-title"
+        class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
+      >
+        The Sovereign Workforce &amp; Payroll Transmission Core
+      </h2>
+      <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        How biometric edge logs, statutory compliance computation, and zero-error salary disbursements orchestrate
+        across your enterprise without human friction.
+      </p>
+    </div>
+
+    <!-- Circuit Trace Diagram Stage -->
+    <!-- Circuit Trace Diagram Stage (Pure Vector SVG Architecture) -->
+    <div class="circuit-hub-container">
+      <div class="circuit-canvas-wrap">
+        <!-- Glowing Ambient Aura behind Center Hub -->
+        <div class="circuit-center-aura" aria-hidden="true"></div>
+
+        <svg
+          class="circuit-svg-stage w-full h-auto"
+          viewBox="0 0 1024 430"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="hrm-glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="hrm-glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="hrm-glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="hrm-glow-green" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="hrm-glow-coral" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="hrm-node-shadow" x="-10%" y="-15%" width="125%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(45, 38, 32, 0.07)" />
+            </filter>
+            <filter id="hrm-center-shadow" x="-20%" y="-20%" width="145%" height="145%">
+              <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(125, 48, 36, 0.28)" />
+            </filter>
+          </defs>
+
+          <!-- Circuit Bus Traces (Orthogonal & 45-degree chamfered PCB paths) -->
+          <g stroke="#E4DBD2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trace 1: Center to Upper-Left Node 1 & Far Node 3 -->
+            <path d="M 462 195 L 360 195 L 305 140 L 255 140" />
+            <path d="M 105 140 L 80 140 L 55 95 L 25 95" />
+            <!-- Parallel trace with amber signal pulse -->
+            <path d="M 462 205 L 370 205 L 320 155 L 255 155" />
+            <!-- Trace 2: Center to Top-Center Node 2 -->
+            <path d="M 485 160 L 485 130 L 445 85 L 420 85" />
+            <!-- Trace 4: Center to Lower-Left Node 4 & Edge -->
+            <path d="M 462 225 L 380 225 L 325 295 L 265 295" />
+            <path d="M 105 295 L 80 295 L 45 350 L 15 350" />
+            <!-- Trace: Bottom Center Stem -->
+            <path d="M 512 265 L 512 325 L 475 375 L 475 420" />
+            <!-- Trace 5: Center to Top-Right Node 5 -->
+            <path d="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85" />
+            <path d="M 915 85 L 945 85 L 970 45 L 995 45" />
+            <!-- Trace 6: Center to Mid-Right Node 6 & Far Node 7 -->
+            <path d="M 562 210 L 745 210" />
+            <path d="M 905 210 L 925 210" />
+            <!-- Trace 8: Center to Lower-Right Node 8 -->
+            <path d="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350" />
+            <path d="M 730 305 L 755 350 L 755 420" />
+          </g>
+
+          <!-- Animated Signal Pulses (Gliding glowing packets) -->
+          <!-- Gold pulse on Upper-Left path -->
+          <circle r="3.5" fill="#F59E0B" filter="url(#hrm-glow-gold)">
+            <animateMotion
+              dur="4.2s"
+              repeatCount="indefinite"
+              path="M 462 195 L 360 195 L 305 140 L 255 140 L 105 140 L 80 140 L 55 95 L 25 95"
+            />
+          </circle>
+          <!-- Amber pulse on parallel trace -->
+          <circle r="3" fill="#FBBF24" filter="url(#hrm-glow-gold)">
+            <animateMotion dur="3.6s" repeatCount="indefinite" path="M 462 205 L 370 205 L 320 155 L 255 155" />
+          </circle>
+          <!-- Warm Amber pulse on Top-Right path -->
+          <circle r="3.5" fill="#D97706" filter="url(#hrm-glow-gold)">
+            <animateMotion
+              dur="3.8s"
+              repeatCount="indefinite"
+              path="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85 L 915 85 L 945 85 L 970 45 L 995 45"
+            />
+          </circle>
+          <!-- Warm Clay pulse on Center-Right path -->
+          <circle r="3.5" fill="#7D3024" filter="url(#hrm-glow-gold)">
+            <animateMotion dur="4.4s" repeatCount="indefinite" path="M 562 210 L 745 210 L 905 210 L 925 210" />
+          </circle>
+          <!-- Green pulse on Lower-Right path -->
+          <circle r="3.5" fill="#10B981" filter="url(#hrm-glow-green)">
+            <animateMotion
+              dur="4.6s"
+              repeatCount="indefinite"
+              path="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350"
+            />
+          </circle>
+          <!-- Warm Terracotta pulse on Lower-Left path -->
+          <circle r="3.5" fill="#C2410C" filter="url(#hrm-glow-coral)">
+            <animateMotion
+              dur="4.1s"
+              repeatCount="indefinite"
+              path="M 462 225 L 380 225 L 325 295 L 265 295 L 105 295 L 80 295 L 45 350 L 15 350"
+            />
+          </circle>
+
+          <!-- Golden Terminal Endpoint Dot at (25, 95) -->
+          <circle cx="25" cy="95" r="5" fill="#F59E0B" filter="url(#hrm-glow-gold)" />
+          <circle cx="25" cy="95" r="8" stroke="#F59E0B" stroke-width="1" opacity="0.5">
+            <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+
+          <!-- CENTER HUB CARD -->
+          <g filter="url(#hrm-center-shadow)" class="cursor-pointer group">
+            <rect x="452" y="150" width="120" height="120" rx="26" fill="#FFFFFF" stroke="#7D3024" stroke-width="1.5" />
+            <rect x="456" y="154" width="112" height="112" rx="22" fill="#FFFFFF" />
+
+            <!-- Official Salowtech Logo -->
+            <image
+              href="/assets/salowtech_logo.png"
+              xlink:href="/assets/salowtech_logo.png"
+              x="488"
+              y="162"
+              width="48"
+              height="48"
+              preserveAspectRatio="xMidYMid meet"
+            />
+
+            <!-- Brand Typography -->
+            <text
+              x="512"
+              y="226"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="800"
+              font-size="11"
+              fill="#171513"
+              letter-spacing="0.05em"
+            >
+              SALOWTECH
+            </text>
+            <text
+              x="512"
+              y="241"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="700"
+              font-size="8.5"
+              fill="#7D3024"
+              letter-spacing="0.08em"
+            >
+              WORKFORCE CORE
+            </text>
+            <text
+              x="512"
+              y="253"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="600"
+              font-size="7"
+              fill="#78716C"
+            >
+              PAYROLL &amp; STATUTORY
+            </text>
+          </g>
+
+          <!-- PERIPHERAL DOMAIN-SPECIFIC COMPONENT CARDS -->
+          <!-- Node: Biometric Hardware API -->
+          <g transform="translate(95, 113)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#5C2017" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M12 2a5 5 0 0 0-5 5v1a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5zm-7 18c0-3.3 2.7-6 6-6h2c3.3 0 6 2.7 6 6v1H5v-1z"
+                fill="#FFF"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Biometric Hardware API
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Face & Thumb Edge Logs
+            </text>
+          </g>
+          <!-- Node: Dynamic Shift Rostering -->
+          <g transform="translate(245, 58)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="175"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#EA580C" />
+            <g transform="translate(15, 15)">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="#FFF" stroke-width="2" fill="none" />
+              <line x1="16" y1="2" x2="16" y2="6" stroke="#FFF" stroke-width="2" />
+              <line x1="8" y1="2" x2="8" y2="6" stroke="#FFF" stroke-width="2" />
+              <line x1="3" y1="10" x2="21" y2="10" stroke="#FFF" stroke-width="2" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Dynamic Shift Rostering
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Automated Scheduling
+            </text>
+          </g>
+          <!-- Node: Slack & Teams HR Bot -->
+          <g transform="translate(95, 268)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="170"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"
+                stroke="#FFF"
+                stroke-width="2"
+                fill="none"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Slack & Teams HR Bot
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Instant Leave Approvals
+            </text>
+          </g>
+          <!-- Node: Statutory PF, ESI, TDS -->
+          <g transform="translate(755, 58)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#059669" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M12 3v18M3 8l9-5 9 5M6 13h-4l2 5h4l-2-5zm16 0h-4l2 5h4l-2-5z"
+                stroke="#FFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Statutory PF, ESI, TDS
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              100% Legal Compliance
+            </text>
+          </g>
+          <!-- Node: 1-Click Payroll Run -->
+          <g transform="translate(745, 183)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <circle cx="12" cy="12" r="9" stroke="#FFF" stroke-width="2" fill="none" />
+              <path d="M12 7v5l3 3" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              1-Click Payroll Run
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Zero-Error Salary Batch
+            </text>
+          </g>
+          <!-- Node: Bank NEFT API -->
+          <g transform="translate(915, 183)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="100"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#0F766E" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4"
+                stroke="#FFF"
+                stroke-width="2"
+                stroke-linecap="round"
+                fill="none"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Bank NEFT API
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Direct Batch Payout
+            </text>
+          </g>
+          <!-- Node: Tamper-Proof Audit -->
+          <g transform="translate(765, 323)" filter="url(#hrm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="165"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#1E293B" />
+            <g transform="translate(15, 15)">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FFF" stroke-width="2" fill="none" />
+              <path d="M9 12l2 2 4-4" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Tamper-Proof Audit
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Cryptographic HR Logs
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <!-- END: Connected Circuit Integration Hub -->
+
+  <!-- BEGIN: Canonical FAQ Section (Exact Match to Home Page #faq-section) -->
+
+  <!-- BEGIN: SalowTech Interactive Mascot Service Guide -->
+  <section class="py-12 sm:py-16 relative overflow-hidden" data-purpose="mascot-service-guide">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left: 3D Mascot Facing Right Towards Text in Website Background Color -->
+        <div class="md:col-span-4 flex justify-center md:justify-end">
+          <div class="w-36 sm:w-44 lg:w-52 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            <Image
+              src={mascotExplaining}
+              alt="SalowTech Engineering Mascot"
+              class="w-full h-auto object-contain filter drop-shadow-[0_12px_24px_rgba(125, 48, 36,0.22)]"
+              width={240}
+              height={240}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={92}
+            />
+          </div>
+        </div>
+
+        <!-- Right: Editorial Enterprise Architecture Text -->
+        <div class="md:col-span-8 text-center md:text-left">
+          <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#7D3024] font-sans mb-2">
+            COMPLIANCE AUTOMATION
+          </span>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
+            Automated Statutory Payroll & Workforce Systems
+          </h3>
+          <p class="text-base sm:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+            Biometric attendance, geofenced shifts, and 100% automated statutory compliance (PF, ESIC, TDS, Form 16)
+            connected directly to bank batch disbursal.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTech Interactive Mascot Service Guide -->
+
+  <section class="faq" id="faq-section" aria-labelledby="faq-title">
+    <div class="head">
+      <span class="eyebrow">+ FAQ</span>
+      <h2 id="faq-title">
+        HRM & Payroll <em>FAQs</em>
+      </h2>
+    </div>
+
+    <div class="list">
+      <!-- FAQ 1 -->
+      <div class="q open">
+        <h3>
+          <button type="button" id="faq-hrm-btn-1" aria-expanded="true" aria-controls="faq-hrm-ans-1">
+            How does Salowtech HRM automate monthly payroll and tax deductions?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-1" role="region" aria-labelledby="faq-hrm-btn-1">
+          <div>
+            <p>
+              Our automated payroll engine calculates gross-to-net salary, statutory deductions (PF, ESI, TDS,
+              Professional Tax), overtime, bonuses, and expense reimbursements with one-click bank disbursement file
+              generation and instant digital payslip delivery.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-hrm-btn-2" aria-expanded="false" aria-controls="faq-hrm-ans-2">
+            Can the HRM integrate with biometric fingerprint and facial recognition attendance hardware?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-2" role="region" aria-labelledby="faq-hrm-btn-2">
+          <div>
+            <p>
+              Yes. We integrate directly with physical biometric turnstiles, Essl/ZKTeco devices, geo-fenced mobile
+              check-ins, and RFID card readers, synchronizing real-time shift punches directly into payroll without
+              manual spreadsheet entry.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-hrm-btn-3" aria-expanded="false" aria-controls="faq-hrm-ans-3">
+            What self-service features are available for employees?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-3" role="region" aria-labelledby="faq-hrm-btn-3">
+          <div>
+            <p>
+              Employees get a dedicated mobile and web self-service portal to view/download payslips, submit leave
+              applications, submit tax declaration investment proofs, request expense reimbursements, and update
+              personal information.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-hrm-btn-4" aria-expanded="false" aria-controls="faq-hrm-ans-4">
+            How does the system handle complex shift scheduling and leave policies?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-4" role="region" aria-labelledby="faq-hrm-btn-4">
+          <div>
+            <p>
+              The platform supports custom rotational shifts, night allowance calculations, comp-off accruals, sandwich
+              leave rules, and multi-tier managerial approval workflows customized to your HR policy handbook.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-hrm-btn-5" aria-expanded="false" aria-controls="faq-hrm-ans-5">
+            How is confidential employee salary and personal data secured?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-5" role="region" aria-labelledby="faq-hrm-btn-5">
+          <div>
+            <p>
+              All employee compensation data is protected by multi-tier encryption and strict role isolation. HR
+              managers, department heads, and executives only access payroll tiers appropriate to their authorization
+              clearance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-hrm-btn-6" aria-expanded="false" aria-controls="faq-hrm-ans-6">
+            Can the HRM system scale as our workforce expands from 50 to 5,000+ employees?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-hrm-ans-6" role="region" aria-labelledby="faq-hrm-btn-6">
+          <div>
+            <p>
+              Yes. Built on cloud-native containerized architecture with high-concurrency database indexing, the system
+              handles concurrent thousands-of-employee shift logins and high-volume payroll batch runs without
+              degradation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Have questions about your project scope, architecture, or timeline?</p>
+      <a href="/contact-us" class="cta">
+        Talk to Our Senior Engineers
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- END: Canonical FAQ Section -->
+
+    <!-- ==========================================
+       HRMS ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
+       ========================================== -->
+  <ServiceVideoShowcase
+    id="hrm-video-showcase"
+    eyebrow="HRMS Architecture In Action"
+    titleHtml='Watch How We Automate <span class="font-serif italic font-normal text-[#AD8B73]">Workforce & Payroll</span>'
+    description="Biometric device integrations, sandwich leaves, overtime rules, and statutory tax compliance."
+    poster="/assets/posters/video6.jpg"
+    videoSrc="/assets/SalowTech_video6.mp4"
+  />
+
+  <!-- BEGIN: CTA Section -->
+
+  <section class="cta-wrap" id="cta-section">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Choose SalowTech.
+          <br />
+          Automate workforce management.
+        </h2>
+        <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+          Start Your Journey &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Tailored HRM and payroll built for your company
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Zero data loss migration from legacy software &amp; Excel
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Dedicated engineering team with lifetime support
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: CTA Section -->
+
+  <!-- BEGIN: SiteFooter -->
+  <!-- BEGIN: Footer Section -->
+</Layout>

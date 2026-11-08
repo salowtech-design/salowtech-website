@@ -1,0 +1,753 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import { pagesSEO } from "../data/seo";
+import { getLegalPageSchema } from "../data/schema";
+
+const seo = pagesSEO.termsAndConditions;
+const title = seo.title;
+const description = seo.description;
+const keywords = "";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass =
+  "selection:bg-neutral-900 selection:text-white min-h-screen bg-[#FAF7F2] font-sans antialiased text-stone-900";
+const showChatbot = false;
+const schemaJson = getLegalPageSchema(seo.title, seo.canonicalPath, seo.description);
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <!-- Hero Header -->
+  <main class="pt-36 sm:pt-44 pb-20">
+    <div class="max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-12">
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 text-xs font-sans text-stone-500 mb-6">
+        <a href="/" class="hover:text-[#5C2017] transition-colors">
+          Home
+        </a>
+        <span>/</span>
+        <span class="text-stone-800 font-semibold">Terms of Service</span>
+      </nav>
+
+      <!-- Main Headline -->
+      <div class="max-w-4xl mb-12">
+        <h1 class="font-editorial text-4xl sm:text-5xl md:text-6xl text-neutral-950 font-normal tracking-tight leading-tight mb-4">
+          Terms of Service &amp; <span class="italic text-[#5C2017]">Commercial Conditions</span>
+        </h1>
+        <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-3xl font-sans">
+          These Terms of Service govern your access to and use of all software applications, bespoke engineering
+          deliverables, conversational AI voice systems, cloud architectures, and consulting services provided by Salow
+          Technologies (&ldquo;Salowtech&rdquo;).
+        </p>
+        <p class="mt-4 text-xs font-medium text-stone-500 font-sans flex items-center gap-2 flex-wrap">
+          <span>Last updated: October 31, 2026</span>
+          <span class="text-stone-300">&bull;</span>
+          <span>Salow Technologies</span>
+          <span class="text-stone-300">&bull;</span>
+          <span>Surat, Gujarat, India</span>
+        </p>
+      </div>
+
+      <!-- Main Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Sticky Sidebar Navigation (Desktop) -->
+        <aside class="hidden lg:block lg:col-span-4">
+          <div class="sticky top-28 bg-white border border-[#E8E1D3] rounded-2xl p-5 shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] font-sans">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-[#5C2017] mb-3.5 px-2.5">Table of Contents</h3>
+            <nav class="space-y-1 text-xs max-h-[70vh] overflow-y-auto pr-1">
+              <a
+                href="#sec-1"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                1. Acceptance of Terms
+              </a>
+              <a
+                href="#sec-2"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                2. Scope of Services
+              </a>
+              <a
+                href="#sec-3"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                3. User Accounts &amp; Security
+              </a>
+              <a
+                href="#sec-4"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                4. Eligibility &amp; Authority
+              </a>
+              <a
+                href="#sec-5"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                5. Acceptable Use Policy
+              </a>
+              <a
+                href="#sec-6"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                6. AI Voice &amp; Synthetic Content
+              </a>
+              <a
+                href="#sec-7"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                7. Orders, Quotations &amp; SOWs
+              </a>
+              <a
+                href="#sec-8"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                8. Fees, Invoicing &amp; Taxes
+              </a>
+              <a
+                href="#sec-9"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                9. Subscriptions &amp; SLA
+              </a>
+              <a
+                href="#sec-10"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                10. Refunds &amp; Cancellations
+              </a>
+              <a
+                href="#sec-11"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                11. Intellectual Property Sovereignty
+              </a>
+              <a
+                href="#sec-12"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                12. AI &amp; Automated Systems
+              </a>
+              <a
+                href="#sec-13"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                13. Third-Party Integrations
+              </a>
+              <a
+                href="#sec-14"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                14. Confidentiality &amp; NDA
+              </a>
+              <a
+                href="#sec-15"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                15. Data Protection (DPDP Act)
+              </a>
+              <a
+                href="#sec-16"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                16. Representations &amp; Warranties
+              </a>
+              <a
+                href="#sec-17"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                17. Limitation of Liability
+              </a>
+              <a
+                href="#sec-18"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                18. Indemnification
+              </a>
+              <a
+                href="#sec-19"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                19. Suspension &amp; Termination
+              </a>
+              <a
+                href="#sec-20"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                20. Arbitration (Surat Seat)
+              </a>
+              <a
+                href="#sec-21"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                21. Grievance Redressal
+              </a>
+            </nav>
+
+            <div class="mt-5 pt-4 border-t border-[#EFEAE1] text-xs">
+              <p class="text-stone-500 mb-2">Questions regarding terms?</p>
+              <a
+                href="mailto:contact@salowtech.com"
+                class="font-bold text-[#5C2017] hover:underline flex items-center gap-1.5"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                contact@salowtech.com
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Legal Content Sections -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Section 1 -->
+          <article id="sec-1" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">01.</span> Acceptance of Terms
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                By accessing our website (
+                <a href="/" class="text-[#7D3024] font-semibold underline">
+                  salowtech.com
+                </a>
+                ), engaging Salow Technologies for development services, signing a Statement of Work
+                (&ldquo;SOW&rdquo;), or using any proprietary software artifacts, you confirm that you have read,
+                understood, and agreed to be legally bound by these Terms of Service.
+              </p>
+              <p>
+                If you are entering into this agreement on behalf of a corporate entity, partnership, or limited
+                liability company, you represent and warrant that you possess the full legal authority to bind that
+                entity to these Terms. If you do not agree with any provision of these Terms, you must discontinue all
+                access and use of our services immediately.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 2 -->
+          <article id="sec-2" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">02.</span> Scope of Services
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech provides enterprise engineering, custom software development, digital automation, and
+                consulting solutions, including without limitation:
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong>Custom ERP Platforms:</strong> Modular supply chain, inventory bin tracking, manufacturing
+                  BOM, and double-entry accounting engines.
+                </li>
+                <li>
+                  <strong>Omnichannel CRM Systems:</strong> Lead routing, WhatsApp Business API sync, automated
+                  telephony logging, and predictive deal scoring.
+                </li>
+                <li>
+                  <strong>HRM &amp; Statutory Payroll:</strong> Biometric facial/fingerprint attendance integration, GPS
+                  geofencing, and automated PF/ESIC/TDS compliance.
+                </li>
+                <li>
+                  <strong>Autonomous AI Voice Assistants:</strong> Low-latency streaming speech-to-text, domain-tuned
+                  LLMs, and neural voice synthesis.
+                </li>
+                <li>
+                  <strong>Web &amp; Mobile Engineering:</strong> High-performance web applications, native iOS/Android,
+                  and cross-platform Flutter mobile solutions.
+                </li>
+                <li>
+                  <strong>Search Optimization &amp; GEO:</strong> Generative Engine Optimization, Core Web Vitals
+                  remediation, and high-intent schema architectures.
+                </li>
+              </ul>
+              <p>
+                All project-specific features, schedules, deliverables, milestone payments, and acceptance criteria
+                shall be specified in binding Statements of Work executed between the Client and Salowtech.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 3 -->
+          <article id="sec-3" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">03.</span> User Accounts &amp; Security
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Certain services and staging environments require user authentication. You agree to maintain the
+                absolute confidentiality of your credentials and accept sole responsibility for all actions executed
+                under your credentials.
+              </p>
+              <p>
+                You must notify Salowtech immediately at{" "}
+                <a href="mailto:contact@salowtech.com" class="text-[#7D3024] font-semibold underline">
+                  contact@salowtech.com
+                </a>{" "}
+                upon suspecting any unauthorized breach, credential compromise, or security incident. Salowtech reserves
+                the right to suspend any credential that presents an active risk to infrastructure security.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 4 -->
+          <article id="sec-4" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">04.</span> Eligibility &amp; Authority
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Our services are provided strictly to commercial entities, registered companies, entrepreneurs, and
+                individuals of legal age (at least 18 years under the Indian Contract Act, 1872, or the applicable age
+                of majority in your jurisdiction) capable of entering into legally enforceable contracts.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 5 -->
+          <article id="sec-5" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">05.</span> Acceptable Use Policy
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>You agree not to use our systems or deliverables to:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  Violate any federal, state, local, or international statute, including the Information Technology Act,
+                  2000, and DPDP Act, 2023.
+                </li>
+                <li>
+                  Engage in unauthorized penetration testing, vulnerability fuzzing, denial-of-service, or automated
+                  scraping without prior written consent.
+                </li>
+                <li>
+                  Transmit malicious payload code, Trojan horses, spyware, ransomware, or illicit keylogger components.
+                </li>
+                <li>
+                  Circumvent licensing checks, copy proprietary pre-existing architectural templates, or misrepresent
+                  Salowtech's trademarks.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 6 -->
+          <article id="sec-6" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">06.</span> AI Voice &amp; Synthetic Content
+              Restrictions
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                For deployments utilizing Salowtech AI Voice Assistant engines, the Client represents and warrants that:
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  Synthetic voice models shall never be configured to impersonate any individual, government entity,
+                  financial institution, or public official without documented explicit legal consent.
+                </li>
+                <li>
+                  All automated calls placed through the voice assistant comply with statutory Telecommunications
+                  Commercial Communications Customer Preference Regulations (TCCCPR) and applicable national
+                  Do-Not-Disturb (DND) registries.
+                </li>
+                <li>
+                  Inbound and outbound callers are explicitly informed at the inception of the interaction that they are
+                  communicating with an automated artificial intelligence assistant.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 7 -->
+          <article id="sec-7" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">07.</span> Orders, Quotations &amp;
+              Statements of Work
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Formal engagements begin with an executed Statement of Work. Each SOW details architectural specs,
+                milestone deliverables, delivery schedules, fee breakdowns, and acceptance test procedures. In the event
+                of a conflict between these Terms and an executed SOW, the terms of the specific SOW shall govern for
+                that engagement.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 8 -->
+          <article id="sec-8" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">08.</span> Fees, Invoicing &amp; Taxes
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Fees are quoted in Indian Rupees (INR) or United States Dollars (USD) as specified in the SOW. Milestone
+                invoices are payable within the net terms stated on each invoice (default 15 calendar days from
+                issuance).
+              </p>
+              <p>
+                All prices are exclusive of statutory taxes. Indian clients are subject to Goods and Services Tax (GST)
+                at statutory rates. Late payments are subject to a commercial interest surcharge of 1.5% per month or
+                the maximum rate permissible by law on overdue balances.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 9 -->
+          <article id="sec-9" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">09.</span> Subscriptions &amp; SLA
+              Commitments
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Ongoing infrastructure stewardship, maintenance, and telephony routing are governed by Service Level
+                Agreements (SLAs). Our standard enterprise SLA commits to 99.9% core uptime excluding scheduled
+                maintenance windows notified at least 48 hours in advance. Critical Priority-1 incidents receive
+                engineering acknowledgement within 60 minutes.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 10 -->
+          <article id="sec-10" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">10.</span> Refund &amp; Cancellation Policy
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Because custom enterprise software development involves dedicated engineering time, sprint resources,
+                and bespoke architecture, advance milestone payments are non-refundable once engineering sprints have
+                commenced.
+              </p>
+              <p>
+                If a Client requests project cancellation before milestone delivery, the Client remains liable for work
+                completed up to the cancellation notice date, and Salowtech shall deliver all intermediate source code
+                artifacts created up to that point upon settlement of accrued fees.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 11 -->
+          <article id="sec-11" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">11.</span> Intellectual Property &amp;
+              Sovereign Code Ownership
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p class="font-semibold text-slate-900">The Salowtech Sovereign Software Doctrine:</p>
+              <p>
+                Upon final settlement of milestone invoices for custom deliverables specified in an SOW,{" "}
+                <strong>
+                  100% full, perpetual, irrevocable source code ownership and intellectual property rights in the
+                  bespoke deliverables transfer to the Client
+                </strong>
+                . You are never subject to recurring per-seat user taxes or vendor lock-in.
+              </p>
+              <p>
+                Salowtech retains ownership of its pre-existing core libraries, foundational utility frameworks, design
+                systems, and know-how developed independently of the Client engagement, and grants the Client a
+                perpetual, royalty-free license to use and modify such embedded core libraries in conjunction with the
+                deliverables.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 12 -->
+          <article id="sec-12" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">12.</span> AI &amp; Automated Services
+              Disclaimers
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Artificial intelligence and machine learning technologies are probabilistic by nature. While Salowtech
+                configures domain-specific guardrails, retrieval-augmented grounding, and verification loops, Salowtech
+                does not warrant that AI model outputs will be 100% free of hallucination or inaccuracy. Clients must
+                implement human-in-the-loop review for high-stakes regulatory or clinical actions.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 13 -->
+          <article id="sec-13" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">13.</span> Third-Party Integrations &amp;
+              Telephony APIs
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Our platforms frequently interface with third-party service providers (e.g., WhatsApp Business API,
+                Twilio, OpenAI, AWS, Google Cloud, Razorpay). Salowtech is not responsible for outages, rate limits, or
+                unilateral policy changes implemented by third-party platforms outside Salowtech's direct control.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 14 -->
+          <article id="sec-14" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">14.</span> Confidentiality &amp;
+              Non-Disclosure
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Each party agrees to hold all proprietary trade secrets, business logic, customer databases, and
+                software architectures disclosed during the engagement in strict confidence. Neither party shall
+                disclose Confidential Information to any third party without prior written consent, except to employees,
+                subcontractors, and legal counsel with a need to know.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 15 -->
+          <article id="sec-15" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">15.</span> Data Protection &amp; DPDP Act,
+              2023 Compliance
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Both parties acknowledge their statutory duties under the Digital Personal Data Protection Act, 2023
+                (DPDP Act) and the DPDP Rules, 2025. Where Salowtech processes personal data on behalf of the Client,
+                Salowtech acts strictly as a <strong>Data Processor</strong>, processing personal data solely pursuant
+                to documented client instructions.
+              </p>
+              <p>
+                Our full data handling practices are detailed in our{" "}
+                <a href="/privacy-policy" class="text-[#7D3024] font-semibold underline">
+                  Privacy Policy
+                </a>
+                , which is incorporated by reference into these Terms.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 16 -->
+          <article id="sec-16" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">16.</span> Representations &amp; Warranties
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech warrants that custom software deliverables shall substantially conform to the specifications
+                set forth in the applicable SOW for a warranty period of thirty (30) days following commercial
+                acceptance. Salowtech shall make reasonable commercial efforts to remediate reproducible code defects
+                reported during this warranty period at no additional charge.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 17 -->
+          <article id="sec-17" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">17.</span> Limitation of Liability
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                To the maximum extent permissible by law, in no event shall Salowtech, its directors, engineers, or
+                affiliates be liable for any indirect, incidental, special, punitive, exemplary, or consequential
+                damages (including loss of profits, data corruption, or business interruption) arising out of or in
+                connection with the deliverables.
+              </p>
+              <p>
+                Salowtech's aggregate liability for all claims arising out of an engagement shall in no event exceed the
+                total fees actually received by Salowtech from the Client under the specific SOW giving rise to the
+                claim during the six (6) months preceding the event.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 18 -->
+          <article id="sec-18" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">18.</span> Indemnification
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                The Client agrees to defend, indemnify, and hold harmless Salowtech and its personnel from and against
+                any third-party claims, liabilities, damages, and expenses (including reasonable attorneys&rsquo; fees)
+                arising from: (a) Client data provided to Salowtech; (b) Client&rsquo;s violation of applicable law; or
+                (c) Client&rsquo;s deployment of AI voice assistants in violation of consumer telemarketing regulations.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 19 -->
+          <article id="sec-19" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">19.</span> Term, Suspension &amp;
+              Termination
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Either party may terminate an engagement for material breach upon thirty (30) days written notice if the
+                breaching party fails to cure the breach within that notice period. Salowtech may immediately suspend
+                services if Client accounts are overdue by more than thirty (30) calendar days or if an active security
+                hazard is detected.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 20 -->
+          <article id="sec-20" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">20.</span> Dispute Resolution, Governing
+              Law &amp; Arbitration
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                These Terms shall be governed by and construed in accordance with the substantive laws of India, without
+                regard to its conflict of law principles.
+              </p>
+              <p>
+                Any dispute, controversy, or claim arising out of or relating to this contract shall be referred to and
+                finally resolved by binding arbitration in accordance with the{" "}
+                <strong>Arbitration and Conciliation Act, 1996</strong> of India. The seat and legal place of
+                arbitration shall be <strong>Surat, Gujarat, India</strong>. The arbitration proceedings shall be
+                conducted in the English language before a sole arbitrator mutually appointed by the parties.
+              </p>
+              <p>
+                Subject to arbitration, the civil courts situated in Surat, Gujarat, India shall exercise exclusive
+                jurisdiction over any auxiliary legal proceedings.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 21 -->
+          <article id="sec-21" class="legal-card bg-[#FAF7F2] border-[#5C2017]/30">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">21.</span> Grievance Redressal &amp; Formal
+              Notices
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                All legal notices, questions, or grievance redressal communications under these Terms must be addressed
+                to the designated officer of Salow Technologies:
+              </p>
+              <div class="bg-white p-6 rounded-2xl border border-[#E8E1D3] space-y-2.5 text-sm font-sans text-stone-700">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Entity:</span>
+                  <span class="text-neutral-700">Salow Technologies (Salowtech)</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Attention:</span>
+                  <span class="text-neutral-700">Grievance Redressal &amp; Legal Officer</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Registered Location:</span>
+                  <span class="text-neutral-700">Surat, Gujarat, India</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Email:</span>
+                  <a href="mailto:contact@salowtech.com" class="text-[#5C2017] font-bold hover:underline">
+                    contact@salowtech.com
+                  </a>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 gap-1 text-xs text-stone-500 pt-1">
+                  <span class="font-medium">Corporate Web:</span>
+                  <a href="/" class="text-stone-700 hover:text-black underline">
+                    salowtech.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- BEGIN: SalowTechCTA -->
+  <section class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Ready for sovereign software?
+          <br />
+          Accelerate enterprise growth.
+        </h2>
+        <a href="/contact-us" class="cta-btn">
+          Schedule Discovery Call &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            100% perpetual source code ownership
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Zero per-seat licensing tax
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Dedicated engineering team in India
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTechCTA -->
+
+  <!-- BEGIN: Footer Section -->
+</Layout>

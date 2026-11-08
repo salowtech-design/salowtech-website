@@ -1,0 +1,536 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import { blogArticlesSEO } from "../../data/seo";
+import { getBlogPostingSchema } from "../../data/schema";
+import { getBlogRelatedServices } from "../../data/blogServices";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.data.id || post.id },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const slug = post.data.id || post.id;
+const articleSeo = blogArticlesSEO[slug];
+const title = articleSeo?.seoTitle || `${post.data.title.substring(0, 45)} | Salowtech`;
+const description =
+  articleSeo?.seoDescription ||
+  (post.data.excerpt && post.data.excerpt.length > 158 ? `${post.data.excerpt.substring(0, 155)}...` : post.data.excerpt);
+const canonicalPath = `/blog/${slug}`;
+const ogTitle = title;
+const ogDescription = description;
+const ogImage = post.data.image || "https://salowtech.com/assets/salowtech_team_hero.jpg";
+const bodyClass =
+  "selection:bg-neutral-900 selection:text-white min-h-screen bg-[#FAF7F0] font-sans antialiased text-stone-900";
+const showChatbot = true;
+const showPreFooterCTA = true;
+const schemaJson = getBlogPostingSchema(post, slug);
+
+// Fetch related articles
+const allPosts = await getCollection("blog");
+const colorThemes = ["is-pink", "is-yellow", "is-green", "is-violet", "is-peach", "is-cream"];
+const relatedPosts = allPosts
+  .filter((p) => (p.data.id || p.id) !== slug)
+  .slice(0, 3)
+  .map((p, idx) => ({
+    ...p,
+    theme: colorThemes[idx % colorThemes.length]
+  }));
+
+// Contextual internal linking to relevant service verticals
+const relatedServices = getBlogRelatedServices(slug);
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  ogImage={ogImage}
+  bodyClass={bodyClass}
+  activePath="/blog"
+  showChatbot={showChatbot}
+  showPreFooterCTA={showPreFooterCTA}
+  schemaJson={schemaJson}
+>
+  <main class="pt-36 sm:pt-44 pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumbs & Back Button -->
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-[#E8E2D6]/80 text-xs text-stone-500 font-medium">
+        <a href="/blog" class="inline-flex items-center gap-1.5 text-stone-600 hover:text-[#7D3024] transition-colors">
+          <span>&larr;</span>
+          <span>Back to all articles</span>
+        </a>
+        <div class="hidden sm:flex items-center gap-2">
+          <a href="/blog" class="hover:text-[#7D3024] transition-colors">
+            Blog
+          </a>
+          <span>/</span>
+          <span class="text-stone-800 font-semibold">{post.data.categoryPill}</span>
+        </div>
+      </div>
+
+      <!-- Main Article Header -->
+      <header class="text-center mb-6">
+        <!-- Title -->
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-950 tracking-tight leading-tight max-w-3xl mx-auto mb-6">
+          {post.data.title}
+        </h1>
+
+        <!-- Author, Date, Read Time Row -->
+        <div class="flex items-center justify-center gap-2.5 text-xs sm:text-sm text-stone-600 mb-6 flex-wrap">
+          <img
+            src={post.data.author.avatar}
+            alt={post.data.author.name}
+            width="32"
+            height="32"
+            class="w-7 h-7 sm:w-8 sm:h-8 rounded-full object-cover border border-[#E5DFD3]"
+            loading="eager"
+            decoding="async"
+          />
+          <span class="font-semibold text-slate-900">{post.data.author.name}</span>
+          <span class="text-stone-300">&middot;</span>
+          <span>{post.data.date}</span>
+          <span class="text-stone-300">&middot;</span>
+          <span class="font-sans text-stone-500">{post.data.readTime}</span>
+        </div>
+
+        <!-- Sticky AI Model Summarize Bar -->
+        <div class="sticky top-20 sm:top-24 z-30 my-4 flex justify-center">
+          <div class="inline-flex items-center gap-2 sm:gap-2.5 py-2 px-3.5 sm:px-4 bg-[#FAF7F0]/95 backdrop-blur-md border border-[#E8E2D6] rounded-full shadow-[0_4px_20px_rgba(43,35,26,0.06)] hover:shadow-md transition-all duration-200">
+            <span class="text-[11px] sm:text-xs font-bold text-stone-700 tracking-wide uppercase flex items-center gap-1.5 shrink-0">
+              <svg
+                class="w-3.5 h-3.5 text-[#7D3024]"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+              <span>Summarize</span>
+            </span>
+            <div class="h-4 w-px bg-stone-300 shrink-0"></div>
+
+            <!-- 7 AI Platforms -->
+            <div class="flex items-center gap-1 sm:gap-1.5">
+              <!-- 1. Google Gemini -->
+              <button
+                type="button"
+                data-model="gemini"
+                class="ai-model-pill-btn ai-pill-gemini group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with Google Gemini"
+                aria-label="Summarize with Google Gemini"
+              >
+                <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gemini-star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#1A73E8" />
+                      <stop offset="35%" stop-color="#8AB4F8" />
+                      <stop offset="70%" stop-color="#9334E8" />
+                      <stop offset="100%" stop-color="#EA4335" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#gemini-star-grad)"
+                    d="M12 2C12 7.52 7.52 12 2 12C7.52 12 12 16.48 12 22C12 16.48 16.48 12 22 12C16.48 12 12 7.52 12 2Z"
+                  />
+                </svg>
+              </button>
+
+              <!-- 2. ChatGPT (OpenAI) -->
+              <button
+                type="button"
+                data-model="chatgpt"
+                class="ai-model-pill-btn ai-pill-chatgpt group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with ChatGPT (OpenAI)"
+                aria-label="Summarize with ChatGPT"
+              >
+                <svg
+                  class="w-4 h-4 text-[#10A37F] transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M22.28 9.53a5.52 5.52 0 0 0-.47-4.48 5.61 5.61 0 0 0-4.69-2.73 5.4 5.4 0 0 0-1.84.32 5.57 5.57 0 0 0-4-1.84 5.61 5.61 0 0 0-5.18 3.44 5.46 5.46 0 0 0-2.3.5A5.57 5.57 0 0 0 1.05 9a5.61 5.61 0 0 0 .76 5.37 5.52 5.52 0 0 0 .47 4.48 5.61 5.61 0 0 0 4.69 2.73 5.4 5.4 0 0 0 1.84-.32 5.57 5.57 0 0 0 4 1.84 5.61 5.61 0 0 0 5.18-3.44 5.46 5.46 0 0 0 2.3-.5 5.57 5.57 0 0 0 2.75-4.32 5.61 5.61 0 0 0-.76-5.45zM12 14.5a2.5 2.5 0 1 1 2.5-2.5 2.5 2.5 0 0 1-2.5 2.5z" />
+                </svg>
+              </button>
+
+              <!-- 3. Grok (xAI) -->
+              <button
+                type="button"
+                data-model="grok"
+                class="ai-model-pill-btn ai-pill-grok group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with Grok (xAI)"
+                aria-label="Summarize with Grok"
+              >
+                <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 19L14 5H18L8 19H4Z" fill="#38BDF8" />
+                  <path d="M12 13L17.5 19H14.5L10 14L12 13Z" fill="#FFFFFF" />
+                </svg>
+              </button>
+
+              <!-- 4. Claude (Anthropic) -->
+              <button
+                type="button"
+                data-model="claude"
+                class="ai-model-pill-btn ai-pill-claude group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with Claude (Anthropic)"
+                aria-label="Summarize with Claude"
+              >
+                <svg
+                  class="w-4 h-4 text-[#D97706] transition-transform duration-200"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M13.8 2.2a1.8 1.8 0 0 0-3.6 0l-.3 4.2a1 1 0 0 1-.8.9L5 8.1a1.8 1.8 0 0 0 0 3.6l4.1.8a1 1 0 0 1 .9.8l.8 4.2a1.8 1.8 0 0 0 3.6 0l.8-4.2a1 1 0 0 1 .9-.8l4.1-.8a1.8 1.8 0 0 0 0-3.6l-4.1-.8a1 1 0 0 1-.9-.8l-.8-4.3z" />
+                  <circle cx="12" cy="12" r="2.2" fill="#FAF7F0" />
+                </svg>
+              </button>
+
+              <!-- 5. Qwen (Alibaba Cloud) -->
+              <button
+                type="button"
+                data-model="qwen"
+                class="ai-model-pill-btn ai-pill-qwen group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with Qwen (Alibaba Cloud)"
+                aria-label="Summarize with Qwen"
+              >
+                <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 3.2L17.5 8 12 11.2 6.5 8 12 5.2zm-6 4.3l5 3v5.8l-5-3.1V9.5zm7 8.8v-5.8l5-3v5.7l-5 3.1z"
+                    fill="#615CED"
+                  />
+                </svg>
+              </button>
+
+              <!-- 6. DeepSeek (DeepSeek AI) -->
+              <button
+                type="button"
+                data-model="deepseek"
+                class="ai-model-pill-btn ai-pill-deepseek group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with DeepSeek AI"
+                aria-label="Summarize with DeepSeek AI"
+              >
+                <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M3 13.5C3 8.8 6.8 5 11.5 5c3.2 0 6 1.8 7.4 4.5.4-.1.8-.2 1.3-.2 1.8 0 3.2 1.4 3.2 3.2 0 1.2-.7 2.3-1.7 2.8-.2 1.9-1.2 3.6-2.7 4.7l2.5 1.5-3.2.5c-.8.5-1.8.8-2.8.8-3.9 0-7.2-2.7-8-6.4-.3-.1-.6-.2-.9-.4-1-.8-1.6-2-1.6-2.5z"
+                    fill="#1E88E5"
+                  />
+                  <circle cx="8.5" cy="10.5" r="1.2" fill="#FFFFFF" />
+                  <circle cx="8.8" cy="10.3" r="0.6" fill="#0D47A1" />
+                </svg>
+              </button>
+
+              <!-- 7. Kimi (Moonshot AI) -->
+              <button
+                type="button"
+                data-model="kimi"
+                class="ai-model-pill-btn ai-pill-kimi group w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center cursor-pointer transition-all duration-200"
+                title="Summarize with Kimi (Moonshot AI)"
+                aria-label="Summarize with Kimi"
+              >
+                <svg class="w-4 h-4 transition-transform duration-200" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 4h3.5v6.5L14 4h4.5l-6.2 7 6.7 9h-4.5L9.5 13.5V20H5V4z" fill="url(#kimi-header-grad)" />
+                  <defs>
+                    <linearGradient id="kimi-header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#00E5FF" />
+                      <stop offset="100%" stop-color="#7000FF" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="18" cy="6" r="1.8" fill="#00E5FF" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="h-4 w-px bg-stone-300 shrink-0"></div>
+
+            <!-- Quick Preview Toggle -->
+            <button
+              type="button"
+              id="toggle-ai-summary-btn"
+              class="text-[11px] font-semibold text-[#7D3024] hover:text-[#5C2017] transition-colors shrink-0 cursor-pointer"
+            >
+              Quick Peek
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Expandable Instant AI Summary Card -->
+      <div
+        id="instant-ai-summary-box"
+        class="hidden mb-10 bg-white border border-[#7D3024]/40 rounded-2xl p-6 sm:p-7 shadow-lg transition-all duration-300"
+      >
+        <div class="flex items-center justify-between pb-3 mb-4 border-b border-stone-100">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-900">
+              Salowtech AI Executive Synthesis
+            </span>
+          </div>
+          <button
+            type="button"
+            id="close-ai-summary-btn"
+            class="text-stone-400 hover:text-stone-700 text-sm font-sans cursor-pointer"
+          >
+            &times;
+          </button>
+        </div>
+        <p class="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans mb-4">{post.data.aiSummary}</p>
+        <div class="flex items-center justify-between pt-2 text-[11px] font-sans text-stone-500">
+          <span>Target Platform: Real-Time Verified</span>
+          <span class="text-emerald-700 font-semibold">&check; Formatted Prompt Ready</span>
+        </div>
+      </div>
+
+      <!-- Hero Cover Image -->
+      <div class="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D6] shadow-sm mb-12 bg-stone-100">
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          width="1200"
+          height="675"
+          class="w-full aspect-[16/9] object-cover"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+
+      <!-- Key Takeaways Callout Card -->
+      {post.data.keyTakeaways && post.data.keyTakeaways.length > 0 && (
+        <aside class="bg-[#F6F2EA] border border-[#E5DFD3] rounded-2xl p-6 sm:p-8 mb-12">
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#7D3024] mb-3">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            Executive Summary &amp; Key Takeaways
+          </div>
+          <ul class="space-y-3 text-xs sm:text-sm text-stone-800 leading-relaxed">
+            {post.data.keyTakeaways.map((takeaway) => (
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#7D3024] mt-2 shrink-0"></span>
+                <span>{takeaway}</span>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )}
+
+      <!-- Main Longform Article Body -->
+      <article class="prose prose-stone max-w-none space-y-8 blog-content-body text-stone-700 text-base sm:text-lg leading-relaxed">
+        <Content />
+      </article>
+
+      <!-- Author Bio Section -->
+      <div class="mt-16 pt-8 border-t border-[#E8E2D6] flex items-center gap-5 bg-white p-6 rounded-2xl border border-stone-200/80">
+        <img
+          src={post.data.author.avatar}
+          alt={post.data.author.name}
+          width="56"
+          height="56"
+          class="w-14 h-14 rounded-full object-cover border border-[#E5DFD3] shrink-0"
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <h3 class="font-bold text-slate-900 text-base">{post.data.author.name}</h3>
+          <p class="text-xs text-[#7D3024] font-semibold mb-1">{post.data.author.role}</p>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Specializing in enterprise systems, high-scale software architectures, and sovereign data platforms at
+            Salowtech.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contextual Related Service Hub for SEO, AEO & Conversion -->
+      {relatedServices && relatedServices.length > 0 && (
+        <aside class="mt-12 p-6 sm:p-8 bg-[#FAF7F2] border border-[#E8E1D3] rounded-2xl" aria-label="Related Software Engineering Services">
+          <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#7D3024] mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#7D3024]"></span>
+            <span>Explore Engineering Capabilities</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Ready to implement sovereign software for your enterprise?
+          </h3>
+          <p class="text-xs sm:text-sm text-stone-600 mb-5 leading-relaxed">
+            Discover how Salowtech engineers bespoke platforms with 100% intellectual property ownership, zero recurring SaaS license taxes, and dedicated architecture.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {relatedServices.map((svc) => (
+              <a
+                href={svc.path}
+                class="group p-4 bg-white rounded-xl border border-[#E8E1D3] hover:border-[#7D3024] hover:shadow-xs transition-all duration-200 flex flex-col justify-between"
+              >
+                <div>
+                  <span class="text-[10px] font-bold text-[#7D3024] uppercase tracking-wider block mb-1">{svc.tag}</span>
+                  <h4 class="text-sm font-bold text-neutral-900 group-hover:text-[#7D3024] transition-colors leading-snug">
+                    {svc.title}
+                  </h4>
+                  <p class="text-xs text-stone-600 mt-1 leading-relaxed">{svc.description}</p>
+                </div>
+                <div class="mt-3 pt-2 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-[#7D3024]">
+                  <span>Explore {svc.shortName}</span>
+                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </aside>
+      )}
+
+      <!-- Related Articles Section (Matching 3-Card Editorial) -->
+      {relatedPosts.length > 0 && (
+        <div class="mt-20">
+          <div class="flex items-center justify-between mb-8">
+            <h3 class="text-2xl font-serif font-bold text-slate-950 tracking-tight">Related Articles</h3>
+            <a href="/blog" class="text-xs font-bold text-[#7D3024] hover:text-[#5C2017] transition-colors">
+              View All &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedPosts.map((rel) => (
+              <article class="h-full">
+                <a
+                  href={`/blog/${rel.data.id || rel.id}`}
+                  class={`blog-editorial-card ${rel.theme} group block`}
+                  aria-label={rel.data.title}
+                >
+                  <div class="card-notch" aria-hidden="true">
+                    <span class="notch-logo">Salowtech&reg;</span>
+                  </div>
+
+                  <div class="card-cta-btn" aria-hidden="true">
+                    <span>Read story</span>
+                    <svg
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M6 12l4-4-4-4" />
+                    </svg>
+                  </div>
+
+                  <div class="card-content">
+                    <div class="card-thumb-wrap">
+                      <img
+                        src={rel.data.image}
+                        alt={rel.data.title}
+                        width="400"
+                        height="225"
+                        class="card-thumb-img"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+
+                    <div class="card-body">
+                      <div class="card-category-row">
+                        <span class="card-cat-badge">{rel.data.categoryPill || rel.data.category}</span>
+                        <span class="card-read-time">{rel.data.readTime}</span>
+                      </div>
+
+                      <h3 class="card-title">{rel.data.title}</h3>
+                      <p class="card-excerpt">{rel.data.excerpt}</p>
+                    </div>
+
+                    <div class="card-meta">
+                      <span class="card-author">
+                        {rel.data.author ? rel.data.author.name : "Salowtech Engineering"}
+                      </span>
+                      <span class="card-date">{rel.data.date}</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </main>
+
+  <script is:inline define:vars={{ articleData: post.data, canonicalUrl: `https://salowtech.com/blog/${slug}` }}>
+    // Interactive Quick Peek Toggle
+    const toggleBtn = document.getElementById("toggle-ai-summary-btn");
+    const closeBtn = document.getElementById("close-ai-summary-btn");
+    const summaryBox = document.getElementById("instant-ai-summary-box");
+
+    function toggleSummary() {
+      if (summaryBox) {
+        summaryBox.classList.toggle("hidden");
+      }
+    }
+
+    if (toggleBtn) toggleBtn.addEventListener("click", toggleSummary);
+    if (closeBtn) closeBtn.addEventListener("click", toggleSummary);
+
+    // AI Summarize Buttons
+    const aiButtons = document.querySelectorAll(".ai-model-pill-btn");
+    aiButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const model = this.getAttribute("data-model");
+        summarizeWithModel(model);
+      });
+    });
+
+    function summarizeWithModel(modelKey) {
+      const promptText = `Please provide a clear, comprehensive summary of this Salowtech engineering article: "${articleData.title}".
+Category: ${articleData.categoryPill}
+Original Article URL: ${canonicalUrl}
+
+Executive Summary:
+${articleData.aiSummary}
+
+Key Takeaways to expand:
+- ${(articleData.keyTakeaways || []).join("\n- ")}
+
+Please provide:
+1. An Executive Summary (3-4 sentences)
+2. Strategic Implications for Technology Leaders
+3. Tactical Recommendations & Best Practices
+4. Common Mistakes to Avoid`;
+
+      let targetUrl = "";
+      switch ((modelKey || "").toLowerCase()) {
+        case "gemini":
+          targetUrl = `https://gemini.google.com/app?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "chatgpt":
+          targetUrl = `https://chatgpt.com/?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "grok":
+          targetUrl = `https://grok.com/?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "claude":
+          targetUrl = `https://claude.ai/new?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "qwen":
+          targetUrl = `https://chat.qwenlm.ai/?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "deepseek":
+          targetUrl = `https://chat.deepseek.com/?q=${encodeURIComponent(promptText)}`;
+          break;
+        case "kimi":
+          targetUrl = `https://kimi.moonshot.cn/?q=${encodeURIComponent(promptText)}`;
+          break;
+        default:
+          targetUrl = `https://gemini.google.com/app?q=${encodeURIComponent(promptText)}`;
+      }
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(promptText).catch(() => {});
+      }
+      window.open(targetUrl, "_blank", "noopener,noreferrer");
+    }
+  </script>
+</Layout>

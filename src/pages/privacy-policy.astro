@@ -1,0 +1,671 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import { pagesSEO } from "../data/seo";
+import { getLegalPageSchema } from "../data/schema";
+
+const seo = pagesSEO.privacyPolicy;
+const title = seo.title;
+const description = seo.description;
+const keywords = "";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass =
+  "selection:bg-neutral-900 selection:text-white min-h-screen bg-[#FAF7F2] font-sans antialiased text-stone-900";
+const showChatbot = false;
+const schemaJson = getLegalPageSchema(seo.title, seo.canonicalPath, seo.description);
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <!-- Main Content Container -->
+  <main class="pt-36 sm:pt-44 pb-20">
+    <div class="max-w-[1340px] mx-auto px-5 sm:px-8 lg:px-12">
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 text-xs font-sans text-stone-500 mb-6">
+        <a href="/" class="hover:text-[#5C2017] transition-colors">
+          Home
+        </a>
+        <span>/</span>
+        <span class="text-stone-800 font-semibold">Privacy Policy</span>
+      </nav>
+
+      <!-- Headline -->
+      <div class="max-w-4xl mb-12">
+        <h1 class="font-editorial text-4xl sm:text-5xl md:text-6xl text-neutral-950 font-normal tracking-tight leading-tight mb-4">
+          Privacy Policy &amp; <span class="italic text-[#5C2017]">Data Protection</span>
+        </h1>
+        <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-3xl font-sans">
+          At Salow Technologies (&ldquo;Salowtech&rdquo;), we hold that customer and enterprise data sovereignty is an
+          inviolable architectural duty. This Privacy Policy outlines how we collect, process, safeguard, and fulfill
+          your rights regarding personal data across all software platforms.
+        </p>
+        <p class="mt-4 text-xs font-medium text-stone-500 font-sans flex items-center gap-2 flex-wrap">
+          <span>Last updated: October 31, 2026</span>
+          <span class="text-stone-300">&bull;</span>
+          <span>Salow Technologies</span>
+          <span class="text-stone-300">&bull;</span>
+          <span>Surat, Gujarat, India</span>
+        </p>
+      </div>
+
+      <!-- Main Two-Column Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+        <!-- Sidebar Navigation (Desktop) -->
+        <aside class="hidden lg:block lg:col-span-4">
+          <div class="sticky top-28 bg-white border border-[#E8E1D3] rounded-2xl p-5 shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] font-sans">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-[#5C2017] mb-3.5 px-2.5">Table of Contents</h3>
+            <nav class="space-y-1 text-xs max-h-[70vh] overflow-y-auto pr-1">
+              <a
+                href="#priv-1"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                1. Scope &amp; Applicability
+              </a>
+              <a
+                href="#priv-2"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                2. Categories of Data We Collect
+              </a>
+              <a
+                href="#priv-3"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                3. Lawful Processing Grounds
+              </a>
+              <a
+                href="#priv-4"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                4. Notice &amp; Consent Mechanisms
+              </a>
+              <a
+                href="#priv-5"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                5. AI Voice &amp; Non-Training Policy
+              </a>
+              <a
+                href="#priv-6"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                6. Cookies &amp; Telemetry
+              </a>
+              <a
+                href="#priv-7"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                7. Sharing &amp; Third-Party Processors
+              </a>
+              <a
+                href="#priv-8"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                8. Security &amp; Encryption
+              </a>
+              <a
+                href="#priv-9"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                9. Retention &amp; Deletion Schedules
+              </a>
+              <a
+                href="#priv-10"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                10. Data Principal Statutory Rights
+              </a>
+              <a
+                href="#priv-11"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                11. Consent Withdrawal
+              </a>
+              <a
+                href="#priv-12"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                12. Children &amp; Minor Privacy
+              </a>
+              <a
+                href="#priv-13"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                13. Fiduciary vs Processor Roles
+              </a>
+              <a
+                href="#priv-14"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                14. Cross-Border Data Transfers
+              </a>
+              <a
+                href="#priv-15"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                15. Grievance Redressal Officer
+              </a>
+              <a
+                href="#priv-16"
+                class="block px-2.5 py-1.5 rounded-lg text-stone-600 hover:text-neutral-950 hover:bg-[#FAF7F2] transition-colors font-medium"
+              >
+                16. Policy Amendments
+              </a>
+            </nav>
+
+            <div class="mt-5 pt-4 border-t border-[#EFEAE1] text-xs">
+              <p class="text-stone-500 mb-2">Privacy inquiries &amp; DPDP requests:</p>
+              <a
+                href="mailto:contact@salowtech.com"
+                class="font-bold text-[#5C2017] hover:underline flex items-center gap-1.5"
+              >
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                contact@salowtech.com
+              </a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Policy Content Sections -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Section 1 -->
+          <article id="priv-1" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">01.</span> Scope &amp; Applicability
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                This Privacy Policy applies to personal digital data processed by Salow Technologies
+                (&ldquo;Salowtech&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) in connection with
+                our website, custom client software platforms, mobile applications, APIs, and AI voice systems.
+              </p>
+              <p>
+                This Policy is drafted in strict adherence to the{" "}
+                <strong>Digital Personal Data Protection Act, 2023</strong> (&ldquo;DPDP Act&rdquo;) and the{" "}
+                <strong>Digital Personal Data Protection Rules, 2025</strong> enacted by the Government of India, along
+                with global privacy benchmarks including GDPR where applicable.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 2 -->
+          <article id="priv-2" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">02.</span> Categories of Data We Collect
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>We may process the following categories of digital data:</p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong>Identity &amp; Contact Data:</strong> Full name, corporate email address, business telephone
+                  number, organizational title, company name, and physical office location.
+                </li>
+                <li>
+                  <strong>Commercial &amp; Billing Data:</strong> GSTIN, PAN, bank account details for milestone
+                  transfers, billing addresses, and payment transaction IDs.
+                </li>
+                <li>
+                  <strong>Client Application Data:</strong> Database records, business entities, employee attendance
+                  logs, and inventory data hosted within client-commissioned software platforms.
+                </li>
+                <li>
+                  <strong>Voice, Audio &amp; Telephony Data:</strong> Live telephony audio streams, dual-channel call
+                  recordings, and speech-to-text transcripts generated via Salowtech AI Voice Assistant modules.
+                </li>
+                <li>
+                  <strong>Technical &amp; Telemetry Data:</strong> IP address, browser user-agent, operating system, API
+                  request latency, cold-start telemetry, and error stack traces.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 3 -->
+          <article id="priv-3" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">03.</span> Lawful Grounds for Processing
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                In compliance with Section 4 of the DPDP Act, Salowtech processes personal data solely under recognized
+                lawful bases:
+              </p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>
+                  <strong>Consent:</strong> Given freely, specifically, informedly, conditionally, and unambiguously by
+                  the Data Principal through an affirmative action.
+                </li>
+                <li>
+                  <strong>Certain Legitimate Uses:</strong> As provided under Section 7 of the DPDP Act, including
+                  statutory compliance, fulfilling contracts requested by the Data Principal, and mitigating active
+                  cybersecurity threats.
+                </li>
+                <li>
+                  <strong>Statutory Tax &amp; Audit Compliance:</strong> Retention of invoices and commercial
+                  transaction records required under the Central Goods and Services Tax Act, 2017.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 4 -->
+          <article id="priv-4" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">04.</span> Notice &amp; Consent
+              Architecture
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Prior to or at the time of collecting personal data, Salowtech presents an itemized, accessible notice
+                detailing the exact categories of data sought, the specific purposes of processing, the manner in which
+                the Data Principal may exercise their statutory rights, and the designated Grievance Officer's contact
+                coordinates.
+              </p>
+              <p>
+                Notices are made available in clear, plain English and are accessible to users across mobile, desktop,
+                and interactive telephony interfaces.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 5: Strict Zero-Training AI Doctrine -->
+          <article id="priv-5" class="legal-card bg-[#FAF7F0] border-[#7D3024]/40">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#7D3024] mb-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+              Core Architectural Guarantee
+            </div>
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">05.</span> AI Voice Assistants &amp; Strict
+              Non-Training Policy
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p class="font-semibold text-slate-950">
+                Salowtech enforces a strict zero-retention, non-training doctrine for all proprietary client data and
+                voice telemetry:
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong>No Public Model Training:</strong> Client voice audio, call transcripts, proprietary customer
+                  interactions, and enterprise database records are{" "}
+                  <strong>
+                    NEVER used to train, retrain, fine-tune, or improve public or commercial foundation models
+                  </strong>{" "}
+                  (e.g., OpenAI, Google, Anthropic, or open-source weights).
+                </li>
+                <li>
+                  <strong>Ephemeral Audio Streaming:</strong> Inbound and outbound speech streams processed by our
+                  neural inference engines are processed in memory and discarded immediately upon session termination,
+                  unless the Client has explicitly configured encrypted archival in their sovereign private storage
+                  vault.
+                </li>
+                <li>
+                  <strong>Tenant Isolation:</strong> Any domain-specific fine-tuning or vector embeddings engineered
+                  specifically for a Client reside strictly within that Client's dedicated, encrypted database
+                  container.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 6 -->
+          <article id="priv-6" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">06.</span> Cookies, Telemetry &amp; Local
+              Storage
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Our marketing website uses strictly essential operational cookies and lightweight, privacy-preserving
+                session tokens necessary for security, load balancing, and CSRF prevention.
+              </p>
+              <p>
+                We do not deploy intrusive cross-site behavioral tracking pixels or third-party ad retargeting beacons.
+                Users may configure their browser to reject cookies, though doing so may disable authenticated dashboard
+                access.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 7 -->
+          <article id="priv-7" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">07.</span> Sharing &amp; Third-Party Data
+              Processors
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                <strong>
+                  Salowtech never sells, leases, or trades personal data to data brokers or advertising exchanges.
+                </strong>
+              </p>
+              <p>
+                Personal data is shared only with verified Data Processors bound by statutory Data Processing Agreements
+                (DPAs) that mandate security standards equivalent to or exceeding this Policy, including:
+              </p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Cloud infrastructure hosts (AWS India, Google Cloud India, or client-specified private clouds).</li>
+                <li>Telephony gateway carriers (Twilio, Exotel, or authorized telecom service providers in India).</li>
+                <li>Licensed payment aggregators (Razorpay, Cashfree, or designated scheduled commercial banks).</li>
+                <li>
+                  Governmental or regulatory authorities solely when mandated by valid court subpoena or statutory law.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 8 -->
+          <article id="priv-8" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">08.</span> Data Security &amp;
+              Cryptographic Safeguards
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech maintains organizational and technological safeguards designed to protect personal data from
+                accidental loss, unauthorized destruction, or illicit access:
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong>Encryption Standards:</strong> AES-256 encryption for data at rest across all database
+                  partitions, and TLS 1.3 encryption for all data in transit.
+                </li>
+                <li>
+                  <strong>Least-Privilege Access:</strong> Strict multi-factor authentication (MFA) and Role-Based
+                  Access Control (RBAC) governing engineer access to production environments.
+                </li>
+                <li>
+                  <strong>Breach Notification:</strong> In the event of a verified personal data breach, Salowtech shall
+                  notify the Data Protection Board of India and affected Data Principals in the form and manner
+                  prescribed by Section 8(6) of the DPDP Act and DPDP Rules, 2025.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 9 -->
+          <article id="priv-9" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">09.</span> Retention Schedules &amp; Data
+              Erasure
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech retains personal data only for as long as necessary to satisfy the purpose for which it was
+                collected or to comply with statutory legal requirements.
+              </p>
+              <p>
+                Upon expiration of the retention window or upon receiving a valid erasure request from a Data Principal,
+                Salowtech securely purges, shreds, or irreversibly anonymizes the personal data from all active
+                databases and secondary backup rotations within 30 calendar days.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 10 -->
+          <article id="priv-10" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">10.</span> Rights of the Data Principal
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Under Chapter III of the DPDP Act, 2023, every Data Principal whose personal data is processed by
+                Salowtech is endowed with the following statutory rights:
+              </p>
+              <ul class="list-disc pl-5 space-y-1.5">
+                <li>
+                  <strong>Right to Access Information:</strong> Obtain a summary of personal data processed, identities
+                  of all data fiduciaries/processors with whom data has been shared, and any other relevant processing
+                  details.
+                </li>
+                <li>
+                  <strong>Right to Correction &amp; Erasure:</strong> Request the correction of misleading or inaccurate
+                  personal data, completion of incomplete data, or erasure of data no longer necessary for the original
+                  purpose.
+                </li>
+                <li>
+                  <strong>Right of Grievance Redressal:</strong> Avail readily accessible grievance redressal mechanisms
+                  with our Grievance Redressal Officer.
+                </li>
+                <li>
+                  <strong>Right to Nominate:</strong> Nominate any individual to exercise data principal rights in the
+                  event of death or incapacity.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Section 11 -->
+          <article id="priv-11" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">11.</span> Withdrawal of Consent
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Data Principals possess the statutory right to withdraw previously granted consent at any time.
+                Withdrawal can be executed by emailing{" "}
+                <a href="mailto:contact@salowtech.com" class="text-[#7D3024] font-semibold underline">
+                  contact@salowtech.com
+                </a>
+                .
+              </p>
+              <p>
+                Withdrawal of consent does not affect the legality of processing executed prior to the withdrawal.
+                Following withdrawal, Salowtech shall cease processing unless processing is mandated by statutory Indian
+                law.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 12 -->
+          <article id="priv-12" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">12.</span> Protection of Children &amp;
+              Minor Privacy
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech does not knowingly process personal data relating to minors under 18 years of age without
+                verifiable parental or legal guardian consent, in accordance with Section 9 of the DPDP Act. We do not
+                engage in targeted advertising, behavioral tracking, or profiling directed at minors.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 13 -->
+          <article id="priv-13" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">13.</span> Data Fiduciary vs Data Processor
+              Relationships
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                When you interact directly with our website or enter into commercial contracts with us, Salowtech acts
+                as a <strong>Data Fiduciary</strong> determining the purpose and means of processing.
+              </p>
+              <p>
+                When Salowtech develops, hosts, or maintains software solutions for our enterprise clients wherein the
+                Client stores end-user data (e.g. CRM contacts, ERP vendor records, HRM employee files),{" "}
+                <strong>the Client acts as the Data Fiduciary and Salowtech acts solely as a Data Processor</strong>,
+                processing data strictly pursuant to the Client&rsquo;s documented instructions.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 14 -->
+          <article id="priv-14" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">14.</span> Cross-Border Data Processing
+              &amp; Transfers
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech stores primary enterprise and client data on servers physically located within India. In the
+                event of cross-border data transfer to global cloud regions, such transfers shall comply strictly with
+                notifications issued by the Central Government of India under Section 16 of the DPDP Act.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 15 -->
+          <article id="priv-15" class="legal-card bg-[#FAF7F2] border-[#5C2017]/30">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">15.</span> Grievance Redressal Officer
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Pursuant to Section 8(9) of the DPDP Act, 2023 and the DPDP Rules, 2025, Salowtech has appointed a
+                designated Grievance Redressal Officer to address all inquiries, consent withdrawals, and statutory
+                grievances:
+              </p>
+              <div class="bg-white p-6 rounded-2xl border border-[#E8E1D3] space-y-2.5 text-sm font-sans text-stone-700">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Designated Role:</span>
+                  <span class="text-neutral-700">Grievance Redressal &amp; Data Protection Officer</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Entity:</span>
+                  <span class="text-neutral-700">Salow Technologies (Salowtech)</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Registered Location:</span>
+                  <span class="text-neutral-700">Surat, Gujarat, India</span>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 border-b border-[#EFEAE1] gap-1">
+                  <span class="font-semibold text-neutral-900">Direct Redressal Email:</span>
+                  <a href="mailto:contact@salowtech.com" class="text-[#5C2017] font-bold hover:underline">
+                    contact@salowtech.com
+                  </a>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between py-1.5 gap-1 text-xs text-stone-500 pt-1">
+                  <span class="font-medium">Statutory Turnaround:</span>
+                  <span>Responses provided within 30 calendar days</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Section 16 -->
+          <article id="priv-16" class="legal-card">
+            <h2 class="text-xl sm:text-2xl font-sans font-bold text-neutral-950 mb-3 flex items-center gap-2.5 tracking-tight">
+              <span class="text-[#5C2017] font-semibold text-base font-sans">16.</span> Policy Amendments &amp;
+              Notifications
+            </h2>
+            <div class="prose prose-stone text-sm leading-relaxed space-y-3 text-stone-700">
+              <p>
+                Salowtech may periodically update this Privacy Policy to reflect statutory developments, regulatory
+                circulars, or architectural modifications. The &ldquo;Effective Date&rdquo; at the top of this document
+                indicates when the latest revision took effect.
+              </p>
+              <p>
+                Material modifications will be communicated via website notice or direct email dispatch to registered
+                enterprise contacts prior to taking effect.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- BEGIN: SalowTechCTA -->
+  <section class="cta-wrap">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Sovereign data. Complete trust.
+          <br />
+          Architect your platform with Salowtech.
+        </h2>
+        <a href="/contact-us" class="cta-btn">
+          Talk to Senior Engineers &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Full DPDP Act 2023 compliance
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Zero-training AI voice guarantee
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            AES-256 encrypted sovereign vaults
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTechCTA -->
+
+  <!-- BEGIN: Footer Section -->
+</Layout>

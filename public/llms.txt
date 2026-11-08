@@ -1,0 +1,40 @@
+# Salow Technologies (Salowtech)
+
+> Sovereign software engineering studio specializing in custom enterprise ERP, CRM, HRM, mobile applications, web platforms, and autonomous AI voice assistants.
+
+## What Salowtech Does
+Salowtech engineers sovereign, production-grade business software platforms built with modern cloud architectures, PostgreSQL, React, Node.js, and Flutter. Clients receive 100% intellectual property ownership, zero per-seat SaaS taxes, and full data sovereignty.
+
+## Core Services
+- **Custom CRM Development:** Omnichannel lead capture, automated pipeline management, WhatsApp Cloud API integration, and telephony sync.
+- **Enterprise ERP Development:** Real-time multi-plant telemetry, supply chain synchronization, inventory management, and automated GST compliance.
+- **HRM & Payroll Software:** Biometric clock-in, GPS geofencing, employee self-service (ESS) portals, and 1-click statutory tax & payroll processing.
+- **AI Voice Assistants:** 24/7 autonomous conversational telephony agents, multi-language speech models, and CRM inquiry resolution with sub-second latency.
+- **Web App Development:** High-performance, scalable web portals, SaaS platforms, and enterprise dashboards built with modern frontend frameworks.
+- **Mobile App Development:** Native iOS, Android, and cross-platform Flutter applications engineered for 120 FPS performance and offline-first capabilities.
+- **SEO, AEO & GEO Services:** Technical search optimization, Core Web Vitals engineering, and Answer Engine / Generative Engine Optimization for AI platforms.
+
+## Important URLs
+- [Homepage](https://salowtech.com/) — Sovereign enterprise software engineering studio.
+- [Custom CRM Software](https://salowtech.com/crm-development) — Sales pipelines and WhatsApp CRM automation.
+- [Enterprise ERP Solutions](https://salowtech.com/erp-development) — Manufacturing, operations, and supply chain ERP.
+- [HRM & Payroll Software](https://salowtech.com/hrm-payroll) — Sovereign HRMS, biometrics, and automated payroll.
+- [AI Voice Assistants](https://salowtech.com/ai-voice-assistant) — Conversational telephony agents and customer service bots.
+- [Web Development Services](https://salowtech.com/web-development) — Custom web apps and enterprise platforms.
+- [Mobile App Development](https://salowtech.com/mobile-app-development) — Native iOS & Android mobile engineering.
+- [SEO & Growth Engineering](https://salowtech.com/seo-and-growth) — Technical SEO, AEO, and GEO search visibility.
+- [About Salowtech](https://salowtech.com/about-us) — Engineering doctrine, values, and senior software architects.
+- [Client Testimonials](https://salowtech.com/testimonials) — Verified client feedback and enterprise delivery track record.
+- [Contact & Quote](https://salowtech.com/contact-us) — Request confidential proposal with mutual NDA.
+- [Engineering Blog](https://salowtech.com/blog) — In-depth architectural teardowns and technical insights.
+- [Privacy Policy](https://salowtech.com/privacy-policy) — DPDP Act compliant enterprise data protection policy.
+- [Terms & Conditions](https://salowtech.com/terms-and-conditions) — Commercial terms and 100% IP ownership SLA.
+- [Sitemap](https://salowtech.com/sitemap.xml) — Machine-readable XML sitemap.
+
+## Contact Information
+- Legal Name: Salow Technologies (Salowtech)
+- Website: https://salowtech.com
+- Contact Email: contact@salowtech.com
+- Inquiries: +91 63517 88935
+- WhatsApp: https://wa.me/916351788935
+- Location: Surat, Gujarat, India (serving global enterprises across USA, UK, UAE, and India)

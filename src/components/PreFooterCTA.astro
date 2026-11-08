@@ -1,0 +1,84 @@
+---
+/**
+ * PreFooterCTA Component: Full-width conversion banner placed before footer across landing & subpages.
+ * Props: headingHtml (string), buttonText (string), buttonLink (string), points (string[]), imageSrc (ImageMetadata)
+ */
+import { Image } from "astro:assets";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+
+interface Props {
+  headingHtml?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  points?: string[];
+  imageSrc?: any;
+}
+
+const {
+  headingHtml = "Choose SalowTech.<br>Accelerate business growth.",
+  buttonText = "Start Your Journey &rarr;",
+  buttonLink = "/contact-us",
+  points = ["Custom AI solutions for your business", "Fast setup and delivery", "Dedicated support after launch"],
+  imageSrc = ctaIllustration
+} = Astro.props;
+
+// Strip HTML entities like &rarr; for clean accessible label
+const cleanAriaLabel = buttonText.replace(/&rarr;|→/g, "").trim();
+const cleanHeading = headingHtml
+  .replace(/<[^>]*>/g, " ")
+  .replace(/\s+/g, " ")
+  .trim();
+---
+
+<!-- CTA Section -->
+<section class="cta-wrap" id="cta-section">
+  <div class="cta-card">
+    <div class="cta-text">
+      <h2 aria-label={cleanHeading} set:html={headingHtml} />
+      <a href={buttonLink} class="cta-btn" aria-label={cleanAriaLabel} set:html={buttonText} />
+      <ul class="cta-points">
+        {points.map((pt) => (
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            <span>{pt}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="cta-art" aria-hidden="true">
+      {typeof imageSrc === "string" ? (
+        <img
+          src={imageSrc}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width="967"
+          height="1024"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <Image
+          src={imageSrc}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      )}
+    </div>
+  </div>
+</section>

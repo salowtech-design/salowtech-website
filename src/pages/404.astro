@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import dogBody from "../assets/dog_404_body.png";
+import dogTail from "../assets/dog_404_tail.png";
+import { pagesSEO } from "../data/seo";
+
+const seo = pagesSEO.notFound;
+const bodyClass = "selection:bg-neutral-900 selection:text-white min-h-screen bg-[#f5f3e8]";
+const showChatbot = true;
+const schemaJson = null;
+---
+
+<Layout
+  title={seo.title}
+  description={seo.description}
+  canonicalPath={seo.canonicalPath}
+  ogTitle={seo.title}
+  ogDescription={seo.description}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+  noindex={true}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <!-- 404 Main Stage -->
+  <main class="page-404" id="main-content">
+    <div class="stage-404">
+      <!-- Left Content Column -->
+      <section class="flex flex-col items-start justify-center">
+        <h1 class="font-serif text-[clamp(44px,6.8vw,88px)] font-normal tracking-tight text-neutral-950 leading-[1.02] mb-5">
+          Woof! This page <em class="italic text-[#7D3024]">ran off.</em>
+        </h1>
+
+        <p class="text-neutral-600 text-base sm:text-lg leading-relaxed max-w-lg mb-8">
+          The page or asset you are looking for has been relocated, archived, or never existed in this realm. Let’s
+          guide you right back to sovereign engineering.
+        </p>
+
+        <!-- Primary Action Buttons -->
+        <div class="flex items-center gap-4 flex-wrap mb-10">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-sm font-semibold tracking-tight shadow-md hover:shadow-lg transition-all hover:scale-[1.02]"
+          >
+            <span>Back to Home</span>
+            <svg class="w-4 h-4 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+          <a
+            href="/contact-us"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-neutral-400 hover:border-neutral-950 text-neutral-900 text-sm font-semibold transition-all hover:bg-white/60"
+          >
+            <span>Contact Support</span>
+          </a>
+        </div>
+
+        <!-- Quick Navigation Links -->
+        <div class="pt-6 border-t border-[#e2d7c0] w-full max-w-md">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">Popular Destinations</p>
+          <div class="flex flex-wrap gap-2 text-xs font-medium text-neutral-700">
+            <a
+              href="/#digital-solutions"
+              class="px-3 py-1.5 rounded-lg bg-[#ece5d4] hover:bg-[#e0d6be] hover:text-black transition-colors"
+            >
+              Our Services
+            </a>
+            <a
+              href="/#strategic-roadmap"
+              class="px-3 py-1.5 rounded-lg bg-[#ece5d4] hover:bg-[#e0d6be] hover:text-black transition-colors"
+            >
+              Roadmap &amp; Tech
+            </a>
+            <a
+              href="/#showcase-video"
+              class="px-3 py-1.5 rounded-lg bg-[#ece5d4] hover:bg-[#e0d6be] hover:text-black transition-colors"
+            >
+              Case Studies
+            </a>
+            <a
+              href="/#faq-section"
+              class="px-3 py-1.5 rounded-lg bg-[#ece5d4] hover:bg-[#e0d6be] hover:text-black transition-colors"
+            >
+              FAQs
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Interactive Art Column -->
+      <div
+        class="art-404"
+        id="art"
+        role="img"
+        aria-label="Interactive illustration of a sleeping dog with an animated wagging tail and cursor torch effect"
+      >
+        <div class="big-404" aria-hidden="true">
+          <span class="outline">404</span>
+          <span class="torch" id="torch">
+            404
+          </span>
+        </div>
+        <div class="zzz" aria-hidden="true">
+          <i>z</i>
+          <i>z</i>
+          <i>Z</i>
+        </div>
+        <div class="rig" id="rig" title="Click or move cursor to pet the dog">
+          <Image
+            class="layer"
+            alt="Sleeping hound"
+            src={dogBody}
+            width={420}
+            height={420}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={90}
+          />
+          <Image
+            class="layer tail"
+            id="tail"
+            alt="Wagging tail"
+            src={dogTail}
+            width={120}
+            height={120}
+            style="transform-origin: 84.1% 89.7%"
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={90}
+          />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Unified Salowtech Footer -->
+  <!-- BEGIN: Footer Section -->
+</Layout>

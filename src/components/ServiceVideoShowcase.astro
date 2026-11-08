@@ -1,0 +1,115 @@
+---
+/**
+ * ServiceVideoShowcase Component: 85% screen ratio borderless video player
+ * with custom branding, play controls, and matching poster cover.
+ */
+interface Props {
+  id?: string;
+  eyebrow: string;
+  titleHtml: string;
+  description: string;
+  poster: string;
+  videoSrc: string;
+  fallbackVideoSrc?: string;
+}
+
+const {
+  id = "service-video-showcase",
+  eyebrow,
+  titleHtml,
+  description,
+  poster,
+  videoSrc,
+  fallbackVideoSrc
+} = Astro.props;
+---
+
+<!-- ==========================================
+     SERVICE VIDEO SHOWCASE (85% SCREEN RATIO)
+     ========================================== -->
+<section class="py-16 sm:py-20 lg:py-24 bg-[#FAF7F2] border-t border-cream-200/60 scroll-mt-28" data-purpose="video-showcase-section" id={id}>
+  <!-- Section Title -->
+  <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10 px-4">
+    <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#AD8B73] block mb-2">
+      {eyebrow}
+    </span>
+    <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl text-neutral-950 font-bold tracking-tight leading-tight" set:html={titleHtml} />
+    <p class="text-stone-600 text-sm sm:text-base mt-3 max-w-2xl mx-auto leading-relaxed">
+      {description}
+    </p>
+  </div>
+
+  <!-- 85% Screen Ratio Borderless Video Container -->
+  <div class="w-[85vw] max-w-[85vw] mx-auto">
+    <div class="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 shadow-2xl aspect-video group">
+      <video
+        id={`${id}-video`}
+        class="w-full h-full object-cover block rounded-2xl sm:rounded-3xl"
+        controls
+        playsinline
+        preload="metadata"
+        poster={poster}
+      >
+        <source src={videoSrc} type="video/mp4" />
+        {fallbackVideoSrc && <source src={fallbackVideoSrc} type="video/mp4" />}
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Clickable Cover Play Button Overlay -->
+      <div
+        id={`${id}-overlay`}
+        role="button"
+        tabindex="0"
+        aria-label={`Play ${eyebrow}`}
+        class="absolute inset-0 bg-transparent hover:bg-black/10 flex flex-col items-center justify-center cursor-pointer z-10 transition-all duration-300"
+      >
+        <div class="flex flex-col items-center select-none text-center px-4">
+          <!-- Circular Play Button -->
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 backdrop-blur-md shadow-2xl flex items-center justify-center text-neutral-950 group-hover:scale-110 group-hover:bg-white transition-all border border-white/90 mb-3">
+            <svg class="w-6 h-6 sm:w-8 sm:h-8 ml-1 text-neutral-900 fill-current" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </div>
+
+          <span class="text-xs sm:text-sm font-medium text-neutral-900 bg-white/90 px-3.5 py-1 rounded-full shadow-sm backdrop-blur-sm tracking-wide">
+            Watch System Overview
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ id }}>
+    (function() {
+      const video = document.getElementById(`${id}-video`);
+      const overlay = document.getElementById(`${id}-overlay`);
+      if (!video || !overlay) return;
+
+      function playVideo() {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        video.play().catch(function() {});
+      }
+
+      overlay.addEventListener('click', playVideo);
+      overlay.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          playVideo();
+        }
+      });
+
+      video.addEventListener('ended', function() {
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+      });
+      video.addEventListener('pause', function() {
+        if (video.currentTime === 0 || video.ended) {
+          overlay.style.opacity = '1';
+          overlay.style.pointerEvents = 'auto';
+        }
+      });
+    })();
+  </script>
+</section>
+

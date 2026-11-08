@@ -1,0 +1,1571 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getTestimonialsSchema } from "../data/schema";
+
+const seo = pagesSEO.testimonials;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "Salowtech client reviews, enterprise software case studies, custom ERP client testimonials, verified IT client feedback, software development success stories India";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "font-sans antialiased text-[#171513] selection:bg-[#F8EDE8] selection:text-[#7D3024]";
+const showChatbot = true;
+const schemaJson = getTestimonialsSchema();
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <Breadcrumb currentPage="Testimonials" />
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="pt-24 sm:pt-28 pb-20">
+    <!-- 01. EDITORIAL ACCELERATION HERO (INTERCOM PARTNER STYLE) -->
+    <style>
+      /* Hero typography harmonized with site-wide styles */
+      .editorial-hero-title {
+        font-family: "Instrument Serif", Georgia, serif;
+        font-weight: 400;
+        letter-spacing: -0.015em;
+        line-height: 1.08;
+      }
+
+      .editorial-hero-subtext {
+        line-height: 1.62;
+      }
+
+      /* Subtle gentle wave bobbing animation */
+      @keyframes gentleFloat {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+          transform: translateY(-7px) rotate(0.8deg);
+        }
+      }
+
+      @keyframes parasailSway {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(-1.5deg);
+        }
+
+        50% {
+          transform: translate(4px, -10px) rotate(2deg);
+        }
+      }
+
+      @keyframes waveSurge {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+
+        50% {
+          transform: translateX(-8px);
+        }
+      }
+
+      .anim-parasail {
+        transform-origin: 390px 420px;
+        animation: parasailSway 4.8s ease-in-out infinite;
+      }
+
+      .anim-boat {
+        animation: gentleFloat 3.2s ease-in-out infinite;
+      }
+
+      .anim-wave-front {
+        animation: waveSurge 5s ease-in-out infinite;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .anim-parasail,
+        .anim-boat,
+        .anim-wave-front {
+          animation: none !important;
+        }
+      }
+    </style>
+
+    <section class="relative overflow-hidden pt-6 sm:pt-10 pb-16 lg:pb-24 bg-[#FAF7F0]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- LEFT COLUMN: Editorial Typography & Conversion Engine -->
+          <div class="lg:col-span-6 xl:col-span-6 flex flex-col justify-center z-10">
+            <!-- Eyebrow Pill / Category (Exact Intercom Style) -->
+            <div class="inline-flex items-center gap-2 mb-5">
+              <span class="text-[12px] sm:text-[13px] font-bold uppercase tracking-wider text-[#1F1B18] opacity-80">
+                Enterprise Sovereign Partnership
+              </span>
+            </div>
+
+            <!-- Main Punchy Headline (Matching site-wide font-editorial / Instrument Serif) -->
+            <h1 class="font-editorial text-4xl sm:text-5xl lg:text-[60px] xl:text-[68px] font-normal text-neutral-950 leading-[1.08] tracking-tight mb-6">
+              A partnership to accelerate <br class="hidden sm:inline" />
+              <span class="italic text-[#7D3024]">your enterprise.</span>
+            </h1>
+
+            <!-- High-converting 2-3 line subtext -->
+            <p class="editorial-hero-subtext text-base sm:text-lg lg:text-[19px] text-[#5C524C] font-normal mb-8 max-w-xl">
+              Software you own will always outrun SaaS you rent. Partner with Salowtech today to unlock custom
+              multi-plant ERPs, high-converting platforms, and 24/7 AI systems with zero per-seat taxes.
+            </p>
+
+            <!-- Dual CTA Buttons with trailing arrow (Intercom style) -->
+            <div class="flex flex-wrap items-center gap-3.5 mb-5">
+              <!-- Primary Action Button: Solid Brand Maroon with Arrow -->
+              <a
+                href="#demo-consultation"
+                class="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#7D3024] hover:bg-[#581C15] text-[#FAF7F0] text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              >
+                <span>Join as partner</span>
+                <span class="transition-transform duration-200 group-hover:translate-x-1 font-bold text-base">→</span>
+              </a>
+
+              <!-- Secondary Action Button: Clean Outline Button with Arrow -->
+              <a
+                href="#all-testimonials"
+                class="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-[#1F1B18] bg-transparent hover:bg-[#F8EDE8] text-[#1F1B18] hover:text-[#7D3024] hover:border-[#7D3024] text-sm sm:text-base font-semibold tracking-tight transition-all duration-200 hover:-translate-y-0.5 shadow-2xs"
+              >
+                <span>Explore client stories</span>
+                <span class="transition-transform duration-200 group-hover:translate-x-1 font-bold text-base">→</span>
+              </a>
+            </div>
+
+            <!-- Footnote Link (Exact reference: "No app? Build one.") -->
+            <div class="text-xs sm:text-[13px] text-[#5C524C]">
+              <span>Existing partner? </span>
+              <button
+                type="button"
+                onclick="openSubmitTestimonialModal()"
+                class="text-[#1F1B18] font-semibold underline underline-offset-4 hover:text-[#7D3024] transition-colors cursor-pointer"
+              >
+                Submit your story.
+              </button>
+            </div>
+
+            <!-- Quick Trust Micro-Badges -->
+            <div class="mt-10 pt-6 border-t border-[#E8E3D7] flex flex-wrap items-center gap-6 sm:gap-8 text-xs text-[#5C524C]">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0F6848]"></span>
+                <span class="font-medium text-[#1F1B18]">100% Source Code Ownership</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#7D3024]"></span>
+                <span class="font-medium text-[#1F1B18]">Zero Per-Seat SaaS Taxes</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0F6848]"></span>
+                <span class="font-medium text-[#1F1B18]">Live in 90 Days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: High-Energy Illustration Crafted in Brand Palette -->
+          <div class="lg:col-span-6 xl:col-span-6 relative flex items-center justify-center select-none">
+            <!-- Ambient Backing Glow Tint -->
+            <div class="absolute -inset-4 bg-gradient-to-tr from-[#F8EDE8] via-transparent to-[#F3EFE6] rounded-3xl opacity-70 filter blur-2xl -z-10"></div>
+
+            <!-- Custom Vector Illustration mirroring the screenshot composition in Salowtech brand palette -->
+            <svg
+              class="w-full max-w-[560px] h-auto drop-shadow-xs"
+              viewBox="0 0 680 580"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <!-- Gradients for subtle depth -->
+                <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#7D3024" stop-opacity="0.12" />
+                  <stop offset="100%" stop-color="#7D3024" stop-opacity="0.05" />
+                </linearGradient>
+                <linearGradient id="canopyMaroonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#842D23" />
+                  <stop offset="100%" stop-color="#581C15" />
+                </linearGradient>
+                <linearGradient id="waveFoamGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#EFE9DE" />
+                  <stop offset="100%" stop-color="#FAF7F0" />
+                </linearGradient>
+              </defs>
+
+              <!-- 1. Background Clouds (Soft Brand Accents) -->
+              <!-- Top-right cloud -->
+              <g opacity="0.85">
+                <path
+                  d="M575 110 C575 95 590 85 605 85 C615 85 625 90 630 98 C636 93 646 94 651 100 C656 106 657 114 653 120 C655 122 656 125 656 128 C656 135 650 140 642 140 L578 140 C568 140 560 133 560 125 C560 117 567 110 575 110 Z"
+                  fill="#0F6848"
+                  fill-opacity="0.25"
+                  stroke="#1F1B18"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+
+              <!-- Middle cloud behind parachute -->
+              <g opacity="0.95">
+                <path
+                  d="M370 210 C370 190 390 180 410 180 C422 180 435 186 442 195 C450 188 465 190 472 198 C480 206 480 218 475 228 C482 232 486 240 484 248 C482 258 472 264 460 264 L375 264 C360 264 348 253 348 240 C348 226 358 212 370 210 Z"
+                  fill="#7D3024"
+                  fill-opacity="0.15"
+                  stroke="#1F1B18"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+
+              <!-- Small ambient accent cloud -->
+              <g opacity="0.7">
+                <path
+                  d="M190 160 C190 148 202 140 215 140 C223 140 232 144 237 151 C243 146 253 147 258 153 C262 160 261 168 257 174 L192 174 C184 174 178 168 178 160 C178 152 184 146 190 160 Z"
+                  fill="#0F6848"
+                  fill-opacity="0.18"
+                  stroke="#1F1B18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </g>
+
+              <!-- 2. Ocean Waves (Sea of Enterprise Agility) -->
+              <!-- Base Sea Mass with energetic waves -->
+              <g class="anim-wave-front">
+                <!-- Main Turquoise/Mint Sea Crest matching the reference energetic splash -->
+                <path
+                  d="M40 480 C70 410 110 395 145 425 C175 450 205 385 245 420 C280 450 325 390 370 430 C410 465 455 420 495 445 C535 470 575 420 615 450 C640 468 665 480 680 490 L680 570 L30 570 L30 510 Z"
+                  fill="#42D3B8"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <!-- Deep wave accent shadow in brand cream/sage -->
+                <path
+                  d="M30 520 C90 510 130 535 180 515 C230 495 270 525 320 505 C370 485 420 515 470 495 C520 475 570 510 680 495 L680 570 L30 570 Z"
+                  fill="#1EAA90"
+                  opacity="0.3"
+                />
+
+                <!-- Stylized water crest spray curves -->
+                <path
+                  d="M95 420 C105 405 125 400 138 415"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M190 415 C202 395 225 395 238 412"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M290 422 C305 402 330 405 342 425"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M480 450 C495 430 515 432 528 448"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <path
+                  d="M570 445 C585 428 605 430 618 445"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+
+                <!-- Water splashes / droplets -->
+                <circle cx="85" cy="400" r="4.5" fill="#42D3B8" stroke="#1F1B18" stroke-width="2.2" />
+                <circle cx="115" cy="380" r="3.5" fill="#42D3B8" stroke="#1F1B18" stroke-width="2" />
+                <circle cx="270" cy="390" r="4" fill="#42D3B8" stroke="#1F1B18" stroke-width="2" />
+                <circle cx="450" cy="415" r="3" fill="#42D3B8" stroke="#1F1B18" stroke-width="1.8" />
+              </g>
+
+              <!-- 3. High-Speed Powerboat (The Enterprise Engine) -->
+              <g class="anim-boat">
+                <!-- Boat Wake Foam -->
+                <path
+                  d="M465 520 C490 510 520 515 540 500"
+                  stroke="#1F1B18"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-dasharray="3 5"
+                />
+                <path
+                  d="M450 535 C480 525 510 530 535 520"
+                  stroke="#FAF7F0"
+                  stroke-width="3.5"
+                  stroke-linecap="round"
+                />
+
+                <!-- Boat Hull (Crisp White/Cream with Terracotta Stripe) -->
+                <!-- Hull main body -->
+                <path
+                  d="M500 505 L590 415 L660 460 C660 460 625 500 560 520 L500 505 Z"
+                  fill="#FFFFFF"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  stroke-linejoin="round"
+                />
+                <!-- Hull terracotta brand accent stripe -->
+                <path d="M515 503 L595 425 L630 450 L560 514 Z" fill="#7D3024" stroke="#1F1B18" stroke-width="2" />
+                <!-- Windshield -->
+                <path
+                  d="M575 428 L590 395 L615 412 L605 438 Z"
+                  fill="#FAF7F0"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+                <!-- Cockpit Interior -->
+                <path d="M545 470 L580 435 L610 450 L575 485 Z" fill="#FAF3F1" stroke="#1F1B18" stroke-width="2" />
+
+                <!-- Outboard Motor on Transom -->
+                <rect x="495" y="475" width="22" height="36" rx="4" fill="#1F1B18" stroke="#1F1B18" stroke-width="2" />
+                <path d="M506 480 L506 505" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+
+                <!-- Boat Driver (Enterprise Leader at the Helm) -->
+                <!-- Hat / Cap with feather -->
+                <path
+                  d="M540 380 C548 370 565 370 575 378 L588 382 C592 384 585 390 570 388 C555 388 545 388 540 380 Z"
+                  fill="#FAF7F0"
+                  stroke="#1F1B18"
+                  stroke-width="2.4"
+                  stroke-linejoin="round"
+                />
+                <!-- Head -->
+                <circle cx="560" cy="390" r="11" fill="#FFFFFF" stroke="#1F1B18" stroke-width="2.5" />
+                <!-- Ponytail / Hair blowing in wind -->
+                <path
+                  d="M548 390 C535 390 530 398 525 395"
+                  stroke="#1F1B18"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <!-- Smiling face profile -->
+                <path
+                  d="M567 390 C569 392 568 395 565 396"
+                  stroke="#1F1B18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+                <!-- Body / Shirt in Terracotta Maroon -->
+                <path
+                  d="M550 402 C558 402 575 408 580 425 L555 438 L540 415 Z"
+                  fill="#7D3024"
+                  stroke="#1F1B18"
+                  stroke-width="2.5"
+                  stroke-linejoin="round"
+                />
+                <!-- Arms holding steering wheel / waving forward -->
+                <!-- Arm 1 forward -->
+                <path
+                  d="M565 410 L585 400 L600 385"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <!-- Open Hand waving forward -->
+                <path
+                  d="M600 385 L608 380 M600 385 L609 385 M600 385 L607 390"
+                  stroke="#1F1B18"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+
+                <!-- Tow Hitch Mast & Rope Mount -->
+                <circle cx="515" cy="465" r="5" fill="#7D3024" stroke="#1F1B18" stroke-width="2.5" />
+              </g>
+
+              <!-- 4. High-Tension Tow Line linking Boat to Soaring Parasailer -->
+              <g>
+                <!-- Dynamic Taut Line from boat hitch (515, 465) to parasailer harness (390, 245) -->
+                <line x1="515" y1="465" x2="390" y2="245" stroke="#1F1B18" stroke-width="2.8" stroke-linecap="round" />
+                <!-- Speed motion tick lines around rope -->
+                <line
+                  x1="470"
+                  y1="380"
+                  x2="480"
+                  y2="385"
+                  stroke="#1F1B18"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  opacity="0.6"
+                />
+                <line
+                  x1="435"
+                  y1="320"
+                  x2="445"
+                  y2="325"
+                  stroke="#1F1B18"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  opacity="0.6"
+                />
+              </g>
+
+              <!-- 5. Soaring Parasailer & Giant Accelerating Canopy -->
+              <g class="anim-parasail">
+                <!-- Parasail Canopy Shroud Lines (Rigging connecting harness to canopy) -->
+                <line x1="390" y1="200" x2="330" y2="160" stroke="#1F1B18" stroke-width="2" stroke-linecap="round" />
+                <line x1="390" y1="200" x2="355" y2="163" stroke="#1F1B18" stroke-width="1.8" stroke-linecap="round" />
+                <line x1="390" y1="200" x2="380" y2="164" stroke="#1F1B18" stroke-width="1.8" stroke-linecap="round" />
+                <line x1="390" y1="200" x2="410" y2="164" stroke="#1F1B18" stroke-width="1.8" stroke-linecap="round" />
+                <line x1="390" y1="200" x2="435" y2="163" stroke="#1F1B18" stroke-width="1.8" stroke-linecap="round" />
+                <line x1="390" y1="200" x2="465" y2="160" stroke="#1F1B18" stroke-width="2" stroke-linecap="round" />
+
+                <!-- THE PARACHUTE CANOPY (Iconic Striped Design styled in Salowtech Terracotta & Warm Tones) -->
+                <!-- Canopy Outline Dome -->
+                <!-- Slice 1: Leftmost outer rib (Cream) -->
+                <path
+                  d="M330 160 C320 135 325 105 345 80 C352 95 356 125 355 163 Z"
+                  fill="#FAF7F0"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+                <!-- Slice 2: Terracotta Brand Maroon Strip -->
+                <path
+                  d="M355 163 C356 125 352 95 345 80 C360 65 375 60 380 58 C382 85 382 120 380 164 Z"
+                  fill="#7D3024"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+                <!-- Slice 3: Warm Mustard / Amber Accent (Momentum) -->
+                <path
+                  d="M380 164 C382 120 382 85 380 58 C392 56 405 56 415 58 C414 85 412 120 410 164 Z"
+                  fill="#E09F3E"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+                <!-- Slice 4: Deep Maroon Stripe -->
+                <path
+                  d="M410 164 C412 120 414 85 415 58 C425 62 440 70 452 82 C444 98 438 128 435 163 Z"
+                  fill="#581C15"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+                <!-- Slice 5: Rightmost outer rib (Cream/White) -->
+                <path
+                  d="M435 163 C438 128 444 98 452 82 C468 102 475 130 465 160 Z"
+                  fill="#FAF7F0"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+
+                <!-- Canopy Vent Trim & Scalloped Bottom Edge -->
+                <path
+                  d="M330 160 Q342 165 355 163 Q367 166 380 164 Q395 166 410 164 Q422 166 435 163 Q450 165 465 160"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+
+                <!-- THE PARASAILER (Joyful, Agility, Reaching New Heights) -->
+                <!-- Hair tied back / in wind -->
+                <path d="M385 180 C382 168 398 165 400 178 C402 188 392 195 385 180 Z" fill="#1F1B18" />
+                <path
+                  d="M382 172 C375 168 370 170 365 167"
+                  stroke="#1F1B18"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                />
+
+                <!-- Head -->
+                <circle cx="390" cy="186" r="9.5" fill="#FFFFFF" stroke="#1F1B18" stroke-width="2.4" />
+                <!-- Smiling face -->
+                <path
+                  d="M386 186 Q390 190 394 186"
+                  stroke="#1F1B18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  fill="none"
+                />
+
+                <!-- Torso / White Oversized Shirt (Intercom style) -->
+                <path
+                  d="M375 196 L405 196 L410 230 L370 230 Z"
+                  fill="#FFFFFF"
+                  stroke="#1F1B18"
+                  stroke-width="2.8"
+                  stroke-linejoin="round"
+                />
+
+                <!-- Left Arm outstretched catching the air -->
+                <path
+                  d="M375 200 L350 205 L335 195"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M335 195 L330 190 M335 195 L328 195 M335 195 L330 200"
+                  stroke="#1F1B18"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+
+                <!-- Right Arm outstretched celebrating freedom -->
+                <path
+                  d="M405 200 L430 195 L445 180"
+                  stroke="#1F1B18"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  fill="none"
+                />
+                <path
+                  d="M445 180 L448 174 M445 180 L452 178 M445 180 L450 185"
+                  stroke="#1F1B18"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                />
+
+                <!-- Black / Dark Pants (Intercom style) -->
+                <!-- Left Leg bent in dynamic pose -->
+                <path
+                  d="M375 230 L365 260 L350 270"
+                  stroke="#1F1B18"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Left shoe/foot pointing -->
+                <ellipse cx="346" cy="273" rx="5" ry="3" fill="#1F1B18" />
+
+                <!-- Right Leg trailing downward -->
+                <path
+                  d="M400 230 L405 265 L395 295"
+                  stroke="#1F1B18"
+                  stroke-width="7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <!-- Right shoe/foot -->
+                <ellipse cx="392" cy="298" rx="5" ry="3" fill="#1F1B18" />
+
+                <!-- Wind / Speed lines around the parasailer -->
+                <path
+                  d="M325 175 C315 178 305 180 295 178"
+                  stroke="#1F1B18"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-dasharray="2 4"
+                />
+                <path
+                  d="M315 220 C305 224 290 225 280 222"
+                  stroke="#1F1B18"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-dasharray="2 4"
+                />
+                <path
+                  d="M455 160 C465 158 478 156 490 160"
+                  stroke="#1F1B18"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-dasharray="2 4"
+                />
+              </g>
+
+              <!-- Floating Brand Tag / Micro-Badge on Art -->
+              <g transform="translate(180, 470)">
+                <rect
+                  x="0"
+                  y="0"
+                  width="168"
+                  height="38"
+                  rx="19"
+                  fill="#FFFFFF"
+                  stroke="#E8E3D7"
+                  stroke-width="1.5"
+                  filter="drop-shadow(0 4px 12px rgba(31,27,24,0.06))"
+                />
+                <circle cx="20" cy="19" r="6" fill="#0F6848" />
+                <text
+                  x="34"
+                  y="23"
+                  fill="#1F1B18"
+                  font-size="12"
+                  font-weight="700"
+                  font-family="'Plus Jakarta Sans', sans-serif"
+                >
+                  Zero SaaS Rent · 100% Own
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subtle Luxury Transition Divider -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="section-stitch-divider"></div>
+    </div>
+
+    <!-- 04. CLIENT TESTIMONIALS (Continuous Floating Marquee towards Left, Pause on Hover) -->
+    <section id="all-testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <!-- Outer Big Card (Matching Uploaded Screenshot) -->
+      <div class="bg-white rounded-[2.5rem] p-6 sm:p-12 lg:p-14 border border-[#E8E3D7] shadow-[0_20px_60px_-15px_rgba(43,35,26,0.06)] relative overflow-hidden">
+        <!-- Top-Left Large Decorative Quotation Mark Watermark -->
+        <div
+          class="absolute -top-3 left-4 sm:top-6 sm:left-10 pointer-events-none select-none text-neutral-100 opacity-90 z-0"
+          aria-hidden="true"
+        >
+          <svg class="w-28 h-28 sm:w-44 sm:h-44" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+          </svg>
+        </div>
+
+        <!-- Centered Header & Brand Accent Line (Polished Editorial Style) -->
+        <div class="relative z-10 text-center mb-10 sm:mb-12">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F8EDE8] text-[#7D3024] text-xs font-semibold uppercase tracking-wider mb-2">
+            Verified Experiences
+          </span>
+          <h2 class="font-editorial text-3xl sm:text-5xl lg:text-5xl text-neutral-950 font-normal leading-tight tracking-tight mt-1">
+            What Our Clients <span class="italic text-[#7D3024]">Say</span>
+          </h2>
+          <div class="flex items-center justify-center gap-2 mt-3">
+            <div class="w-12 h-1 bg-[#7D3024] rounded-full"></div>
+            <div class="w-2.5 h-1 bg-[#7D3024]/30 rounded-full"></div>
+          </div>
+          <p class="text-xs sm:text-sm text-neutral-500 mt-2">Continuous live feed · Hover any card to pause</p>
+        </div>
+
+        <!-- Continuous Floating Marquee Track with Side Fade Gradients -->
+        <div class="relative z-10 overflow-hidden py-4 -mx-2 sm:-mx-6">
+          <!-- Gradient Edge Fade Masks -->
+          <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none"></div>
+          <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+
+          <!-- Marquee Flex Track -->
+          <div id="clients-cards-row" class="client-reviews-track-marquee flex items-stretch gap-6 py-4">
+            <!-- SET 1 (5 Cards) -->
+            <!-- CARD 1: John Doe -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80"
+                    alt="John Doe"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">John Doe</h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  I knew I was going to get great service, but they went above and beyond my expectations.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 2: Asa Walter -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&auto=format&fit=crop&q=80"
+                    alt="Asa Walter"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">
+                  Asa Walter
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  This is the best thing that happened to my small business. They re-branded, re-organized and re-vamped
+                  my company in no time.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 3: Zahid Miles -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-16 h-16 rounded-full overflow-hidden mx-auto border-2 border-white shadow-md flex-shrink-0 mb-3 ring-2 ring-[#7D3024]/30">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format&fit=crop&q=80"
+                    alt="Zahid Miles"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-extrabold text-base sm:text-lg text-neutral-900 text-center leading-tight mb-3">
+                  Zahid Miles
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-800 text-center leading-relaxed font-medium my-2 px-1">
+                  They are great. They did exactly what I needed. The friendly chaps are a real problem solvers. Loved
+                  working with them.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 4: Casper Leigh -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80"
+                    alt="Casper Leigh"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">
+                  Casper Leigh
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  Awesome services. I am really happy to be here because of their services. I will continue to use their
+                  services in the future.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 5: Cian R -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80"
+                    alt="Cian R"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">Cian R</h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  By far the best team... this is the most efficient platform they've put together. Everyone is so
+                  knowledgeable.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- SET 2 (Duplicate 5 Cards for Seamless Infinite Looping) -->
+            <!-- CARD 6: John Doe (Clone) -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80"
+                    alt="John Doe"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">John Doe</h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  I knew I was going to get great service, but they went above and beyond my expectations.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 7: Asa Walter (Clone) -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&auto=format&fit=crop&q=80"
+                    alt="Asa Walter"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">
+                  Asa Walter
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  This is the best thing that happened to my small business. They re-branded, re-organized and re-vamped
+                  my company in no time.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 8: Zahid Miles (Clone) -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-16 h-16 rounded-full overflow-hidden mx-auto border-2 border-white shadow-md flex-shrink-0 mb-3 ring-2 ring-[#7D3024]/30">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format&fit=crop&q=80"
+                    alt="Zahid Miles"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-extrabold text-base sm:text-lg text-neutral-900 text-center leading-tight mb-3">
+                  Zahid Miles
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-800 text-center leading-relaxed font-medium my-2 px-1">
+                  They are great. They did exactly what I needed. The friendly chaps are a real problem solvers. Loved
+                  working with them.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 9: Casper Leigh (Clone) -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80"
+                    alt="Casper Leigh"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">
+                  Casper Leigh
+                </h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  Awesome services. I am really happy to be here because of their services. I will continue to use their
+                  services in the future.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- CARD 10: Cian R (Clone) -->
+            <div class="client-review-card w-[260px] sm:w-[280px] md:w-[300px] flex-shrink-0 bg-white rounded-3xl p-6 border border-[#E8E3D7] shadow-md hover:shadow-2xl hover:border-[#7D3024] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer">
+              <div>
+                <div class="w-14 h-14 rounded-full overflow-hidden mx-auto border-2 border-[#E8E3D7] shadow-sm flex-shrink-0 mb-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80"
+                    alt="Cian R"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-neutral-900 text-center leading-tight mb-3">Cian R</h3>
+                <div class="text-[#E2DDD5] text-left -mb-1">
+                  <svg class="w-7 h-7 inline-block opacity-85" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+                <p class="text-xs sm:text-sm text-neutral-700 text-center leading-relaxed font-normal my-2 px-1">
+                  By far the best team... this is the most efficient platform they've put together. Everyone is so
+                  knowledgeable.
+                </p>
+                <div class="text-[#E2DDD5] text-right -mt-1">
+                  <svg class="w-7 h-7 inline-block opacity-85 rotate-180" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subtle Luxury Transition Divider -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="section-stitch-divider"></div>
+    </div>
+
+    <!-- 05. CALL TO ACTION: ARCHITECTURE CONSULTATION (Salowtech Master Prompt Refinement) -->
+    <section
+      id="demo-consultation"
+      class="scroll-reveal max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- Left Column: Editorial Value & Engineering Differentiators -->
+        <div class="lg:col-span-6 flex flex-col justify-between">
+          <div>
+            <!-- Editorial Headline -->
+            <h2 class="font-editorial text-3xl sm:text-4xl lg:text-[46px] text-[#171513] font-normal leading-[1.14] tracking-tight mb-4">
+              Let’s Engineer Something <br />
+              <span class="italic text-[#7D3024]">Built to Last.</span>
+            </h2>
+
+            <!-- Supporting Paragraph -->
+            <p class="text-sm sm:text-base text-[#68635E] leading-relaxed mb-6 max-w-xl font-normal">
+              Speak directly with the senior engineers who will design and build your platform. We'll review your
+              architecture, identify bottlenecks, and outline a practical delivery plan with transparent pricing.
+            </p>
+
+            <!-- Engineering Highlight Card -->
+            <div class="mb-7 p-4 sm:p-5 rounded-2xl bg-[#F7F0EA] border border-[#E8DED2] flex items-center gap-4 sm:gap-5 overflow-hidden transition-colors duration-200 hover:border-[#7D3024]/30">
+              <Image
+                src={ctaIllustration}
+                alt="Salowtech Sovereign Engineering"
+                class="cta-img"
+                width={967}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+                format="webp"
+                quality={90}
+              />
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-[#7D3024]">
+                  ARCHITECTED FOR YOUR BUSINESS
+                </span>
+                <h4 class="text-sm sm:text-base font-bold text-[#171513] mt-0.5">
+                  Sovereign Code &amp; Custom Systems
+                </h4>
+                <p class="text-xs text-[#68635E] mt-1 leading-relaxed">
+                  Purpose-built software with direct engineering ownership, transparent delivery, and no unnecessary
+                  recurring seat fees.
+                </p>
+              </div>
+            </div>
+
+            <!-- Engineering Differentiators (3 Trust Points) -->
+            <div class="space-y-4 mb-7">
+              <div class="differentiator-item flex items-start gap-3.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-[#FAF3F1] border border-[#7D3024]/20 text-[#7D3024] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <div>
+                  <div class="text-sm font-bold text-[#171513]">100% Code &amp; IP Ownership</div>
+                  <div class="text-xs sm:text-[13px] text-[#68635E] mt-0.5 leading-relaxed">
+                    Your repositories, source code, database schemas, and deployment assets remain under your control,
+                    as defined in your agreement.
+                  </div>
+                </div>
+              </div>
+              <div class="differentiator-item flex items-start gap-3.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-[#FAF3F1] border border-[#7D3024]/20 text-[#7D3024] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <div>
+                  <div class="text-sm font-bold text-[#171513]">Bi-Weekly Sprints &amp; Fixed Pricing</div>
+                  <div class="text-xs sm:text-[13px] text-[#68635E] mt-0.5 leading-relaxed">
+                    Structured delivery cycles, visible progress, and agreed pricing so you know what is being built and
+                    when.
+                  </div>
+                </div>
+              </div>
+              <div class="differentiator-item flex items-start gap-3.5">
+                <span
+                  class="w-5 h-5 rounded-full bg-[#FAF3F1] border border-[#7D3024]/20 text-[#7D3024] flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  ✓
+                </span>
+                <div>
+                  <div class="text-sm font-bold text-[#171513]">Battle-Tested Compliance &amp; Scale</div>
+                  <div class="text-xs sm:text-[13px] text-[#68635E] mt-0.5 leading-relaxed">
+                    Engineering designed around integrations, security, compliance requirements, and the demands of
+                    enterprise operations.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Existing Partner Testimonial Secondary CTA -->
+          <div class="pt-5 border-t border-[#E8DED2] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <div class="text-xs sm:text-sm font-bold text-[#171513]">Already a SalowTechnologies partner?</div>
+              <div class="text-xs text-[#68635E] mt-0.5">
+                Share your experience and help future clients understand the impact of our work.
+              </div>
+            </div>
+            <button
+              type="button"
+              onclick="openSubmitTestimonialModal()"
+              class="px-4 py-2 rounded-lg bg-white border border-[#E8DED2] hover:border-[#7D3024] text-[#7D3024] hover:bg-[#FAF3F1] text-xs font-bold tracking-wide shrink-0 transition-all cursor-pointer shadow-xs"
+            >
+              Submit a Testimonial →
+            </button>
+          </div>
+        </div>
+
+        <!-- Right Column: Consultation Form (Exact Reference Style) -->
+        <div class="lg:col-span-6" id="lead-form">
+          <div class="p-6 sm:p-8 rounded-2xl bg-white border border-[#E8E3D7] shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)]">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Request A Quote</h3>
+                <p class="text-[11px] text-stone-500 mt-0.5">Architecture roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span class="w-7 h-7 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-xs border border-[#FFE0CC] shadow-xs">
+                ⚡
+              </span>
+            </div>
+
+            <form
+              id="architecture-consultation-form"
+              class="space-y-2.5"
+              onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);"
+            >
+              <div>
+                <label class="sr-only" for="lead-fullname">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="lead-fullname"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+
+              <div>
+                <label class="sr-only" for="lead-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="lead-phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+
+              <div>
+                <label class="sr-only" for="lead-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="lead-email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+
+              <div>
+                <label class="sr-only" for="lead-notes">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="lead-notes"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="2"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span>100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-800">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <button id="lead-submit-btn" class="btn-salow-submit" type="submit">
+                <span class="btn-salow-logo-mark">
+                  <Image
+                    src={salowtechLogo}
+                    width={24}
+                    height={24}
+                    alt="Salowtech"
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                  />
+                </span>
+                <span class="btn-salow-text">SUBMIT REQUEST</span>
+                <span class="btn-salow-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Subtle Luxury Transition Divider -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="section-stitch-divider"></div>
+    </div>
+
+    <!-- 06. ENTERPRISE FAQ & ASSURANCES (Exact Match to Home Main Page #faq-section) -->
+    <section class="faq" id="faq-section" aria-labelledby="faq-title">
+      <div class="head">
+        <span class="eyebrow">+ FAQ</span>
+        <h2 id="faq-title">
+          Frequently Asked <em>Questions</em>
+        </h2>
+      </div>
+
+      <div class="list">
+        <!-- FAQ 1 (Open by default) -->
+        <div class="q open">
+          <h3>
+            <button type="button" id="faq-btn-1" aria-expanded="true" aria-controls="faq-ans-1">
+              What services do you offer?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-1" role="region" aria-labelledby="faq-btn-1">
+            <div>
+              <p>Websites, mobile apps, CRM/HRM/ERM software, AI chatbots and Voice Assistants, all in one place.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-ans-2">
+              How do you verify the authenticity of client testimonials and metrics?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-2" role="region" aria-labelledby="faq-btn-2">
+            <div>
+              <p>
+                Every testimonial and performance metric on this page is sourced from authenticated enterprise contracts
+                and executive stakeholders. For prospective clients under mutual NDA, we coordinate direct peer-to-peer
+                reference calls with our active CTO and engineering leaders.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-ans-3">
+              What do you mean by "100% Sovereign Software Platforms"?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-3" role="region" aria-labelledby="faq-btn-3">
+            <div>
+              <p>
+                Unlike third-party SaaS vendors that store your sensitive factory or financial data overseas and charge
+                recurring monthly per-seat licenses, Salowtech builds platforms that run on your own private cloud or
+                on-premise infrastructure. You own 100% of the code, IP, and database tables.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-ans-4">
+              How long does an enterprise migration or project kickoff typically take?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-4" role="region" aria-labelledby="faq-btn-4">
+            <div>
+              <p>
+                A standard custom web platform or CRM deployment ships within 4 to 6 weeks. Comprehensive multi-plant
+                ERP migrations with legacy database ingest, barcode hardware integration, and statutory GST verification
+                are delivered in 60 to 90 days with guaranteed zero business downtime.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-ans-5">
+              Can we connect Salowtech's platforms with our existing hardware and APIs?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-5" role="region" aria-labelledby="faq-btn-5">
+            <div>
+              <p>
+                Yes. Our architectures feature native REST, GraphQL, and MQTT webhook connectors. We regularly integrate
+                with biometric thumbprint scanners, weighbridges, warehouse barcode readers, banking payment gateways,
+                and statutory NIC GST / e-Way portals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-6" aria-expanded="false" aria-controls="faq-ans-6">
+              Is our enterprise client and financial data secure?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-6" role="region" aria-labelledby="faq-btn-6">
+            <div>
+              <p>
+                Yes. Your data is encrypted at rest and in transit, access is strictly role-based (RBAC) so personnel
+                only view authorized records, automated backups run continuously, and platforms comply with Indian DPDP
+                Act 2023 guidelines.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-7" aria-expanded="false" aria-controls="faq-ans-7">
+              Do you provide support and SLAs after launch?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-ans-7" role="region" aria-labelledby="faq-btn-7">
+            <div>
+              <p>
+                Yes. Every sovereign platform deployment includes dedicated post-launch engineering support, proactive
+                server telemetry, bug fixes, team training, and quarterly feature upgrades with guaranteed SLA response
+                times.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <p>Something else on your mind? Talk to the team that builds it.</p>
+        <a class="cta" href="/contact-us">
+          Talk to our team
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2 7h10M8 3l4 4-4 4" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= SUBMIT TESTIMONIAL MODAL ================= -->
+  <div
+    id="submit-testimonial-modal"
+    class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-backdrop bg-black/60"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+  >
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-[#E8E3D7] relative shadow-2xl max-h-[90vh] overflow-y-auto" data-lenis-prevent>
+      <div class="flex items-center justify-between mb-5 border-b border-[#EFEAE1] pb-4">
+        <div>
+          <span class="text-xs font-bold uppercase text-[#7D3024]">Client Contribution</span>
+          <h3 id="modal-title" class="text-xl font-bold text-neutral-950 mt-0.5">
+            Share Your Experience
+          </h3>
+        </div>
+        <button
+          type="button"
+          onclick="closeSubmitTestimonialModal()"
+          class="w-8 h-8 rounded-full bg-[#FAF7F0] flex items-center justify-center text-neutral-500 hover:text-black transition-colors"
+          aria-label="Close modal"
+        >
+          ✕
+        </button>
+      </div>
+
+      <form id="client-testimonial-form" onsubmit="handleClientTestimonialSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-client-name">
+            Your Full Name &amp; Designation *
+          </label>
+          <input
+            class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+            id="modal-client-name"
+            placeholder="e.g. Anand Rathi, Head of Supply Chain"
+            required
+            type="text"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-company-name">
+            Company / Organization *
+          </label>
+          <input
+            class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+            id="modal-company-name"
+            placeholder="e.g. Apex Industrial Solutions"
+            required
+            type="text"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-service">
+              Service Deployed *
+            </label>
+            <select
+              id="modal-service"
+              class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+              required
+            >
+              <option value="ERP Solutions">ERP Solutions</option>
+              <option value="CRM Development">CRM Development</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Mobile App Development">Mobile App Development</option>
+              <option value="AI &amp; Voice Assistant">AI &amp; Voice Assistant</option>
+              <option value="HRM &amp; Payroll">HRM &amp; Payroll</option>
+              <option value="SEO &amp; Growth">SEO &amp; Growth</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-rating">
+              Overall Rating *
+            </label>
+            <select
+              id="modal-rating"
+              class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+              required
+            >
+              <option value="5">★★★★★ (5.0 / 5.0)</option>
+              <option value="4.5">★★★★½ (4.5 / 5.0)</option>
+              <option value="4">★★★★☆ (4.0 / 5.0)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-metric">
+            Measurable Metric or Result Achieved *
+          </label>
+          <input
+            class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+            id="modal-metric"
+            placeholder="e.g. 64% reduction in paperwork; ₹1.2 Cr saved"
+            required
+            type="text"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-neutral-800 mb-1" for="modal-quote">
+            Your Testimonial Quote *
+          </label>
+          <textarea
+            class="w-full text-xs sm:text-sm rounded-xl border-[#E8E3D7] bg-[#FAF7F0] text-neutral-900 px-3 py-2.5 focus:border-[#7D3024] focus:ring-[#7D3024]"
+            id="modal-quote"
+            rows="4"
+            placeholder="How has Salowtech benefited your operations, engineering, or team productivity?"
+            required
+          ></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-[#EFEAE1]">
+          <button
+            type="button"
+            onclick="closeSubmitTestimonialModal()"
+            class="px-4 py-2 rounded-xl text-xs font-semibold text-neutral-600 hover:text-black"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            class="px-6 py-2.5 rounded-xl bg-[#7D3024] hover:bg-[#581C15] text-white text-xs font-bold tracking-wide uppercase transition-all shadow-md"
+          >
+            Submit for Review
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= EXACT MAIN SITE FOOTER (Untouched / 100% Match) ================= -->
+  <!-- BEGIN: Footer Section -->
+</Layout>

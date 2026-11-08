@@ -1,0 +1,503 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getBlogIndexSchema } from "../data/schema";
+
+const seo = pagesSEO.blog;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "enterprise software development blog, sovereign software architecture, custom ERP vs SaaS, technical SEO guides, web performance optimization articles";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "selection:bg-neutral-900 selection:text-white min-h-screen bg-[#FAF7F0] font-sans antialiased";
+const showChatbot = true;
+const schemaJson = getBlogIndexSchema();
+
+// Fetch all posts statically
+const posts = await getCollection("blog");
+const colorThemes = ["is-pink", "is-yellow", "is-green", "is-violet", "is-peach", "is-cream"];
+
+const categories = [
+  { id: "all", label: "All" },
+  { id: "Tips", label: "Tips" },
+  { id: "Tech", label: "Tech" },
+  { id: "HRM", label: "HRM" },
+  { id: "CRM", label: "CRM" },
+  { id: "ERP", label: "ERP" },
+  { id: "AI", label: "AI & Voice" },
+  { id: "SEO", label: "SEO" }
+];
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  activePath="/blog"
+  showChatbot={showChatbot}
+  showPreFooterCTA={true}
+  schemaJson={schemaJson}
+>
+  <Breadcrumb currentPage="Blog" />
+
+  <!-- BEGIN: BlogSection (Matching Kindsight Clean Editorial Style) -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 pb-20">
+    <!-- Editorial Page Header -->
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF3F1] border border-[#E8D2CF] text-[#7D3024] text-xs font-semibold uppercase tracking-wider mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#7D3024]"></span>
+        <span>Salowtech Editorial Hub</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-serif text-slate-950 font-normal tracking-tight mb-4 leading-tight">
+        Engineering Insights &amp; Tactical Blueprints
+      </h1>
+      <p class="text-stone-600 text-sm sm:text-base font-normal max-w-xl mx-auto leading-relaxed">
+        Proprietary architecture blueprints, enterprise systems benchmarks, and tactical engineering playbooks.
+      </p>
+    </div>
+
+    <!-- Search & Filter Controls Bar -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8 sm:mb-10 pb-4 border-b border-[#E8E2D6]/80">
+      <!-- Left: Active Category Pills / Count -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none text-xs" id="category-pills-bar">
+        <span id="blog-count-badge" class="font-bold text-stone-500 uppercase tracking-wider text-[11px] mr-2 shrink-0">
+          {posts.length} Articles
+        </span>
+        {categories.map((cat, i) => (
+          <button
+            type="button"
+            data-category={cat.id}
+            data-label={cat.label}
+            class={`blog-cat-pill px-3.5 py-1.5 rounded-full font-semibold transition-all shrink-0 cursor-pointer ${i === 0 ? "active bg-slate-900 text-white shadow-xs" : "bg-white text-stone-700 border border-[#E2D7CD] hover:border-[#7D3024]"}`}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Right: Search Input + Filter Dropdown -->
+      <div class="flex items-center gap-2.5 shrink-0 self-end md:self-auto w-full md:w-auto">
+        <!-- Live Search Input -->
+        <div class="relative flex-1 md:w-60">
+          <label for="blog-search-input" class="sr-only">Search resources</label>
+          <input
+            type="text"
+            id="blog-search-input"
+            placeholder="Search resources..."
+            aria-label="Search resources"
+            class="w-full bg-white border border-[#E2D7CD] rounded-full pl-9 pr-4 py-2 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#7D3024] focus:ring-1 focus:ring-[#7D3024] shadow-xs transition-colors"
+          />
+          <svg
+            class="w-4 h-4 text-stone-400 absolute left-3 top-2.5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            />
+          </svg>
+        </div>
+
+        <!-- Filter By Dropdown -->
+        <div class="relative" id="blog-filter-dropdown-wrap">
+          <button
+            type="button"
+            id="blog-filter-toggle-btn"
+            class="inline-flex items-center gap-1.5 bg-white border border-[#E2D7CD] rounded-full px-4 py-2 text-xs sm:text-sm font-semibold text-stone-800 hover:border-[#7D3024] transition-all shadow-xs cursor-pointer"
+          >
+            <span id="blog-filter-btn-label">Filter by</span>
+            <svg
+              id="blog-filter-arrow"
+              class="w-3.5 h-3.5 text-stone-500 transition-transform duration-200"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            id="blog-filter-menu"
+            class="hidden absolute right-0 top-full mt-2 w-52 bg-white border border-[#E8E1D3] rounded-2xl shadow-xl p-2 z-30 space-y-0.5"
+          >
+            <button
+              type="button"
+              data-filter="all"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              All Categories
+            </button>
+            <button
+              type="button"
+              data-filter="Tips"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              Strategic Tips
+            </button>
+            <button
+              type="button"
+              data-filter="Tech"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              Deep Tech
+            </button>
+            <button
+              type="button"
+              data-filter="HRM"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              HRM Systems
+            </button>
+            <button
+              type="button"
+              data-filter="CRM"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              CRM &amp; Sales
+            </button>
+            <button
+              type="button"
+              data-filter="ERP"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              Enterprise ERP
+            </button>
+            <button
+              type="button"
+              data-filter="AI"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              AI &amp; Voice Agents
+            </button>
+            <button
+              type="button"
+              data-filter="SEO"
+              class="blog-filter-menu-item w-full text-left px-3 py-2 rounded-xl text-xs sm:text-sm font-medium text-stone-700 hover:bg-[#FAF7F0] hover:text-[#7D3024] transition-colors cursor-pointer"
+            >
+              SEO &amp; Growth
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-COLUMN RESPONSIVE CARD GRID (Static SSG Rendering) -->
+    <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {posts.map((post, index) => {
+        const theme = colorThemes[index % colorThemes.length];
+        const searchContent =
+          `${post.data.title} ${post.data.excerpt} ${post.data.category} ${post.data.categoryPill} ${post.data.author.name}`.toLowerCase();
+
+        return (
+          <>
+            <article
+              class="blog-card-item h-full"
+              data-category={post.data.category}
+              data-pill={post.data.categoryPill}
+              data-search={searchContent}
+            >
+              <a
+                href={`/blog/${post.data.id || post.id}`}
+                class={`blog-editorial-card ${theme} group block`}
+                aria-label={post.data.title}
+              >
+                <!-- Top-Right Notch Tab with Logo/Brand -->
+                <div class="card-notch" aria-hidden="true">
+                  <span class="notch-logo">Salowtech&reg;</span>
+                </div>
+
+                <!-- Centered Floating CTA -->
+                <div class="card-cta-btn" aria-hidden="true">
+                  <span>Read story</span>
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 12l4-4-4-4" />
+                  </svg>
+                </div>
+
+                <!-- Card Content -->
+                <div class="card-content">
+                  <div class="card-thumb-wrap">
+                    <img
+                      src={post.data.image}
+                      alt={post.data.title}
+                      width="400"
+                      height="225"
+                      class="card-thumb-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div class="card-body">
+                    <div class="card-category-row">
+                      <span class="card-cat-badge">{post.data.categoryPill || post.data.category}</span>
+                      <span class="card-read-time">{post.data.readTime}</span>
+                    </div>
+
+                    <h3 class="card-title">{post.data.title}</h3>
+                    <p class="card-excerpt">{post.data.excerpt}</p>
+                  </div>
+
+                  <div class="card-meta">
+                    <span class="card-author">
+                      {post.data.author ? post.data.author.name : "Salowtech Engineering"}
+                    </span>
+                    <span class="card-date">{post.data.date}</span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            {/* In slot 6 (after 5 cards), inject the Dispatch Newsletter Card */}
+            {index === 4 && (
+              <article class="blog-newsletter-item h-full" data-newsletter="true">
+                <div class="blog-editorial-card is-cream blog-newsletter-card group block">
+                  <div class="card-notch" aria-hidden="true">
+                    <span class="notch-logo">DISPATCH&reg;</span>
+                  </div>
+                  <div class="card-content flex flex-col justify-between h-full">
+                    <div>
+                      <div class="card-category-row" style="margin-bottom: 12px;">
+                        <span class="card-cat-badge">NEWSLETTER</span>
+                        <span class="card-read-time">FORTNIGHTLY</span>
+                      </div>
+                      <h3 class="font-serif text-2xl sm:text-3xl text-slate-950 font-normal leading-tight mb-3">
+                        Sovereign Architectures in Your Inbox
+                      </h3>
+                      <p class="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6 font-sans">
+                        Join 2,400+ founders and enterprise engineering directors receiving our fortnightly breakdowns
+                        on private AI, sovereign ERPs, and resilient cloud architectures. Zero fluff, 100% tactical
+                        engineering.
+                      </p>
+                    </div>
+                    <div>
+                      <form id="blog-newsletter-form" class="space-y-2.5">
+                        <div class="relative">
+                          <label for="blog-newsletter-email" class="sr-only">Email address for newsletter</label>
+                          <input
+                            type="email"
+                            id="blog-newsletter-email"
+                            placeholder="name@company.com"
+                            required
+                            aria-label="Email address for newsletter"
+                            class="w-full bg-white border border-[#E2D7CD] rounded-full px-4 py-2.5 text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#7D3024] focus:ring-1 focus:ring-[#7D3024] transition-colors"
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          class="w-full bg-[#7D3024] hover:bg-[#5C2017] text-white text-xs font-semibold py-2.5 px-4 rounded-full transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                        >
+                          <span>Subscribe Free</span>
+                          <svg
+                            class="w-3.5 h-3.5"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                          >
+                            <path d="M3 8h10M9 4l4 4-4 4" />
+                          </svg>
+                        </button>
+                        <p class="text-[10px] text-stone-400 text-center font-sans">
+                          Strictly zero spam. Unsubscribe anytime with 1-click.
+                        </p>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            )}
+          </>
+        );
+      })}
+    </div>
+
+    <!-- Empty Results State -->
+    <div id="blog-empty-state" class="hidden text-center py-16">
+      <div class="w-12 h-12 mx-auto mb-4 rounded-full bg-[#FAF3F1] flex items-center justify-center text-[#7D3024]">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      </div>
+      <h3 class="text-lg font-serif font-bold text-stone-900 mb-1">No articles found</h3>
+      <p class="text-xs text-stone-500 max-w-sm mx-auto">
+        Try refining your search keyword or selecting a different category filter.
+      </p>
+    </div>
+  </section>
+  <!-- END: BlogSection -->
+
+  <!-- Client-side Lightweight Interactive Search & Filtering Script -->
+  <script is:inline>
+    (function () {
+      const pills = document.querySelectorAll(".blog-cat-pill");
+      const searchInput = document.getElementById("blog-search-input");
+      const countBadge = document.getElementById("blog-count-badge");
+      const cards = document.querySelectorAll(".blog-card-item");
+      const newsletterItem = document.querySelector(".blog-newsletter-item");
+      const emptyState = document.getElementById("blog-empty-state");
+      const filterToggleBtn = document.getElementById("blog-filter-toggle-btn");
+      const filterMenu = document.getElementById("blog-filter-menu");
+      const filterLabel = document.getElementById("blog-filter-btn-label");
+      const filterMenuItems = document.querySelectorAll(".blog-filter-menu-item");
+      const newsletterForm = document.getElementById("blog-newsletter-form");
+
+      let currentCategory = "all";
+      let currentQuery = "";
+
+      function filterArticles() {
+        let visibleCount = 0;
+        const q = currentQuery.trim().toLowerCase();
+
+        cards.forEach((card) => {
+          const category = card.getAttribute("data-category") || "";
+          const pill = card.getAttribute("data-pill") || "";
+          const searchData = card.getAttribute("data-search") || "";
+
+          let matchesCat = false;
+          if (currentCategory === "all") {
+            matchesCat = true;
+          } else if (currentCategory === "AI") {
+            matchesCat = category.toLowerCase().includes("ai") || pill.toLowerCase().includes("ai");
+          } else if (currentCategory === "SEO") {
+            matchesCat = category.toLowerCase().includes("seo") || pill.toLowerCase().includes("seo");
+          } else {
+            matchesCat =
+              category.toLowerCase().includes(currentCategory.toLowerCase()) ||
+              pill.toLowerCase().includes(currentCategory.toLowerCase());
+          }
+
+          let matchesQuery = true;
+          if (q) {
+            matchesQuery = searchData.includes(q);
+          }
+
+          if (matchesCat && matchesQuery) {
+            card.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+
+        // Toggle newsletter box: show only on "all" category when no search is active
+        if (newsletterItem) {
+          if (currentCategory === "all" && !q) {
+            newsletterItem.classList.remove("hidden");
+          } else {
+            newsletterItem.classList.add("hidden");
+          }
+        }
+
+        // Toggle empty state
+        if (emptyState) {
+          if (visibleCount === 0) {
+            emptyState.classList.remove("hidden");
+          } else {
+            emptyState.classList.add("hidden");
+          }
+        }
+
+        // Update count badge
+        if (countBadge) {
+          countBadge.textContent = `${visibleCount} Article${visibleCount === 1 ? "" : "s"}`;
+        }
+      }
+
+      function setCategory(catId, label) {
+        currentCategory = catId;
+        pills.forEach((p) => {
+          if (p.getAttribute("data-category") === catId) {
+            p.classList.add("active", "bg-slate-900", "text-white", "shadow-xs");
+            p.classList.remove("bg-white", "text-stone-700", "border");
+          } else {
+            p.classList.remove("active", "bg-slate-900", "text-white", "shadow-xs");
+            p.classList.add("bg-white", "text-stone-700", "border");
+          }
+        });
+
+        if (filterLabel && label) {
+          filterLabel.textContent = label;
+        }
+
+        filterArticles();
+      }
+
+      // Pill click handlers
+      pills.forEach((p) => {
+        p.addEventListener("click", function () {
+          const cat = this.getAttribute("data-category");
+          const label = this.getAttribute("data-label");
+          setCategory(cat, label);
+        });
+      });
+
+      // Search input handler
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          currentQuery = this.value;
+          filterArticles();
+        });
+      }
+
+      // Filter dropdown toggle
+      if (filterToggleBtn && filterMenu) {
+        filterToggleBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          filterMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!filterToggleBtn.contains(e.target) && !filterMenu.contains(e.target)) {
+            filterMenu.classList.add("hidden");
+          }
+        });
+
+        filterMenuItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
+            const label = this.textContent.trim();
+            setCategory(filter, label);
+            filterMenu.classList.add("hidden");
+          });
+        });
+      }
+
+      // Newsletter form submit handler
+      if (newsletterForm) {
+        newsletterForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+          if (email) {
+            this.innerHTML =
+              '<div class="py-3 text-center text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl font-medium text-xs">✓ Subscribed successfully! Welcome to Salowtech Dispatch.</div>';
+          }
+        });
+      }
+    })();
+  </script>
+</Layout>

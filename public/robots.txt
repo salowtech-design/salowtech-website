@@ -1,0 +1,52 @@
+# ==============================================================================
+# ROBOTS.TXT — SALOW TECHNOLOGIES (https://salowtech.com)
+# Sovereign Enterprise Search & Generative AI Crawler Directives
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+# Generative AI Answer Engines & Grounding Bots (Full Retrieval Allowed)
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+Disallow: /crm-dashboard
+
+Sitemap: https://salowtech.com/sitemap.xml

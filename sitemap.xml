@@ -1,70 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Root entity: homepage -->
+  <!-- ==========================================
+       1. ROOT BRAND ENTITY (HOMEPAGE)
+       ========================================== -->
   <url>
     <loc>https://salowtech.com/</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
 
-  <!-- Core services (sub-pages of the homepage) -->
+  <!-- ==========================================
+       2. CORE SERVICES (DIRECT SITELINK TARGETS)
+       ========================================== -->
   <url>
     <loc>https://salowtech.com/crm-development</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/erp-development</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/web-development</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/mobile-app-development</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/hrm-payroll</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/ai-voice-assistant</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/seo-and-growth</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
 
-  <!-- Company and resources -->
+  <!-- ==========================================
+       3. COMPANY & AUTHORITY PAGES
+       ========================================== -->
   <url>
     <loc>https://salowtech.com/about-us</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/contact-us</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/testimonials</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/blog</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
 
-  <!--
-    /blog-post removed: it looks like a template page, not a real article.
-    Add real articles here as https://salowtech.com/blog/your-article-slug
-    with the true last-modified date of each one.
-  -->
-
-  <!-- Legal and trust -->
+  <!-- ==========================================
+       4. LEGAL & TRUST
+       ========================================== -->
   <url>
     <loc>https://salowtech.com/privacy-policy</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
   </url>
   <url>
     <loc>https://salowtech.com/terms-and-conditions</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+
+  <!-- ==========================================
+       5. ENGINEERING INSIGHTS & ARTICLES
+       ========================================== -->
+  <url>
+    <loc>https://salowtech.com/blog/ai-voice-assistant-customer-support</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/business-automation-repetitive-tasks</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/cloud-erp-security-checklist</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/custom-vs-ready-made-mobile-app</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/erp-vs-crm-vs-hrm-guide</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/google-seo-ranking-2026</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/high-converting-business-website</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/manage-customers-crm-pipeline</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/omnichannel-customer-support-hub</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/postgresql-timescaledb-financial-vault</loc>
+    <lastmod>2026-11-08</lastmod>
+  </url>
+  <url>
+    <loc>https://salowtech.com/blog/what-is-hrm-software</loc>
+    <lastmod>2026-11-08</lastmod>
   </url>
 
 </urlset>
+

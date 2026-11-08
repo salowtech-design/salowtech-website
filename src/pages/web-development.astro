@@ -1,0 +1,977 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import mascotExplaining from "../assets/mascot_explaining.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getServiceSchema } from "../data/schema";
+
+const seo = pagesSEO.webDevelopment;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "custom web development services India, enterprise web application development, full-stack React Next.js development agency, custom corporate website development, headless web development company, fast loading secure web applications";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "font-sans antialiased text-[#2A2428] selection:bg-[#F8EDE8] selection:text-[#7D3024]";
+const showChatbot = true;
+const schemaJson = getServiceSchema({
+  serviceKey: "web-development",
+  serviceName: seo.title,
+  serviceType: "Web Application Development",
+  description: seo.description,
+  path: seo.canonicalPath,
+  breadcrumbTitle: "Web Development"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <Breadcrumb currentPage="Web Development" />
+
+  <!-- BEGIN: HeroSection -->
+  <section
+    class="relative pt-20 sm:pt-24 pb-8 sm:pb-12 overflow-hidden hero-circuit-bg border-b border-cream-300/60"
+    data-purpose="hero-section"
+  >
+    <!-- Decorative background glow -->
+    <div class="absolute -top-32 right-1/4 w-96 h-96 bg-[#7D3024]/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <!-- Left Content Column (Compact & Minimal for 100vh Laptop Viewport Fit) -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <h1 class="font-display text-3xl sm:text-4xl lg:text-[40px] font-extrabold leading-[1.16] tracking-tight mb-3 text-neutral-950">
+            Create a Website That <span class="text-[#7D3024]">Captures Attention</span>, Builds Trust &amp;{" "}
+            <span class="text-[#7D3024]">Drives Action</span>
+          </h1>
+
+          <!-- Concise Value Narrative -->
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-4 max-w-xl">
+            High-performance Next.js and React web applications engineered to capture attention, build enterprise trust,
+            and accelerate conversions.
+          </p>
+
+          <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
+            <p class="font-semibold text-neutral-900 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[#7D3024]"></span>
+              <span>Quick Overview:</span>
+            </p>
+            <p>
+              Salowtech Custom Web Development is a bespoke software engineering service that builds high-performance Next.js and React web applications, portals, and SaaS dashboards. Engineered for ambitious businesses needing speed, security, full API integrations, and 100% source code ownership.
+            </p>
+          </div>
+
+          <!-- CTA Action -->
+          <div class="flex flex-wrap items-center gap-3 mb-5" data-purpose="dual-cta-group">
+            <a
+              class="inline-flex items-center gap-2 px-6 py-2.5 bg-[#7D3024] hover:bg-[#5C2017] text-white rounded-full font-semibold text-xs sm:text-sm transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+              href="/contact-us"
+            >
+              <span>Get Free Consultation</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Floating Request A Quote Form (Compacted for screen fit) -->
+        <div class="lg:col-span-5 relative" id="quote-card">
+          <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-floating border border-cream-200 relative">
+            <div class="flex items-center justify-between pb-3 mb-3 border-b border-cream-200">
+              <div>
+                <h2 class="text-lg font-bold font-display text-neutral-950 tracking-tight">Request A Quote</h2>
+                <p class="text-[11px] text-stone-500 mt-0.5">Web roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span
+                class="w-7 h-7 rounded-full bg-[#7D3024]/10 text-[#7D3024] flex items-center justify-center font-bold text-xs"
+                title="Instant Roadmap"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                </svg>
+              </span>
+            </div>
+
+            <form
+              class="space-y-2.5"
+              data-purpose="quote-form"
+              onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);"
+            >
+              <div>
+                <label class="sr-only" for="name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] transition placeholder:text-stone-400 text-stone-800"
+                  id="name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] transition placeholder:text-stone-400 text-stone-800"
+                  id="phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] transition placeholder:text-stone-400 text-stone-800"
+                  id="email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="message">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] transition placeholder:text-stone-400 text-stone-800 resize-none"
+                  id="message"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="2"
+                ></textarea>
+              </div>
+              <!-- Mock Trust Badge -->
+              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span>100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-800">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn-salow-submit" type="submit">
+                <span class="btn-salow-logo-mark">
+                  <Image
+                    src={salowtechLogo}
+                    width={24}
+                    height={24}
+                    alt="Salowtech"
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                  />
+                </span>
+                <span class="btn-salow-text">Submit Request</span>
+                <span class="btn-salow-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: ValuePropositionSection -->
+  <section class="py-20 bg-cream-50 relative" data-purpose="value-proposition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-display text-3xl sm:text-4xl md:text-[40px] font-bold leading-[1.2] mb-8 text-neutral-950">
+        <span class="font-extrabold text-neutral-950">From Digital Ideas to </span>
+        <span class="italic font-extrabold text-[#7D3024]">High-Impact Websites</span>
+      </h2>
+      <div class="space-y-6 text-stone-600 text-sm sm:text-base leading-relaxed text-center max-w-3xl mx-auto">
+        <p>
+          Today, your website is the cornerstone of your brand identity and the first touchpoint where visitors evaluate
+          your credibility, expertise, and digital authority. At Salowtech, we craft high-performance, professional
+          websites engineered to elevate your business presence, captivate your target audience, and turn visitors into
+          loyal customers.
+        </p>
+        <p>
+          From initial strategy and custom UI/UX design to robust development, lightning-fast speed, and search
+          optimization, our dedicated team builds digital experiences focused entirely on accelerating your long-term
+          business growth. Partner with Salowtech to build a scalable digital foundation that drives sustained
+          inquiries, sales, and competitive success.
+        </p>
+      </div>
+      <div class="mt-8">
+        <a
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-[#7D3024] hover:bg-[#5C2017] text-white rounded-full font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+          href="/contact-us"
+        >
+          Get Free Consultation
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END: ValuePropositionSection -->
+
+  <!-- BEGIN: LaptopShowcaseSection (MacBook Pro Flagship SaaS Web Platform) -->
+  <section
+    class="py-16 sm:py-20 bg-[#FAF7F2] border-t border-cream-200 relative overflow-hidden"
+    id="web-laptop-showcase"
+    data-purpose="laptop-web-showcase"
+  >
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#7D3024]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">+ LIVE ENTERPRISE SAAS PREVIEW</span>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-[42px] font-extrabold text-neutral-950 leading-[1.2] tracking-tight mt-2 mb-3">
+          Custom Web Platforms Engineered to{" "}
+          <span class="italic font-extrabold text-[#7D3024]">Drive Real Revenue</span>
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          See how SalowTech builds high-converting enterprise SaaS, customer portals, and sovereign web applications
+          with sub-second speeds and bank-grade reliability.
+        </p>
+      </div>
+
+      <!-- MacBook Pro Hardware Mockup Frame (Solid & Stable) -->
+      <div class="macbook-chassis mb-14">
+        <!-- Screen Lid -->
+        <div class="macbook-lid">
+          <div class="macbook-notch"></div>
+          <div class="macbook-screen">
+            <!-- Browser Chrome Top Bar -->
+            <div class="bg-[#FAF6F0] px-3 sm:px-4 py-2 sm:py-2.5 border-b border-[#E8DFC5] flex items-center justify-between text-xs select-none">
+              <div class="flex items-center gap-1.5 sm:gap-2">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#7D3024] inline-block border border-[#7D3024]/40"
+                  title="Close"
+                ></span>
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#CEAB93] inline-block border border-[#BA9780]/40"
+                  title="Minimize"
+                ></span>
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-[#E3CAA5] inline-block border border-[#CEAB93]/40"
+                  title="Expand"
+                ></span>
+              </div>
+              <!-- Browser URL Pill -->
+              <div class="flex items-center gap-2 bg-white text-neutral-800 px-3 sm:px-5 py-1 rounded-full text-[10px] sm:text-[11px] font-sans border border-[#E3CAA5]/80 shadow-2xs max-w-xs sm:max-w-md w-full justify-center">
+                <svg class="w-3 h-3 text-[#7D3024] shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z" />
+                </svg>
+                <span class="truncate font-medium">https://cloud.salowtech.com/enterprise-dashboard</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-2 text-stone-500 text-[10px] font-sans">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span class="font-medium text-emerald-700">99.99% Uptime SLA</span>
+              </div>
+            </div>
+
+            <!-- Inside SaaS Web Application UI -->
+            <div class="bg-[#FAF8F5] text-stone-900 grid grid-cols-12 min-h-[320px] sm:min-h-[420px]">
+              <!-- Sidebar Rail -->
+              <div class="hidden md:flex md:col-span-3 bg-white border-r border-cream-200 p-4 flex-col justify-between">
+                <div class="space-y-4">
+                  <!-- Brand Identity -->
+                  <div class="flex items-center gap-2.5 px-2">
+                    <div class="w-7 h-7 rounded-lg bg-[#7D3024] text-white font-bold text-xs flex items-center justify-center shadow-xs">
+                      S
+                    </div>
+                    <span class="font-bold text-xs tracking-tight text-neutral-950">SalowTech Cloud</span>
+                  </div>
+                  <!-- Nav Links with Clean Bespoke SVGs (No Emojis) -->
+                  <nav class="space-y-1">
+                    <a
+                      class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg bg-[#7D3024]/15 text-[#7D3024] font-bold text-xs"
+                      href="#"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="3" y="3" width="7" height="7" />
+                        <rect x="14" y="3" width="7" height="7" />
+                        <rect x="14" y="14" width="7" height="7" />
+                        <rect x="3" y="14" width="7" height="7" />
+                      </svg>
+                      <span>Dashboard</span>
+                    </a>
+                    <a
+                      class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-stone-600 hover:bg-cream-100 text-xs font-medium transition"
+                      href="#"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                      </svg>
+                      <span>Customer CRM</span>
+                    </a>
+                    <a
+                      class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-stone-600 hover:bg-cream-100 text-xs font-medium transition"
+                      href="#"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                        <line x1="2" y1="10" x2="22" y2="10" />
+                      </svg>
+                      <span>Billing &amp; Subscriptions</span>
+                    </a>
+                    <a
+                      class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-stone-600 hover:bg-cream-100 text-xs font-medium transition"
+                      href="#"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M13 2L3 14h8l-1 8 11-13h-8l1-7z" />
+                      </svg>
+                      <span>AI Automations</span>
+                    </a>
+                    <a
+                      class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-lg text-stone-600 hover:bg-cream-100 text-xs font-medium transition"
+                      href="#"
+                    >
+                      <svg
+                        class="w-4 h-4"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      </svg>
+                      <span>Security &amp; SLA</span>
+                    </a>
+                  </nav>
+                </div>
+                <!-- Sidebar Footer Pill -->
+                <div class="p-2.5 rounded-xl bg-cream-100 border border-cream-300 text-[10px] text-stone-600">
+                  <div class="flex items-center justify-between font-bold text-neutral-800 mb-0.5">
+                    <span>Sovereign Cloud</span>
+                    <span class="text-emerald-600 font-bold">100% Owned</span>
+                  </div>
+                  <span>Zero Vendor Lock-In</span>
+                </div>
+              </div>
+
+              <!-- Main Dashboard Area -->
+              <div class="col-span-12 md:col-span-9 p-3 sm:p-6 space-y-3 sm:space-y-4">
+                <!-- Top 3 Revenue & Performance Metrics Row -->
+                <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                  <div class="p-2.5 sm:p-3.5 rounded-xl bg-white border border-cream-200 shadow-2xs">
+                    <div class="text-[9px] sm:text-[10px] text-stone-500 font-medium leading-tight">
+                      Monthly Recurring Revenue
+                    </div>
+                    <div class="text-xs sm:text-xl font-extrabold text-neutral-900 mt-0.5">$184,500</div>
+                    <span class="inline-block mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600">
+                      +31.4% Growth
+                    </span>
+                  </div>
+                  <div class="p-2.5 sm:p-3.5 rounded-xl bg-white border border-cream-200 shadow-2xs">
+                    <div class="text-[9px] sm:text-[10px] text-stone-500 font-medium leading-tight">
+                      Active Enterprise Clients
+                    </div>
+                    <div class="text-xs sm:text-xl font-extrabold text-[#7D3024] mt-0.5">12,480</div>
+                    <span class="inline-block mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-600">
+                      98.2% Retention
+                    </span>
+                  </div>
+                  <div class="p-2.5 sm:p-3.5 rounded-xl bg-white border border-cream-200 shadow-2xs">
+                    <div class="text-[9px] sm:text-[10px] text-stone-500 font-medium leading-tight">
+                      Conversion Speed (LCP)
+                    </div>
+                    <div class="text-xs sm:text-xl font-extrabold text-neutral-900 mt-0.5">0.42 sec</div>
+                    <span class="inline-block mt-0.5 sm:mt-1 text-[8px] sm:text-[9px] font-bold px-1 sm:px-1.5 py-0.5 rounded bg-[#FDF6E8] text-[#D97706]">
+                      3.8x Industry Avg
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Center Interactive Analytics Graph Card -->
+                <div class="p-4 rounded-xl bg-white border border-cream-200 shadow-2xs">
+                  <div class="flex items-center justify-between mb-2">
+                    <div>
+                      <div class="text-xs font-bold text-neutral-900">
+                        Enterprise Revenue &amp; Subscription Trajectory
+                      </div>
+                      <div class="text-[10px] text-stone-500">Real-Time B2B Multi-Tenant Platform Performance</div>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                      <span>Verified Live Stream</span>
+                    </span>
+                  </div>
+                  <!-- Responsive SVG Area Chart -->
+                  <div class="w-full h-32 sm:h-40">
+                    <svg class="w-full h-full" viewBox="0 0 500 140" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="laptopChartGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#7D3024" stop-opacity="0.35" />
+                          <stop offset="100%" stop-color="#7D3024" stop-opacity="0.0" />
+                        </linearGradient>
+                      </defs>
+                      <!-- Grid lines -->
+                      <line x1="0" y1="35" x2="500" y2="35" stroke="#EAE4DA" stroke-dasharray="4 4" stroke-width="1" />
+                      <line x1="0" y1="70" x2="500" y2="70" stroke="#EAE4DA" stroke-dasharray="4 4" stroke-width="1" />
+                      <line
+                        x1="0"
+                        y1="105"
+                        x2="500"
+                        y2="105"
+                        stroke="#EAE4DA"
+                        stroke-dasharray="4 4"
+                        stroke-width="1"
+                      />
+                      <!-- Filled Area -->
+                      <path
+                        d="M 0,115 C 50,110 80,95 120,75 C 160,55 200,85 240,60 C 280,35 320,65 370,40 C 420,15 460,30 500,10 L 500,140 L 0,140 Z"
+                        fill="url(#laptopChartGrad)"
+                      />
+                      <!-- Stroke line -->
+                      <path
+                        d="M 0,115 C 50,110 80,95 120,75 C 160,55 200,85 240,60 C 280,35 320,65 370,40 C 420,15 460,30 500,10"
+                        fill="none"
+                        stroke="#7D3024"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Bottom Activity Feed Row -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div class="p-2.5 rounded-lg bg-white border border-stone-200/80 flex items-center justify-between text-xs">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                      <span class="font-medium text-stone-800">
+                        Annual Enterprise Tier Contract Activated ($54,000/yr)
+                      </span>
+                    </span>
+                    <span class="text-stone-500 text-[10px]">Just now</span>
+                  </div>
+                  <div class="p-2.5 rounded-lg bg-white border border-stone-200/80 flex items-center justify-between text-xs">
+                    <span class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-[#7D3024]"></span>
+                      <span class="font-medium text-stone-800">Global Edge Deployment &bull; 48 Regions Live</span>
+                    </span>
+                    <span class="text-stone-500 text-[10px]">24s ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MacBook Base & Trackpad Notch -->
+        <div class="macbook-base">
+          <div class="macbook-notch-lip"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEGIN: Superb Radial Orbit Transmission Hub (Exact Reference Match) -->
+  <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">+ REAL-TIME WEB TRANSMISSION</span>
+      <h2
+        id="transmission-title"
+        class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
+      >
+        The Sovereign Web Architecture Transmission Core
+      </h2>
+      <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        How modern React & Next.js client layers, microservice APIs, and edge CDN deployments communicate flawlessly to
+        deliver sub-second global web experiences.
+      </p>
+    </div>
+
+    <div class="transmission-stage">
+      <!-- Concentric Pulsing Wave Halos -->
+      <div class="transmission-halo transmission-halo-1" aria-hidden="true"></div>
+      <div class="transmission-halo transmission-halo-2" aria-hidden="true"></div>
+      <div class="transmission-halo transmission-halo-3" aria-hidden="true"></div>
+
+      <!-- Center Hub -->
+      <div class="orbit-center-hub">
+        <Image
+          src={salowtechLogo}
+          width={140}
+          height={42}
+          alt="Salowtech Logo"
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={95}
+          class="h-8 w-auto object-contain"
+        />
+        <div class="hub-text text-left">
+          <span class="hub-title">Salowtech</span>
+          <span class="hub-badge">Sovereign Web Core</span>
+        </div>
+      </div>
+
+      <!-- 8 Orbiting Nodes with Real SVGs -->
+      <div class="orbit-node node-pos-1">
+        <span class="orbit-node-icon" style="background: #000000;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 180 180" fill="none">
+            <mask id="nextMask" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
+              <circle cx="90" cy="90" r="90" fill="black" />
+            </mask>
+            <g mask="url(#nextMask)">
+              <circle cx="90" cy="90" r="90" fill="black" />
+              <path
+                d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z"
+                fill="white"
+              />
+              <rect x="115" y="54" width="12" height="72" fill="white" />
+            </g>
+          </svg>
+        </span>
+        <span>Next.js 15 &amp; SSR</span>
+      </div>
+      <div class="orbit-node node-pos-2">
+        <span class="orbit-node-icon" style="background: #3178C6;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 128 128" fill="none">
+            <rect width="128" height="128" rx="16" fill="#3178C6" />
+            <path
+              d="M68.5 78.5c1.8 3.5 5 5.5 9.5 5.5 4.5 0 7.5-2 7.5-5.5 0-3.5-3-4.5-9-6.5-9-3-15-7-15-16.5 0-9 7.5-15.5 17.5-15.5 7.5 0 13 2.5 16.5 8.5l-6.5 5.5c-2-3-4.5-4.5-8.5-4.5-4 0-6.5 2-6.5 4.5 0 2.5 2 3.5 8 5.5 10 3 16 6.5 16 16.5 0 9.5-7.5 16.5-18 16.5-9.5 0-16.5-4-19-10.5l7.5-4zm-37.5-35h33v9h-12v43h-9v-43h-12v-9z"
+              fill="#FFF"
+            />
+          </svg>
+        </span>
+        <span>TypeScript &amp; Strict Types</span>
+      </div>
+      <div class="orbit-node node-pos-3">
+        <span class="orbit-node-icon" style="background: #5C2017;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+          </svg>
+        </span>
+        <span>Tailored CSS System</span>
+      </div>
+      <div class="orbit-node node-pos-4">
+        <span class="orbit-node-icon" style="background: #336791;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+            <ellipse cx="12" cy="5" rx="9" ry="3" />
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+          </svg>
+        </span>
+        <span>PostgreSQL &amp; Redis</span>
+      </div>
+      <div class="orbit-node node-pos-5">
+        <span class="orbit-node-icon" style="background: #F38020;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#FFF">
+            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+          </svg>
+        </span>
+        <span>Cloudflare Edge CDN</span>
+      </div>
+      <div class="orbit-node node-pos-6">
+        <span class="orbit-node-icon" style="background: #2496ED;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="#FFF">
+            <path d="M13.98 11.08h1.83V9.25h-1.83v1.83zm-2.4 0h1.83V9.25h-1.83v1.83zm-2.4 0H11V9.25H9.18v1.83zm-2.4 0h1.82V9.25H6.78v1.83zm7.2-2.39h1.83V6.86h-1.83v1.83zm-2.4 0h1.83V6.86h-1.83v1.83zm-2.4 0H11V6.86H9.18v1.83zm7.2-2.39h1.83V4.47h-1.83v1.83zm7.98 7.47c-.55-.38-1.74-.52-2.66-.2-.17-1.31-1.04-2.43-2.12-2.9l-.65-.28-.39.59c-.58.89-.92 2.1-1.02 3.32-.48.2-1.04.3-1.61.3H1.27c-.37 1.63.14 3.4 1.34 4.5 1.5 1.38 3.75 1.83 5.77 1.83 6.64 0 11.66-3.79 12.87-9.16z" />
+          </svg>
+        </span>
+        <span>Docker Microservices</span>
+      </div>
+      <div class="orbit-node node-pos-7">
+        <span class="orbit-node-icon" style="background: #10B981;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+        </span>
+        <span>Automated CI/CD Bus</span>
+      </div>
+      <div class="orbit-node node-pos-8">
+        <span class="orbit-node-icon" style="background: #0F172A;">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </span>
+        <span>Enterprise Auth &amp; SSL</span>
+      </div>
+    </div>
+  </section>
+  <!-- END: Superb Radial Orbit Transmission Hub -->
+
+  <!-- BEGIN: Canonical FAQ Section (Exact Match to Home Page #faq-section) -->
+
+  <!-- BEGIN: SalowTech Interactive Mascot Service Guide -->
+  <section class="py-12 sm:py-16 relative overflow-hidden" data-purpose="mascot-service-guide">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left: 3D Mascot Facing Right Towards Text in Website Background Color -->
+        <div class="md:col-span-4 flex justify-center md:justify-end">
+          <div class="w-36 sm:w-44 lg:w-52 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            <Image
+              src={mascotExplaining}
+              alt="SalowTech Engineering Mascot"
+              class="w-full h-auto object-contain filter drop-shadow-[0_12px_24px_rgba(125, 48, 36,0.22)]"
+              width={240}
+              height={240}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={92}
+            />
+          </div>
+        </div>
+
+        <!-- Right: Editorial Enterprise Architecture Text -->
+        <div class="md:col-span-8 text-center md:text-left">
+          <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#7D3024] font-sans mb-2">
+            ENGINEERING BENCHMARK
+          </span>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
+            Sub-Second Sovereign Web Architecture
+          </h3>
+          <p class="text-base sm:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+            We engineer production Next.js 15 platforms with sub-250ms Core Web Vitals, automated CI/CD pipelines, and
+            100% code ownership—zero bloated templates, zero platform lock-in.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTech Interactive Mascot Service Guide -->
+
+  <section class="faq" id="faq-section" aria-labelledby="faq-title">
+    <div class="head">
+      <span class="eyebrow">+ FAQ</span>
+      <h2 id="faq-title">
+        Website Development <em>FAQs</em>
+      </h2>
+    </div>
+
+    <div class="list">
+      <!-- FAQ 1 -->
+      <div class="q open">
+        <h3>
+          <button type="button" id="faq-webdev-btn-1" aria-expanded="true" aria-controls="faq-webdev-ans-1">
+            What types of websites and web platforms does Salowtech build?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-1" role="region" aria-labelledby="faq-webdev-btn-1">
+          <div>
+            <p>
+              We engineer bespoke enterprise web platforms, high-conversion commercial portals, custom SaaS web apps,
+              and headless e-commerce architectures. Every build is developed from scratch without off-the-shelf
+              templates, tailored precisely to your brand and operational workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-webdev-btn-2" aria-expanded="false" aria-controls="faq-webdev-ans-2">
+            How do you guarantee sub-second page load speeds and Core Web Vitals?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-2" role="region" aria-labelledby="faq-webdev-btn-2">
+          <div>
+            <p>
+              Our web engineering follows performance-first principles: pure semantic HTML5, zero bloat, next-gen
+              WebP/AVIF image compression, CSS hardware acceleration, intelligent resource preloading, edge caching, and
+              CDN deployment, achieving guaranteed 95+ Google PageSpeed and Lighthouse scores.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-webdev-btn-3" aria-expanded="false" aria-controls="faq-webdev-ans-3">
+            Will our website be fully responsive and accessible across all devices?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-3" role="region" aria-labelledby="faq-webdev-btn-3">
+          <div>
+            <p>
+              Yes. Every interface is designed mobile-first and tested rigorously across iOS Safari, Android Chrome,
+              tablet breakpoints, and 4K ultra-wide monitors. We adhere strictly to WCAG 2.1 AA accessibility
+              guidelines, including full keyboard navigation, screen reader ARIA landmarks, and high-contrast
+              compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-webdev-btn-4" aria-expanded="false" aria-controls="faq-webdev-ans-4">
+            Do you integrate custom APIs, CRM, ERP, and payment gateways?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-4" role="region" aria-labelledby="faq-webdev-btn-4">
+          <div>
+            <p>
+              Absolutely. We build robust, secure REST and GraphQL integrations with leading ERPs (SAP, Oracle), CRMs
+              (Salesforce, HubSpot, custom Salowtech CRM), payment gateways (Stripe, Razorpay, PayPal), and third-party
+              logistics or marketing automations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-webdev-btn-5" aria-expanded="false" aria-controls="faq-webdev-ans-5">
+            How long does a custom web development project take to launch?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-5" role="region" aria-labelledby="faq-webdev-btn-5">
+          <div>
+            <p>
+              A dedicated marketing or corporate website ships in 3 to 5 weeks. Complex custom web applications, SaaS
+              dashboards, or e-commerce platforms typically deploy in 6 to 10 weeks via iterative, agile milestones with
+              continuous staging previews.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-webdev-btn-6" aria-expanded="false" aria-controls="faq-webdev-ans-6">
+            Do we own the full source code and intellectual property?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-webdev-ans-6" role="region" aria-labelledby="faq-webdev-btn-6">
+          <div>
+            <p>
+              100% Yes. Upon project completion and final milestone sign-off, all repository source code, design assets,
+              database schemas, and intellectual property rights are transferred unconditionally to your organization
+              with zero recurring proprietary vendor fees.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Have questions about your project scope, architecture, or timeline?</p>
+      <a href="/contact-us" class="cta">
+        Talk to Our Senior Engineers
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- END: Canonical FAQ Section -->
+
+    <!-- ==========================================
+       WEB ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
+       ========================================== -->
+  <ServiceVideoShowcase
+    id="web-video-showcase"
+    eyebrow="Web Architecture In Action"
+    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Sovereign Web Platforms</span>'
+    description="High-performance React & Next.js architecture, robust security, and cloud scalability."
+    poster="/assets/posters/web_architecture.jpg"
+    videoSrc="/assets/Salowtech_Promo_Video_v2.mp4"
+    fallbackVideoSrc="/assets/SalowTech_video1.mp4"
+  />
+
+  <!-- BEGIN: CTA Section (Choose SalowTech) -->
+
+  <section class="cta-wrap" id="cta-section">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Choose SalowTech.
+          <br />
+          Accelerate business growth.
+        </h2>
+        <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+          Start Your Journey &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Custom AI solutions for your business
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Fast setup and delivery
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Dedicated support after launch
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: CTA Section -->
+
+  <!-- BEGIN: Footer Section -->
+</Layout>

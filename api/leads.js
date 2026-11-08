@@ -1,24 +1,96 @@
-const { verifyRecaptcha } = require('../js/recaptcha-verify');
-const crm = require('../js/crm-backend');
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const { verifyRecaptcha } = require('../tools/recaptcha-verify.js');
+const crm = require('../tools/crm-backend.js');
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://anxehjlbdpzxthpmacjt.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || 'sb_secret_Gwl1XD7zMAnbc8HeM3jpSA_Ark4zJll';
+const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const ADMIN_TOKEN = process.env.CRM_ADMIN_TOKEN || process.env.WEBHOOK_VERIFY_TOKEN || 'salowtech_crm_token_2026';
 
-function setCorsHeaders(res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, apikey');
+// In-memory sliding window rate limiter
+const rateLimitMap = new Map();
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const MAX_REQUESTS_PER_WINDOW = 10;
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip) || { count: 0, firstSeen: now };
+  if (now - record.firstSeen > RATE_LIMIT_WINDOW_MS) {
+    record.count = 1;
+    record.firstSeen = now;
+    rateLimitMap.set(ip, record);
+    return true;
+  }
+  if (record.count >= MAX_REQUESTS_PER_WINDOW) {
+    return false;
+  }
+  record.count += 1;
+  rateLimitMap.set(ip, record);
+  return true;
 }
 
-module.exports = async function handler(req, res) {
-  setCorsHeaders(res);
+function setCorsHeaders(req, res) {
+  const origin = req.headers.origin || '';
+  const allowedOrigins = ['https://salowtech.com', 'https://www.salowtech.com'];
+  if (allowedOrigins.includes(origin) || (process.env.NODE_ENV !== 'production' && origin.startsWith('http://localhost:'))) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://salowtech.com');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Admin-Token, apikey');
+  res.setHeader('Access-Control-Max-Age', '86400');
+}
+
+function verifyAdminAuth(req) {
+  const authHeader = req.headers.authorization || '';
+  const tokenHeader = req.headers['x-admin-token'] || '';
+  const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : tokenHeader.trim();
+
+  // SEC-FIX: Do NOT rely on req.headers.host for localhost bypass (prevents Host Header Injection).
+  // In development, only allow unauthenticated access if explicitly in non-production AND local loopback IP.
+  const remoteIp = (req.socket && req.socket.remoteAddress) || '';
+  const isLocalDev = process.env.NODE_ENV === 'development' && (remoteIp === '127.0.0.1' || remoteIp === '::1');
+  if (isLocalDev && !ADMIN_TOKEN) {
+    return true;
+  }
+
+  // Enforce secure token match
+  return Boolean(ADMIN_TOKEN && token && token === ADMIN_TOKEN);
+}
+
+function sanitizeText(str, maxLength = 255) {
+  if (typeof str !== 'string') return '';
+  return str.replace(/[<>]/g, '').trim().slice(0, maxLength);
+}
+
+function isValidPhone(phone) {
+  if (!phone || typeof phone !== 'string') return false;
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length < 10 || digits.length > 15) return false;
+  if (/^(\d)\1+$/.test(digits)) return false; // Reject repeated digits like 0000000000
+  return true;
+}
+
+function isValidEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  return regex.test(email) && email.length <= 100;
+}
+
+export default async function handler(req, res) {
+  setCorsHeaders(req, res);
 
   if (req.method === 'OPTIONS') {
     return res.status(204).end();
   }
 
-  // 1. GET /api/leads
+  // 1. GET /api/leads — Protected Admin Endpoint
   if (req.method === 'GET') {
+    if (!verifyAdminAuth(req)) {
+      return res.status(401).json({ error: 'Unauthorized: Administrative access token required' });
+    }
+
     try {
       if (SUPABASE_KEY) {
         const resp = await fetch(`${SUPABASE_URL}/rest/v1/leads?select=*&order=created_at.desc`, {
@@ -78,32 +150,66 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  // 2. POST /api/leads - Create new lead
+  // 2. POST /api/leads — Public Intake with Anti-Spam & Rate Limiting
   if (req.method === 'POST') {
+    const clientIp = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1').split(',')[0].trim();
+
+    if (!checkRateLimit(clientIp)) {
+      return res.status(429).json({ error: 'Too many requests. Please wait a few minutes before submitting another inquiry.' });
+    }
+
     try {
-      const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-      if (!data || !data.name || !data.phone) {
-        return res.status(400).json({ error: 'Name and Phone are required' });
+      const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body || {};
+
+      // Honeypot Trap Defense: Silently drop bot submissions
+      const honeypot = data._gotcha || data.website_hp || data.company_url || data.bot_field;
+      if (honeypot && String(honeypot).trim().length > 0) {
+        return res.status(200).json({ success: true, message: 'Inquiry received' });
+      }
+
+      // Input Validation
+      const rawName = sanitizeText(data.name, 100);
+      const rawPhone = String(data.phone || '').trim();
+      const rawEmail = String(data.email || '').trim().toLowerCase();
+      const rawMessage = sanitizeText(data.message, 2000);
+      const rawService = sanitizeText(data.service, 100) || 'Enterprise Consultation';
+      const rawSource = sanitizeText(data.sourcePage || data.source_page, 100) || 'website';
+
+      if (!rawName || rawName.length < 2) {
+        return res.status(400).json({ error: 'Valid Name is required (minimum 2 characters)' });
+      }
+      if (!isValidPhone(rawPhone)) {
+        return res.status(400).json({ error: 'Valid Phone Number is required (10-15 digits)' });
+      }
+      if (rawEmail && !isValidEmail(rawEmail)) {
+        return res.status(400).json({ error: 'Valid Email Address format is required' });
       }
 
       let recaptchaVerified = true;
       let recaptchaScore = 0.9;
       if (data.recaptchaToken) {
         try {
-          const clientIp = (req.headers['x-forwarded-for'] || '').split(',')[0].trim();
           const verification = await verifyRecaptcha(data.recaptchaToken, clientIp);
           recaptchaVerified = verification.verified;
           recaptchaScore = verification.score;
         } catch (_) {}
       }
 
-      data.recaptchaVerified = recaptchaVerified;
-      data.recaptchaScore = recaptchaScore;
+      const payload = {
+        name: rawName,
+        phone: rawPhone,
+        email: rawEmail,
+        message: rawMessage,
+        service: rawService,
+        sourcePage: rawSource,
+        recaptchaVerified,
+        recaptchaScore
+      };
 
-      const localResult = crm.createLead(data);
+      const localResult = crm.createLead(payload);
       const lead = localResult.lead;
 
-      // Write to Supabase table 'leads'
+      // Write to Supabase securely via Service Role Key
       if (SUPABASE_KEY) {
         try {
           const supabasePayload = {
@@ -153,23 +259,28 @@ module.exports = async function handler(req, res) {
     }
   }
 
-  // 3. PATCH /api/leads - Update lead
+  // 3. PATCH /api/leads — Protected Admin Endpoint
   if (req.method === 'PATCH') {
+    if (!verifyAdminAuth(req)) {
+      return res.status(401).json({ error: 'Unauthorized: Administrative access token required' });
+    }
+
     try {
       const data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
-      const leadId = req.query.id || data.id;
-      if (!leadId) {
-        return res.status(400).json({ error: 'Lead ID required' });
+      const rawId = req.query.id || data.id;
+      if (!rawId || !/^[a-zA-Z0-9_-]+$/.test(rawId)) {
+        return res.status(400).json({ error: 'Valid Lead ID required' });
       }
+
+      const leadId = String(rawId).trim();
 
       if (SUPABASE_KEY) {
         const patchData = {};
-        if (data.status) patchData.status = data.status;
-        if (data.name) patchData.name = data.name;
-        if (data.phone) patchData.phone = data.phone;
-        if (data.email) patchData.email = data.email;
+        if (data.status) patchData.status = sanitizeText(data.status, 50);
+        if (data.name) patchData.name = sanitizeText(data.name, 100);
+        if (data.phone && isValidPhone(data.phone)) patchData.phone = String(data.phone).trim();
+        if (data.email && isValidEmail(data.email)) patchData.email = String(data.email).trim().toLowerCase();
         if (data.note) {
-          // Fetch existing notes first or update array
           try {
             const getRes = await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${encodeURIComponent(leadId)}&select=notes`, {
               headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
@@ -177,7 +288,7 @@ module.exports = async function handler(req, res) {
             if (getRes.ok) {
               const rows = await getRes.json();
               const existingNotes = (rows && rows[0] && rows[0].notes) || [];
-              existingNotes.push({ date: new Date().toISOString(), text: data.note.trim() });
+              existingNotes.push({ date: new Date().toISOString(), text: sanitizeText(data.note, 500) });
               patchData.notes = existingNotes;
             }
           } catch (_) {}
@@ -201,13 +312,19 @@ module.exports = async function handler(req, res) {
     }
   }
 
-  // 4. DELETE /api/leads - Delete lead
+  // 4. DELETE /api/leads — Protected Admin Endpoint
   if (req.method === 'DELETE') {
+    if (!verifyAdminAuth(req)) {
+      return res.status(401).json({ error: 'Unauthorized: Administrative access token required' });
+    }
+
     try {
-      const leadId = req.query.id;
-      if (!leadId) {
-        return res.status(400).json({ error: 'Lead ID required' });
+      const rawId = req.query.id;
+      if (!rawId || !/^[a-zA-Z0-9_-]+$/.test(rawId)) {
+        return res.status(400).json({ error: 'Valid Lead ID required' });
       }
+
+      const leadId = String(rawId).trim();
 
       if (SUPABASE_KEY) {
         await fetch(`${SUPABASE_URL}/rest/v1/leads?id=eq.${encodeURIComponent(leadId)}`, {
@@ -227,4 +344,6 @@ module.exports = async function handler(req, res) {
   }
 
   return res.status(405).json({ error: 'Method Not Allowed' });
-};
+}
+
+export { handler };

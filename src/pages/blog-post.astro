@@ -1,0 +1,39 @@
+---
+// Redirect stub for legacy blog-post.html URLs
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting to Salowtech Blog...</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://salowtech.com/blog" />
+    <script is:inline>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("id");
+        if (id) {
+          window.location.replace("/blog/" + id);
+        } else {
+          window.location.replace("/blog");
+        }
+      })();
+    </script>
+    <meta http-equiv="refresh" content="0; url=/blog" />
+  </head>
+  <body style="font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background-color: #FAF7F0;">
+    <div style="text-align: center; padding: 20px;">
+      <h1 style="font-size: 18px; color: #5C2017; font-weight: 600; margin: 0 0 8px 0;">
+        Redirecting to Salowtech Blog...
+      </h1>
+      <p style="font-size: 13px; color: #78716C; margin: 0;">
+        If you are not redirected automatically,{" "}
+        <a href="/blog" style="color: #7D3024; text-decoration: underline;">
+          click here
+        </a>
+        .
+      </p>
+    </div>
+  </body>
+</html>

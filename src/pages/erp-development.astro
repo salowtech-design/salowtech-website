@@ -1,0 +1,1339 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import mascotExplaining from "../assets/mascot_explaining.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getServiceSchema } from "../data/schema";
+
+const seo = pagesSEO.erpDevelopment;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "custom ERP software development India, enterprise ERP software solutions, manufacturing ERP software, multi-branch ERP system, GST compliant ERP India, cloud ERP software company, inventory supply chain management software";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "bg-cream-200 text-slate-800 font-sans antialiased selection:bg-maroon selection:text-white";
+const showChatbot = true;
+const schemaJson = getServiceSchema({
+  serviceKey: "erp-development",
+  serviceName: seo.title,
+  serviceType: "Enterprise Resource Planning Software",
+  description: seo.description,
+  path: seo.canonicalPath,
+  breadcrumbTitle: "ERP Development"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <Breadcrumb currentPage="ERP Development" />
+
+  <!-- BEGIN: HeroSection -->
+  <section class="relative pt-28 sm:pt-36 pb-16 lg:pt-36 lg:pb-24 overflow-hidden" data-purpose="hero-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <!-- Left Column: Value Proposition & Bullet Points -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <!-- Main Hero Headline: Compact & stylish -->
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-4">
+            Synchronize Operations with{" "}
+            <span class="font-serif italic font-bold text-maroon block sm:inline">Modern ERP Solutions</span>
+          </h1>
+
+          <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
+            <p class="font-semibold text-neutral-900 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-maroon"></span>
+              <span>Quick Overview:</span>
+            </p>
+            <p>
+              Salowtech Custom ERP Development builds unified enterprise software to streamline supply chain, inventory, finance, and cross-departmental operations. Built for growing manufacturers, distributors, and service enterprises wanting zero per-seat licensing fees, total data sovereignty, and custom workflow automation.
+            </p>
+          </div>
+
+          <!-- 4 Value Bullets -->
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Unified Supply Chain, Finance &amp; Inventory Management
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Automated Cross-Departmental Workflows &amp; Real-Time Sync
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Seamless Cloud, Legacy &amp; Third-Party API Integrations
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Role-Based Access Controls &amp; Bank-Grade Security
+              </span>
+            </li>
+          </ul>
+          <!-- Dual Pill Button -->
+          <div class="flex items-center">
+            <div class="inline-flex rounded-full p-1 bg-maroon text-white shadow-lg shadow-maroon/25">
+              <a
+                class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase hover:bg-maroon-dark transition-colors cursor-pointer"
+                href="/contact-us"
+              >
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Lead Capture Card (Exact Reference Style) -->
+        <div class="lg:col-span-5" id="lead-form">
+          <div class="bg-white rounded-2xl shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] p-6 sm:p-7 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                <p class="text-[11px] text-stone-500 mt-0.5">ERP roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span class="w-7 h-7 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-xs border border-[#FFE0CC] shadow-xs">
+                ⚡
+              </span>
+            </div>
+            <form class="space-y-2.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
+              <div>
+                <label class="sr-only" for="erp-name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="erp-name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="erp-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="erp-phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="erp-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="erp-email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="erp-message">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="erp-message"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="2"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span>100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-800">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn-salow-submit" type="submit">
+                <span class="btn-salow-logo-mark">
+                  <Image
+                    src={salowtechLogo}
+                    width={24}
+                    height={24}
+                    alt="Salowtech"
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                  />
+                </span>
+                <span class="btn-salow-text">SUBMIT REQUEST</span>
+                <span class="btn-salow-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: BrandPropositionSection -->
+  <section class="py-14 sm:py-16 bg-cream-100 border-y border-cream-300" data-purpose="brand-proposition">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon/10 border border-maroon/20 w-fit mx-auto mb-3"></div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug mb-4">
+        From Siloed Data to <span class="font-serif italic font-bold text-maroon">Unified Enterprise Intelligence</span>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-7">
+        At Salowtech, we architect tailored ERP platforms that connect finance, supply chain, warehouse, and human
+        resources into one resilient ecosystem.
+      </p>
+      <div>
+        <a
+          class="inline-flex items-center gap-2 px-7 py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide text-white bg-maroon hover:bg-maroon-dark shadow-md hover:shadow-lg transition-all duration-200"
+          href="/contact-us"
+        >
+          Get Free ERP Consultation <span class="">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END: BrandPropositionSection -->
+
+  <!-- BEGIN: SmartErpSolutionsSection (Exact Reference Tiered Design) -->
+  <section class="py-16 lg:py-24" data-purpose="smart-erp-solutions-grid" id="solutions">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header Matching Reference -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight mb-3">
+          Everything you need to operate, automate, and scale
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          Unified operations. Zero-latency telemetry. Engineered for industrial enterprise scale.
+        </p>
+      </div>
+
+      <!-- Tier 1: Financial & Supply Chain Core -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">1</span>
+          <span class="tier-title">Financial &amp; Supply Chain Core</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 1 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Financial &amp; Accounting ERP
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Real-time multi-currency general ledgers, automated bank reconciliation, GST e-invoicing, and
+                  audit-ready P&amp;L statements.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#D97706] transition-colors">
+                  Supply Chain &amp; Logistics Control
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  End-to-end freight dispatching, GPS route monitoring, carrier contract rate engines, and automated
+                  digital proof of delivery (e-POD).
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 2: Operations & Warehouse Automation -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">2</span>
+          <span class="tier-title">Operations &amp; Warehouse Automation</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 3 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF1F0] border border-[#F3D5D3] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Inventory &amp; Warehouse Automation
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Multi-warehouse inventory routing, barcode/RFID scanning, batch expiry tracking, and automated min-max
+                  reordering triggers.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#DCFCE7] text-[#059669]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#059669] transition-colors">
+                  Manufacturing &amp; Production Scheduling
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Bill of materials (BOM), MRP II scheduling, shop-floor work orders, machine downtime alerts, and
+                  quality control checkpoints.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 3: Enterprise Ecosystem & Integration -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">3</span>
+          <span class="tier-title">Enterprise Ecosystem &amp; Integration</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Card 5 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F5F2EB] border border-[#E2D7CD] text-[#5C2017]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#5C2017] transition-colors">
+                  HRMS &amp; Payroll Integration
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Biometric attendance logging, 1-click salary disbursals, statutory PF/ESIC compliance, and employee
+                  self-service portals.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 6 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  B2B Vendor &amp; Portals
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Role-based partner extranets with custom price books, credit limits, multi-tier purchase approvals,
+                  and punchout catalogs.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 7 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#CCFBF1] text-[#0F766E]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#0F766E] transition-colors">
+                  Multi-Branch Sync
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Zero-latency synchronization across distributed factories, warehouses, and retail outlets with offline
+                  resilient queueing.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 8 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                  <path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#D97706] transition-colors">
+                  ERP Modernization
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Safe migration from legacy SAP/Tally monoliths to modern modular cloud microservices with zero
+                  operational downtime.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SmartErpSolutionsSection -->
+
+  <!-- BEGIN: VideoArchitectureSection -->
+  <section class="py-16 lg:py-20" data-purpose="video-placeholder-section" id="architecture">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon/10 border border-maroon/20 w-fit mx-auto mb-2"></div>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Watch How Salowtech Engineers High-Performance ERPs
+        </h2>
+      </div>
+      <!-- Placeholder Video Container -->
+      <div
+        class="bg-slate-950 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video flex flex-col justify-between p-4 sm:p-6"
+        data-purpose="video-player-container"
+      >
+        <!-- Centered Glowing Play Button -->
+        <div class="flex flex-col items-center justify-center my-auto z-10">
+          <button
+            aria-label="Play ERP Architecture Video"
+            class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-maroon/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-maroon transition-transform duration-300 ring-8 ring-maroon/20 cursor-pointer"
+            type="button"
+          >
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-current" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Video Bottom Player Bar (Mock Controls) -->
+        <div class="z-10 space-y-2">
+          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-maroon h-full w-1/3 rounded-full"></div>
+          </div>
+        </div>
+        <!-- Subtle Gradient Backdrop -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/80 pointer-events-none"></div>
+      </div>
+    </div>
+  </section>
+  <!-- END: VideoArchitectureSection -->
+
+  <!-- BEGIN: Connected Circuit Integration Hub (Exact Reference Design Match) -->
+  <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">
+        + REAL-TIME ENTERPRISE TRANSMISSION
+      </span>
+      <h2
+        id="transmission-title"
+        class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
+      >
+        The Sovereign ERP Transmission Nerve Center
+      </h2>
+      <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        How our unified ledger, automated factory floor MES, and real-time supply chain telematics synchronize into a
+        zero-latency enterprise core.
+      </p>
+    </div>
+
+    <!-- Circuit Trace Diagram Stage -->
+    <!-- Circuit Trace Diagram Stage (Pure Vector SVG Architecture) -->
+    <div class="circuit-hub-container">
+      <div class="circuit-canvas-wrap">
+        <!-- Glowing Ambient Aura behind Center Hub -->
+        <div class="circuit-center-aura" aria-hidden="true"></div>
+
+        <svg
+          class="circuit-svg-stage w-full h-auto"
+          viewBox="0 0 1024 430"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="erp-glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="erp-glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="erp-glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="erp-glow-green" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="erp-glow-coral" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="erp-node-shadow" x="-10%" y="-15%" width="125%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(45, 38, 32, 0.07)" />
+            </filter>
+            <filter id="erp-center-shadow" x="-20%" y="-20%" width="145%" height="145%">
+              <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(125, 48, 36, 0.28)" />
+            </filter>
+          </defs>
+
+          <!-- Circuit Bus Traces (Orthogonal & 45-degree chamfered PCB paths) -->
+          <g stroke="#E4DBD2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trace 1: Center to Upper-Left Node 1 & Far Node 3 -->
+            <path d="M 462 195 L 360 195 L 305 140 L 255 140" />
+            <path d="M 105 140 L 80 140 L 55 95 L 25 95" />
+            <!-- Parallel trace with amber signal pulse -->
+            <path d="M 462 205 L 370 205 L 320 155 L 255 155" />
+            <!-- Trace 2: Center to Top-Center Node 2 -->
+            <path d="M 485 160 L 485 130 L 445 85 L 420 85" />
+            <!-- Trace 4: Center to Lower-Left Node 4 & Edge -->
+            <path d="M 462 225 L 380 225 L 325 295 L 265 295" />
+            <path d="M 105 295 L 80 295 L 45 350 L 15 350" />
+            <!-- Trace: Bottom Center Stem -->
+            <path d="M 512 265 L 512 325 L 475 375 L 475 420" />
+            <!-- Trace 5: Center to Top-Right Node 5 -->
+            <path d="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85" />
+            <path d="M 915 85 L 945 85 L 970 45 L 995 45" />
+            <!-- Trace 6: Center to Mid-Right Node 6 & Far Node 7 -->
+            <path d="M 562 210 L 745 210" />
+            <path d="M 905 210 L 925 210" />
+            <!-- Trace 8: Center to Lower-Right Node 8 -->
+            <path d="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350" />
+            <path d="M 730 305 L 755 350 L 755 420" />
+          </g>
+
+          <!-- Animated Signal Pulses (Gliding glowing packets) -->
+          <!-- Gold pulse on Upper-Left path -->
+          <circle r="3.5" fill="#F59E0B" filter="url(#erp-glow-gold)">
+            <animateMotion
+              dur="4.2s"
+              repeatCount="indefinite"
+              path="M 462 195 L 360 195 L 305 140 L 255 140 L 105 140 L 80 140 L 55 95 L 25 95"
+            />
+          </circle>
+          <!-- Amber pulse on parallel trace -->
+          <circle r="3" fill="#FBBF24" filter="url(#erp-glow-gold)">
+            <animateMotion dur="3.6s" repeatCount="indefinite" path="M 462 205 L 370 205 L 320 155 L 255 155" />
+          </circle>
+          <!-- Warm Amber pulse on Top-Right path -->
+          <circle r="3.5" fill="#D97706" filter="url(#erp-glow-gold)">
+            <animateMotion
+              dur="3.8s"
+              repeatCount="indefinite"
+              path="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85 L 915 85 L 945 85 L 970 45 L 995 45"
+            />
+          </circle>
+          <!-- Warm Clay pulse on Center-Right path -->
+          <circle r="3.5" fill="#7D3024" filter="url(#erp-glow-gold)">
+            <animateMotion dur="4.4s" repeatCount="indefinite" path="M 562 210 L 745 210 L 905 210 L 925 210" />
+          </circle>
+          <!-- Green pulse on Lower-Right path -->
+          <circle r="3.5" fill="#10B981" filter="url(#erp-glow-green)">
+            <animateMotion
+              dur="4.6s"
+              repeatCount="indefinite"
+              path="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350"
+            />
+          </circle>
+          <!-- Warm Terracotta pulse on Lower-Left path -->
+          <circle r="3.5" fill="#C2410C" filter="url(#erp-glow-coral)">
+            <animateMotion
+              dur="4.1s"
+              repeatCount="indefinite"
+              path="M 462 225 L 380 225 L 325 295 L 265 295 L 105 295 L 80 295 L 45 350 L 15 350"
+            />
+          </circle>
+
+          <!-- Golden Terminal Endpoint Dot at (25, 95) -->
+          <circle cx="25" cy="95" r="5" fill="#F59E0B" filter="url(#erp-glow-gold)" />
+          <circle cx="25" cy="95" r="8" stroke="#F59E0B" stroke-width="1" opacity="0.5">
+            <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+
+          <!-- CENTER HUB CARD -->
+          <g filter="url(#erp-center-shadow)" class="cursor-pointer group">
+            <rect x="452" y="150" width="120" height="120" rx="26" fill="#FFFFFF" stroke="#7D3024" stroke-width="1.5" />
+            <rect x="456" y="154" width="112" height="112" rx="22" fill="#FFFFFF" />
+
+            <!-- Official Salowtech Logo -->
+            <image
+              href="/assets/salowtech_logo.png"
+              xlink:href="/assets/salowtech_logo.png"
+              x="488"
+              y="162"
+              width="48"
+              height="48"
+              preserveAspectRatio="xMidYMid meet"
+            />
+
+            <!-- Brand Typography -->
+            <text
+              x="512"
+              y="226"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="800"
+              font-size="11"
+              fill="#171513"
+              letter-spacing="0.05em"
+            >
+              SALOWTECH
+            </text>
+            <text
+              x="512"
+              y="241"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="700"
+              font-size="8.5"
+              fill="#7D3024"
+              letter-spacing="0.08em"
+            >
+              ERP CORE
+            </text>
+            <text
+              x="512"
+              y="253"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="600"
+              font-size="7"
+              fill="#78716C"
+            >
+              ENTERPRISE NERVE CENTER
+            </text>
+          </g>
+
+          <!-- PERIPHERAL DOMAIN-SPECIFIC COMPONENT CARDS -->
+          <!-- Node: Python & Odoo 18 -->
+          <g transform="translate(95, 113)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#5C2017" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M12 2C6.5 2 7 4.5 7 4.5v2.5h5v1H5s-3-.3-3 5.5c0 5.8 2.6 5.6 2.6 5.6h1.5v-2.2c0-2.4 2.1-2.3 2.1-2.3h5s2 .1 2-2V4.5S17.5 2 12 2zm-1.8 1.8c.6 0 1 .4 1 1s-.4 1-1 1-1-.4-1-1 .4-1 1-1z"
+                fill="#FFF"
+              />
+              <path
+                d="M12 22c5.5 0 5-2.5 5-2.5v-2.5h-5v-1h7s3 .3 3-5.5c0-5.8-2.6-5.6-2.6-5.6h-1.5v2.2c0 2.4-2.1 2.3-2.1 2.3h-5s-2-.1-2 2V19.5S6.5 22 12 22zm1.8-1.8c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1z"
+                fill="#FFF"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Python & Odoo 18
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Modular Business Core
+            </text>
+          </g>
+          <!-- Node: RFID Smart Inventory -->
+          <g transform="translate(245, 58)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="175"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#059669" />
+            <g transform="translate(15, 15)">
+              <rect x="3" y="3" width="18" height="18" rx="3" stroke="#FFF" stroke-width="2" fill="none" />
+              <line x1="3" y1="9" x2="21" y2="9" stroke="#FFF" stroke-width="1.5" />
+              <line x1="9" y1="21" x2="9" y2="9" stroke="#FFF" stroke-width="1.5" />
+              <circle cx="15" cy="15" r="2" fill="#FFF" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              RFID Smart Inventory
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Sub-Second Bin Tracking
+            </text>
+          </g>
+          <!-- Node: Kafka Event Stream -->
+          <g transform="translate(95, 268)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="170"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#E0234E" />
+            <g transform="translate(15, 15)">
+              <circle cx="6" cy="12" r="3" fill="#FFF" />
+              <circle cx="18" cy="6" r="3" fill="#FFF" />
+              <circle cx="18" cy="18" r="3" fill="#FFF" />
+              <line x1="9" y1="11" x2="15" y2="7" stroke="#FFF" stroke-width="2" />
+              <line x1="9" y1="13" x2="15" y2="17" stroke="#FFF" stroke-width="2" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Kafka Event Stream
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              High-Throughput Queue
+            </text>
+          </g>
+          <!-- Node: Timescale & PG Vault -->
+          <g transform="translate(755, 58)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <ellipse cx="12" cy="6" rx="9" ry="3" fill="#FFF" />
+              <path d="M3 6v6c0 1.7 4 3 9 3s9-1.3 9-3V6" stroke="#FFF" stroke-width="2" fill="none" />
+              <path d="M3 12v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" stroke="#FFF" stroke-width="2" fill="none" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Timescale & PG Vault
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Double-Entry Ledger
+            </text>
+          </g>
+          <!-- Node: Multi-Branch Sync -->
+          <g transform="translate(745, 183)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M19.4 15a5 5 0 0 0-4-7.8A6.9 6.9 0 0 0 2 12c0 3.9 3.1 7 7 7h10a4 4 0 0 0 .4-4z"
+                stroke="#FFF"
+                stroke-width="2"
+                fill="none"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Multi-Branch Sync
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Zero-Latency Telemetry
+            </text>
+          </g>
+          <!-- Node: GST E-Way API -->
+          <g transform="translate(915, 183)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="100"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"
+                stroke="#FFF"
+                stroke-width="2"
+                fill="none"
+              />
+              <polyline points="14,2 14,8 20,8" stroke="#FFF" stroke-width="2" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              GST E-Way API
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              NIC Portal Auto Sync
+            </text>
+          </g>
+          <!-- Node: Enterprise RBAC -->
+          <g transform="translate(765, 323)" filter="url(#erp-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="165"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#1E293B" />
+            <g transform="translate(15, 15)">
+              <rect x="3" y="11" width="18" height="11" rx="2" stroke="#FFF" stroke-width="2" fill="none" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#FFF" stroke-width="2" fill="none" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Enterprise RBAC
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Immutable Audit Core
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <!-- END: Connected Circuit Integration Hub -->
+
+  <!-- BEGIN: Canonical FAQ Section (Exact Match to Home Page #faq-section) -->
+
+  <!-- BEGIN: SalowTech Interactive Mascot Service Guide -->
+  <section class="py-12 sm:py-16 relative overflow-hidden" data-purpose="mascot-service-guide">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left: 3D Mascot Facing Right Towards Text in Website Background Color -->
+        <div class="md:col-span-4 flex justify-center md:justify-end">
+          <div class="w-36 sm:w-44 lg:w-52 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            <Image
+              src={mascotExplaining}
+              alt="SalowTech Engineering Mascot"
+              class="w-full h-auto object-contain filter drop-shadow-[0_12px_24px_rgba(125, 48, 36,0.22)]"
+              width={240}
+              height={240}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={92}
+            />
+          </div>
+        </div>
+
+        <!-- Right: Editorial Enterprise Architecture Text -->
+        <div class="md:col-span-8 text-center md:text-left">
+          <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#7D3024] font-sans mb-2">
+            ENTERPRISE CORE
+          </span>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
+            Zero-Latency Cloud ERP Platforms
+          </h3>
+          <p class="text-base sm:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+            Unified real-time telemetry across multi-warehouse inventory, automated double-entry accounting, and supply
+            chain logistics with sub-second SQL queries.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTech Interactive Mascot Service Guide -->
+
+  <section class="faq" id="faq-section" aria-labelledby="faq-title">
+    <div class="head">
+      <span class="eyebrow">+ FAQ</span>
+      <h2 id="faq-title">
+        Enterprise ERP <em>FAQs</em>
+      </h2>
+    </div>
+
+    <div class="list">
+      <!-- FAQ 1 -->
+      <div class="q open">
+        <h3>
+          <button type="button" id="faq-erp-btn-1" aria-expanded="true" aria-controls="faq-erp-ans-1">
+            What modules are included in a custom Salowtech ERP system?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-1" role="region" aria-labelledby="faq-erp-btn-1">
+          <div>
+            <p>
+              Our modular ERP architecture can include Inventory & Warehouse Management, Procurement & Vendor Portals,
+              Production & Bill of Materials (BOM), Multi-Warehouse Logistics, Financial Accounting & GST/Tax Invoicing,
+              and Executive BI Analytics.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-erp-btn-2" aria-expanded="false" aria-controls="faq-erp-ans-2">
+            Can the ERP handle multi-branch, multi-warehouse, and multi-currency operations?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-2" role="region" aria-labelledby="faq-erp-btn-2">
+          <div>
+            <p>
+              Yes. Our enterprise engine supports distributed multi-plant topology, real-time inter-branch stock
+              transfers, automated currency conversions, and consolidated corporate balance sheets with granular
+              subsidiary reporting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-erp-btn-3" aria-expanded="false" aria-controls="faq-erp-ans-3">
+            How do you connect the ERP with factory floor IoT and barcode scanners?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-3" role="region" aria-labelledby="faq-erp-btn-3">
+          <div>
+            <p>
+              We provide native integrations for thermal barcode/QR printers, handheld RFID scanners, weighbridge
+              automation, and PLC/SCADA industrial controllers via MQTT and industrial IoT gateway protocols.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-erp-btn-4" aria-expanded="false" aria-controls="faq-erp-ans-4">
+            How do you guarantee statutory compliance and tax reporting?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-4" role="region" aria-labelledby="faq-erp-btn-4">
+          <div>
+            <p>
+              Our accounting modules generate automated e-invoices, e-way bills, GST returns (GSTR-1, GSTR-3B), TDS
+              reconciliation, and audit trails adhering to local statutory commercial laws and IFRS compliance
+              standards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-erp-btn-5" aria-expanded="false" aria-controls="faq-erp-ans-5">
+            What is the typical timeline and methodology for enterprise ERP implementation?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-5" role="region" aria-labelledby="faq-erp-btn-5">
+          <div>
+            <p>
+              We deploy ERPs using phased modular rollouts over 8 to 16 weeks. Critical modules (Inventory & Invoicing)
+              launch first to deliver immediate operational ROI, followed by manufacturing automation and advanced
+              executive reporting.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-erp-btn-6" aria-expanded="false" aria-controls="faq-erp-ans-6">
+            What disaster recovery and backup safeguards are built in?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-erp-ans-6" role="region" aria-labelledby="faq-erp-btn-6">
+          <div>
+            <p>
+              Every deployment includes automated hourly incremental snapshots, geo-redundant database replication,
+              point-in-time recovery (PITR), and 99.99% uptime SLAs with failover redundancy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Have questions about your project scope, architecture, or timeline?</p>
+      <a href="/contact-us" class="cta">
+        Talk to Our Senior Engineers
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- END: Canonical FAQ Section -->
+
+    <!-- ==========================================
+       ERP ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
+       ========================================== -->
+  <ServiceVideoShowcase
+    id="erp-video-showcase"
+    eyebrow="ERP Architecture In Action"
+    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Enterprise ERP Systems</span>'
+    description="Synchronizing multi-plant manufacturing, inventory, purchase, accounts, and human resources in one sovereign system."
+    poster="/assets/posters/video5.jpg"
+    videoSrc="/assets/SalowTech_video5.mp4"
+  />
+
+  <!-- BEGIN: CTA Section (Choose SalowTech - from 2nd screenshot) -->
+
+  <section class="cta-wrap" id="cta-section">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Choose SalowTech.
+          <br />
+          Accelerate business growth.
+        </h2>
+        <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+          Start Your Journey &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Custom AI solutions for your business
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Fast setup and delivery
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Dedicated support after launch
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: CTA Section -->
+
+  <!-- BEGIN: SiteFooter -->
+  <!-- BEGIN: Footer Section -->
+</Layout>

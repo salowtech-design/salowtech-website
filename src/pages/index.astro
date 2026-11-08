@@ -1,0 +1,2924 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import sketchWeb from "../assets/personas/sketch_web.png";
+import sketchMobile from "../assets/personas/sketch_mobile.png";
+import sketchCrm from "../assets/personas/sketch_crm.png";
+import sketchErp from "../assets/personas/sketch_erp.png";
+import sketchAi from "../assets/personas/sketch_ai.png";
+import mascot3d from "../assets/salowtech_mascot_3d.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import { siteConfig } from "../data/site";
+import { pagesSEO } from "../data/seo";
+import { getHomeSchema } from "../data/schema";
+
+const seo = pagesSEO.home;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "custom software development company India, enterprise ERP software development, custom CRM development, HRM payroll software India, native mobile app development, conversational AI voice assistant, enterprise software architecture, Surat, Bangalore";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "selection:bg-neutral-900 selection:text-white min-h-screen";
+const showChatbot = true;
+const schemaJson = getHomeSchema();
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <main id="spa-container" class="relative w-full">
+    <section class="hero" id="hero">
+      <video
+        class="hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/assets/clouds_hero_poster.jpg"
+        aria-hidden="true"
+        tabindex="-1"
+      >
+        <source src="/assets/clouds_hero_clean.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero__content">
+        <h1 class="sr-only">
+          Salowtech — Sovereign Enterprise Software Development Company. Your growth, our engineering. Your problem, our
+          solution. Built by real engineers — Salow Technologies.
+        </h1>
+        <div class="hero__title hero-cycler-container" aria-live="polite">
+          <!-- Cycle 1: Your growth, our engineering -->
+          <div class="hero-cycle-slide is-active" data-cycle-slide="0">
+            <span class="line">Your growth,</span>
+            <span class="line">
+              our <em>engineering.</em>
+            </span>
+          </div>
+          <!-- Cycle 2: Your problem, our solution -->
+          <div class="hero-cycle-slide" data-cycle-slide="1">
+            <span class="line">Your problem,</span>
+            <span class="line">
+              our <em>solution.</em>
+            </span>
+          </div>
+          <!-- Cycle 3: Built by real engineers — Salow Technologies with mascot -->
+          <div class="hero-cycle-slide" data-cycle-slide="2">
+            <span class="hero-line-lead">Built by real engineers &mdash;</span>
+            <span class="hero-line-brand">
+              <span>Salow Technologies</span>
+              <Image
+                src={mascot3d}
+                alt="Salow Technologies 3D mascot avatar"
+                class="hero-mascot-badge"
+                width={56}
+                height={56}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                format="webp"
+                quality={92}
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__curve" aria-hidden="true"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 pt-8 sm:pt-10 pb-8" id="tech-stack">
+      <div class="text-center mb-12">
+        <h2 class="tech-stack-title font-editorial text-4xl sm:text-5xl lg:text-6xl text-neutral-950 font-normal mt-2">
+          Built with world-class developer tools
+        </h2>
+      </div>
+
+      <!-- 24 Tools Grid seamlessly integrated without outer boxed border -->
+      <div class="w-full">
+        <div class="grid grid-cols-6 gap-2 sm:gap-4 md:gap-6 lg:gap-8 justify-items-center items-start">
+          <!-- 1. HTML -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+HTML"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of HTML"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              HTML
+            </span>
+          </a>
+
+          <!-- 2. CSS -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+CSS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of CSS"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              CSS
+            </span>
+          </a>
+
+          <!-- 3. JavaScript -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+JavaScript"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of JavaScript"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              JavaScript
+            </span>
+          </a>
+
+          <!-- 4. TypeScript -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+TypeScript"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of TypeScript"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              TypeScript
+            </span>
+          </a>
+
+          <!-- 5. React -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+React"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of React"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              React
+            </span>
+          </a>
+
+          <!-- 6. Next.js -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Next.js"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Next.js"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                alt="Next.js"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Next.js
+            </span>
+          </a>
+
+          <!-- 7. Node.js -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Node.js"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Node.js"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Node.js
+            </span>
+          </a>
+
+          <!-- 8. Express.js -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Express.js"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Express.js"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                alt="Express.js"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Express.js
+            </span>
+          </a>
+
+          <!-- 9. Python -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Python"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Python"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Python
+            </span>
+          </a>
+
+          <!-- 10. Java -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Java"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Java"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Java
+            </span>
+          </a>
+
+          <!-- 11. Git -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Git"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Git"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Git
+            </span>
+          </a>
+
+          <!-- 12. GitHub -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of GitHub"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                alt="GitHub"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              GitHub
+            </span>
+          </a>
+
+          <!-- 13. VS Code -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+VS+Code"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of VS Code"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                alt="VS Code"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              VS Code
+            </span>
+          </a>
+
+          <!-- 14. Figma -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Figma"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Figma"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                alt="Figma"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Figma
+            </span>
+          </a>
+
+          <!-- 15. Tailwind CSS -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Tailwind+CSS"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Tailwind CSS"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                alt="Tailwind CSS"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Tailwind CSS
+            </span>
+          </a>
+
+          <!-- 16. Bootstrap -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Bootstrap"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Bootstrap"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                alt="Bootstrap"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Bootstrap
+            </span>
+          </a>
+
+          <!-- 17. Docker -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Docker"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Docker"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+                alt="Docker"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Docker
+            </span>
+          </a>
+
+          <!-- 18. MongoDB -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+MongoDB"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of MongoDB"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                alt="MongoDB"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              MongoDB
+            </span>
+          </a>
+
+          <!-- 19. MySQL -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+MySQL"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of MySQL"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              MySQL
+            </span>
+          </a>
+
+          <!-- 20. Firebase -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Firebase"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Firebase"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
+                alt="Firebase"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Firebase
+            </span>
+          </a>
+
+          <!-- 21. Postman -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Postman"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Postman"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                alt="Postman"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Postman
+            </span>
+          </a>
+
+          <!-- 22. Sass -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Sass"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Sass"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+                alt="Sass"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Sass
+            </span>
+          </a>
+
+          <!-- 23. NPM -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+NPM"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of NPM"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
+                alt="NPM"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              NPM
+            </span>
+          </a>
+
+          <!-- 24. Yarn -->
+          <a
+            href="https://www.google.com/search?q=what+is+the+use+of+Yarn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col items-center group cursor-pointer no-underline text-inherit"
+            title="What is the use of Yarn"
+          >
+            <div class="w-11 h-11 xs:w-12 xs:h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white rounded-xl sm:rounded-2xl shadow-xs sm:shadow-md border border-neutral-100 flex items-center justify-center p-2 sm:p-3.5 lg:p-4 group-hover:scale-95 transition-transform">
+              <img
+                class="w-full h-full object-contain"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg"
+                alt="Yarn"
+                width="48"
+                height="48"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <span class="mt-1.5 sm:mt-2.5 lg:mt-3 text-[10px] sm:text-xs lg:text-sm font-semibold text-neutral-800 tracking-tight text-center leading-tight">
+              Yarn
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-full relative px-2.5 sm:px-4 lg:px-8 pt-4 pb-20" id="tilt-stage-wrapper">
+      <div id="platform" class="absolute -top-24"></div>
+
+      <!-- Integrated Platform Simulation: Edge-to-Edge Cinematic Canvas -->
+      <div class="w-full max-w-[1440px] mx-auto">
+        <div
+          class="tilt-card relative w-full rounded-3xl sm:rounded-[36px] lg:rounded-[44px] overflow-hidden h-[520px] sm:h-[620px] lg:h-[700px] flex items-center justify-center border border-[#E5DDD0]/80 shadow-[0_20px_60px_-15px_rgba(125, 48, 36,0.14),_0_8px_24px_-8px_rgba(43,35,26,0.04)]"
+          style="background: linear-gradient(180deg, #FFFFFF 0%, #FAF7F2 35%, #F5EFE4 100%);"
+        >
+          <!-- Warm Natural Ambient Light -->
+          <div
+            class="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,_rgba(255,255,255,0.9)_0%,_transparent_70%)]"
+            aria-hidden="true"
+          ></div>
+          <!-- Simulation Frame -->
+          <iframe
+            id="simulationIframe"
+            src="Salowtech_promo.html"
+            class="w-full h-full border-0 block bg-transparent pointer-events-none relative z-10"
+            title="Salowtech Platform Interactive Simulation"
+            loading="lazy"
+            allow="autoplay"
+            allowtransparency="true"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <div id="digital-solutions" class="relative -top-20 invisible pointer-events-none"></div>
+    <section class="sec" id="strat" aria-labelledby="st-title">
+      <div class="panel">
+        <div class="head">
+          <span class="eyebrow">From sovereign web development to enterprise automation</span>
+          <h2 id="st-title">
+            Smart Strategies For <em>Business Expansion</em>
+          </h2>
+          <svg class="mk" viewBox="0 0 260 16" preserveAspectRatio="none" aria-hidden="true">
+            <path pathLength="1" d="M4 10C60 3 130 4 170 8s60 2 86-3" />
+          </svg>
+        </div>
+
+        <div class="am-personas-content am-hide-mobile">
+          <div class="am-personas-content-wrapper">
+            <div class="hide w-embed">
+              <style>
+                /* TABS HEIGHT: every panel sits in the same grid cell, so the area is always as tall as the tallest
+                   tab and the content below never moves. Inactive panels are invisible, not clickable and skipped by
+                   screen readers. Webflow's fade-in on the new panel still works.
+                   opacity: 0 on the inactive panel matters: the Explore buttons (am-nav-btn) have "transition: all 500ms",
+                   which also animates visibility, so a button would stay visible for half a second after its tab closes.
+                   A parent's opacity can't be undone by its children, so the old button disappears at once. */
+                .am-personas-tabs-body {
+                  display: grid;
+                }
+                .am-personas-tabs-body > .am-personas-tabs-content-wrapper {
+                  display: block; /* overrides Webflow's display: none on inactive tabs */
+                  grid-area: 1 / 1; /* all panels in the same cell */
+                }
+                .am-personas-tabs-body > .am-personas-tabs-content-wrapper:not(.w--tab-active) {
+                  opacity: 0 !important;
+                  transition: none !important;
+                }
+                .am-personas-tabs-body > .am-personas-tabs-content-wrapper:not(.w--tab-active),
+                .am-personas-tabs-body > .am-personas-tabs-content-wrapper:not(.w--tab-active) * {
+                  visibility: hidden !important;
+                  pointer-events: none !important;
+                }
+
+                /* MOBILE CARDS: the gradient (a WebGL canvas) always sits IN FRONT of the illustration, like on desktop.
+                   Safari paints the canvas on top while the cards slide and used to drop it behind when the slide ended.
+                   Both get their own layer, and the gradient a higher z-index and a nearer 3D depth, so the order never changes. */
+                .am-pm__art {
+                  isolation: isolate;
+                  transform-style: preserve-3d;
+                }
+                .am-pm__img {
+                  position: absolute;
+                  z-index: 1;
+                  transform: translate3d(0, 0, 0);
+                }
+                .am-pm__beam {
+                  z-index: 2;
+                  transform: translate3d(0, 0, 1px);
+                }
+
+                /* SOVEREIGN LUXURY TABS INTEGRATION */
+                .am-personas-content {
+                  position: relative !important;
+                  max-width: 960px !important;
+                  margin: 0 auto !important;
+                  background: #ffffff !important;
+                  border: 1px solid rgba(17, 17, 17, 0.08) !important;
+                  border-radius: 16px !important;
+                  padding: 12px !important;
+                  box-shadow:
+                    0 1px 3px rgba(0, 0, 0, 0.02),
+                    0 20px 48px -18px rgba(40, 30, 20, 0.06) !important;
+                }
+
+                .am-personas-tabs-wrapper {
+                  gap: 0.75rem !important;
+                  margin-bottom: 0 !important;
+                }
+
+                .am-personas-tab {
+                  background: #f4efe6 !important;
+                  border: 1px solid rgba(125, 48, 36, 0.09) !important;
+                  border-radius: 18px !important;
+                  padding: 1rem 0.6rem 1rem !important;
+                  display: flex !important;
+                  flex-direction: column !important;
+                  align-items: center !important;
+                  justify-content: space-between !important;
+                  gap: 0.75rem !important;
+                  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                  overflow: hidden !important;
+                  position: relative !important;
+                  cursor: pointer !important;
+                }
+
+                .am-tab-header {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 6px;
+                  width: 100%;
+                  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+                  z-index: 3;
+                  position: relative;
+                }
+
+                .am-tab-num {
+                  font-family: "Instrument Serif", Georgia, serif;
+                  font-style: italic;
+                  font-size: 0.95rem;
+                  font-weight: 600;
+                  color: #7d3024;
+                  opacity: 0.6;
+                  transition: opacity 0.25s ease;
+                }
+
+                .am-tab-title {
+                  font-size: 0.88rem;
+                  font-weight: 600;
+                  letter-spacing: -0.01em;
+                  color: #55483d;
+                  transition: color 0.25s ease;
+                  white-space: nowrap;
+                }
+
+                .am-personas-tab:not(.w--current):hover {
+                  background: #ffffff !important;
+                  border-color: rgba(125, 48, 36, 0.28) !important;
+                  transform: translateY(-3px) !important;
+                  box-shadow: 0 10px 24px -4px rgba(125, 48, 36, 0.08) !important;
+                }
+
+                .am-personas-tab:not(.w--current):hover .am-tab-title {
+                  color: #1c1713 !important;
+                }
+
+                .am-personas-tab:not(.w--current):hover .am-tab-num {
+                  opacity: 0.9 !important;
+                }
+
+                .am-personas-tab:not(.w--current) .am-personas-gradient {
+                  opacity: 0 !important;
+                  display: none !important;
+                  visibility: hidden !important;
+                }
+
+                .am-personas-tab.w--current {
+                  background: #ffffff !important;
+                  border: 2px solid #7d3024 !important;
+                  border-radius: 18px !important;
+                  transform: translateY(-4px) !important;
+                  box-shadow:
+                    0 16px 36px -8px rgba(125, 48, 36, 0.16),
+                    0 2px 8px rgba(28, 23, 19, 0.04) !important;
+                }
+
+                .am-personas-tab.w--current .am-tab-title {
+                  color: #7d3024 !important;
+                  font-weight: 700 !important;
+                }
+
+                .am-personas-tab.w--current .am-tab-num {
+                  opacity: 1 !important;
+                  color: #7d3024 !important;
+                }
+
+                .am-personas-hero-illustration {
+                  height: 9.25rem !important;
+                  width: auto !important;
+                  max-width: 95% !important;
+                  object-fit: contain !important;
+                  filter: drop-shadow(0 8px 16px rgba(125, 48, 36, 0.08)) !important;
+                  transition:
+                    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                    filter 0.35s ease !important;
+                  position: relative !important;
+                  z-index: 2 !important;
+                }
+
+                .am-personas-tab:not(.w--current) .am-personas-hero-illustration {
+                  opacity: 0.88 !important;
+                  filter: drop-shadow(0 4px 10px rgba(28, 23, 19, 0.06)) grayscale(10%) !important;
+                }
+
+                .am-personas-tab.w--current .am-personas-hero-illustration {
+                  opacity: 1 !important;
+                  transform: scale(1.05) translateY(-2px) !important;
+                  filter: drop-shadow(0 12px 24px rgba(125, 48, 36, 0.14)) !important;
+                }
+
+                .am-personas-gradient,
+                .am-personas-gradient.is-sellers,
+                .am-personas-gradient.is-leaders,
+                .am-personas-gradient.is-founders,
+                .am-personas-gradient.is-revops,
+                .am-personas-gradient.is-marketers {
+                  position: absolute !important;
+                  inset: 0 !important;
+                  width: 100% !important;
+                  height: 100% !important;
+                  transform: none !important;
+                  pointer-events: none !important;
+                  z-index: 1 !important;
+                  opacity: 0;
+                  transition: opacity 0.3s ease;
+                }
+
+                .seller-canvas,
+                .leader-canvas,
+                .founder-canvas,
+                .revops-canvas,
+                .mkt-canvas {
+                  width: 100% !important;
+                  height: 100% !important;
+                  display: block !important;
+                }
+
+                .am-personas-tab.w--current .am-personas-gradient {
+                  opacity: 1 !important;
+                }
+
+                .am-personas-tabs-content-parent {
+                  padding: 2.25rem 2rem 2rem !important;
+                  background: transparent !important;
+                  border-radius: 0 !important;
+                  border: none !important;
+                  box-shadow: none !important;
+                }
+
+                .am-personas-tabs-content > .am-horizontal-divider {
+                  display: none !important;
+                }
+
+                .am-personas-tabs-title h3 {
+                  font-family: "Instrument Serif", Georgia, serif !important;
+                  font-size: 2.75rem !important;
+                  line-height: 1.15 !important;
+                  font-weight: 400 !important;
+                  color: #1c1713 !important;
+                  letter-spacing: -0.02em !important;
+                }
+
+                .am-personas-tabs-title h3 em {
+                  font-style: italic !important;
+                  color: #7d3024 !important;
+                }
+
+                .am-personas-tabs-content-text h4 {
+                  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+                  font-size: 1.15rem !important;
+                  font-weight: 700 !important;
+                  color: #1c1713 !important;
+                  line-height: 1.35 !important;
+                  letter-spacing: -0.01em !important;
+                }
+
+                .am-personas-tabs-content-text p {
+                  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+                  font-size: 0.95rem !important;
+                  color: rgba(28, 23, 19, 0.72) !important;
+                  line-height: 1.65 !important;
+                }
+
+                .am-nav-btn.is-secondary {
+                  display: inline-flex !important;
+                  align-items: center !important;
+                  gap: 8px !important;
+                  background: #7d3024 !important;
+                  color: #faf7f2 !important;
+                  border: 1.5px solid #7d3024 !important;
+                  border-radius: 9999px !important;
+                  padding: 12px 28px !important;
+                  font-family: "Plus Jakarta Sans", system-ui, sans-serif !important;
+                  font-size: 0.95rem !important;
+                  font-weight: 600 !important;
+                  text-decoration: none !important;
+                  box-shadow: 0 4px 14px rgba(125, 48, 36, 0.22) !important;
+                  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+                }
+
+                .am-nav-btn.is-secondary:hover {
+                  background: #5b1e14 !important;
+                  border-color: #5b1e14 !important;
+                  color: #ffffff !important;
+                  transform: translateY(-2px) !important;
+                  box-shadow: 0 8px 24px rgba(125, 48, 36, 0.32) !important;
+                }
+              </style>
+            </div>
+            <div
+              data-current="Tab 1"
+              data-easing="ease"
+              data-duration-in="300"
+              data-duration-out="100"
+              class="tabs-2 w-tabs"
+            >
+              <div class="am-personas-tabs-wrapper w-tab-menu" role="tablist">
+                <!-- TAB 1: WEB & PLATFORMS -->
+                <a
+                  data-w-tab="Tab 1"
+                  class="am-personas-tab is-sellers w-inline-block w-tab-link w--current"
+                  id="w-tabs-1-data-w-tab-0"
+                  href="#strat"
+                  role="tab"
+                  aria-controls="w-tabs-1-data-w-pane-0"
+                  aria-selected="true"
+                >
+                  <div class="am-tab-header">
+                    <span class="am-tab-num">01</span>
+                    <span class="am-tab-title">Web &amp; Platforms</span>
+                  </div>
+                  <div class="am-personas-gradient is-sellers">
+                    <div
+                      data-bg-color="transparent"
+                      data-color-1="240,75,15"
+                      data-color-2="238,226,212"
+                      data-color-3="255,145,40"
+                      class="am-personas-code w-embed"
+                    >
+                      <style>
+                        .seller-canvas {
+                          width: 100%;
+                          height: 100%;
+                          display: block;
+                          background-color: transparent;
+                          -webkit-mask-image: url(#seller-button-mask);
+                          mask-image: url(#seller-button-mask);
+                          -webkit-mask-size: contain;
+                          mask-size: contain;
+                          -webkit-mask-repeat: no-repeat;
+                          mask-repeat: no-repeat;
+                        }
+
+                        .seller-mask {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                      </style>
+                      <canvas
+                        class="seller-canvas"
+                        width="177"
+                        height="107"
+                        style="background-color: transparent; -webkit-mask-image: url(#seller-button-mask); mask-image: url(#seller-button-mask); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+                      ></canvas>
+                      <svg class="seller-mask" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <defs>
+                          <filter id="seller-blur-canvas" x="-10%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur id="seller-deviation" stdDeviation="4"></feGaussianBlur>
+                          </filter>
+                          <mask id="seller-button-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                            <path
+                              id="seller-dynamic-path"
+                              fill="white"
+                              filter="url(#seller-blur-canvas)"
+                              d="M110.5,99.84 L68,4.16 H161.5 Z"
+                            ></path>
+                          </mask>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <Image
+                    src={sketchWeb}
+                    alt="Web & Platforms Architectural Blueprint"
+                    width={560}
+                    height={520}
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                    class="am-personas-hero-illustration"
+                  />
+                </a>
+
+                <!-- TAB 2: MOBILE APPS -->
+                <a
+                  data-w-tab="Tab 2"
+                  class="am-personas-tab is-leaders w-inline-block w-tab-link"
+                  tabindex="-1"
+                  id="w-tabs-1-data-w-tab-1"
+                  href="#strat"
+                  role="tab"
+                  aria-controls="w-tabs-1-data-w-pane-1"
+                  aria-selected="false"
+                >
+                  <div class="am-tab-header">
+                    <span class="am-tab-num">02</span>
+                    <span class="am-tab-title">Mobile Apps</span>
+                  </div>
+                  <Image
+                    src={sketchMobile}
+                    alt="Mobile Apps Architectural Blueprint"
+                    width={560}
+                    height={520}
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                    class="am-personas-hero-illustration"
+                  />
+                  <div class="am-personas-gradient is-leaders">
+                    <div
+                      data-bg-color="transparent"
+                      data-color-1="255,45,120"
+                      data-color-2="238,226,212"
+                      data-color-3="255,110,170"
+                      class="am-personas-code w-embed"
+                    >
+                      <style>
+                        .leader-canvas {
+                          width: 100%;
+                          height: 100%;
+                          display: block;
+                          background-color: transparent;
+                          -webkit-mask-image: url(#leader-button-mask);
+                          mask-image: url(#leader-button-mask);
+                          -webkit-mask-size: contain;
+                          mask-size: contain;
+                          -webkit-mask-repeat: no-repeat;
+                          mask-repeat: no-repeat;
+                        }
+
+                        .leader-mask {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                      </style>
+                      <canvas
+                        class="leader-canvas"
+                        style="background-color: transparent; -webkit-mask-image: url(#leader-button-mask); mask-image: url(#leader-button-mask); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+                      ></canvas>
+                      <svg class="leader-mask" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <defs>
+                          <filter id="leader-blur-canvas" x="-10%" y="-10%" width="140%" height="140%">
+                            <feGaussianBlur id="leader-deviation" stdDeviation="4"></feGaussianBlur>
+                          </filter>
+                          <mask id="leader-button-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                            <path
+                              id="leader-dynamic-path"
+                              fill="white"
+                              filter="url(#leader-blur-canvas)"
+                              d="M110.5,95.68 L71.4,4.16 H161.5 Z"
+                            ></path>
+                          </mask>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- TAB 3: CRM & REVENUE -->
+                <a
+                  data-w-tab="Tab 3"
+                  class="am-personas-tab is-founders w-inline-block w-tab-link"
+                  id="w-tabs-1-data-w-tab-2"
+                  href="#strat"
+                  role="tab"
+                  aria-controls="w-tabs-1-data-w-pane-2"
+                  aria-selected="false"
+                  tabindex="-1"
+                >
+                  <div class="am-tab-header">
+                    <span class="am-tab-num">03</span>
+                    <span class="am-tab-title">CRM &amp; Revenue</span>
+                  </div>
+                  <div class="am-personas-gradient is-founders">
+                    <div
+                      data-bg-color="transparent"
+                      data-color-1="70,230,225"
+                      data-color-2="238,226,212"
+                      data-color-3="115,245,240"
+                      class="am-personas-code w-embed"
+                    >
+                      <style>
+                        .founder-canvas {
+                          width: 100%;
+                          height: 100%;
+                          display: block;
+                          background-color: transparent;
+                          -webkit-mask-image: url(#founder-button-mask);
+                          mask-image: url(#founder-button-mask);
+                          -webkit-mask-size: contain;
+                          mask-size: contain;
+                          -webkit-mask-repeat: no-repeat;
+                          mask-repeat: no-repeat;
+                        }
+
+                        .founder-mask {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                      </style>
+                      <canvas
+                        class="founder-canvas"
+                        style="background-color: transparent; -webkit-mask-image: url(#founder-button-mask); mask-image: url(#founder-button-mask); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+                      ></canvas>
+                      <svg class="founder-mask" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <defs>
+                          <filter id="founder-blur-canvas" x="-10%" y="-10%" width="140%" height="140%">
+                            <feGaussianBlur id="founder-deviation" stdDeviation="4"></feGaussianBlur>
+                          </filter>
+                          <mask id="founder-button-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                            <path
+                              id="founder-dynamic-path"
+                              fill="white"
+                              filter="url(#founder-blur-canvas)"
+                              d="M102,79.04 L81.6,4.16 H170 V93.6 Z"
+                            ></path>
+                          </mask>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                  <Image
+                    src={sketchCrm}
+                    alt="CRM & Revenue Architectural Blueprint"
+                    width={560}
+                    height={520}
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                    class="am-personas-hero-illustration"
+                  />
+                </a>
+
+                <!-- TAB 4: ENTERPRISE ERP -->
+                <a
+                  data-w-tab="Tab 4"
+                  class="am-personas-tab is-revops w-inline-block w-tab-link"
+                  tabindex="-1"
+                  id="w-tabs-1-data-w-tab-3"
+                  href="#strat"
+                  role="tab"
+                  aria-controls="w-tabs-1-data-w-pane-3"
+                  aria-selected="false"
+                >
+                  <div class="am-tab-header">
+                    <span class="am-tab-num">04</span>
+                    <span class="am-tab-title">Enterprise ERP</span>
+                  </div>
+                  <Image
+                    src={sketchErp}
+                    alt="Enterprise ERP Architectural Blueprint"
+                    width={560}
+                    height={520}
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                    class="am-personas-hero-illustration"
+                  />
+                  <div class="am-personas-gradient is-revops">
+                    <div
+                      data-bg-color="transparent"
+                      data-color-1="40,205,100"
+                      data-color-2="238,226,212"
+                      data-color-3="120,235,70"
+                      class="am-personas-code w-embed"
+                    >
+                      <style>
+                        .revops-canvas {
+                          width: 100%;
+                          height: 100%;
+                          display: block;
+                          background-color: transparent;
+                          -webkit-mask-image: url(#revops-button-mask);
+                          mask-image: url(#revops-button-mask);
+                          -webkit-mask-size: contain;
+                          mask-size: contain;
+                          -webkit-mask-repeat: no-repeat;
+                          mask-repeat: no-repeat;
+                        }
+
+                        .revops-mask {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                      </style>
+                      <canvas
+                        class="revops-canvas"
+                        style="background-color: transparent; -webkit-mask-image: url(#revops-button-mask); mask-image: url(#revops-button-mask); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+                      ></canvas>
+                      <svg class="revops-mask" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <defs>
+                          <filter id="revops-blur-canvas" x="-10%" y="-10%" width="140%" height="140%">
+                            <feGaussianBlur id="revops-deviation" stdDeviation="4"></feGaussianBlur>
+                          </filter>
+                          <mask id="revops-button-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                            <path
+                              id="revops-dynamic-path"
+                              fill="white"
+                              filter="url(#revops-blur-canvas)"
+                              d="M61.2,66.56 L17,4.16 H105.4 Z"
+                            ></path>
+                          </mask>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+
+                <!-- TAB 5: AI & VOICE AGENTS -->
+                <a
+                  data-w-tab="Tab 5"
+                  class="am-personas-tab is-marketers w-inline-block w-tab-link"
+                  id="w-tabs-1-data-w-tab-4"
+                  href="#strat"
+                  role="tab"
+                  aria-controls="w-tabs-1-data-w-pane-4"
+                  aria-selected="false"
+                  tabindex="-1"
+                >
+                  <div class="am-tab-header">
+                    <span class="am-tab-num">05</span>
+                    <span class="am-tab-title">AI &amp; Voice Agents</span>
+                  </div>
+                  <Image
+                    src={sketchAi}
+                    alt="AI & Voice Agents Architectural Blueprint"
+                    width={560}
+                    height={520}
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                    class="am-personas-hero-illustration"
+                  />
+                  <div class="am-personas-gradient is-marketers">
+                    <div
+                      data-bg-color="transparent"
+                      data-color-1="165,65,255"
+                      data-color-2="238,226,212"
+                      data-color-3="205,110,255"
+                      class="am-personas-code w-embed"
+                    >
+                      <style>
+                        .mkt-canvas {
+                          width: 100%;
+                          height: 100%;
+                          display: block;
+                          background-color: transparent;
+                          -webkit-mask-image: url(#mkt-button-mask);
+                          mask-image: url(#mkt-button-mask);
+                          -webkit-mask-size: contain;
+                          mask-size: contain;
+                          -webkit-mask-repeat: no-repeat;
+                          mask-repeat: no-repeat;
+                        }
+
+                        .mkt-mask {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                      </style>
+                      <canvas
+                        class="mkt-canvas"
+                        style="background-color: transparent; -webkit-mask-image: url(#mkt-button-mask); mask-image: url(#mkt-button-mask); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;"
+                      ></canvas>
+                      <svg class="mkt-mask" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+                        <defs>
+                          <filter id="mkt-blur-canvas" x="-10%" y="-10%" width="140%" height="140%">
+                            <feGaussianBlur id="mkt-deviation" stdDeviation="4"></feGaussianBlur>
+                          </filter>
+                          <mask id="mkt-button-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+                            <path
+                              id="mkt-dynamic-path"
+                              fill="white"
+                              filter="url(#mkt-blur-canvas)"
+                              d="M79.9,62.4 L88.4,8.32 H166.6 V93.6 Z"
+                            ></path>
+                          </mask>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="am-personas-tabs-body w-tab-content">
+                <div
+                  data-w-tab="Tab 1"
+                  class="am-personas-tabs-content-wrapper w-tab-pane w--tab-active"
+                  id="w-tabs-1-data-w-pane-0"
+                  role="tabpanel"
+                  aria-labelledby="w-tabs-1-data-w-tab-0"
+                  style="opacity: 1; transition: all, opacity 300ms;"
+                >
+                  <div class="am-personas-tabs-content">
+                    <div class="am-horizontal-divider am-hide-mobile"></div>
+                    <div class="am-personas-tabs-content-parent">
+                      <div class="am-personas-tabs-title">
+                        <h3
+                          class="am-heading-36 am-text-wrap-balance"
+                          aria-label="High-performance web platforms engineered for scale"
+                        >
+                          High-performance web platforms engineered for <em>scale</em>
+                        </h3>
+                        <a
+                          href="/web-development"
+                          class="am-nav-btn is-secondary w-button"
+                          aria-label="Explore Web Solutions"
+                        >
+                          Explore Web Solutions &rarr;
+                        </a>
+                      </div>
+                      <div class="am-personas-tabs-content-text max-width-370">
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Sub-second cold boot & 100/100 Core Web Vitals"
+                          >
+                            Sub-second cold boot &amp; 100/100 Core Web Vitals
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            We engineer bespoke web applications with zero bloated templates. Every route is
+                            pre-rendered for instant interaction, driving lower bounce rates and higher enterprise
+                            conversions.
+                          </p>
+                        </div>
+                        <div class="am-horizontal-divider"></div>
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Conversion-tuned enterprise user funnels"
+                          >
+                            Conversion-tuned enterprise user funnels
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Frictionless multi-step quote flows, interactive ROI calculators, and native WhatsApp
+                            routing that turn casual traffic into qualified sales meetings.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-w-tab="Tab 2"
+                  class="am-personas-tabs-content-wrapper w-tab-pane"
+                  id="w-tabs-1-data-w-pane-1"
+                  role="tabpanel"
+                  aria-labelledby="w-tabs-1-data-w-tab-1"
+                >
+                  <div class="am-personas-tabs-content">
+                    <div class="am-horizontal-divider"></div>
+                    <div class="am-personas-tabs-content-parent">
+                      <div class="am-personas-tabs-title">
+                        <h3
+                          class="am-heading-36 am-text-wrap-balance"
+                          aria-label="Bespoke iOS & Android apps with zero lock-in"
+                        >
+                          Bespoke iOS &amp; Android apps with <em>zero lock-in</em>
+                        </h3>
+                        <a
+                          href="/mobile-app-development"
+                          class="am-nav-btn is-secondary w-button"
+                          aria-label="Explore Mobile Solutions"
+                        >
+                          Explore Mobile Solutions &rarr;
+                        </a>
+                      </div>
+                      <div class="am-personas-tabs-content-text max-width-370">
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="120 FPS native performance with offline SQLite sync"
+                          >
+                            120 FPS native performance with offline SQLite sync
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Enable field squads, logistics dispatchers, and customers to transact smoothly anywhere —
+                            even in low-connectivity environments with automatic background reconciliation.
+                          </p>
+                        </div>
+                        <div class="am-horizontal-divider"></div>
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Direct push notifications & biometric security"
+                          >
+                            Direct push notifications &amp; biometric security
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Hardware-isolated FaceID/TouchID protection, sub-100ms cold starts, and automated order
+                            tracking that keep your highest-value customers engaged daily.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-w-tab="Tab 3"
+                  class="am-personas-tabs-content-wrapper w-tab-pane"
+                  id="w-tabs-1-data-w-pane-2"
+                  role="tabpanel"
+                  aria-labelledby="w-tabs-1-data-w-tab-2"
+                  style=""
+                >
+                  <div class="am-personas-tabs-content">
+                    <div class="am-horizontal-divider"></div>
+                    <div class="am-personas-tabs-content-parent">
+                      <div class="am-personas-tabs-title">
+                        <h3
+                          class="am-heading-36 am-text-wrap-balance"
+                          aria-label="Turn inbound inquiries into signed deals on autopilot"
+                        >
+                          Turn inbound inquiries into signed deals on <em>autopilot</em>
+                        </h3>
+                        <a
+                          href="/crm-development"
+                          class="am-nav-btn is-secondary w-button"
+                          aria-label="Explore CRM Solutions"
+                        >
+                          Explore CRM Solutions &rarr;
+                        </a>
+                      </div>
+                      <div class="am-personas-tabs-content-text max-width-370">
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Sub-5 minute lead routing & WhatsApp automation"
+                          >
+                            Sub-5 minute lead routing &amp; WhatsApp automation
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Eliminate lost leads. Inbound inquiries trigger instant automated WhatsApp qualification
+                            sequences and sync directly with account executive calendars.
+                          </p>
+                        </div>
+                        <div class="am-horizontal-divider"></div>
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Predictive pipeline analytics & deal health visibility"
+                          >
+                            Predictive pipeline analytics &amp; deal health visibility
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Real-time visibility over deal velocity, follow-up SLAs, and agent performance without
+                            forcing reps to waste hours on tedious manual form entries.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-w-tab="Tab 4"
+                  class="am-personas-tabs-content-wrapper w-tab-pane"
+                  id="w-tabs-1-data-w-pane-3"
+                  role="tabpanel"
+                  aria-labelledby="w-tabs-1-data-w-tab-3"
+                >
+                  <div class="am-personas-tabs-content">
+                    <div class="am-horizontal-divider"></div>
+                    <div class="am-personas-tabs-content-parent">
+                      <div class="am-personas-tabs-title">
+                        <h3
+                          class="am-heading-36 am-text-wrap-balance"
+                          aria-label="Unified enterprise operations: inventory, ledgers & payroll"
+                        >
+                          Unified enterprise operations: <em>inventory, ledgers &amp; payroll</em>
+                        </h3>
+                        <a
+                          href="/erp-development"
+                          class="am-nav-btn is-secondary w-button"
+                          aria-label="Explore ERP Solutions"
+                        >
+                          Explore ERP Solutions &rarr;
+                        </a>
+                      </div>
+                      <div class="am-personas-tabs-content-text max-width-370">
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Double-entry financial ledgers & inventory synchronization"
+                          >
+                            Double-entry financial ledgers &amp; inventory synchronization
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Replace fragmented spreadsheets with an immutable PostgreSQL backbone that ties
+                            multi-location warehouse stock, purchase orders, and tax compliance together.
+                          </p>
+                        </div>
+                        <div class="am-horizontal-divider"></div>
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Geofenced biometric HRM & 1-click compliant payroll"
+                          >
+                            Geofenced biometric HRM &amp; 1-click compliant payroll
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Facial recognition punch-in, automated PF/ESIC statutory tax calculations, and 1-click
+                            banking batch payouts with zero recurring per-user licensing fees.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-w-tab="Tab 5"
+                  class="am-personas-tabs-content-wrapper w-tab-pane"
+                  id="w-tabs-1-data-w-pane-4"
+                  role="tabpanel"
+                  aria-labelledby="w-tabs-1-data-w-tab-4"
+                  style=""
+                >
+                  <div class="am-personas-tabs-content">
+                    <div class="am-horizontal-divider"></div>
+                    <div class="am-personas-tabs-content-parent">
+                      <div class="am-personas-tabs-title">
+                        <h3
+                          class="am-heading-36 am-max-width-270 am-text-wrap-balance"
+                          aria-label="24x7 intelligent voice agents & neural automation"
+                        >
+                          24x7 intelligent voice agents &amp; <em>neural automation</em>
+                        </h3>
+                        <a
+                          href="/ai-voice-assistant"
+                          class="am-nav-btn is-secondary w-button"
+                          aria-label="Explore AI Solutions"
+                        >
+                          Explore AI Solutions &rarr;
+                        </a>
+                      </div>
+                      <div class="am-personas-tabs-content-text max-width-370">
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Sub-400ms neural voice synthesis in natural accents"
+                          >
+                            Sub-400ms neural voice synthesis in natural accents
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Deploy autonomous voice agents that handle thousands of simultaneous inbound calls, qualify
+                            inquiries, book calendar appointments, and escalate complex cases.
+                          </p>
+                        </div>
+                        <div class="am-horizontal-divider"></div>
+                        <div class="div-block-40">
+                          <h4
+                            class="am-heading-20 am-text-wrap-balance"
+                            aria-label="Proprietary document intelligence & task automation"
+                          >
+                            Proprietary document intelligence &amp; task automation
+                          </h4>
+                          <p class="am-paragraph-16 am-opacity-60">
+                            Automate invoice OCR extraction, contract analysis, and repetitive internal back-office
+                            workflows with privacy-first sovereign LLM infrastructure.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12" id="cta-platform">
+      <div class="relative pt-8 pb-2 text-center overflow-hidden">
+        <!-- Headline -->
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-neutral-950 font-normal tracking-tight leading-tight max-w-2xl mx-auto mb-8">
+          Bring your vision on the <span class="font-serif italic font-normal text-[#7D3024]">sovereign page</span>.
+        </h2>
+        <!-- Dual CTA Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-8 relative z-10">
+          <a
+            href="#lead-capture"
+            class="px-6 py-2.5 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white text-xs sm:text-sm font-semibold tracking-tight shadow-sm transition-all hover:shadow-md"
+          >
+            Contact Us →
+          </a>
+          <a
+            href="#digital-solutions"
+            class="px-6 py-2.5 rounded-full bg-white/80 hover:bg-white text-neutral-800 border border-[#DDD4C1] text-xs sm:text-sm font-medium tracking-tight shadow-2xs transition-all"
+          >
+            Explore Services
+          </a>
+        </div>
+
+        <!-- Slite-inspired Horizon Arc & Doodle Figures Illustration -->
+        <div class="relative max-w-3xl mx-auto h-36 sm:h-44 overflow-hidden select-none pointer-events-none mt-2">
+          <svg class="w-full h-full" viewBox="0 0 760 190" fill="none" preserveAspectRatio="xMidYMid meet">
+            <!-- Subtle Warm Horizon Arc -->
+            <path d="M 40,195 Q 380,45 720,195" stroke="#C8B99D" stroke-width="1.75" fill="none"></path>
+
+            <!-- Node 1: Left Mini Shop / Enterprise Storefront -->
+            <g transform="translate(85, 136) scale(0.7)">
+              <ellipse cx="24" cy="28" rx="16" ry="3" fill="#1C1A17" opacity="0.12"></ellipse>
+              <polygon points="10,12 24,4 38,12" stroke="#2B231A" stroke-width="1.5" fill="#FAF7F0"></polygon>
+              <rect x="12" y="12" width="24" height="15" stroke="#2B231A" stroke-width="1.5" fill="#FFFFFF"></rect>
+              <rect x="20" y="18" width="8" height="9" stroke="#2B231A" stroke-width="1.2" fill="#CEBCA4"></rect>
+              <line x1="16" y1="15" x2="18" y2="15" stroke="#2B231A" stroke-width="1.2"></line>
+            </g>
+
+            <!-- Node 2: Paper-Stack / Architect Character -->
+            <g transform="translate(210, 80) scale(0.75)">
+              <polygon points="26,62 5,115 50,118 36,62" fill="#1C1A17" opacity="0.2"></polygon>
+              <polygon points="26,10 10,32 42,32" stroke="#2B231A" stroke-width="1.5" fill="#FAF7F0"></polygon>
+              <line x1="18" y1="32" x2="26" y2="10" stroke="#2B231A" stroke-width="1"></line>
+              <line x1="34" y1="32" x2="26" y2="10" stroke="#2B231A" stroke-width="1"></line>
+              <rect x="14" y="32" width="24" height="30" stroke="#2B231A" stroke-width="1.5" fill="#FFFFFF"></rect>
+              <line x1="14" y1="40" x2="38" y2="40" stroke="#2B231A" stroke-width="1"></line>
+              <line x1="14" y1="48" x2="38" y2="48" stroke="#2B231A" stroke-width="1"></line>
+              <line x1="14" y1="56" x2="38" y2="56" stroke="#2B231A" stroke-width="1"></line>
+              <line x1="20" y1="62" x2="18" y2="75" stroke="#2B231A" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="32" y1="62" x2="34" y2="75" stroke="#2B231A" stroke-width="2" stroke-linecap="round"></line>
+            </g>
+
+            <!-- Node 3: Building Architecture Block (Left of center) -->
+            <g transform="translate(265, 82) scale(0.65)">
+              <polygon
+                points="0,16 16,8 38,12 38,40 16,42 0,38"
+                stroke="#2B231A"
+                stroke-width="1.4"
+                fill="#FFFFFF"
+              ></polygon>
+              <line x1="16" y1="8" x2="16" y2="42" stroke="#2B231A" stroke-width="1.2"></line>
+              <rect x="4" y="18" width="3" height="4" fill="#2B231A"></rect>
+              <rect x="9" y="19" width="3" height="4" fill="#2B231A"></rect>
+              <rect x="22" y="16" width="4" height="4" fill="#2B231A"></rect>
+              <rect x="29" y="17" width="4" height="4" fill="#2B231A"></rect>
+              <rect x="22" y="24" width="4" height="4" fill="#2B231A"></rect>
+              <rect x="29" y="25" width="4" height="4" fill="#2B231A"></rect>
+            </g>
+
+            <!-- Node 4: Center Hero (Yoga pose with laptop screen head) -->
+            <g transform="translate(355, 36) scale(0.85)">
+              <path d="M 30,86 L 10,132 L -12,118 L 22,86 Z" fill="#1C1A17" opacity="0.22"></path>
+              <rect
+                x="17"
+                y="12"
+                width="26"
+                height="18"
+                rx="2"
+                stroke="#2B231A"
+                stroke-width="1.5"
+                fill="#FFFFFF"
+              ></rect>
+              <path
+                d="M 25,20 Q 30,24 35,20"
+                stroke="#2B231A"
+                stroke-width="1.2"
+                fill="none"
+                stroke-linecap="round"
+              ></path>
+              <circle cx="24" cy="17" r="1" fill="#2B231A"></circle>
+              <circle cx="36" cy="17" r="1" fill="#2B231A"></circle>
+              <line x1="14" y1="30" x2="46" y2="30" stroke="#2B231A" stroke-width="2" stroke-linecap="round"></line>
+              <path d="M 26,30 L 25,48 L 35,48 L 34,30 Z" fill="#EFE9DC" stroke="#2B231A" stroke-width="1.2"></path>
+              <path
+                d="M 20,36 L 30,42 L 40,36"
+                stroke="#2B231A"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path d="M 25,48 L 30,86" stroke="#7D3024" stroke-width="3.5" stroke-linecap="round"></path>
+              <path
+                d="M 25,48 L 16,62 L 28,64"
+                stroke="#7D3024"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+
+            <!-- Node 5: Modern Enterprise Office Block (Right of center) -->
+            <g transform="translate(440, 82) scale(0.68)">
+              <polygon
+                points="0,14 20,6 46,12 46,42 20,44 0,38"
+                stroke="#2B231A"
+                stroke-width="1.4"
+                fill="#FFFFFF"
+              ></polygon>
+              <line x1="20" y1="6" x2="20" y2="44" stroke="#2B231A" stroke-width="1.2"></line>
+              <rect x="5" y="18" width="4" height="4" fill="#2B231A"></rect>
+              <rect x="11" y="19" width="4" height="4" fill="#2B231A"></rect>
+              <rect x="27" y="16" width="5" height="5" fill="#2B231A"></rect>
+              <rect x="36" y="17" width="5" height="5" fill="#2B231A"></rect>
+              <rect x="27" y="26" width="5" height="5" fill="#2B231A"></rect>
+              <rect x="36" y="27" width="5" height="5" fill="#2B231A"></rect>
+            </g>
+
+            <!-- Node 6: Sombrero / Creative Founder Character -->
+            <g transform="translate(515, 82) scale(0.78)">
+              <polygon points="26,68 -5,116 28,122 36,68" fill="#1C1A17" opacity="0.2"></polygon>
+              <ellipse cx="28" cy="12" rx="22" ry="6" stroke="#2B231A" stroke-width="1.5" fill="#E8DEC8"></ellipse>
+              <path d="M 20,11 C 20,2 36,2 36,11" stroke="#2B231A" stroke-width="1.5" fill="#CEBCA4"></path>
+              <circle cx="28" cy="20" r="6" fill="#FAF7F0" stroke="#2B231A" stroke-width="1.2"></circle>
+              <rect
+                x="18"
+                y="26"
+                width="20"
+                height="24"
+                rx="3"
+                fill="#FAF0E6"
+                stroke="#2B231A"
+                stroke-width="1.4"
+              ></rect>
+              <rect x="19" y="50" width="8" height="22" fill="#CEBCA4" stroke="#2B231A" stroke-width="1.4"></rect>
+              <rect x="29" y="50" width="8" height="22" fill="#CEBCA4" stroke="#2B231A" stroke-width="1.4"></rect>
+            </g>
+
+            <!-- Node 7: Right Micro Cottage / Home Office -->
+            <g transform="translate(615, 138) scale(0.68)">
+              <ellipse cx="20" cy="28" rx="14" ry="3" fill="#1C1A17" opacity="0.12"></ellipse>
+              <polygon points="6,14 20,4 34,14" stroke="#2B231A" stroke-width="1.5" fill="#FAF7F0"></polygon>
+              <rect x="8" y="14" width="24" height="14" stroke="#2B231A" stroke-width="1.5" fill="#FFFFFF"></rect>
+              <rect x="17" y="20" width="6" height="8" stroke="#2B231A" stroke-width="1.2" fill="#CEBCA4"></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BEGIN: StrategicRoadmapSection (Interactive 3-Step Animated Flow from roadmap-3-steps.html) -->
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-14" id="strategic-roadmap">
+      <div class="text-center max-w-4xl mx-auto mb-10">
+        <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-neutral-600 block mb-2">
+          STEP-BY-STEP
+        </span>
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-neutral-950 font-normal tracking-tight leading-tight mb-4">
+          Strategic Roadmap <span class="font-serif italic font-normal text-[#7D3024]">Behind Every Successful</span>
+          Digital Project
+        </h2>
+      </div>
+
+      <div class="grid">
+        <!-- Step 01: Discovery & Digital Strategy -->
+        <article class="card">
+          <div class="stage">
+            <div class="panel">
+              <div class="ph">Strategy brief</div>
+              <div class="prog">
+                <i></i>
+              </div>
+              <div class="row a1">
+                <span class="tick t1">✓</span>Business goals<em>3× leads</em>
+              </div>
+              <div class="row a2">
+                <span class="tick t2">✓</span>Target market<em>SMEs, 25–45</em>
+              </div>
+              <div class="row a3">
+                <span class="tick t3">✓</span>Competitors<em>5 analysed</em>
+              </div>
+              <div class="tl a4">
+                <div class="nd n1">
+                  <i></i>Build
+                </div>
+                <div class="nd n2">
+                  <i></i>Launch
+                </div>
+                <div class="nd n3">
+                  <i></i>Scale
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">1</div>
+            <div class="phase">PHASE 01</div>
+            <h3>Discovery &amp; Digital Strategy</h3>
+            <p>
+              We analyse your goals, target market and competition, then build a custom strategy aligned with your
+              brand, website and marketing, built to deliver tangible business results.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 02: Website Design & Development -->
+        <article class="card">
+          <div class="stage">
+            <div class="browser">
+              <div class="bar">
+                <b></b>
+                <b></b>
+                <b></b>
+                <span>salowtech.com</span>
+              </div>
+              <div class="browser-video-container">
+                <video class="roadmap-preview-video" autoplay muted loop playsinline preload="metadata">
+                  <source src="/assets/clouds_hero_clean.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">2</div>
+            <div class="phase">PHASE 02</div>
+            <h3>Website Design &amp; Development</h3>
+            <p>
+              Unique, user-oriented websites that browse beautifully on every device, optimised for speed, performance,
+              search engines and better conversion rates.
+            </p>
+          </div>
+        </article>
+
+        <!-- Step 03: Marketing, AI Visibility & Growth -->
+        <article class="card">
+          <div class="stage">
+            <div class="chart">
+              <div class="ch">
+                <div>
+                  <small>Organic traffic</small>
+                  <strong class="cnt" data-to="212" data-pre="+" data-suf="%">
+                    +0%
+                  </strong>
+                </div>
+                <small>last 12 months</small>
+              </div>
+              <svg viewBox="0 0 260 84" fill="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="rm-g" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#8A3B30" stop-opacity=".22" />
+                    <stop offset="1" stop-color="#8A3B30" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <path d="M0 80H260M0 54H260M0 28H260" stroke="#efe7da" />
+                <path class="area" d="M4 74C40 71 62 65 96 54S160 34 192 22 238 8 256 5V84H4Z" fill="url(#rm-g)" />
+                <path
+                  class="line"
+                  pathLength="100"
+                  d="M4 74C40 71 62 65 96 54S160 34 192 22 238 8 256 5"
+                  stroke="#8A3B30"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+                <g class="dot">
+                  <circle r="4.5" fill="#8A3B30" stroke="#fff" stroke-width="2" />
+                  <circle r="8" fill="#8A3B30" opacity=".3">
+                    <animate attributeName="r" values="5;14" dur="1.4s" repeatCount="indefinite" />
+                    <animate attributeName="opacity" values=".35;0" dur="1.4s" repeatCount="indefinite" />
+                  </circle>
+                  <animateMotion
+                    dur="9s"
+                    repeatCount="indefinite"
+                    calcMode="linear"
+                    keyPoints="0;0;1;1"
+                    keyTimes="0;.08;.45;1"
+                    path="M4 74C40 71 62 65 96 54S160 34 192 22 238 8 256 5"
+                  />
+                </g>
+              </svg>
+              <div class="mo">
+                <span>JAN</span>
+                <span>MAR</span>
+                <span>MAY</span>
+                <span>JUL</span>
+                <span>SEP</span>
+                <span>DEC</span>
+              </div>
+              <div class="stats">
+                <div class="st a3">
+                  <small>Visitors</small>
+                  <b class="cnt" data-to="12400" data-sep="1">
+                    0
+                  </b>
+                </div>
+                <div class="st a4">
+                  <small>Leads</small>
+                  <b class="cnt up" data-to="340" data-pre="+">
+                    +0
+                  </b>
+                </div>
+                <div class="st a5">
+                  <small>Conversion</small>
+                  <b class="cnt" data-to="4.8" data-dec="1" data-suf="%">
+                    0%
+                  </b>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="num">3</div>
+            <div class="phase">PHASE 03</div>
+            <h3>Marketing, AI Visibility &amp; Growth</h3>
+            <p>
+              Once live, we run SEO, PPC, content, social, AEO and GEO to win search and AI answer rankings, then track
+              metrics and user behaviour to keep improving engagement and conversions.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BEGIN: WorkShowcaseSection (from showcase-section.html) -->
+
+    <section class="work" id="showcase-work">
+      <div class="head">
+        <div>
+          <div class="eyebrow">OUR WORK</div>
+          <h2>
+            From first idea <em>to real results.</em>
+          </h2>
+        </div>
+        <p>
+          Websites, CRM dashboards, AI agents and voice assistants, built, launched and grown for real businesses. Every
+          project is tuned for search and AI answers from day one.
+        </p>
+      </div>
+      <div class="rows">
+        <!-- Row 1 (Normal Scroll) -->
+        <div class="work-row">
+          <!-- 1. Travel -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>gangatrails.in</span>
+            </div>
+            <div class="pv travel">
+              <div class="serif">
+                Sacred journeys,
+                <br />
+                planned for you.
+              </div>
+              <span class="btn">Plan my trip</span>
+            </div>
+            <div class="ft">
+              <span>Website</span>
+              <span class="g">SEO ready</span>
+            </div>
+          </div>
+          <!-- 2. Edu -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>topranker-classes.in</span>
+            </div>
+            <div class="pv edu">
+              <div class="serif">Crack your exams with expert mentors.</div>
+              <div class="stats">
+                <div>
+                  <b>92%</b>selection
+                </div>
+                <div>
+                  <b>5k+</b>students
+                </div>
+                <div>
+                  <b>15 yrs</b>experience
+                </div>
+              </div>
+            </div>
+            <div class="ft">
+              <span>Website</span>
+              <span class="g">Lead forms</span>
+            </div>
+          </div>
+          <!-- 3. CRM -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>crm.brightpath.app</span>
+            </div>
+            <div class="pv crm">
+              <div class="side">
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+              </div>
+              <div class="main">
+                <h4>
+                  Leads <small>Last 30 days</small>
+                </h4>
+                <div class="kp">
+                  <div>
+                    New<b>312</b>
+                  </div>
+                  <div>
+                    Won<b>86</b>
+                  </div>
+                  <div>
+                    Rate<b>27%</b>
+                  </div>
+                </div>
+                <svg viewBox="0 0 160 46" fill="none">
+                  <path
+                    class="ln"
+                    pathLength="100"
+                    d="M0 40C20 38 30 30 52 27S86 19 106 13 140 6 160 3"
+                    stroke="#8A3B30"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="ft">
+              <span>CRM</span>
+              <span class="g">Automated</span>
+            </div>
+          </div>
+          <!-- 4. SEO -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>growth.northfield.co</span>
+            </div>
+            <div class="pv seo">
+              <small>Organic traffic · 12 months</small>
+              <strong class="serif">+212%</strong>
+              <svg viewBox="0 0 260 70" fill="none">
+                <path d="M0 66H260M0 40H260" stroke="#efe7da" />
+                <path
+                  class="ln"
+                  pathLength="100"
+                  d="M4 62C40 60 62 54 96 44S160 28 192 18 238 6 256 3"
+                  stroke="#8A3B30"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <div class="ft">
+              <span>SEO · AEO · GEO</span>
+              <span class="g">Ranking #1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 (Reverse Scroll) -->
+        <div class="work-row r">
+          <!-- 5. AI Assistant -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>assistant.sahayak.ai</span>
+            </div>
+            <div class="pv chat">
+              <div class="q">How do I book a puja slot?</div>
+              <div class="a">
+                <i></i>
+                <span>
+                  Pick a date, then tap <b>Confirm</b>. You'll get a WhatsApp reminder.
+                </span>
+              </div>
+              <div class="inp">Ask anything…</div>
+            </div>
+            <div class="ft">
+              <span>AI agent</span>
+              <span class="g">24/7</span>
+            </div>
+          </div>
+          <!-- 6. Restaurant -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>saffronhouse.in</span>
+            </div>
+            <div class="pv food">
+              <div class="serif">Book a table</div>
+              <div class="slots">
+                <i>7:00</i>
+                <i class="on">7:30</i>
+                <i>8:00</i>
+                <i>8:30</i>
+              </div>
+              <span class="btn" style="background:#f1d28a">
+                Reserve for 2
+              </span>
+            </div>
+            <div class="ft">
+              <span>Website</span>
+              <span class="g">Online booking</span>
+            </div>
+          </div>
+          <!-- 7. HRM -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>hr.teamworks.app</span>
+            </div>
+            <div class="pv hr">
+              <h4>Today's attendance</h4>
+              <div class="p">
+                <i></i>Aarav Mehta<em>Present</em>
+              </div>
+              <div class="p">
+                <i></i>Meera Nair<em>Present</em>
+              </div>
+              <div class="p">
+                <i></i>Kabir Rao<em class="l">On leave</em>
+              </div>
+            </div>
+            <div class="ft">
+              <span>HRM</span>
+              <span class="g">Auto payroll</span>
+            </div>
+          </div>
+          <!-- 8. Voice -->
+          <div class="c">
+            <div class="u">
+              <b></b>
+              <b></b>
+              <b></b>
+              <span>voice.clinicdesk.ai</span>
+            </div>
+            <div class="pv voice">
+              <div class="wave">
+                <i style="animation-delay:0s"></i>
+                <i style="animation-delay:.12s"></i>
+                <i style="animation-delay:.24s"></i>
+                <i style="animation-delay:.36s"></i>
+                <i style="animation-delay:.48s"></i>
+                <i style="animation-delay:.6s"></i>
+                <i style="animation-delay:.72s"></i>
+                <i style="animation-delay:.84s"></i>
+                <i style="animation-delay:.3s"></i>
+              </div>
+              <p>“Book an appointment for Monday, 11 am”</p>
+              <small>Listening…</small>
+            </div>
+            <div class="ft">
+              <span>Voice assistant</span>
+              <span class="g">Live calls</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note">Illustrative examples of the projects we deliver.</p>
+    </section>
+
+    <section class="w-full relative px-2.5 sm:px-4 lg:px-8 pb-20 pt-4" id="showcase-video">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-neutral-600 block mb-2">
+          Platform In Action
+        </span>
+        <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-neutral-950 font-normal tracking-tight leading-tight">
+          See What <span class="font-serif italic font-normal text-[#7D3024]">We Build</span>
+        </h2>
+      </div>
+
+      <!-- Video Player Container: 85% Screen Ratio Borderless Cinema Canvas -->
+      <div class="w-[85vw] max-w-[85vw] mx-auto">
+        <div class="relative w-full rounded-2xl sm:rounded-3xl lg:rounded-[36px] overflow-hidden bg-slate-950 aspect-video group shadow-2xl">
+          <!-- HTML5 Video Element -->
+          <video
+            id="salowtechPromoVideo"
+            class="w-full h-full object-cover block rounded-2xl sm:rounded-3xl lg:rounded-[36px]"
+            controls
+            playsinline
+            preload="metadata"
+            poster="/assets/home_video_cover.jpg"
+          >
+            <source src="/assets/Salowtech_Promo_Video_v2.mp4" type="video/mp4" />
+            <source src="/assets/SalowTech_video1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Clickable Cover Overlay with Center Play Button (Exact Reference Match) -->
+          <div
+            id="videoPlayOverlay"
+            onclick="startPromoVideo()"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();startPromoVideo();}"
+            role="button"
+            tabindex="0"
+            aria-label="Play Salowtech System Overview"
+            class="absolute inset-0 bg-transparent hover:bg-black/10 flex flex-col items-center justify-center cursor-pointer z-10 transition-all duration-300"
+          >
+            <div class="flex flex-col items-center select-none text-center px-4">
+              <!-- Circular Play Button -->
+              <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/95 backdrop-blur-md shadow-2xl flex items-center justify-center text-neutral-950 group-hover:scale-110 group-hover:bg-white transition-all border border-white/90 mb-3">
+                <svg
+                  id="playIconSvg"
+                  class="w-6 h-6 sm:w-8 sm:h-8 ml-1 text-neutral-900 fill-current"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z"></path>
+                </svg>
+              </div>
+
+              <span
+                id="videoPlayLabel"
+                class="text-xs sm:text-sm font-medium text-neutral-900 bg-white/90 px-3.5 py-1 rounded-full shadow-sm backdrop-blur-sm tracking-wide"
+              >
+                Watch System Overview
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Script to toggle overlay and play/pause video seamlessly -->
+      <script is:inline>
+        function startPromoVideo() {
+          const video = document.getElementById('salowtechPromoVideo');
+          const overlay = document.getElementById('videoPlayOverlay');
+          if (video) {
+            if (overlay) {
+              overlay.style.opacity = '0';
+              overlay.style.pointerEvents = 'none';
+            }
+            video.play().catch(function() {});
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          const video = document.getElementById('salowtechPromoVideo');
+          const overlay = document.getElementById('videoPlayOverlay');
+          if (video && overlay) {
+            video.addEventListener('ended', function() {
+              overlay.style.opacity = '1';
+              overlay.style.pointerEvents = 'auto';
+            });
+            video.addEventListener('pause', function() {
+              if (video.currentTime === 0 || video.ended) {
+                overlay.style.opacity = '1';
+                overlay.style.pointerEvents = 'auto';
+              }
+            });
+          }
+        });
+      </script>
+    </section>
+
+    <!-- ================= CORE ENGINEERING SERVICES (GOOGLE SITELINKS HUB) ================= -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16" id="services-overview">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+        <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#7D3024] block mb-2">
+          Enterprise Systems &amp; Software
+        </span>
+        <h2 class="font-editorial text-3xl sm:text-4xl lg:text-5xl text-neutral-950 font-normal tracking-tight leading-tight">
+          Core Engineering <span class="font-serif italic font-normal text-[#7D3024]">Capabilities</span>
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base mt-3 max-w-xl mx-auto leading-relaxed">
+          Sovereign software platforms engineered for high reliability, zero layout shift, and 100% intellectual property ownership.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+        <!-- 1. CRM Development -->
+        <a
+          href="/crm-development"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              CRM Development
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Tailored CRM software built for multi-channel sales pipelines, lead tracking, automated quotations, and WhatsApp integration.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore CRM Systems</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 2. ERP Development -->
+        <a
+          href="/erp-development"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              ERP Development
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Sovereign cloud ERP systems integrating multi-warehouse inventory, double-entry accounting, and procurement.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore ERP Systems</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 3. Web Development -->
+        <a
+          href="/web-development"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              Web Development
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              High-performance web apps, custom SaaS portals, and scalable cloud architectures built for speed and security.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore Web Architecture</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 4. Mobile App Development -->
+        <a
+          href="/mobile-app-development"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              Mobile App Development
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Engineered native iOS, Android, and Flutter mobile applications with offline sync, clean UX, and strict app store SLAs.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore Mobile Solutions</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 5. HRM & Payroll -->
+        <a
+          href="/hrm-payroll"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              HRM &amp; Payroll
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Automate biometric attendance, statutory tax calculations, leave workflows, and multi-tier salary disbursements.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore HRM Systems</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 6. AI Voice Assistant -->
+        <a
+          href="/ai-voice-assistant"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between"
+        >
+          <div>
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              AI Voice Assistant
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Low-latency conversational voice bots and automated call assistants for 24/7 customer support and inbound routing.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore AI Voice Agents</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+
+        <!-- 7. SEO & Growth -->
+        <a
+          href="/seo-and-growth"
+          class="group p-6 sm:p-7 rounded-2xl bg-white border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-md hover:border-[#7D3024]/40 transition-all flex flex-col justify-between md:col-span-2 lg:col-span-3"
+        >
+          <div class="max-w-2xl">
+            <h3 class="text-lg sm:text-xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-2">
+              SEO &amp; Growth
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Technical SEO, Core Web Vitals optimization, and structured search architecture to dominate organic rankings and AI discovery.
+            </p>
+          </div>
+          <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#7D3024] mt-4 group-hover:translate-x-1 transition-transform">
+            <span>Explore Search Growth Architecture</span>
+            <span aria-hidden="true">&rarr;</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= LEAD CAPTURE: CODE. RANK. CONVERT. ================= -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-24 pt-8" id="lead-capture">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <!-- Left Pitch Column -->
+        <div class="lg:col-span-6 flex flex-col justify-center">
+          <span class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-neutral-600 mb-3 block">
+            Partner with India's Elite Digital Developers
+          </span>
+          <h2 class="font-editorial text-4xl sm:text-5xl lg:text-6xl text-neutral-950 font-normal tracking-tight leading-[1.1] mb-6">
+            Code. <span class="font-serif italic font-normal text-[#612319]">Rank. Convert.</span>
+          </h2>
+          <p class="text-sm text-neutral-700 leading-relaxed max-w-md">
+            Transform your digital infrastructure with high-performance software, enterprise HRM &amp; ERM solutions,
+            and automated intelligent workflows tailored for the Indian enterprise landscape.
+          </p>
+        </div>
+
+        <!-- Right Lead Intake Form Card (Exact Style Matching Reference) -->
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] relative">
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                <p class="text-xs sm:text-sm text-stone-500 mt-1">Web roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-sm border border-[#FFE0CC] shadow-xs">
+                ⚡
+              </span>
+            </div>
+
+            <form
+              id="lead-intake-form"
+              class="space-y-3.5"
+              onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);"
+            >
+              <!-- Honeypot anti-spam trap (invisible to humans and screen-readers) -->
+              <div class="hidden" aria-hidden="true" style="display:none !important;">
+                <input type="text" name="_gotcha" id="index-gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" aria-label="Leave this field empty" />
+              </div>
+              <div>
+                <label class="sr-only" for="home-name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="home-name"
+                  aria-label="Name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="home-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="home-phone"
+                  aria-label="Phone Number"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="home-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="home-email"
+                  aria-label="Email Address"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="home-msg">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="home-msg"
+                  aria-label="Type Your Message"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="px-3.5 py-2.5 bg-[#FAF9F6] border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600">
+                <span class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span class="font-medium">100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-900">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-1">
+                <button type="submit" class="btn-salow-submit">
+                  <span class="btn-salow-logo-mark">
+                    <Image
+                      src={salowtechLogo}
+                      width={24}
+                      height={24}
+                      alt="Salowtech"
+                      loading="lazy"
+                      decoding="async"
+                      format="webp"
+                      quality={90}
+                    />
+                  </span>
+                  <span class="btn-salow-text">SUBMIT REQUEST</span>
+                  <span class="btn-salow-arrow">&rarr;</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq-section" aria-labelledby="faq-title">
+      <div class="head">
+        <span class="eyebrow">+ FAQ</span>
+        <h2 id="faq-title">
+          Frequently Asked <em>Questions</em>
+        </h2>
+      </div>
+
+      <div class="list">
+        <div class="q open">
+          <h3>
+            <button type="button" id="b1" aria-expanded="true" aria-controls="p1">
+              What services do you offer?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p1" role="region" aria-labelledby="faq-btn-1">
+            <div>
+              <p>Websites, mobile apps, CRM/HRM/ERM software, AI chatbots and Voice Assistants, all in one place.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="b2" aria-expanded="false" aria-controls="p2">
+              What is the difference between CRM, HRM and ERM?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p2" role="region" aria-labelledby="faq-btn-2">
+            <div>
+              <p>
+                CRM manages your customers, leads and sales. HRM manages your people: attendance, leave, payroll and
+                hiring. ERM brings day-to-day operations like inventory, accounts and reports into one system. We can
+                build them separately or connected.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-3" aria-expanded="false" aria-controls="p3">
+              What will the AI and Voice Assistant do for my business?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p3" role="region" aria-labelledby="faq-btn-3">
+            <div>
+              <p>
+                The AI chatbot answers customer questions on your website and WhatsApp 24/7, captures leads and books
+                appointments. The Voice Assistant does the same on phone calls and hands over to your team whenever
+                needed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-4" aria-expanded="false" aria-controls="p4">
+              How much time and cost will my project need?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p4" role="region" aria-labelledby="faq-btn-4">
+            <div>
+              <p>
+                It depends on the features and size of your project. After a short discovery call we share a clear
+                scope, timeline and fixed quote, so there are no surprise costs later.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-5" aria-expanded="false" aria-controls="p5">
+              Will the mobile app work on both Android and iOS?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p5" role="region" aria-labelledby="faq-btn-5">
+            <div>
+              <p>
+                Yes. We build one app that runs on both Android and iOS, so you manage a single product and can launch
+                on both stores together.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-6" aria-expanded="false" aria-controls="p6">
+              Is my data safe?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p6" role="region" aria-labelledby="faq-btn-6">
+            <div>
+              <p>
+                Yes. Your data is encrypted, access is role-based so people only see what they should, and automatic
+                backups run regularly.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-btn-7" aria-expanded="false" aria-controls="p7">
+              Do you provide support after launch?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="p7" role="region" aria-labelledby="faq-btn-7">
+            <div>
+              <p>
+                Yes. We stay with you after launch with bug fixes, updates, team training and help whenever you want to
+                add new features.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <p>Something else on your mind? Talk to the team that builds it.</p>
+        <a class="cta" href="/contact-us">
+          Talk to our team
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M2 7h10M8 3l4 4-4 4" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA Section (replaces Testimonials) -->
+    <section class="cta-wrap" id="cta-section">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>
+            Choose SalowTech.
+            <br />
+            Accelerate business growth.
+          </h2>
+          <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+            Start Your Journey &rarr;
+          </a>
+          <ul class="cta-points">
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Custom AI solutions for your business
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Fast setup and delivery
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Dedicated support after launch
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-art" aria-hidden="true">
+          <Image
+            src={ctaIllustration}
+            alt="Salowtech Growth Illustration"
+            class="cta-img"
+            width={967}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={90}
+          />
+        </div>
+      </div>
+    </section>
+    <div id="testimonials" class="sr-only" aria-hidden="true"></div>
+  </main>
+  <!-- END: #spa-container -->
+
+  <!-- BEGIN: Footer Section -->
+  <script is:inline slot="scripts" src="/js/personas-desktop.min.js"></script>
+</Layout>

@@ -1,14 +1,25 @@
 {
   "name": "salowtech",
   "version": "1.0.0",
-  "description": "Salowtech sovereign software platforms",
-  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "build": "echo 'Static build ready'",
-    "vercel-build": "echo 'Static build ready'",
-    "start": "node server.js"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "vercel-build": "astro build",
+    "preview": "astro preview",
+    "crm": "node tools/server.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
-  "engines": {
-    "node": ">=18.0.0"
+  "dependencies": {
+    "astro": "^5.1.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^8.72.1",
+    "eslint": "^10.14.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.2"
   }
 }

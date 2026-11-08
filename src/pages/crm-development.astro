@@ -1,0 +1,1493 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import mascotExplaining from "../assets/mascot_explaining.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { siteConfig } from "../data/site";
+import { pagesSEO } from "../data/seo";
+import { getServiceSchema } from "../data/schema";
+
+const seo = pagesSEO.crmDevelopment;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "custom CRM software development company, enterprise CRM development services, sales pipeline automation CRM, multi-channel lead tracking CRM, custom customer relationship management software, bespoke CRM solutions India";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "bg-cream-200 text-slate-800 font-sans antialiased selection:bg-maroon selection:text-white";
+const showChatbot = true;
+const schemaJson = getServiceSchema({
+  serviceKey: "crm-development",
+  serviceName: seo.title,
+  serviceType: "Customer Relationship Management Software",
+  description: seo.description,
+  path: seo.canonicalPath,
+  breadcrumbTitle: "CRM Development"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <Breadcrumb currentPage="CRM Development" />
+
+  <!-- BEGIN: HeroSection -->
+  <section class="relative pt-28 sm:pt-36 pb-20 lg:pt-36 lg:pb-28 overflow-hidden" data-purpose="hero-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <!-- Left Column: Value Proposition & Bullet Points -->
+        <div class="lg:col-span-7 flex flex-col justify-center">
+          <!-- Main Hero Headline -->
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-4">
+            Transform Customer Relationships with{" "}
+            <span class="font-serif italic font-bold text-maroon block sm:inline">Scalable CRM Development</span>
+          </h1>
+
+          <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
+            <p class="font-semibold text-neutral-900 mb-1 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-maroon"></span>
+              <span>Quick Overview:</span>
+            </p>
+            <p>
+              Salowtech Custom CRM Development delivers tailored customer relationship platforms designed around your specific sales, support, and marketing pipelines. Ideal for B2B and high-touch B2C businesses looking to replace bloated SaaS tools with custom automated workflows, lead tracking, omnichannel communication, and full data privacy.
+            </p>
+          </div>
+
+          <!-- 4 Bullet Points with Icons -->
+          <ul class="space-y-3.5 mb-10">
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Custom Workflow Automation &amp; Pipeline Management
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                360° Lead Tracking &amp; Predictive Sales Intelligence
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Omnichannel Integrations (Email, Telephony, WhatsApp, ERP)
+              </span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-maroon/10 text-maroon flex items-center justify-center mt-0.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </span>
+              <span class="text-sm sm:text-base font-semibold text-slate-800">
+                Enterprise-Grade Data Privacy &amp; Role-Based Access
+              </span>
+            </li>
+          </ul>
+
+          <!-- Dual Pill Button -->
+          <div class="flex items-center">
+            <div class="inline-flex rounded-full p-1 bg-maroon text-white shadow-lg shadow-maroon/25">
+              <a
+                class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase hover:bg-maroon-dark transition-colors"
+                href="/contact-us"
+              >
+                Contact Us
+              </a>
+              <span class="flex items-center px-3 text-xs uppercase tracking-wider text-white/70 font-medium">OR</span>
+              <a
+                class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wide uppercase bg-white/10 hover:bg-white/20 transition-colors"
+                href={siteConfig.contact.phoneTel}
+              >
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Lead Capture Card (Exact Reference Style) -->
+        <div class="lg:col-span-5" id="lead-form">
+          <div class="bg-white rounded-2xl shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] p-6 sm:p-7 relative">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h2 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                <p class="text-[11px] text-stone-500 mt-0.5">CRM roadmap &amp; sprint estimate in 24 hours</p>
+              </div>
+              <span class="w-7 h-7 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-xs border border-[#FFE0CC] shadow-xs">
+                ⚡
+              </span>
+            </div>
+            <form class="space-y-2.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
+              <div>
+                <label class="sr-only" for="crm-name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="crm-name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="crm-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="crm-phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="crm-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="crm-email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="crm-message">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="crm-message"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="2"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                <span class="flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span>100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-800">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="btn-salow-submit" type="submit">
+                <span class="btn-salow-logo-mark">
+                  <Image
+                    src={salowtechLogo}
+                    width={24}
+                    height={24}
+                    alt="Salowtech"
+                    loading="lazy"
+                    decoding="async"
+                    format="webp"
+                    quality={90}
+                  />
+                </span>
+                <span class="btn-salow-text">SUBMIT REQUEST</span>
+                <span class="btn-salow-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: HeroSection -->
+
+  <!-- BEGIN: BrandPropositionSection -->
+  <section class="py-16 sm:py-20 bg-cream-100 border-y border-cream-300" data-purpose="brand-proposition">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- Headline with Italic Serif Accent -->
+      <h2 class="text-2xl sm:text-3xl lg:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug mb-5">
+        From Fragmented Data to <span class="font-serif italic font-bold text-maroon">Actionable CRM Intelligence</span>
+      </h2>
+      <!-- Concise Copy -->
+      <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8">
+        At Salowtech, we design and build bespoke CRM platforms that unify sales, marketing, and customer support into
+        one synchronized revenue ecosystem. Eliminate manual bottlenecks, forecast with precision, and scale your
+        operations effortlessly.
+      </p>
+      <!-- CTA Button -->
+      <div>
+        <a
+          class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-wide text-white bg-maroon hover:bg-maroon-dark shadow-md hover:shadow-lg transition-all duration-200"
+          href="/contact-us"
+        >
+          Get Free CRM Consultation <span class="">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END: BrandPropositionSection -->
+
+  <!-- BEGIN: SmartCrmSolutionsSection (Exact Reference Tiered Design) -->
+  <section class="py-16 lg:py-24" data-purpose="smart-crm-solutions-grid" id="solutions">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header Matching Reference -->
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight mb-3">
+          Everything you need to run, sell, and scale
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base">
+          Powerful capabilities. Predictable value. Built to grow with your business.
+        </p>
+      </div>
+
+      <!-- Tier 1: Core Platform -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">1</span>
+          <span class="tier-title">Core Platform</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 1 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  CRM for Small Business
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Manage leads, contacts, and pipelines in one intuitive platform designed to help you grow
+                  relationships and close more deals.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 2 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#D97706] transition-colors">
+                  Predictable Pricing &amp; ROI
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Fixed, transparent pricing with no hidden costs. Full source code ownership and long-term value you
+                  can count on.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 2: Dedicated Engineering -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">2</span>
+          <span class="tier-title">Dedicated Engineering</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Card 3 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#FDF1F0] border border-[#F3D5D3] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Hire Dedicated CRM Developers
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Scale your team with skilled, vetted CRM developers who integrate seamlessly and deliver impact from
+                  day one.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 4 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content">
+              <div class="tier-icon-circle bg-[#F5F2EB] border border-[#E2D7CD] text-[#1C1917]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Full-Stack Web Developers
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                  Expert developers across front-end, back-end, and databases—building secure, scalable, and
+                  future-ready solutions.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Tier 3: Connected Experiences -->
+      <div class="tier-group">
+        <div class="tier-header">
+          <span class="tier-num-pill">3</span>
+          <span class="tier-title">Connected Experiences</span>
+          <div class="tier-divider-line"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Card 5 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#DCFCE7] text-[#059669]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#059669] transition-colors">
+                  LMS Development Services
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Engaging learning platforms with robust content management and seamless user experiences.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 6 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  B2C Customer Portal
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Personalized, secure portals that empower customers and strengthen relationships.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 7 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F0FDF4] border border-[#CCFBF1] text-[#0F766E]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#0F766E] transition-colors">
+                  B2B Enterprise Portal
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Streamline operations and collaboration with enterprise-grade portals built for scale and security.
+                </p>
+              </div>
+            </div>
+          </a>
+          <!-- Card 8 -->
+          <a href="/contact-us" class="tier-card block group">
+            <div class="tier-card-content flex-col items-start gap-3">
+              <div class="tier-icon-circle bg-[#F5F2EB] border border-[#E2D7CD] text-[#5C2017]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                  <path
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#5C2017] transition-colors">
+                  Human Resource Management
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Simplify HR processes, manage people, and foster a culture of growth and efficiency.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SmartCrmSolutionsSection -->
+
+  <!-- BEGIN: WhyPartnerSection -->
+  <section class="py-20 lg:py-24 bg-cream-100 border-y border-cream-300" data-purpose="why-partner-section" id="why-us">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center max-w-4xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">
+          + ENGINEERING EXCELLENCE &amp; TRUST
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug mb-3 mt-1">
+          Partner with a Dedicated CRM Software Development Company{" "}
+          <span class="font-serif italic font-bold text-maroon block sm:inline">for Scalable Success</span>
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto">
+          Why high-growth enterprises and venture-backed founders select Salowtech for sovereign revenue engineering.
+        </p>
+      </div>
+
+      <!-- 6 Feature Cards (3 Columns x 2 Rows) -->
+      <div class="spotlight-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <!-- Feature 1 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">Senior Architects</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#7D3024] transition-colors">
+              Experienced CRM Architects
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              10+ years engineering high-concurrency multi-tenant CRM platforms with sub-50ms search indexes and clean
+              zero-tech-debt architecture.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#F2F8F5] border border-[#D1E7DD] text-[#0F766E]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">Zero Seat Tax</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#0F766E] transition-colors">
+              Affordable &amp; Transparent Pricing
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Fixed milestone-based commercial agreements with perpetual source code ownership and zero recurring
+              user-license penalties.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#FEF6EE] border border-[#FCD9BD] text-[#D97706]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">2-Wk Sprints</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#D97706] transition-colors">
+              Agile Delivery Methodology
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Two-week sprint cadences with interactive staging environments, daily automated test suites, and
+              transparent PR tracking.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#FDF2F0] border border-[#F8D2CC] text-[#7D3024]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">AES-256 Core</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#7D3024] transition-colors">
+              Bank-Grade Data Security
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              SOC2 and GDPR-ready architectures with encrypted database columns, immutable audit ledgers, and sovereign
+              VPC deployment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#F9F5F1] border border-[#E5DACF] text-[#5C2017]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">SLA Guaranteed</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#5C2017] transition-colors">
+              Guaranteed On-Time Delivery
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Contractual milestone completion guarantees backed by senior squad leadership and rigorous phase boundary
+              management.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="masterpiece-card group" data-purpose="why-us-card">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="masterpiece-icon-box bg-[#FAF2EF] border border-[#EED7CE] text-[#9A3412]">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path
+                    d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  ></path>
+                </svg>
+              </div>
+              <span class="masterpiece-badge">24/7 Global L3</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-[#9A3412] transition-colors">
+              24/7 Global Technical Support
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+              Round-the-clock enterprise L3 engineering surveillance, proactive vulnerability mitigation, and sub-15m
+              incident response.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: WhyPartnerSection -->
+
+  <!-- BEGIN: VideoArchitectureSection -->
+  <section class="py-20 lg:py-24" data-purpose="video-placeholder-section" id="architecture">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Title -->
+      <div class="text-center mb-10">
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mt-2">
+          Watch How Salowtech Engineers High-Performance CRMs
+        </h2>
+      </div>
+      <!-- Modern Empty / Placeholder Video Container -->
+      <div
+        class="bg-slate-950 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video flex flex-col justify-between p-4 sm:p-6"
+        data-purpose="video-player-container"
+      >
+        <!-- Centered Glowing Play Button (Placeholder) -->
+        <div class="flex flex-col items-center justify-center my-auto z-10">
+          <button
+            aria-label="Play CRM Architecture Video"
+            class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-maroon/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-maroon transition-transform duration-300 ring-8 ring-maroon/20 cursor-pointer"
+            type="button"
+          >
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-current" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Subtle Gradient Backdrop -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/80 pointer-events-none"></div>
+      </div>
+    </div>
+  </section>
+  <!-- END: VideoArchitectureSection -->
+
+  <!-- BEGIN: Connected Circuit Integration Hub (Exact Reference Design Match) -->
+  <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
+      <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">+ REAL-TIME REVENUE TRANSMISSION</span>
+      <h2
+        id="transmission-title"
+        class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
+      >
+        The Omnichannel CRM Transmission Hub
+      </h2>
+      <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+        How multi-channel customer inquiries, automated WhatsApp flows, and pipeline intelligence feed directly into one
+        closed-loop revenue engine.
+      </p>
+    </div>
+
+    <!-- Circuit Trace Diagram Stage -->
+    <!-- Circuit Trace Diagram Stage (Pure Vector SVG Architecture) -->
+    <div class="circuit-hub-container">
+      <div class="circuit-canvas-wrap">
+        <!-- Glowing Ambient Aura behind Center Hub -->
+        <div class="circuit-center-aura" aria-hidden="true"></div>
+
+        <svg
+          class="circuit-svg-stage w-full h-auto"
+          viewBox="0 0 1024 430"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="crm-glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="crm-glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="crm-glow-purple" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="crm-glow-green" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="crm-glow-coral" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="crm-node-shadow" x="-10%" y="-15%" width="125%" height="140%">
+              <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="rgba(45, 38, 32, 0.07)" />
+            </filter>
+            <filter id="crm-center-shadow" x="-20%" y="-20%" width="145%" height="145%">
+              <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="rgba(125, 48, 36, 0.28)" />
+            </filter>
+          </defs>
+
+          <!-- Circuit Bus Traces (Orthogonal & 45-degree chamfered PCB paths) -->
+          <g stroke="#E4DBD2" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Trace 1: Center to Upper-Left Node 1 & Far Node 3 -->
+            <path d="M 462 195 L 360 195 L 305 140 L 255 140" />
+            <path d="M 105 140 L 80 140 L 55 95 L 25 95" />
+            <!-- Parallel trace with amber signal pulse -->
+            <path d="M 462 205 L 370 205 L 320 155 L 255 155" />
+            <!-- Trace 2: Center to Top-Center Node 2 -->
+            <path d="M 485 160 L 485 130 L 445 85 L 420 85" />
+            <!-- Trace 4: Center to Lower-Left Node 4 & Edge -->
+            <path d="M 462 225 L 380 225 L 325 295 L 265 295" />
+            <path d="M 105 295 L 80 295 L 45 350 L 15 350" />
+            <!-- Trace: Bottom Center Stem -->
+            <path d="M 512 265 L 512 325 L 475 375 L 475 420" />
+            <!-- Trace 5: Center to Top-Right Node 5 -->
+            <path d="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85" />
+            <path d="M 915 85 L 945 85 L 970 45 L 995 45" />
+            <!-- Trace 6: Center to Mid-Right Node 6 & Far Node 7 -->
+            <path d="M 562 210 L 745 210" />
+            <path d="M 905 210 L 925 210" />
+            <!-- Trace 8: Center to Lower-Right Node 8 -->
+            <path d="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350" />
+            <path d="M 730 305 L 755 350 L 755 420" />
+          </g>
+
+          <!-- Animated Signal Pulses (Gliding glowing packets) -->
+          <!-- Gold pulse on Upper-Left path -->
+          <circle r="3.5" fill="#F59E0B" filter="url(#crm-glow-gold)">
+            <animateMotion
+              dur="4.2s"
+              repeatCount="indefinite"
+              path="M 462 195 L 360 195 L 305 140 L 255 140 L 105 140 L 80 140 L 55 95 L 25 95"
+            />
+          </circle>
+          <!-- Amber pulse on parallel trace -->
+          <circle r="3" fill="#FBBF24" filter="url(#crm-glow-gold)">
+            <animateMotion dur="3.6s" repeatCount="indefinite" path="M 462 205 L 370 205 L 320 155 L 255 155" />
+          </circle>
+          <!-- Warm Amber pulse on Top-Right path -->
+          <circle r="3.5" fill="#D97706" filter="url(#crm-glow-gold)">
+            <animateMotion
+              dur="3.8s"
+              repeatCount="indefinite"
+              path="M 562 185 L 610 185 L 660 120 L 710 120 L 735 85 L 755 85 L 915 85 L 945 85 L 970 45 L 995 45"
+            />
+          </circle>
+          <!-- Warm Clay pulse on Center-Right path -->
+          <circle r="3.5" fill="#7D3024" filter="url(#crm-glow-gold)">
+            <animateMotion dur="4.4s" repeatCount="indefinite" path="M 562 210 L 745 210 L 905 210 L 925 210" />
+          </circle>
+          <!-- Green pulse on Lower-Right path -->
+          <circle r="3.5" fill="#10B981" filter="url(#crm-glow-green)">
+            <animateMotion
+              dur="4.6s"
+              repeatCount="indefinite"
+              path="M 562 230 L 630 230 L 685 305 L 730 305 L 760 350 L 765 350"
+            />
+          </circle>
+          <!-- Warm Terracotta pulse on Lower-Left path -->
+          <circle r="3.5" fill="#C2410C" filter="url(#crm-glow-coral)">
+            <animateMotion
+              dur="4.1s"
+              repeatCount="indefinite"
+              path="M 462 225 L 380 225 L 325 295 L 265 295 L 105 295 L 80 295 L 45 350 L 15 350"
+            />
+          </circle>
+
+          <!-- Golden Terminal Endpoint Dot at (25, 95) -->
+          <circle cx="25" cy="95" r="5" fill="#F59E0B" filter="url(#crm-glow-gold)" />
+          <circle cx="25" cy="95" r="8" stroke="#F59E0B" stroke-width="1" opacity="0.5">
+            <animate attributeName="r" values="6;12;6" dur="2.5s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite" />
+          </circle>
+
+          <!-- CENTER HUB CARD -->
+          <g filter="url(#crm-center-shadow)" class="cursor-pointer group">
+            <rect x="452" y="150" width="120" height="120" rx="26" fill="#FFFFFF" stroke="#7D3024" stroke-width="1.5" />
+            <rect x="456" y="154" width="112" height="112" rx="22" fill="#FFFDF9" />
+
+            <!-- Official Salowtech Logo -->
+            <image
+              href="/assets/salowtech_logo.png"
+              xlink:href="/assets/salowtech_logo.png"
+              x="488"
+              y="162"
+              width="48"
+              height="48"
+              preserveAspectRatio="xMidYMid meet"
+            />
+
+            <!-- Brand Typography -->
+            <text
+              x="512"
+              y="226"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="800"
+              font-size="11"
+              fill="#171513"
+              letter-spacing="0.05em"
+            >
+              SALOWTECH
+            </text>
+            <text
+              x="512"
+              y="241"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="700"
+              font-size="8.5"
+              fill="#7D3024"
+              letter-spacing="0.08em"
+            >
+              CRM ENGINE
+            </text>
+            <text
+              x="512"
+              y="253"
+              text-anchor="middle"
+              font-family="'Plus Jakarta Sans', system-ui, sans-serif"
+              font-weight="600"
+              font-size="7"
+              fill="#78716C"
+            >
+              LEAD &amp; REVENUE CORE
+            </text>
+          </g>
+
+          <!-- PERIPHERAL DOMAIN-SPECIFIC COMPONENT CARDS -->
+          <!-- Node: WhatsApp Cloud API -->
+          <g transform="translate(95, 113)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#25D366" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.2-1.4c1.4.8 3.1 1.4 4.8 1.4 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.2.8.8-3.1-.2-.3C4 15 3.6 13.5 3.6 12c0-4.6 3.8-8.4 8.4-8.4s8.4 3.8 8.4 8.4-3.8 8.2-8.4 8.2zm4.6-6.2c-.3-.1-1.5-.7-1.8-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.1-.3.2-.5.1-.3-.1-1.1-.4-2.1-1.3-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.3 0-.5s-.6-1.5-.8-2c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3z"
+                fill="#FFF"
+              />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              WhatsApp Cloud API
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Automated Chatbot Flows
+            </text>
+          </g>
+          <!-- Node: Omnichannel Ingestion -->
+          <g transform="translate(245, 58)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="175"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#F59E0B" />
+            <g transform="translate(15, 15)">
+              <path d="M11 2L2 14h7v8l9-12h-7l2-8z" fill="#FFF" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Omnichannel Ingestion
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Meta Ads & Web Webhooks
+            </text>
+          </g>
+          <!-- Node: Omnichannel Inbox -->
+          <g transform="translate(95, 268)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="170"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="#FFF" stroke-width="2" />
+              <path d="M2 8l10 6 10-6" stroke="#FFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Omnichannel Inbox
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Unified Tickets & SMS
+            </text>
+          </g>
+          <!-- Node: PostgreSQL Vault -->
+          <g transform="translate(755, 58)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#5C2017" />
+            <g transform="translate(15, 15)">
+              <ellipse cx="12" cy="6" rx="9" ry="3" fill="#FFF" />
+              <path d="M3 6v6c0 1.7 4 3 9 3s9-1.3 9-3V6" stroke="#FFF" stroke-width="2" fill="none" />
+              <path d="M3 12v6c0 1.7 4 3 9 3s9-1.3 9-3v-6" stroke="#FFF" stroke-width="2" fill="none" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              PostgreSQL Vault
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              360° Lead Profiles & PII
+            </text>
+          </g>
+          <!-- Node: Pipeline Kanban -->
+          <g transform="translate(745, 183)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="160"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <rect x="2" y="14" width="4" height="8" rx="1" fill="#FFF" />
+              <rect x="8" y="10" width="4" height="12" rx="1" fill="#FFF" />
+              <rect x="14" y="6" width="4" height="16" rx="1" fill="#FFF" />
+              <rect x="20" y="2" width="4" height="20" rx="1" fill="#FFF" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Pipeline Kanban
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Multi-Stage Deal Engine
+            </text>
+          </g>
+          <!-- Node: Drip Engine -->
+          <g transform="translate(915, 183)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="100"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#7D3024" />
+            <g transform="translate(15, 15)">
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                stroke="#FFF"
+                stroke-width="2"
+                fill="none"
+              />
+              <polyline points="22,6 12,13 2,6" stroke="#FFF" stroke-width="2" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Drip Engine
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Automated Nurture
+            </text>
+          </g>
+          <!-- Node: Stripe & GST Billing -->
+          <g transform="translate(765, 323)" filter="url(#crm-node-shadow)" class="circuit-node-group cursor-pointer">
+            <rect
+              width="165"
+              height="54"
+              rx="16"
+              fill="#FFFFFF"
+              stroke="#E2D7CD"
+              stroke-width="1.25"
+              class="transition-all duration-300 hover:stroke-[#7D3024]"
+            />
+            <!-- Icon Box -->
+            <rect x="10" y="10" width="34" height="34" rx="10" fill="#10B981" />
+            <g transform="translate(15, 15)">
+              <rect x="2" y="5" width="20" height="14" rx="2" stroke="#FFF" stroke-width="2" fill="none" />
+              <line x1="2" y1="10" x2="22" y2="10" stroke="#FFF" stroke-width="2" />
+              <circle cx="6" cy="15" r="1.5" fill="#FFF" />
+            </g>
+            <!-- Texts -->
+            <text
+              x="52"
+              y="24"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="700"
+              font-size="10.5"
+              fill="#1C1713"
+            >
+              Stripe & GST Billing
+            </text>
+            <text
+              x="52"
+              y="37"
+              font-family="Inter, system-ui, sans-serif"
+              font-weight="500"
+              font-size="8.2"
+              fill="#78716C"
+            >
+              Zero-Mismatch Invoicing
+            </text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+  <!-- END: Connected Circuit Integration Hub -->
+
+  <!-- BEGIN: Canonical FAQ Section (Exact Match to Home Page #faq-section) -->
+
+  <!-- BEGIN: SalowTech Interactive Mascot Service Guide -->
+  <section class="py-12 sm:py-16 relative overflow-hidden" data-purpose="mascot-service-guide">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Left: 3D Mascot Facing Right Towards Text in Website Background Color -->
+        <div class="md:col-span-4 flex justify-center md:justify-end">
+          <div class="w-36 sm:w-44 lg:w-52 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+            <Image
+              src={mascotExplaining}
+              alt="SalowTech Engineering Mascot"
+              class="w-full h-auto object-contain filter drop-shadow-[0_12px_24px_rgba(125, 48, 36,0.22)]"
+              width={240}
+              height={240}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={92}
+            />
+          </div>
+        </div>
+
+        <!-- Right: Editorial Enterprise Architecture Text -->
+        <div class="md:col-span-8 text-center md:text-left">
+          <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#7D3024] font-sans mb-2">
+            REVENUE ENGINE
+          </span>
+          <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
+            High-Velocity Custom CRM Architecture
+          </h3>
+          <p class="text-base sm:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+            Custom sales pipelines, automated deal stages, and bidirectional lead synchronization engineered to replace
+            overpriced per-seat SaaS with total data sovereignty.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END: SalowTech Interactive Mascot Service Guide -->
+
+  <section class="faq" id="faq-section" aria-labelledby="faq-title">
+    <div class="head">
+      <span class="eyebrow">+ FAQ</span>
+      <h2 id="faq-title">
+        CRM Engineering <em>FAQs</em>
+      </h2>
+    </div>
+
+    <div class="list">
+      <!-- FAQ 1 -->
+      <div class="q open">
+        <h3>
+          <button type="button" id="faq-crm-btn-1" aria-expanded="true" aria-controls="faq-crm-ans-1">
+            How does a custom Salowtech CRM differ from SaaS tools like Salesforce or HubSpot?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-1" role="region" aria-labelledby="faq-crm-btn-1">
+          <div>
+            <p>
+              Off-the-shelf SaaS platforms lock your business into steep recurring per-user monthly subscription fees
+              and force your workflow into their rigid templates. A Salowtech custom CRM is built around your exact
+              sales pipeline, eliminates per-seat licensing fees forever, and runs on your sovereign infrastructure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-crm-btn-2" aria-expanded="false" aria-controls="faq-crm-ans-2">
+            Can our custom CRM integrate with WhatsApp, email, telephony, and accounting systems?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-2" role="region" aria-labelledby="faq-crm-btn-2">
+          <div>
+            <p>
+              Yes. We integrate official WhatsApp Business Cloud API, two-way email tracking (Gmail/Outlook), VoIP
+              telephony (Twilio, Exotel) for click-to-call recording, and automatic invoice sync with Tally, QuickBooks,
+              or Zoho Books.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-crm-btn-3" aria-expanded="false" aria-controls="faq-crm-ans-3">
+            How does the CRM help sales teams close deals faster?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-3" role="region" aria-labelledby="faq-crm-btn-3">
+          <div>
+            <p>
+              Our CRM features intelligent lead scoring, automated task reminders, interactive Kanban deal boards,
+              real-time quote generation, and automated follow-up drip sequences that ensure no high-value opportunity
+              slips through the cracks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-crm-btn-4" aria-expanded="false" aria-controls="faq-crm-ans-4">
+            What security measures protect our client contact list and deal financials?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-4" role="region" aria-labelledby="faq-crm-btn-4">
+          <div>
+            <p>
+              Your client data is protected by granular Role-Based Access Control (RBAC), preventing reps from exporting
+              or viewing records outside their assigned territory. All database tables are encrypted with AES-256,
+              backed by immutable audit logs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-crm-btn-5" aria-expanded="false" aria-controls="faq-crm-ans-5">
+            How long does custom CRM deployment take, and how do we migrate existing data?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-5" role="region" aria-labelledby="faq-crm-btn-5">
+          <div>
+            <p>
+              An operational MVP CRM deploys in 4 to 8 weeks. We provide zero-downtime ETL migration scripts that clean,
+              deduplicate, and import your existing customer records from legacy spreadsheets, Salesforce, or Zoho
+              without disruption.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="q">
+        <h3>
+          <button type="button" id="faq-crm-btn-6" aria-expanded="false" aria-controls="faq-crm-ans-6">
+            Do we own the full source code and data after launch?
+            <i class="ic" aria-hidden="true"></i>
+          </button>
+        </h3>
+        <div class="a" id="faq-crm-ans-6" role="region" aria-labelledby="faq-crm-btn-6">
+          <div>
+            <p>
+              Yes. You hold 100% intellectual property ownership of the code, database, and configurations. You can host
+              it on your private cloud (AWS, Azure, GCP) or on-premise servers with total autonomy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <p>Have questions about your project scope, architecture, or timeline?</p>
+      <a href="/contact-us" class="cta">
+        Talk to Our Senior Engineers
+        <svg
+          width="15"
+          height="15"
+          viewBox="0 0 16 16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M3 8h10M9 4l4 4-4 4" />
+        </svg>
+      </a>
+    </div>
+  </section>
+  <!-- END: Canonical FAQ Section -->
+
+    <!-- ==========================================
+       CRM ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
+       ========================================== -->
+  <ServiceVideoShowcase
+    id="crm-video-showcase"
+    eyebrow="CRM Architecture In Action"
+    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Custom CRM Systems</span>'
+    description="From multi-channel lead intake to automated pipelines, WhatsApp flows, and real-time revenue analytics."
+    poster="/assets/posters/video2.jpg"
+    videoSrc="/assets/SalowTech_video2.mp4"
+  />
+
+  <!-- BEGIN: CTA Section (Choose SalowTech - from 2nd screenshot) -->
+
+  <section class="cta-wrap" id="cta-section">
+    <div class="cta-card">
+      <div class="cta-text">
+        <h2>
+          Choose SalowTech.
+          <br />
+          Accelerate business growth.
+        </h2>
+        <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+          Start Your Journey &rarr;
+        </a>
+        <ul class="cta-points">
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Custom AI solutions for your business
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Fast setup and delivery
+          </li>
+          <li>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12l5 5L20 6" />
+            </svg>
+            Dedicated support after launch
+          </li>
+        </ul>
+      </div>
+
+      <div class="cta-art" aria-hidden="true">
+        <Image
+          src={ctaIllustration}
+          alt="Salowtech Growth Illustration"
+          class="cta-img"
+          width={967}
+          height={1024}
+          loading="lazy"
+          decoding="async"
+          format="webp"
+          quality={90}
+        />
+      </div>
+    </div>
+  </section>
+  <!-- END: CTA Section -->
+
+  <!-- BEGIN: SiteFooter -->
+  <!-- BEGIN: Footer Section -->
+</Layout>

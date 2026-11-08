@@ -1,0 +1,109 @@
+# Salow Technologies (Salowtech) — Complete Technical & Architectural Overview
+
+## 1. Company Identity & Engineering Doctrine
+Salow Technologies (https://salowtech.com) is an enterprise software engineering studio based in Surat, Gujarat, India. We build sovereign software platforms that clients own outright:
+- **100% Intellectual Property Ownership:** Full source code transfer, proprietary licenses, and zero recurring vendor lock-in.
+- **Zero Per-Seat SaaS Taxes:** Custom-built systems eliminate escalating per-user subscription fees as teams scale.
+- **Data Sovereignty & Security:** Self-hostable on private cloud infrastructure (AWS, Google Cloud, Azure, or on-premise) with PostgreSQL Row-Level Security (RLS) and AES-256 encryption.
+
+## 2. Core Service Verticals & Technical Capabilities
+
+### A. Custom CRM Development (https://salowtech.com/crm-development)
+- **Overview:** Bespoke customer relationship management platforms tailored to specific sales, customer success, and lead lifecycle operations.
+- **Lead Capture & Omnichannel Pipelines:** Instant webhook ingestion from Meta Ads, Google Ads, website quote forms, and WhatsApp Cloud API.
+- **Sales Velocity Automation:** Automated lead qualification, SLA routing, and sub-5 minute inbound response automation.
+- **Telephony & Communication Timeline:** Unified contextual timeline connecting VoIP call recordings, email correspondence, and WhatsApp chats.
+- **Key FAQs:**
+  * *Why build custom CRM instead of HubSpot/Salesforce?* Custom CRM gives 100% data ownership, zero monthly per-user licenses, and exact workflow fit.
+  * *Can it integrate with WhatsApp & existing telephony?* Yes, native WhatsApp Cloud API and Twilio/SIP telephony integration.
+
+### B. Enterprise ERP Development (https://salowtech.com/erp-development)
+- **Overview:** Modular enterprise resource planning systems integrating inventory, manufacturing, accounting, procurement, and supply chain.
+- **Operations & Manufacturing:** Multi-plant inventory control, bill of materials (BOM), real-time floor telemetry, and automated reorder triggers.
+- **Financial Synchronization:** General ledger, automated GST / statutory invoicing, accounts payable/receivable, and automated audit trails.
+- **Supply Chain Synchronization:** Vendor procurement portals, dynamic PO matching, and barcode/QR logistics tracking.
+- **Key FAQs:**
+  * *Can ERP scale across multiple branches/plants?* Yes, built on scalable multi-tenant or dedicated PostgreSQL schemas with distributed cache.
+  * *How is legacy data migrated?* Structured ETL pipelines with automated validation and rollback checkpoints.
+
+### C. Sovereign HRM & Payroll Software (https://salowtech.com/hrm-payroll)
+- **Overview:** All-in-one human resources management and payroll automation engine with zero per-employee recurring fees.
+- **Biometric & GPS Mobile Punch:** Facial scan verification and GPS geofenced mobile clock-in eliminating proxy attendance.
+- **1-Click Compliant Payroll:** Automated statutory deductions for Provident Fund (PF), ESIC, Professional Tax (PT), and TDS.
+- **Employee Self-Service (ESS):** Mobile portals for AES-256 encrypted payslips, leave approvals, and tax investment declarations.
+- **Key FAQs:**
+  * *Does it support shifts and overtime rules?* Yes, fully configurable rotational shift rosters, night allowances, and overtime policies.
+  * *Is payroll calculation compliant with Indian labor laws?* Yes, 100% compliant with updated statutory tax brackets, PF, ESIC, and bonus norms.
+
+### D. Conversational AI Voice Assistants (https://salowtech.com/ai-voice-assistant)
+- **Overview:** Real-time conversational AI voice agents and smart chatbots handling 24/7 inbound calls, lead capture, and appointment scheduling.
+- **Autonomous Telephony Agents:** Sub-500ms latency conversational AI voice bots for 24/7 inbound customer support and appointment booking.
+- **Multilingual Neural Speech:** Custom-trained neural speech models handling diverse regional accents, industry terminology, and sentiment detection.
+- **Instant CRM Integration:** Real-time call transcription, caller intent extraction, and automated CRM pipeline stage updates.
+- **Key FAQs:**
+  * *How natural does the AI sound?* Ultra-low latency (<500ms) with human-like breathing, interruptions, and contextual understanding.
+  * *Can the AI transfer calls to a live human?* Yes, seamless call escalation and warm handover with caller context summary.
+
+### E. Custom Web Application Development (https://salowtech.com/web-development)
+- **Overview:** High-performance, secure web applications, customer portals, and SaaS dashboards built on modern React and Next.js architectures.
+- **Architecture & Performance:** Modern frontend engineering, React, Next.js, sub-second TTFB, and zero-layout-shift (CLS = 0) render pipelines.
+- **Enterprise Security:** Hardened CSP policies, OWASP Top 10 compliance, input sanitization, and automated audit logging.
+- **Key FAQs:**
+  * *Do we own the source code?* Yes, full IP and repository transfer upon deployment.
+  * *How fast will the website load?* Sub-second load times with Core Web Vitals optimization (LCP < 2.5s, CLS = 0).
+
+### F. Mobile Application Development (https://salowtech.com/mobile-app-development)
+- **Overview:** Production-ready iOS, Android, and Flutter applications engineered for 120 FPS fluid interactions and offline reliability.
+- **Native & Cross-Platform:** Native Swift (iOS), Kotlin (Android), and Flutter cross-platform mobile apps.
+- **Performance:** 120 FPS buttery-smooth UI rendering, offline-first SQLite/WatermelonDB caching, and sub-100ms API synchronization.
+- **Key FAQs:**
+  * *Does one codebase support both iOS and Android?* Yes, with Flutter or React Native, or native codebases based on your performance needs.
+  * *Do you handle App Store and Play Store launch?* Yes, end-to-end certification, security reviews, and deployment.
+
+### G. Technical SEO, AEO & GEO Growth Services (https://salowtech.com/seo-and-growth)
+- **Overview:** Organic search engineering optimizing technical performance, keyword authority, and AI engine citation visibility (AEO/GEO/LLMO).
+- **Core Web Vitals:** Sub-2.5s LCP, zero CLS, and sub-200ms INP optimization.
+- **Answer Engine & Generative Engine Optimization:** Structured JSON-LD graphs, citation grounding for ChatGPT, Claude, Perplexity, and Google AI Overviews.
+- **Key FAQs:**
+  * *What is GEO and AEO?* Generative Engine Optimization and Answer Engine Optimization structure your content so AI search agents cite your business directly.
+  * *How long does organic SEO take?* Technical fixes yield speed and indexing gains within 3-4 weeks; competitive rankings typically compound within 3-6 months.
+
+## 3. Real Engineering Blog Topics & Architectural Insights
+- **What is an HRM Software? 5 Big Benefits for Small & Growing Businesses:** https://salowtech.com/blog/what-is-hrm-software
+- **How to Manage Customers with a CRM and Double Your Sales Pipeline:** https://salowtech.com/blog/manage-customers-crm-pipeline
+- **ERP vs CRM vs HRM: Which Enterprise System Does Your Business Need First?:** https://salowtech.com/blog/erp-vs-crm-vs-hrm-guide
+- **7 Things to Know Before Building a High-Converting Business Website:** https://salowtech.com/blog/high-converting-business-website
+- **Custom App vs Ready-Made App: Which Delivers Higher ROI in 2026?:** https://salowtech.com/blog/custom-vs-ready-made-mobile-app
+- **How to Run 24x7 Customer Support with an Intelligent Voice Assistant:** https://salowtech.com/blog/ai-voice-assistant-customer-support
+- **Website SEO: 10 Easy Proven Ways to Rank at the Top of Google & AI Search:** https://salowtech.com/blog/google-seo-ranking-2026
+- **Cloud ERP Security: How Modern Enterprises Protect Sensitive Ledger Data:** https://salowtech.com/blog/cloud-erp-security-checklist
+- **Business Automation: How to Cut Daily Manual Repetitive Tasks by 80%:** https://salowtech.com/blog/business-automation-repetitive-tasks
+- **Omnichannel Customer Support Hub Architecture:** https://salowtech.com/blog/omnichannel-customer-support-hub
+- **PostgreSQL & TimescaleDB Financial Vault Architecture:** https://salowtech.com/blog/postgresql-timescaledb-financial-vault
+
+## 4. Key Canonical URLs
+- Homepage: https://salowtech.com/
+- About Us: https://salowtech.com/about-us
+- Testimonials: https://salowtech.com/testimonials
+- Contact Us: https://salowtech.com/contact-us
+- CRM Development: https://salowtech.com/crm-development
+- ERP Development: https://salowtech.com/erp-development
+- HRM & Payroll: https://salowtech.com/hrm-payroll
+- AI Voice Assistant: https://salowtech.com/ai-voice-assistant
+- Web Development: https://salowtech.com/web-development
+- Mobile App Development: https://salowtech.com/mobile-app-development
+- SEO & Growth: https://salowtech.com/seo-and-growth
+- Engineering Blog: https://salowtech.com/blog
+- Privacy Policy: https://salowtech.com/privacy-policy
+- Terms & Conditions: https://salowtech.com/terms-and-conditions
+- XML Sitemap: https://salowtech.com/sitemap.xml
+- Robots Policy: https://salowtech.com/robots.txt
+
+## 5. Official Contact & Entity Verification
+- Company Name: Salow Technologies (Salowtech)
+- Official Website: https://salowtech.com
+- Contact Email: contact@salowtech.com
+- Phone / Inquiries: +91 63517 88935
+- WhatsApp: https://wa.me/916351788935
+- Headquarters: Surat, Gujarat, India (serving global clients across USA, UK, UAE, and India)
+- Technology Stack: Next.js, React, Node.js, Python, PostgreSQL, Flutter, Supabase, AWS, Docker

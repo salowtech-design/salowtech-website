@@ -1,0 +1,107 @@
+---
+/**
+ * FAQ Component: Accessible accordion disclosure list with WAI-ARIA expand/collapse states.
+ * Props: eyebrow (string), titleHtml (string), items (FAQItem[]), talkText (string), talkLink (string)
+ */
+export interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  eyebrow?: string;
+  titleHtml?: string;
+  items?: FAQItem[];
+  talkText?: string;
+  talkLink?: string;
+}
+
+const defaultItems: FAQItem[] = [
+  {
+    q: "What services do you offer?",
+    a: "Websites, mobile apps, CRM/HRM/ERM software, AI chatbots and Voice Assistants, all in one place."
+  },
+  {
+    q: "What is the difference between CRM, HRM and ERM?",
+    a: "CRM manages your customers, leads and sales. HRM manages your people: attendance, leave, payroll and hiring. ERM brings day-to-day operations like inventory, accounts and reports into one system. We can build them separately or connected."
+  },
+  {
+    q: "What will the AI and Voice Assistant do for my business?",
+    a: "The AI chatbot answers customer questions on your website and WhatsApp 24/7, captures leads and books appointments. The Voice Assistant does the same on phone calls and hands over to your team whenever needed."
+  },
+  {
+    q: "How much time and cost will my project need?",
+    a: "It depends on the features and size of your project. After a short discovery call we share a clear scope, timeline and fixed quote, so there are no surprise costs later."
+  },
+  {
+    q: "Will the mobile app work on both Android and iOS?",
+    a: "Yes. We build one app that runs on both Android and iOS, so you manage a single product and can launch on both stores together."
+  },
+  {
+    q: "Is my data safe?",
+    a: "Yes. Your data is encrypted, access is role-based so people only see what they should, and automatic backups run regularly."
+  },
+  {
+    q: "Do you provide support after launch?",
+    a: "Yes. We stay with you after launch with bug fixes, updates, team training and help whenever you want to add new features."
+  }
+];
+
+const {
+  eyebrow = "+ FAQ",
+  titleHtml = "Frequently Asked <em>Questions</em>",
+  items = defaultItems,
+  talkText = "Something else on your mind? Talk to the team that builds it.",
+  talkLink = "/contact-us"
+} = Astro.props;
+---
+
+<section class="faq" id="faq-section" aria-labelledby="faq-title">
+  <div class="head">
+    <span class="eyebrow">{eyebrow}</span>
+    <h2 id="faq-title" aria-label="Frequently Asked Questions" set:html={titleHtml} />
+  </div>
+
+  <div class="list">
+    {items.map((item, index) => {
+      const isOpen = index === 0;
+      const btnId = `faq-btn-${index + 1}`;
+      const panelId = `faq-panel-${index + 1}`;
+      return (
+        <div class={`q ${isOpen ? "open" : ""}`}>
+          <h3>
+            <button type="button" id={btnId} aria-expanded={isOpen ? "true" : "false"} aria-controls={panelId}>
+              {item.q}
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id={panelId} role="region" aria-labelledby={btnId}>
+            <div>
+              <p set:html={item.a} />
+            </div>
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <div class="foot">
+    <p>{talkText}</p>
+    <a class="cta" href={talkLink}>
+      Talk to our team
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 14 14"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M2 7h10M8 3l4 4-4 4" />
+      </svg>
+    </a>
+  </div>
+</section>

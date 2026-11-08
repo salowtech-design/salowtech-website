@@ -1,13 +1,37 @@
+# Dependencies
 node_modules/
-comapny-backup/
-scratch/
-.agent/
-*.zip
-*.log
-*.blend
-*.blend1
+node_modules
+
+# Production & Build outputs
+dist/
+dist
+.astro/
+.astro
+.wrangler/
+.wrangler
+.vercel/
+
+# Sensitive & Environment variables
 .env
 .env.*
-.vercel/
-data/leads.json
+.env.local
+!.env.example
 
+# Local Data & CRM Storage
+/data/
+data/leads.json
+data/crm-settings.json
+crm-settings.json
+!src/data/
+
+# Temporary & Logs
+*.log
+scratch/
+.agent/
+.agents/
+_snapshots/
+
+# Binary & 3D archives
+*.zip
+*.blend
+*.blend1

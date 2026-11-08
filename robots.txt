@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /api/
-Disallow: /crm-dashboard
-
-Sitemap: https://salowtech.com/sitemap.xml

@@ -1,0 +1,31 @@
+---
+/**
+ * Breadcrumb Component: Accessible, crawlable visual breadcrumb trail
+ * establishing explicit hierarchical parent-child relationships for Google Sitelinks.
+ */
+interface Props {
+  currentPage: string;
+  parentName?: string;
+  parentUrl?: string;
+}
+
+const { currentPage, parentName = "Home", parentUrl = "/" } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-2">
+  <ol class="flex items-center space-x-2 text-xs sm:text-sm text-stone-500 font-medium">
+    <li>
+      <a href={parentUrl} class="hover:text-stone-900 transition-colors inline-flex items-center gap-1">
+        <svg class="w-3.5 h-3.5 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+        <span>{parentName}</span>
+      </a>
+    </li>
+    <li aria-hidden="true" class="text-stone-400 select-none">/</li>
+    <li class="text-[#7D3024] font-semibold tracking-tight" aria-current="page">
+      {currentPage}
+    </li>
+  </ol>
+</nav>
+

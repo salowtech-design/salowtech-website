@@ -1,0 +1,917 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import mascotExplaining from "../assets/mascot_explaining.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getServiceSchema } from "../data/schema";
+
+const seo = pagesSEO.seoAndGrowth;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "enterprise SEO services India, technical SEO agency, B2B search engine optimization, programmatic SEO digital growth, Core Web Vitals optimization, organic lead generation agency Surat Bangalore";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "bg-cream-100 text-slate-800 antialiased selection:bg-maroon-800 selection:text-white";
+const showChatbot = true;
+const schemaJson = getServiceSchema({
+  serviceKey: "seo-and-growth",
+  serviceName: seo.title,
+  serviceType: "Search Engine Optimization",
+  description: seo.description,
+  path: seo.canonicalPath,
+  breadcrumbTitle: "SEO & Growth"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- END: SiteHeader / Navigation -->
+
+  <main>
+    <Breadcrumb currentPage="SEO & Growth" />
+
+    <!-- BEGIN: HeroSection -->
+    <section class="relative pt-28 sm:pt-36 pb-16 lg:pb-20 overflow-hidden bg-cream-50" data-purpose="hero-section">
+      <div class="absolute inset-0 hero-pattern pointer-events-none"></div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <!-- Hero Left Column: Narrative & Key Bullets -->
+          <div class="lg:col-span-7 space-y-6">
+            <!-- Main Title -->
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.12] tracking-tight">
+              Dominate Search Rankings &amp; Accelerate{" "}
+              <span class="italic font-serif text-maroon-800">Digital Growth</span>
+            </h1>
+
+            <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-cream-200 text-slate-700 text-xs sm:text-sm leading-relaxed shadow-xs" data-purpose="aeo-direct-answer">
+              <p class="font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-maroon-800"></span>
+                <span>Quick Overview:</span>
+              </p>
+              <p>
+                Salowtech SEO &amp; Growth Services deliver technical website optimization, search engine optimization, content strategy, and conversion rate engineering. Designed for B2B brands and growth-focused businesses wanting sustainable organic search rankings, qualified inbound pipeline, and measurable revenue growth.
+              </p>
+            </div>
+
+            <!-- 4 Concise Bullet Points -->
+            <ul class="space-y-3.5 pt-2 text-slate-700">
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-cream-200 text-maroon-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">Technical SEO &amp; Website Architecture Optimization</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-cream-200 text-maroon-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">High-Intent Keyword Strategy &amp; Content Authority</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-cream-200 text-maroon-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">AI-Powered Search Optimization (AEO, GEO &amp; LLMO)</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-full bg-cream-200 text-maroon-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">Measurable Organic Conversions &amp; Revenue Scaling</span>
+              </li>
+            </ul>
+
+            <!-- Dual Pill CTA Button -->
+            <div class="pt-4 flex flex-wrap items-center gap-4">
+              <div class="inline-flex rounded-full bg-maroon-800 p-1.5 shadow-md">
+                <a
+                  class="px-6 py-2.5 rounded-full text-white font-medium text-sm hover:bg-maroon-900 transition-colors flex items-center gap-2"
+                  href="/contact-us"
+                >
+                  <i class="fa-regular fa-paper-plane text-xs"></i> Contact Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right Column: Request A Quote Card -->
+          <div class="lg:col-span-5" id="contact">
+            <div class="bg-white rounded-2xl shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] p-6 sm:p-7 relative">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h2 class="text-base sm:text-lg font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                  <p class="text-[11px] text-stone-500 mt-0.5">SEO roadmap &amp; sprint estimate in 24 hours</p>
+                </div>
+                <span class="w-7 h-7 rounded-full bg-[#FFF5EE] text-[#F37021] flex items-center justify-center font-bold text-xs border border-[#FFE0CC] shadow-xs">
+                  ⚡
+                </span>
+              </div>
+              <form class="space-y-2.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
+                <div>
+                  <label class="sr-only" for="lead_name">
+                    Name*
+                  </label>
+                  <input
+                    class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                    id="lead_name"
+                    placeholder="Name*"
+                    required=""
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <label class="sr-only" for="lead_phone">
+                    Phone No*
+                  </label>
+                  <input
+                    class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                    id="lead_phone"
+                    placeholder="Phone No*"
+                    required=""
+                    type="tel"
+                  />
+                </div>
+                <div>
+                  <label class="sr-only" for="lead_email">
+                    Email*
+                  </label>
+                  <input
+                    class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                    id="lead_email"
+                    placeholder="Email*"
+                    required=""
+                    type="email"
+                  />
+                </div>
+                <div>
+                  <label class="sr-only" for="lead_message">
+                    Type Your Message*
+                  </label>
+                  <textarea
+                    class="w-full px-3.5 py-2 text-xs sm:text-sm bg-[#F8FAFC] border border-stone-200 rounded-lg focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                    id="lead_message"
+                    placeholder="Type Your Message*"
+                    required=""
+                    rows="2"
+                  ></textarea>
+                </div>
+
+                <!-- Trust / NDA Badge -->
+                <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
+                  <span class="flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                      />
+                    </svg>
+                    <span>100% Strict Mutual NDA Protected</span>
+                  </span>
+                  <span class="font-bold text-neutral-800">Verified</span>
+                </div>
+                <!-- Google reCAPTCHA v3 Protection Badge -->
+                <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                  <span class="flex items-center gap-2 font-medium text-stone-700">
+                    <svg
+                      class="w-4 h-4 text-[#1a73e8]"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                      />
+                    </svg>
+                    <span>Protected by Google reCAPTCHA v3</span>
+                  </span>
+                  <span class="text-[11px] text-stone-400">
+                    <a
+                      href="https://policies.google.com/privacy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:underline hover:text-stone-600 transition-colors"
+                    >
+                      Privacy
+                    </a>
+                    <span class="mx-1">&bull;</span>
+                    <a
+                      href="https://policies.google.com/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="hover:underline hover:text-stone-600 transition-colors"
+                    >
+                      Terms
+                    </a>
+                  </span>
+                </div>
+
+                <!-- Submit Button -->
+                <button class="btn-salow-submit" type="submit">
+                  <span class="btn-salow-logo-mark">
+                    <Image
+                      src={salowtechLogo}
+                      width={24}
+                      height={24}
+                      alt="Salowtech"
+                      loading="lazy"
+                      decoding="async"
+                      format="webp"
+                      quality={90}
+                    />
+                  </span>
+                  <span class="btn-salow-text">SUBMIT REQUEST</span>
+                  <span class="btn-salow-arrow">&rarr;</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: HeroSection -->
+
+    <!-- BEGIN: AuthorityValueSection -->
+    <section class="py-16 bg-cream-100 border-y border-cream-200" data-purpose="value-proposition">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          From Search Clicks to{" "}
+          <span class="text-maroon-800 underline decoration-cream-300 decoration-wavy underline-offset-8 italic font-serif">
+            Get SEO Consultant
+          </span>
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          At Salowtech, we help modern brands capture the top spot across search engines and AI platforms. Our
+          data-driven SEO engineering combines deep technical auditing, content authority, and conversion optimization
+          to turn search visibility into lasting business growth.
+        </p>
+        <div class="pt-2">
+          <a
+            class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-maroon-800 hover:bg-maroon-900 text-white font-semibold text-sm transition-all shadow-sm hover:shadow-md"
+            href="/contact-us"
+          >
+            <span>Get SEO Consultation</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- END: AuthorityValueSection -->
+
+    <!-- BEGIN: StrategicTakeawaysSection -->
+    <section class="py-20 bg-cream-50" data-purpose="key-takeaways" id="methodology">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Strategic Takeaways: How Salowtech Powers Search Dominance
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <!-- Left Column: Content, Bullet points, Action Button -->
+          <div class="lg:col-span-7 space-y-6">
+            <h3 class="text-3xl font-extrabold text-maroon-800 italic font-serif">Key Takeaways</h3>
+            <p class="text-slate-700 leading-relaxed">
+              <strong class="font-bold text-maroon-800">SEO Services</strong> optimize your visibility across search
+              engines and AI search platforms. We combine technical audits, high-intent keywords, and authority building
+              to drive rankings and measurable business growth.
+            </p>
+            <h4 class="text-base font-bold text-slate-900 pt-2">What's included in our SEO services:</h4>
+            <ul class="space-y-3.5 text-slate-700">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">Technical SEO &amp; Website Optimization</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">Keyword Research &amp; Search Intent Strategy</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">On-Page SEO &amp; Content Optimization</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">Local SEO &amp; Google Business Profile Optimization</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">High-Quality Authority Link Building</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">AI SEO (AEO, GEO, LLMO &amp; HEO)</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded-full bg-maroon-800/10 text-maroon-800 flex items-center justify-center shrink-0 text-xs">
+                  <i class="fa-solid fa-check"></i>
+                </span>
+                <span class="font-medium text-slate-800">
+                  Monthly Performance Reports &amp; Strategic Recommendations
+                </span>
+              </li>
+            </ul>
+          </div>
+          <!-- Right Column: Visual Mockup -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden border border-cream-300 shadow-warm-card bg-white flex items-center justify-center">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsLhjnBsIVNVPy2B7nnzupcYVQbxpXJQCzhlBkQn8H50ZdBuAq7jReqVnM9u7oLsnf2rqUK_jAdbOgTZmu1uLL4CzjXUDsXcQO6ETOf1Cxp2f07CIhWLhK88_AY6PSGuwFsGncOzjLSAdGKdCX1g0zIzTF45DETCUG--dqj9pdCFuj4OQzx-O-TUZz7RGiHYC_sbrScfVNIUQ7yHlJ3GaPd8YSnOp6vWEKentZ33f7L5OviTEhD2eV-HiHPR_eVLKg"
+                alt="SEO Strategy to Rank #1 on Google"
+                class="w-full h-auto object-cover rounded-2xl transition-transform hover:scale-105 duration-300"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: StrategicTakeawaysSection -->
+
+    <!-- BEGIN: CoreServicesGrid (Exact Reference Asymmetric Bento Grid) -->
+    <section class="py-20 lg:py-24 bg-cream-50" data-purpose="core-services-grid" id="services">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header Matching Reference -->
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-950 tracking-tight mb-3">
+            Growth that compounds
+          </h2>
+          <p class="text-stone-600 text-xs sm:text-sm tracking-wide flex items-center justify-center gap-2">
+            <span>Technical excellence</span>
+            <span class="text-[#7D3024]">✦</span>
+            <span>content authority</span>
+            <span class="text-[#7D3024]">✦</span>
+            <span>continuous optimization</span>
+          </p>
+        </div>
+
+        <!-- 5-Card Asymmetric Bento Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          <!-- Left Column: Tall Card (Technical SEO Foundation) -->
+          <div class="lg:col-span-5">
+            <a href="/contact-us" class="seo-bento-tall-card block group">
+              <!-- Geometric subtle watermark -->
+              <svg class="seo-card-geo-watermark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                <circle cx="50" cy="50" r="45" stroke="#7D3024" stroke-width="1.5" stroke-dasharray="3 3" />
+                <circle cx="50" cy="50" r="30" stroke="#7D3024" stroke-width="1" />
+                <circle cx="50" cy="50" r="15" stroke="#7D3024" stroke-width="0.8" />
+              </svg>
+
+              <div>
+                <div class="seo-squircle-icon bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024] mb-6">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-serif font-bold text-slate-950 mb-3 group-hover:text-[#7D3024] transition-colors relative inline-block">
+                  Technical SEO Foundation
+                  <span class="block h-0.5 w-12 bg-[#7D3024]/60 rounded-full mt-2"></span>
+                </h3>
+                <p class="text-stone-600 text-sm leading-relaxed mt-4">
+                  Core Web Vitals, crawl efficiency, and a robust architecture foundation ensure visibility, speed, and
+                  scalability.
+                </p>
+              </div>
+
+              <div class="mt-auto pt-6 border-t border-cream-200/80 flex items-center justify-between text-xs font-semibold text-[#5C2017]">
+                <span>Explore Technical Audit</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Right Column: Stacked Bento Cards -->
+          <div class="lg:col-span-7 flex flex-col gap-6 justify-between">
+            <!-- Top Wide Card: Content that ranks & converts -->
+            <a href="/contact-us" class="seo-bento-card block group flex-1">
+              <!-- Leaf decorative watermark -->
+              <svg
+                class="seo-card-leaf-watermark text-[#7D3024]"
+                viewBox="0 0 100 100"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M50 0 C60 30 80 50 100 50 C70 60 50 80 50 100 C40 70 20 50 0 50 C30 40 50 20 50 0 Z" />
+              </svg>
+
+              <div class="flex items-start gap-4">
+                <div class="seo-squircle-icon bg-[#F0FDF4] border border-[#CCFBF1] text-[#0F766E]">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-serif font-bold text-slate-950 mb-1 group-hover:text-[#0F766E] transition-colors">
+                    Content that ranks &amp; converts
+                  </h3>
+                  <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    Strategic, authoritative content that answers intent, builds trust, and drives measurable outcomes.
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Middle Wide Card: Authority & Digital PR -->
+            <a href="/contact-us" class="seo-bento-card block group flex-1">
+              <div class="flex items-start gap-4">
+                <div class="seo-squircle-icon bg-[#FDF6E8] border border-[#F3E5C7] text-[#D97706]">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-serif font-bold text-slate-950 mb-1 group-hover:text-[#D97706] transition-colors">
+                    Authority &amp; Digital PR
+                  </h3>
+                  <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    Earned backlinks, trusted domain signals, and strategic partnerships build authority and long-term
+                    equity.
+                  </p>
+                </div>
+              </div>
+            </a>
+
+            <!-- Bottom Row: 2 Split Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Card 4: Local & International SEO -->
+              <a href="/contact-us" class="seo-bento-card block group">
+                <div class="seo-squircle-icon bg-[#FDF1F0] border border-[#F3D5D3] text-[#7D3024] mb-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path
+                      d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 class="text-base font-serif font-bold text-slate-950 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Local &amp; International SEO
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Localized relevance and global scalability—optimized for every market you serve.
+                </p>
+              </a>
+
+              <!-- Card 5: Conversion & Iteration -->
+              <a href="/contact-us" class="seo-bento-card block group">
+                <div class="seo-squircle-icon bg-[#FAF4EE] border border-[#E8DCD1] text-[#7D3024] mb-3">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <h3 class="text-base font-serif font-bold text-slate-950 mb-1 group-hover:text-[#7D3024] transition-colors">
+                  Conversion &amp; Iteration
+                </h3>
+                <p class="text-xs text-stone-600 leading-relaxed">
+                  Data-informed experiments, UX refinement, and continuous iteration turn traffic into growth.
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: CoreServicesGrid -->
+
+    <!-- BEGIN: Superb Radial Orbit Transmission Hub (Exact Reference Match) -->
+    <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024]">+ REAL-TIME SEARCH TRANSMISSION</span>
+        <h2
+          id="transmission-title"
+          class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
+        >
+          The Programmatic Search &amp; Growth Transmission Engine
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+          How high-velocity technical crawls, semantic entity schemas, and edge rendering pipelines drive unshakeable
+          algorithmic dominance on Google.
+        </p>
+      </div>
+
+      <div class="transmission-stage">
+        <!-- Concentric Pulsing Wave Halos -->
+        <div class="transmission-halo transmission-halo-1" aria-hidden="true"></div>
+        <div class="transmission-halo transmission-halo-2" aria-hidden="true"></div>
+        <div class="transmission-halo transmission-halo-3" aria-hidden="true"></div>
+
+        <!-- Center Hub -->
+        <div class="orbit-center-hub">
+          <Image
+            src={salowtechLogo}
+            width={140}
+            height={42}
+            alt="Salowtech Logo"
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={95}
+            class="h-8 w-auto object-contain"
+          />
+          <div class="hub-text text-left">
+            <span class="hub-title">Salowtech</span>
+            <span class="hub-badge">Sovereign Search Hub</span>
+          </div>
+        </div>
+
+        <!-- 8 Orbiting Nodes with Real SVGs -->
+        <div class="orbit-node node-pos-1">
+          <span class="orbit-node-icon" style="background: #10B981;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </span>
+          <span>100/100 Core Web Vitals</span>
+        </div>
+        <div class="orbit-node node-pos-2">
+          <span class="orbit-node-icon" style="background: #5C2017;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+          </span>
+          <span>Schema JSON-LD Graph</span>
+        </div>
+        <div class="orbit-node node-pos-3">
+          <span class="orbit-node-icon" style="background: #7D3024;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+              <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+            </svg>
+          </span>
+          <span>Edge SSR &amp; Prerender</span>
+        </div>
+        <div class="orbit-node node-pos-4">
+          <span class="orbit-node-icon" style="background: #7D3024;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+              <polyline points="17 6 23 6 23 12" />
+            </svg>
+          </span>
+          <span>Real-Time Rank Tracking</span>
+        </div>
+        <div class="orbit-node node-pos-5">
+          <span class="orbit-node-icon" style="background: #F97316;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+              <rect x="3" y="11" width="18" height="10" rx="2" />
+              <circle cx="12" cy="5" r="2" />
+              <path d="M12 7v4" />
+              <line x1="8" y1="16" x2="8" y2="16" />
+              <line x1="16" y1="16" x2="16" y2="16" />
+            </svg>
+          </span>
+          <span>Programmatic Content Engine</span>
+        </div>
+        <div class="orbit-node node-pos-6">
+          <span class="orbit-node-icon" style="background: #0F766E;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+          </span>
+          <span>Backlink Authority Mesh</span>
+        </div>
+        <div class="orbit-node node-pos-7">
+          <span class="orbit-node-icon" style="background: #EF4444;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+          </span>
+          <span>Instant IndexNow API</span>
+        </div>
+        <div class="orbit-node node-pos-8">
+          <span class="orbit-node-icon" style="background: #1E293B;">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="6" />
+              <circle cx="12" cy="12" r="2" />
+            </svg>
+          </span>
+          <span>High-Converting CRO</span>
+        </div>
+      </div>
+    </section>
+    <!-- END: Superb Radial Orbit Transmission Hub -->
+
+    <!-- BEGIN: Canonical FAQ Section (Exact Match to Home Page #faq-section) -->
+
+    <!-- BEGIN: SalowTech Interactive Mascot Service Guide -->
+    <section class="py-12 sm:py-16 relative overflow-hidden" data-purpose="mascot-service-guide">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <!-- Left: 3D Mascot Facing Right Towards Text in Website Background Color -->
+          <div class="md:col-span-4 flex justify-center md:justify-end">
+            <div class="w-36 sm:w-44 lg:w-52 flex-shrink-0 transition-transform duration-300 hover:scale-105">
+              <Image
+                src={mascotExplaining}
+                alt="SalowTech Engineering Mascot"
+                class="w-full h-auto object-contain filter drop-shadow-[0_12px_24px_rgba(125, 48, 36,0.22)]"
+                width={240}
+                height={240}
+                loading="lazy"
+                decoding="async"
+                format="webp"
+                quality={92}
+              />
+            </div>
+          </div>
+
+          <!-- Right: Editorial Enterprise Architecture Text -->
+          <div class="md:col-span-8 text-center md:text-left">
+            <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#7D3024] font-sans mb-2">
+              TECHNICAL DOMINANCE
+            </span>
+            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3">
+              Programmatic SEO & Search Dominance
+            </h3>
+            <p class="text-base sm:text-lg text-neutral-700 leading-relaxed max-w-2xl">
+              Edge-rendered semantic structured schema, Core Web Vitals optimization, and high-intent programmatic
+              indexation built to capture compounding organic revenue.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END: SalowTech Interactive Mascot Service Guide -->
+
+    <section class="faq" id="faq-section" aria-labelledby="faq-title">
+      <div class="head">
+        <span class="eyebrow">+ FAQ</span>
+        <h2 id="faq-title">
+          Search & Growth <em>FAQs</em>
+        </h2>
+      </div>
+
+      <div class="list">
+        <!-- FAQ 1 -->
+        <div class="q open">
+          <h3>
+            <button type="button" id="faq-seo-btn-1" aria-expanded="true" aria-controls="faq-seo-ans-1">
+              What does Salowtech's Technical & Organic SEO service encompass?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-1" role="region" aria-labelledby="faq-seo-btn-1">
+            <div>
+              <p>
+                We execute full-funnel search engine optimization: deep technical website audits, Core Web Vitals
+                optimization, semantic schema markup (JSON-LD), programmatic SEO architecture, competitive keyword
+                mapping, and authority-building content strategies.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-seo-btn-2" aria-expanded="false" aria-controls="faq-seo-ans-2">
+              How long does it take to see measurable ranking and organic traffic improvements?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-2" role="region" aria-labelledby="faq-seo-btn-2">
+            <div>
+              <p>
+                Technical fixes (crawl errors, indexing, page speed) often produce positive signals within 2 to 4 weeks.
+                Sustained high-intent organic keyword rankings and inbound sales pipeline growth typically materialize
+                within 3 to 6 months.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-seo-btn-3" aria-expanded="false" aria-controls="faq-seo-ans-3">
+              Do you guarantee first-page Google rankings for our business?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-3" role="region" aria-labelledby="faq-seo-btn-3">
+            <div>
+              <p>
+                We strictly adhere to Google Search Essentials (white-hat SEO) and avoid fraudulent 'guaranteed
+                overnight #1' claims that lead to algorithmic penalties. We deliver proven, transparent organic traffic
+                growth, top-3 keyword positions for commercial queries, and verifiable inbound leads.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-seo-btn-4" aria-expanded="false" aria-controls="faq-seo-ans-4">
+              How do you optimize for Google Core Web Vitals and page experience?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-4" role="region" aria-labelledby="faq-seo-btn-4">
+            <div>
+              <p>
+                We resolve Largest Contentful Paint (LCP), Interaction to Next Paint (INP), and Cumulative Layout Shift
+                (CLS) directly in the website code: reducing JavaScript execution time, optimizing CSS delivery, and
+                eliminating layout shifts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-seo-btn-5" aria-expanded="false" aria-controls="faq-seo-ans-5">
+              Can you help our local business dominate Google Maps and local search?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-5" role="region" aria-labelledby="faq-seo-btn-5">
+            <div>
+              <p>
+                Yes. Our Local SEO package optimizes your Google Business Profile (GBP), builds authoritative local
+                citations, manages customer review workflows, and implements geo-targeted schema markup to drive phone
+                calls and foot traffic.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="q">
+          <h3>
+            <button type="button" id="faq-seo-btn-6" aria-expanded="false" aria-controls="faq-seo-ans-6">
+              What reporting and analytics transparency do you provide?
+              <i class="ic" aria-hidden="true"></i>
+            </button>
+          </h3>
+          <div class="a" id="faq-seo-ans-6" role="region" aria-labelledby="faq-seo-btn-6">
+            <div>
+              <p>
+                You receive an executive real-time dashboard linking Google Analytics 4, Search Console, and keyword
+                rank trackers. Monthly reviews cover organic impressions, click-through rates, keyword ranking deltas,
+                and qualified lead conversions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <p>Have questions about your project scope, architecture, or timeline?</p>
+        <a href="/contact-us" class="cta">
+          Talk to Our Senior Engineers
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 8h10M9 4l4 4-4 4" />
+          </svg>
+        </a>
+      </div>
+    </section>
+    <!-- END: Canonical FAQ Section -->
+
+      <!-- ==========================================
+       SEO & GROWTH IN ACTION (VIDEO SHOWCASE)
+       ========================================== -->
+  <ServiceVideoShowcase
+    id="seo-video-showcase"
+    eyebrow="SEO & Growth In Action"
+    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Compounding Search Dominance</span>'
+    description="Technical SEO architecture, Core Web Vitals acceleration, and sovereign search rankings."
+    poster="/assets/posters/video1.jpg"
+    videoSrc="/assets/SalowTech_video1.mp4"
+  />
+
+    <!-- BEGIN: CTA Section (Choose SalowTech) -->
+
+    <section class="cta-wrap" id="cta-section">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>
+            Choose SalowTech.
+            <br />
+            Accelerate business growth.
+          </h2>
+          <a href="/contact-us" class="cta-btn" aria-label="Start Your Journey with Salowtech">
+            Start Your Journey &rarr;
+          </a>
+          <ul class="cta-points">
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Custom AI solutions for your business
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Fast setup and delivery
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Dedicated support after launch
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-art" aria-hidden="true">
+          <Image
+            src={ctaIllustration}
+            alt="Salowtech Growth Illustration"
+            class="cta-img"
+            width={967}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={90}
+          />
+        </div>
+      </div>
+    </section>
+    <!-- END: CTA Section -->
+  </main>
+
+  <!-- BEGIN: Footer Section -->
+</Layout>

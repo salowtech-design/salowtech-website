@@ -1,0 +1,790 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import teamHeroImg from "../assets/salowtech_team_hero.jpg";
+import cs1 from "../assets/about/culture-slider-1.png";
+import cs2 from "../assets/about/culture-slider-2.png";
+import cs3 from "../assets/about/culture-slider-3.png";
+import cs4 from "../assets/about/culture-slider-4.png";
+import cs5 from "../assets/about/culture-slider-5.png";
+import cs6 from "../assets/about/culture-slider-6.png";
+import cs7 from "../assets/about/culture-slider-7.png";
+import cs8 from "../assets/about/culture-slider-8.png";
+import cs9 from "../assets/about/culture-slider-9.png";
+import cs10 from "../assets/about/culture-slider-10.png";
+import cs11 from "../assets/about/culture-slider-11.png";
+import ctaIllustration from "../assets/cta_illustration_cream.png";
+import salowtechLogo from "../assets/salowtech_logo.png";
+import Breadcrumb from "../components/Breadcrumb.astro";
+import { pagesSEO } from "../data/seo";
+import { getAboutSchema } from "../data/schema";
+
+const seo = pagesSEO.aboutUs;
+const title = seo.title;
+const description = seo.description;
+const keywords =
+  "about Salowtech, sovereign software engineering, IT consulting firm India, enterprise software architects, software engineering studio Surat Bangalore, custom software developers India";
+const canonicalPath = seo.canonicalPath;
+const ogTitle = seo.title;
+const ogDescription = seo.description;
+const bodyClass = "selection:bg-neutral-900 selection:text-white min-h-screen";
+const showChatbot = true;
+const schemaJson = getAboutSchema();
+---
+
+<Layout
+  title={title}
+  description={description}
+  keywords={keywords}
+  canonicalPath={canonicalPath}
+  ogTitle={ogTitle}
+  ogDescription={ogDescription}
+  bodyClass={bodyClass}
+  showChatbot={showChatbot}
+  schemaJson={schemaJson}
+>
+  <!-- ================= MAIN CONTENT ================= -->
+  <Breadcrumb currentPage="About Us" />
+  <main class="relative w-full pt-20">
+    <!-- ================= 1. HERO SECTION (hello.html Specification) ================= -->
+    <section class="max-w-6xl mx-auto px-6 pt-24 pb-20 about-hero-enter">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+        <div class="lg:col-span-7">
+          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-5 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#7D3024] inline-block animate-pulse"></span>
+            About us
+          </p>
+          <h1 class="editorial-headline text-5xl sm:text-6xl md:text-7xl lg:text-[76px] text-neutral-950 font-normal">
+            Built by people
+            <br />
+            who care about
+            <br />
+            the details.
+          </h1>
+        </div>
+        <div class="lg:col-span-5 pb-2">
+          <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed font-normal">
+            We are a focused team of software engineers and system designers creating sovereign enterprise platforms
+            that feel inevitable &mdash; simple on the surface, powerful underneath.
+          </p>
+        </div>
+      </div>
+
+      <!-- Founders Photo & Architecture Team (Refined & Elegantly Sized) -->
+      <div class="mt-10 sm:mt-12 max-w-2xl sm:max-w-3xl mx-auto">
+        <div class="rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 bg-white border border-[#E8E1D3] shadow-sm overflow-hidden group">
+          <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAF7F2]">
+            <Image
+              src={teamHeroImg}
+              alt="Salowtech Core Architects & Founders"
+              class="w-full h-[320px] sm:h-[400px] lg:h-[480px] object-cover rounded-3xl border border-stone-200/80 shadow-[0_20px_50px_-15px_rgba(43,35,26,0.14)]"
+              width={1200}
+              height={480}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              format="webp"
+              quality={92}
+            />
+          </div>
+        </div>
+
+        <!-- Core Architects Typography (No box, elegant font) -->
+        <div class="mt-4 text-center">
+          <p class="text-xs sm:text-sm uppercase tracking-[0.22em] font-semibold text-[#7D3024] font-sans">
+            Core Architects
+          </p>
+          <p class="text-base sm:text-lg font-serif italic text-neutral-700 mt-1">
+            Founders of Salowtech &mdash; Sovereign Software Engineering
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subtle Hairline Divider -->
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="h-px bg-stone-300/60"></div>
+    </div>
+
+    <!-- ================= 2. WHAT DRIVES US (hello.html Specification) ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-24 sm:py-28 animate-on-scroll">
+      <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-14">What drives us</p>
+
+      <div class="grid md:grid-cols-3 gap-10 lg:gap-14">
+        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
+            01
+          </div>
+          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Precision</h3>
+          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
+            Every line of code and every interaction is intentional. We refuse to ship complexity for the sake of
+            features. Architectural clarity is our permanent default.
+          </p>
+        </div>
+
+        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
+            02
+          </div>
+          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Partnership</h3>
+          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
+            We embed with your core leadership. Your operational goals become our roadmap. We measure engineering
+            success only by the measurable enterprise outcomes we create together.
+          </p>
+        </div>
+
+        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
+            03
+          </div>
+          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Permanence</h3>
+          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
+            We engineer systems meant to compound for decades &mdash; maintainable, scalable, and free from rented
+            technical debt. Short-term vendor lock-in has zero place at Salowtech.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 3. OUR STORY + METRICS (hello.html Specification) ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-12 animate-on-scroll">
+      <div class="grid lg:grid-cols-12 gap-10 items-stretch">
+        <!-- Story Card -->
+        <div class="lg:col-span-7 soft-card rounded-3xl p-8 sm:p-12 bg-white flex flex-col justify-center">
+          <h2 class="editorial-headline text-4xl sm:text-5xl mb-6 text-neutral-950 font-normal">Our Story</h2>
+          <div class="space-y-5 text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
+            <p>
+              Most software is overcomplicated. Bloated interfaces, endless configuration screens, and subscription
+              tools that create more manual work than they save. We saw this pattern repeat across Indian enterprises
+              and decided to engineer differently.
+            </p>
+            <p>
+              We started with an uncompromising belief: the best enterprise platforms feel obvious in hindsight. They
+              remove operational friction instead of adding unnecessary features. They respect the operator's time and
+              the engineer's craft in equal measure.
+            </p>
+            <p>
+              Today, we partner with ambitious manufacturing plants, retail logistics, and high-growth enterprises to
+              design software that compounds in value over years &mdash; not just quarters. Every client engagement is
+              treated as a permanent sovereign partnership, never a disposable transaction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Metrics Cards Stack -->
+        <div class="lg:col-span-5 flex flex-col justify-between gap-5">
+          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
+            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-950 font-sans">2021</p>
+            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">Founded in Surat, Gujarat</p>
+          </div>
+          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
+            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-[#7D3024] font-sans">40+</p>
+            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">Senior Engineering Specialists</p>
+          </div>
+          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
+            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-950 font-sans">Zero VC</p>
+            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">100% Bootstrapped &amp; Sovereign</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. HOW WE WORK (hello.html Specification) ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-24 sm:py-28 animate-on-scroll">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5">
+          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-4">How we work</p>
+          <h2 class="editorial-headline text-4xl sm:text-5xl leading-tight text-neutral-950 font-normal">
+            A calm, deliberate process designed for clarity.
+          </h2>
+          <p class="text-neutral-600 text-base sm:text-lg mt-5 leading-relaxed font-normal">
+            We reject chaotic agency churn. We work directly with founders and CTOs with zero junior middle-managers.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7 space-y-8">
+          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
+            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">01</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Deep Discovery</h3>
+              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
+                We start by mapping the actual physical workflow, edge cases, and compliance constraints. No hasty
+                assumptions. No rushed, inaccurate estimates.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
+            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">02</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Focused Execution</h3>
+              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
+                Dedicated senior squad. Daily automated staging builds. Complete transparency in Discord and GitHub. We
+                ship production increments, not slide-deck theatre.
+              </p>
+            </div>
+          </div>
+
+          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
+            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">03</div>
+            <div>
+              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Long-term Ownership</h3>
+              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
+                We stay accountable for the lifetime of your deployment. Comprehensive codemaps, on-premise
+                infrastructure handover, and 24/7 SLA stewardship are included by design.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. CULTURE & VALUES INFINITE GALLERY ================= -->
+    <section class="py-16 overflow-hidden bg-[#FAF7F2]" aria-label="Culture photo gallery">
+      <div class="max-w-6xl mx-auto px-6 mb-10 text-center">
+        <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-3">Our Culture</p>
+        <h2 class="editorial-headline text-3xl sm:text-4xl text-neutral-950 font-normal">
+          Craft in action &mdash; inside the Salowtech engineering studio.
+        </h2>
+      </div>
+
+      <!-- Top Row Marquee -->
+      <div class="overflow-hidden w-full mb-6 relative">
+        <div class="marquee-track-horizontal flex items-center gap-6">
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs1}
+              alt="Salowtech culture snapshot 1"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs2}
+              alt="Salowtech culture snapshot 2"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs3}
+              alt="Salowtech culture snapshot 3"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs4}
+              alt="Salowtech culture snapshot 4"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs5}
+              alt="Salowtech culture snapshot 5"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <!-- Loop Duplicates -->
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs1}
+              alt="Salowtech culture snapshot 1"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs2}
+              alt="Salowtech culture snapshot 2"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs3}
+              alt="Salowtech culture snapshot 3"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs4}
+              alt="Salowtech culture snapshot 4"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs5}
+              alt="Salowtech culture snapshot 5"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row Marquee (Reverse) -->
+      <div class="overflow-hidden w-full relative">
+        <div class="marquee-track-reverse flex items-center gap-6">
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs6}
+              alt="Salowtech culture snapshot 6"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs7}
+              alt="Salowtech culture snapshot 7"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs8}
+              alt="Salowtech culture snapshot 8"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs9}
+              alt="Salowtech culture snapshot 9"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs10}
+              alt="Salowtech culture snapshot 10"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs11}
+              alt="Salowtech culture snapshot 11"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <!-- Loop Duplicates -->
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs6}
+              alt="Salowtech culture snapshot 6"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs7}
+              alt="Salowtech culture snapshot 7"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs8}
+              alt="Salowtech culture snapshot 8"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
+            <Image
+              src={cs9}
+              alt="Salowtech culture snapshot 9"
+              class="w-full h-full object-cover"
+              width={288}
+              height={192}
+              loading="lazy"
+              decoding="async"
+              format="webp"
+              quality={88}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= 7. CLOSING & STANDARDIZED QUOTE FORM ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-20 sm:py-28 animate-on-scroll" id="contact">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <!-- Left Closing Statement (hello.html Specification) -->
+        <div class="lg:col-span-6">
+          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-4">
+            Start a conversation
+          </p>
+          <h2 class="editorial-headline text-4xl sm:text-5xl md:text-6xl text-neutral-950 font-normal leading-[1.08] mb-6">
+            We don’t chase trends.
+            <br />
+            We compound quality.
+          </h2>
+          <p class="text-neutral-600 text-lg leading-relaxed mb-8 max-w-lg">
+            If you’re looking for an engineering partner who values depth over noise and long-term sovereignty over
+            quick hacks, we should talk.
+          </p>
+
+          <div class="space-y-4 text-sm text-neutral-700">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
+                &check;
+              </span>
+              <span>Fixed-scope enterprise roadmaps delivered in under 24 hours</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
+                &check;
+              </span>
+              <span>100% mutual NDA signed prior to code audits</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
+                &check;
+              </span>
+              <span>Full source-code repository ownership transferred on day one</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Standardized Request A Quote Form -->
+        <div class="lg:col-span-6">
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-[0_20px_50px_-10px_rgba(125, 48, 36,0.08)]">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight font-sans">Request A Quote</h3>
+                <p class="text-xs sm:text-sm text-stone-500 mt-0.5">
+                  Architecture roadmap &amp; sprint estimate in 24 hours
+                </p>
+              </div>
+              <div class="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 shadow-2xs flex-shrink-0">
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                  <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" />
+                </svg>
+              </div>
+            </div>
+
+            <form class="space-y-3.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
+              <!-- Honeypot anti-spam trap (invisible to humans and screen-readers) -->
+              <div class="hidden" aria-hidden="true" style="display:none !important;">
+                <input type="text" name="_gotcha" id="about-gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              </div>
+              <div>
+                <label class="sr-only" for="about-name">
+                  Name*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="about-name"
+                  placeholder="Name*"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="about-phone">
+                  Phone No*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="about-phone"
+                  placeholder="Phone No*"
+                  required=""
+                  type="tel"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="about-email">
+                  Email*
+                </label>
+                <input
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
+                  id="about-email"
+                  placeholder="Email*"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div>
+                <label class="sr-only" for="about-msg">
+                  Type Your Message*
+                </label>
+                <textarea
+                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
+                  id="about-msg"
+                  placeholder="Type Your Message*"
+                  required=""
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <!-- Trust / NDA Badge -->
+              <div class="px-3.5 py-2.5 bg-[#FAF9F6] border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600">
+                <span class="flex items-center gap-2">
+                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                    />
+                  </svg>
+                  <span class="font-medium">100% Strict Mutual NDA Protected</span>
+                </span>
+                <span class="font-bold text-neutral-900">Verified</span>
+              </div>
+              <!-- Google reCAPTCHA v3 Protection Badge -->
+              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
+                <span class="flex items-center gap-2 font-medium text-stone-700">
+                  <svg
+                    class="w-4 h-4 text-[#1a73e8]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                    />
+                  </svg>
+                  <span>Protected by Google reCAPTCHA v3</span>
+                </span>
+                <span class="text-[11px] text-stone-400">
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Privacy
+                  </a>
+                  <span class="mx-1">&bull;</span>
+                  <a
+                    href="https://policies.google.com/terms"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:underline hover:text-stone-600 transition-colors"
+                  >
+                    Terms
+                  </a>
+                </span>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-1">
+                <button type="submit" class="btn-salow-submit">
+                  <span class="btn-salow-logo-mark">
+                    <Image
+                      src={salowtechLogo}
+                      width={24}
+                      height={24}
+                      alt="Salowtech"
+                      loading="lazy"
+                      decoding="async"
+                      format="webp"
+                      quality={90}
+                    />
+                  </span>
+                  <span class="btn-salow-text">SUBMIT REQUEST</span>
+                  <span class="btn-salow-arrow">&rarr;</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. CTA SECTION ================= -->
+    <section class="cta-wrap" id="cta-section">
+      <div class="cta-card">
+        <div class="cta-text">
+          <h2>
+            Choose SalowTech.
+            <br />
+            Accelerate business growth.
+          </h2>
+          <a href="#contact" class="cta-btn">
+            Start Your Journey &rarr;
+          </a>
+          <ul class="cta-points">
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Custom AI solutions for your business
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Fast setup and delivery
+            </li>
+            <li>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 12l5 5L20 6" />
+              </svg>
+              Dedicated support after launch
+            </li>
+          </ul>
+        </div>
+
+        <div class="cta-art" aria-hidden="true">
+          <Image
+            src={ctaIllustration}
+            alt="Salowtech Growth Illustration"
+            class="cta-img"
+            width={967}
+            height={1024}
+            loading="lazy"
+            decoding="async"
+            format="webp"
+            quality={90}
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+</Layout>
