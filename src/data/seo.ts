@@ -105,7 +105,7 @@ export const pagesSEO: Record<string, PageSEO> = {
   privacyPolicy: {
     title: "Privacy Policy & Data Security | Salowtech",
     description:
-      "How Salowtech collects, protects, and governs client and visitor data in compliance with enterprise security and privacy standards. Read our privacy policy.",
+      "How Salowtech collects, protects, and governs client and visitor data in line with enterprise security and privacy standards. Read our privacy policy.",
     canonicalPath: "/privacy-policy",
     h1: "Privacy Policy & Data Protection"
   },

@@ -10,15 +10,17 @@ export function getOrganizationEntity() {
   return {
     "@type": "Organization",
     "@id": `${siteConfig.siteUrl}/#organization`,
-    name: siteConfig.name,
+    name: "Salowtech",
     legalName: siteConfig.legalName,
-    alternateName: ["Salowtech", "Salow Technologies"],
+    alternateName: ["Salow Technologies", "Salowtech Technologies"],
     url: `${siteConfig.siteUrl}/`,
     logo: {
       "@type": "ImageObject",
       "@id": `${siteConfig.siteUrl}/#logo`,
       url: `${siteConfig.siteUrl}/assets/salowtech_logo_square.png`,
-      caption: "Salowtech Logo"
+      caption: "Salowtech Logo",
+      width: "1024",
+      height: "1024"
     },
     image: siteConfig.meta.defaultOgImage,
     description: siteConfig.meta.defaultDescription,
@@ -37,7 +39,13 @@ export function getOrganizationEntity() {
         availableLanguage: ["en", "hi"]
       }
     ],
-    sameAs: [siteConfig.social.linkedin, siteConfig.social.twitter, siteConfig.social.github]
+    sameAs: [
+      "https://linkedin.com/company/salowtech",
+      "https://x.com/salowtech",
+      "https://github.com/salowtech",
+      "https://instagram.com/salowtech",
+      "https://clutch.co/profile/salowtech"
+    ]
   };
 }
 
@@ -46,8 +54,8 @@ export function getWebSiteEntity() {
     "@type": "WebSite",
     "@id": `${siteConfig.siteUrl}/#website`,
     url: `${siteConfig.siteUrl}/`,
-    name: siteConfig.name,
-    alternateName: ["Salow Technologies", "Salowtech Studio"],
+    name: "Salowtech",
+    alternateName: ["Salow Technologies", "Salowtech Technologies"],
     description: siteConfig.meta.defaultDescription,
     publisher: {
       "@id": `${siteConfig.siteUrl}/#organization`
@@ -96,7 +104,8 @@ export function getServiceSchema(opts: {
       description: opts.description,
       provider: {
         "@type": "Organization",
-        name: siteConfig.name,
+        "@id": `${siteConfig.siteUrl}/#organization`,
+        name: "Salowtech",
         url: `${siteConfig.siteUrl}/`
       },
       areaServed: {
@@ -128,10 +137,12 @@ export function getAboutSchema() {
         "@type": "AboutPage",
         "@id": `${url}#webpage`,
         url: url,
-        name: "About Salowtech — Engineering Studio",
+        name: "About Us | Salowtech",
         description:
           "Senior software architects and engineering team building sovereign ERP, CRM, web and mobile platforms with 100% IP ownership.",
-        mainEntity: getOrganizationEntity()
+        mainEntity: {
+          "@id": `${siteConfig.siteUrl}/#organization`
+        }
       },
       getBreadcrumbList([
         { name: "Home", url: `${siteConfig.siteUrl}/` },
@@ -150,10 +161,12 @@ export function getContactSchema() {
         "@type": "ContactPage",
         "@id": `${url}#webpage`,
         url: url,
-        name: "Contact Salowtech — Engineering Team",
+        name: "Contact Us | Salowtech",
         description:
           "Connect directly with Salowtech senior software architects. Request a confidential quote with mutual NDA.",
-        mainEntity: getOrganizationEntity()
+        mainEntity: {
+          "@id": `${siteConfig.siteUrl}/#organization`
+        }
       },
       getBreadcrumbList([
         { name: "Home", url: `${siteConfig.siteUrl}/` },
@@ -168,19 +181,17 @@ export function getTestimonialsSchema() {
   const faq = getFAQPageSchema("testimonials", url);
   const graph: any[] = [
     {
-      "@type": "Product",
-      name: "Salowtech Sovereign Enterprise Platforms",
-      description: "Custom ERP, CRM, Web & Mobile, and AI Automation engineering by Salowtech.",
-      brand: {
-        "@type": "Brand",
-        name: siteConfig.name
-      },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "42",
-        bestRating: "5",
-        worstRating: "1"
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url: url,
+      name: "Testimonials | Salowtech",
+      description:
+        "Verified engineering delivery feedback and case study insights from enterprise founders working with Salowtech.",
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": `${siteConfig.siteUrl}/#website`,
+        url: `${siteConfig.siteUrl}/`,
+        name: "Salowtech"
       }
     },
     getBreadcrumbList([
@@ -205,11 +216,12 @@ export function getBlogIndexSchema() {
         "@type": "Blog",
         "@id": `${url}#blog`,
         url: url,
-        name: "Salowtech Engineering Blog",
-        description: "Enterprise software engineering analysis, architecture teardowns, and technology insights.",
+        name: "Blog | Salowtech",
+        description: "Enterprise software engineering analysis, architecture blueprints, and technology insights.",
         publisher: {
           "@type": "Organization",
-          name: siteConfig.name,
+          "@id": `${siteConfig.siteUrl}/#organization`,
+          name: "Salowtech",
           url: `${siteConfig.siteUrl}/`
         }
       },
@@ -223,35 +235,44 @@ export function getBlogIndexSchema() {
 
 export function getBlogPostingSchema(post: any, slug: string) {
   const url = `${siteConfig.siteUrl}/blog/${slug}`;
+  const publishDate = post.data.date ? new Date(post.data.date).toISOString() : "2026-01-01T00:00:00.000Z";
+  const modifiedDate = post.data.dateModified ? new Date(post.data.dateModified).toISOString() : publishDate;
+
+  const entity: any = {
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: post.data.title,
+    description: post.data.excerpt,
+    datePublished: publishDate,
+    dateModified: modifiedDate,
+    author: {
+      "@type": "Organization",
+      "@id": `${siteConfig.siteUrl}/#organization`,
+      name: "Salowtech",
+      url: `${siteConfig.siteUrl}/`
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${siteConfig.siteUrl}/#organization`,
+      name: "Salowtech",
+      url: `${siteConfig.siteUrl}/`,
+      logo: {
+        "@type": "ImageObject",
+        "@id": `${siteConfig.siteUrl}/#logo`,
+        url: `${siteConfig.siteUrl}/assets/salowtech_logo_square.png`
+      }
+    },
+    mainEntityOfPage: url
+  };
+
+  if (post.data.image) {
+    entity.image = post.data.image;
+  }
+
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BlogPosting",
-        "@id": `${url}#article`,
-        headline: post.data.title,
-        description: post.data.excerpt,
-        image: post.data.image || siteConfig.meta.defaultOgImage,
-        datePublished: post.data.date ? new Date(post.data.date).toISOString() : "2026-01-01T00:00:00.000Z",
-        author: {
-          "@type": "Person",
-          name: post.data.author?.name || "Salowtech Engineering Team",
-          jobTitle: post.data.author?.role || "Software Architect"
-        },
-        publisher: {
-          "@type": "Organization",
-          name: siteConfig.name,
-          url: `${siteConfig.siteUrl}/`,
-          logo: {
-            "@type": "ImageObject",
-            url: `${siteConfig.siteUrl}/assets/salowtech_logo.png`
-          }
-        },
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": url
-        }
-      },
+      entity,
       getBreadcrumbList([
         { name: "Home", url: `${siteConfig.siteUrl}/` },
         { name: "Blog", url: `${siteConfig.siteUrl}/blog` },
@@ -261,7 +282,7 @@ export function getBlogPostingSchema(post: any, slug: string) {
   };
 }
 
-export function getLegalPageSchema(title: string, path: string, description: string) {
+export function getLegalPageSchema(pageName: string, path: string, description: string) {
   const url = `${siteConfig.siteUrl}${path}`;
   return {
     "@context": "https://schema.org",
@@ -270,18 +291,18 @@ export function getLegalPageSchema(title: string, path: string, description: str
         "@type": "WebPage",
         "@id": `${url}#webpage`,
         url: url,
-        name: title,
+        name: `${pageName} | Salowtech`,
         description: description,
         isPartOf: {
           "@type": "WebSite",
           "@id": `${siteConfig.siteUrl}/#website`,
           url: `${siteConfig.siteUrl}/`,
-          name: siteConfig.name
+          name: "Salowtech"
         }
       },
       getBreadcrumbList([
         { name: "Home", url: `${siteConfig.siteUrl}/` },
-        { name: title, url: url }
+        { name: pageName, url: url }
       ])
     ]
   };

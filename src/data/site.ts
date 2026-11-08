@@ -27,8 +27,10 @@ export const siteConfig = {
   },
   social: {
     linkedin: "https://linkedin.com/company/salowtech",
-    twitter: "https://twitter.com/salowtech",
-    github: "https://github.com/salowtech"
+    x: "https://x.com/salowtech",
+    github: "https://github.com/salowtech",
+    instagram: "https://instagram.com/salowtech",
+    clutch: "https://clutch.co/profile/salowtech"
   },
   meta: {
     defaultTitle: "Salowtech - Sovereign Software Platforms & Enterprise Systems",
