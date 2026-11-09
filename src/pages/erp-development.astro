@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import mascotExplaining from "../assets/mascot_explaining.png";
 import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
-import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import RelatedServicesAndGuides from "../components/RelatedServicesAndGuides.astro";
 import { pagesSEO } from "../data/seo";
@@ -532,45 +531,6 @@ const schemaJson = getServiceSchema({
     </div>
   </section>
   <!-- END: SmartErpSolutionsSection -->
-
-  <!-- BEGIN: VideoArchitectureSection -->
-  <section class="py-16 lg:py-20" data-purpose="video-placeholder-section" id="architecture">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-maroon/10 border border-maroon/20 w-fit mx-auto mb-2"></div>
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Watch How Salowtech Engineers High-Performance ERPs
-        </h2>
-      </div>
-      <!-- Placeholder Video Container -->
-      <div
-        class="bg-slate-950 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video flex flex-col justify-between p-4 sm:p-6"
-        data-purpose="video-player-container"
-      >
-        <!-- Centered Glowing Play Button -->
-        <div class="flex flex-col items-center justify-center my-auto z-10">
-          <button
-            aria-label="Play ERP Architecture Video"
-            class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-maroon/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-maroon transition-transform duration-300 ring-8 ring-maroon/20 cursor-pointer"
-            type="button"
-          >
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-current" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"></path>
-            </svg>
-          </button>
-        </div>
-        <!-- Video Bottom Player Bar (Mock Controls) -->
-        <div class="z-10 space-y-2">
-          <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-            <div class="bg-maroon h-full w-1/3 rounded-full"></div>
-          </div>
-        </div>
-        <!-- Subtle Gradient Backdrop -->
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/80 pointer-events-none"></div>
-      </div>
-    </div>
-  </section>
-  <!-- END: VideoArchitectureSection -->
 
   <!-- BEGIN: Connected Circuit Integration Hub (Exact Reference Design Match) -->
   <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
@@ -1260,18 +1220,6 @@ const schemaJson = getServiceSchema({
     </div>
   </section>
   <!-- END: Canonical FAQ Section -->
-
-    <!-- ==========================================
-       ERP ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
-       ========================================== -->
-  <ServiceVideoShowcase
-    id="erp-video-showcase"
-    eyebrow="ERP Architecture In Action"
-    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Enterprise ERP Systems</span>'
-    description="Synchronizing multi-plant manufacturing, inventory, purchase, accounts, and human resources in one sovereign system."
-    poster="/assets/posters/video5.jpg"
-    videoSrc="/assets/SalowTech_video5.mp4"
-  />
 
   <!-- BEGIN: CTA Section (Choose SalowTech - from 2nd screenshot) -->
 

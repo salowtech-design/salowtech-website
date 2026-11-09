@@ -1345,20 +1345,20 @@ const schemaJson = getServiceSchema({
       <div class="transmission-halo transmission-halo-2" aria-hidden="true"></div>
       <div class="transmission-halo transmission-halo-3" aria-hidden="true"></div>
 
-      <!-- Center Hub -->
-      <div class="orbit-center-hub">
-        <Image
-          src={salowtechLogo}
-          width={140}
-          height={42}
-          alt="Salowtech Logo"
-          loading="lazy"
-          decoding="async"
-          format="webp"
-          quality={95}
-          class="h-8 w-auto object-contain"
-        />
-        <div class="hub-text text-left">
+      <!-- Center Hub: Mascot in the middle surrounded by orbiting components -->
+      <div class="orbit-center-hub orbit-mascot-hub group">
+        <div class="mascot-stage">
+          <Image
+            src={mascotExplaining}
+            alt="Salowtech Mascot - Sovereign Mobile Core"
+            width={120}
+            height={120}
+            loading="lazy"
+            decoding="async"
+            class="mascot-img"
+          />
+        </div>
+        <div class="hub-text text-center">
           <span class="hub-title">Salowtech</span>
           <span class="hub-badge">Sovereign Mobile Core</span>
         </div>

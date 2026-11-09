@@ -6582,6 +6582,39 @@ table.deliverables-table tbody tr:hover {
   margin-top: 2px;
 }
 
+/* Orbit Mascot Center Hub */
+.orbit-center-hub.orbit-mascot-hub {
+  flex-direction: column;
+  padding: 0.9rem 1.4rem;
+  border-radius: 2rem;
+  gap: 0.35rem;
+  text-align: center;
+}
+
+.orbit-center-hub.orbit-mascot-hub .mascot-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-center-hub.orbit-mascot-hub .mascot-img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(125, 48, 36, 0.24));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.orbit-center-hub.orbit-mascot-hub:hover .mascot-img {
+  transform: translateY(-4px) scale(1.08);
+}
+
+.orbit-center-hub.orbit-mascot-hub .hub-text {
+  align-items: center;
+  text-align: center;
+}
+
 /* Floating Orbit Badges */
 .orbit-node {
   position: absolute;
@@ -6716,6 +6749,17 @@ table.deliverables-table tbody tr:hover {
     padding: 0.6rem 1.1rem;
     gap: 0.5rem;
     box-shadow: 0 10px 24px -6px rgba(125, 48, 36, 0.28), 0 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+
+  .orbit-center-hub.orbit-mascot-hub {
+    padding: 0.6rem 0.9rem;
+    border-radius: 1.25rem;
+    gap: 0.25rem;
+  }
+
+  .orbit-center-hub.orbit-mascot-hub .mascot-img {
+    width: 58px;
+    height: 58px;
   }
 
   .orbit-center-hub img {
@@ -8931,6 +8975,24 @@ table.deliverables-table tbody tr:hover {
 .blog-editorial-card:hover .card-content {
   filter: blur(8px);
   opacity: 0.55;
+}
+
+/* Explicitly remove blur and hover distortion from the Newsletter Subscribe Box */
+.blog-editorial-card.blog-newsletter-card,
+.blog-newsletter-card {
+  cursor: default !important;
+}
+
+.blog-editorial-card.blog-newsletter-card:hover {
+  transform: none !important;
+  box-shadow: 0 4px 18px -2px rgba(45, 38, 32, 0.04) !important;
+}
+
+.blog-editorial-card.blog-newsletter-card .card-content,
+.blog-editorial-card.blog-newsletter-card:hover .card-content {
+  filter: none !important;
+  opacity: 1 !important;
+  -webkit-filter: none !important;
 }
 
 /* Centered Floating Pill CTA Button (Screenshot Effect) */

@@ -4,7 +4,6 @@ import { Image } from "astro:assets";
 import mascotExplaining from "../assets/mascot_explaining.png";
 import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
-import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import RelatedServicesAndGuides from "../components/RelatedServicesAndGuides.astro";
 import { siteConfig } from "../data/site";
@@ -705,39 +704,6 @@ const schemaJson = getServiceSchema({
   </section>
   <!-- END: WhyPartnerSection -->
 
-  <!-- BEGIN: VideoArchitectureSection -->
-  <section class="py-20 lg:py-24" data-purpose="video-placeholder-section" id="architecture">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Title -->
-      <div class="text-center mb-10">
-        <h2 class="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 tracking-tight mt-2">
-          Watch How Salowtech Engineers High-Performance CRMs
-        </h2>
-      </div>
-      <!-- Modern Empty / Placeholder Video Container -->
-      <div
-        class="bg-slate-950 rounded-2xl overflow-hidden shadow-2xl border border-slate-800 relative group aspect-video flex flex-col justify-between p-4 sm:p-6"
-        data-purpose="video-player-container"
-      >
-        <!-- Centered Glowing Play Button (Placeholder) -->
-        <div class="flex flex-col items-center justify-center my-auto z-10">
-          <button
-            aria-label="Play CRM Architecture Video"
-            class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-maroon/90 text-white flex items-center justify-center shadow-2xl hover:scale-105 hover:bg-maroon transition-transform duration-300 ring-8 ring-maroon/20 cursor-pointer"
-            type="button"
-          >
-            <svg class="w-8 h-8 sm:w-10 sm:h-10 ml-1 fill-current" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"></path>
-            </svg>
-          </button>
-        </div>
-        <!-- Subtle Gradient Backdrop -->
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/60 to-slate-950/80 pointer-events-none"></div>
-      </div>
-    </div>
-  </section>
-  <!-- END: VideoArchitectureSection -->
-
   <!-- BEGIN: Connected Circuit Integration Hub (Exact Reference Design Match) -->
   <section class="transmission-orbit-section" id="ecosystem" aria-labelledby="transmission-title">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
@@ -1414,18 +1380,6 @@ const schemaJson = getServiceSchema({
     </div>
   </section>
   <!-- END: Canonical FAQ Section -->
-
-    <!-- ==========================================
-       CRM ARCHITECTURE IN ACTION (VIDEO SHOWCASE)
-       ========================================== -->
-  <ServiceVideoShowcase
-    id="crm-video-showcase"
-    eyebrow="CRM Architecture In Action"
-    titleHtml='Watch How We Engineer <span class="font-serif italic font-normal text-[#AD8B73]">Custom CRM Systems</span>'
-    description="From multi-channel lead intake to automated pipelines, WhatsApp flows, and real-time revenue analytics."
-    poster="/assets/posters/video2.jpg"
-    videoSrc="/assets/SalowTech_video2.mp4"
-  />
 
   <!-- BEGIN: CTA Section (Choose SalowTech - from 2nd screenshot) -->
 
