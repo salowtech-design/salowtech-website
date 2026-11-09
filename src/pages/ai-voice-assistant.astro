@@ -66,21 +66,10 @@ const schemaJson = getServiceSchema({
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-4">
             AI Voice Assistant
           </h1>
-          <p class="text-base sm:text-lg text-stone-600 font-medium mb-4">
+          <p class="text-base sm:text-lg text-stone-600 font-medium mb-6">
             Automate Operations with{" "}
             <span class="font-serif italic font-bold text-maroon block sm:inline">24/7 Conversational Voice Agents</span>
           </p>
-
-          <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
-          <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
-            <p class="font-semibold text-neutral-900 mb-1 flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-maroon"></span>
-              <span>Quick Overview:</span>
-            </p>
-            <p>
-              Salowtech AI Voice Assistant Solutions create human-like inbound and outbound conversational AI agents for 24/7 automated telephone support, lead qualification, and appointment booking. Engineered for service companies and call centers to handle high call volumes with sub-second latency and seamless CRM synchronization.
-            </p>
-          </div>
 
           <ul class="space-y-3 mb-8">
             <li class="flex items-start gap-3">
@@ -481,7 +470,7 @@ const schemaJson = getServiceSchema({
         id="transmission-title"
         class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
       >
-        The Conversational Voice &amp; AI Transmission Core
+        Conversational Voice &amp; <span class="font-editorial italic font-normal text-[#7D3024]">AI Transmission Core</span>
       </h2>
       <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
         How streaming speech recognition, fine-tuned domain LLMs, and natural neural voice synthesis stream over
@@ -495,20 +484,20 @@ const schemaJson = getServiceSchema({
       <div class="transmission-halo transmission-halo-2" aria-hidden="true"></div>
       <div class="transmission-halo transmission-halo-3" aria-hidden="true"></div>
 
-      <!-- Center Hub -->
-      <div class="orbit-center-hub">
-        <Image
-          src={salowtechLogo}
-          width={140}
-          height={42}
-          alt="Salowtech Logo"
-          loading="lazy"
-          decoding="async"
-          format="webp"
-          quality={95}
-          class="h-8 w-auto object-contain"
-        />
-        <div class="hub-text text-left">
+      <!-- Center Hub: Mascot in the middle surrounded by orbiting components -->
+      <div class="orbit-center-hub orbit-mascot-hub group">
+        <div class="mascot-stage">
+          <Image
+            src={mascotExplaining}
+            alt="Salowtech Mascot - Sovereign Voice Core"
+            width={120}
+            height={120}
+            loading="lazy"
+            decoding="async"
+            class="mascot-img"
+          />
+        </div>
+        <div class="hub-text text-center">
           <span class="hub-title">Salowtech</span>
           <span class="hub-badge">Sovereign Voice Core</span>
         </div>

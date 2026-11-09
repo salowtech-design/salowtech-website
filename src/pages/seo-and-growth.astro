@@ -65,21 +65,10 @@ const schemaJson = getServiceSchema({
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.12] tracking-tight">
               SEO &amp; Growth
             </h1>
-            <p class="text-xl sm:text-2xl font-bold text-slate-800 leading-snug">
+            <p class="text-xl sm:text-2xl font-bold text-slate-800 leading-snug mb-2">
               Dominate Search Rankings &amp; Accelerate{" "}
               <span class="italic font-serif text-maroon-800">Digital Growth</span>
             </p>
-
-            <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-cream-200 text-slate-700 text-xs sm:text-sm leading-relaxed shadow-xs" data-purpose="aeo-direct-answer">
-              <p class="font-semibold text-slate-900 mb-1 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-maroon-800"></span>
-                <span>Quick Overview:</span>
-              </p>
-              <p>
-                Salowtech SEO &amp; Growth Services deliver technical website optimization, search engine optimization, content strategy, and conversion rate engineering. Designed for B2B brands and growth-focused businesses wanting sustainable organic search rankings, qualified inbound pipeline, and measurable revenue growth.
-              </p>
-            </div>
 
             <!-- 4 Concise Bullet Points -->
             <ul class="space-y-3.5 pt-2 text-slate-700">
@@ -537,7 +526,7 @@ const schemaJson = getServiceSchema({
           id="transmission-title"
           class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-neutral-950 tracking-tight mt-2 mb-3"
         >
-          The Programmatic Search &amp; Growth Transmission Engine
+          Programmatic Search &amp; <span class="font-editorial italic font-normal text-[#7D3024]">Growth Transmission Engine</span>
         </h2>
         <p class="text-stone-600 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
           How high-velocity technical crawls, semantic entity schemas, and edge rendering pipelines drive unshakeable
@@ -551,22 +540,22 @@ const schemaJson = getServiceSchema({
         <div class="transmission-halo transmission-halo-2" aria-hidden="true"></div>
         <div class="transmission-halo transmission-halo-3" aria-hidden="true"></div>
 
-        <!-- Center Hub -->
-        <div class="orbit-center-hub">
-          <Image
-            src={salowtechLogo}
-            width={140}
-            height={42}
-            alt="Salowtech Logo"
-            loading="lazy"
-            decoding="async"
-            format="webp"
-            quality={95}
-            class="h-8 w-auto object-contain"
-          />
-          <div class="hub-text text-left">
+        <!-- Center Hub: Mascot in the middle surrounded by orbiting components -->
+        <div class="orbit-center-hub orbit-mascot-hub group">
+          <div class="mascot-stage">
+            <Image
+              src={mascotExplaining}
+              alt="Salowtech Mascot - Sovereign Search Core"
+              width={120}
+              height={120}
+              loading="lazy"
+              decoding="async"
+              class="mascot-img"
+            />
+          </div>
+          <div class="hub-text text-center">
             <span class="hub-title">Salowtech</span>
-            <span class="hub-badge">Sovereign Search Hub</span>
+            <span class="hub-badge">Sovereign Search Core</span>
           </div>
         </div>
 
