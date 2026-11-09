@@ -19,102 +19,109 @@ export interface PageSEO {
 
 export const pagesSEO: Record<string, PageSEO> = {
   home: {
-    title: "Salowtech | Custom Software & SaaS Development",
+    title: "Salowtech | Custom Software, CRM, ERP and App Development",
     description:
       "Salowtech builds sovereign custom ERPs, CRMs, web platforms, and mobile apps with 100% code ownership. Partner with our engineering team today.",
     canonicalPath: "/",
-    h1: "Salowtech — Sovereign Enterprise Software Development Company. Your growth, our engineering. Your problem, our solution. Built by real engineers — Salow Technologies."
+    h1: "Salowtech — Sovereign Enterprise Software Development"
+  },
+  services: {
+    title: "Services | Salowtech",
+    description:
+      "Bespoke software engineering services by Salowtech. Sovereign web apps, mobile apps, ERPs, CRMs, HRM, AI voice agents, and search growth.",
+    canonicalPath: "/services",
+    h1: "Services"
   },
   crmDevelopment: {
     title: "CRM Development | Salowtech",
     description:
       "Tailored CRM software built for multi-channel sales pipelines, lead tracking, automated quotations, and WhatsApp integration. Scale your sales operations.",
     canonicalPath: "/crm-development",
-    h1: "Transform Customer Relationships with Scalable CRM Development"
+    h1: "CRM Development"
   },
   erpDevelopment: {
     title: "ERP Development | Salowtech",
     description:
       "Sovereign cloud ERP systems integrating multi-warehouse inventory, double-entry accounting, and procurement. Automate your enterprise workflows.",
     canonicalPath: "/erp-development",
-    h1: "Synchronize Operations with Modern ERP Solutions"
+    h1: "ERP Development"
   },
   webDevelopment: {
     title: "Web Development | Salowtech",
     description:
       "High-performance web apps, custom SaaS portals, and scalable cloud architectures built for speed and security. Discuss your web architecture with us.",
     canonicalPath: "/web-development",
-    h1: "Create a Website That Captures Attention, Builds Trust & Drives Action"
+    h1: "Web Development"
   },
   mobileAppDevelopment: {
     title: "Mobile App Development | Salowtech",
     description:
       "Engineered native iOS, Android, and Flutter mobile applications with offline sync, clean UX, and strict app store SLAs. Build your custom mobile app.",
     canonicalPath: "/mobile-app-development",
-    h1: "Sovereign Mobile App Engineering for iOS & Android"
+    h1: "Mobile App Development"
   },
   hrmPayroll: {
     title: "HRM & Payroll | Salowtech",
     description:
       "Automate biometric attendance, statutory tax calculations, leave workflows, and multi-tier salary disbursements. Book an HRM demo with Salowtech.",
     canonicalPath: "/hrm-payroll",
-    h1: "Empower Your Workforce with Intelligent HRM & Payroll"
+    h1: "HRM & Payroll"
   },
   aiVoiceAssistant: {
     title: "AI Voice Assistant | Salowtech",
     description:
       "Low-latency conversational voice bots and automated call assistants for 24/7 customer support and inbound routing. Deploy your custom voice agent.",
     canonicalPath: "/ai-voice-assistant",
-    h1: "Automate Operations with 24/7 AI Voice Assistants"
+    h1: "AI Voice Assistant"
   },
   seoAndGrowth: {
     title: "SEO & Growth | Salowtech",
     description:
       "Technical SEO, Core Web Vitals optimization, and structured search architecture to dominate organic rankings and AI discovery. Audit your search rank.",
     canonicalPath: "/seo-and-growth",
-    h1: "Dominate Search Rankings & Accelerate Digital Growth"
+    h1: "SEO & Growth"
   },
   aboutUs: {
     title: "About Us | Salowtech",
     description:
       "Meet the software architects and systems engineers behind Salowtech. We build long-term sovereign digital infrastructure. Learn about our philosophy.",
     canonicalPath: "/about-us",
-    h1: "Built by people who care about craft"
+    h1: "About Us"
   },
   testimonials: {
     title: "Testimonials | Salowtech",
     description:
       "Read verified feedback, operational impact metrics, and case studies from founders and enterprise leaders working with Salowtech. View our track record.",
     canonicalPath: "/testimonials",
-    h1: "A partnership to accelerate engineering results"
+    h1: "Testimonials"
   },
   contactUs: {
     title: "Contact Us | Salowtech",
     description:
       "Direct access to Salowtech technical founders and architects. Discuss scope, timelines, and technical requirements. Request a direct consultation.",
     canonicalPath: "/contact-us",
-    h1: "Contact us"
+    h1: "Contact Us"
   },
   blog: {
     title: "Blog | Salowtech",
     description:
-      "In-depth technical guides, architectural blueprints, and engineering analyses on ERPs, CRMs, private AI, and modern web systems. Read our latest articles.",
+      "Technical guides, architectural blueprints, and engineering analyses on ERPs, CRMs, private AI, and modern web systems. Read our latest articles.",
     canonicalPath: "/blog",
-    h1: "Engineering Insights & Technology Breakdown"
+    h1: "Blog"
   },
   privacyPolicy: {
-    title: "Privacy Policy & Data Security | Salowtech",
+    title: "Privacy Policy | Salowtech",
     description:
       "How Salowtech collects, protects, and governs client and visitor data in line with enterprise security and privacy standards. Read our privacy policy.",
     canonicalPath: "/privacy-policy",
-    h1: "Privacy Policy & Data Protection"
+    h1: "Privacy Policy"
   },
   termsAndConditions: {
-    title: "Terms of Service & Engagement | Salowtech",
+    title: "Terms & Conditions | Salowtech",
     description:
       "Contractual standards, intellectual property ownership terms, SLAs, and development service conditions governing client engagements with Salowtech.",
     canonicalPath: "/terms-and-conditions",
-    h1: "Terms of Service & Engagement"
+    h1: "Terms & Conditions"
   },
   notFound: {
     title: "Page Not Found (404) | Salowtech",

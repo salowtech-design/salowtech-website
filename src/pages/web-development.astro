@@ -6,8 +6,10 @@ import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
 import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedServicesAndGuides from "../components/RelatedServicesAndGuides.astro";
 import { pagesSEO } from "../data/seo";
 import { getServiceSchema } from "../data/schema";
+import { getServiceRelatedData } from "../data/serviceGuides";
 
 const seo = pagesSEO.webDevelopment;
 const title = seo.title;
@@ -19,6 +21,7 @@ const ogTitle = seo.title;
 const ogDescription = seo.description;
 const bodyClass = "font-sans antialiased text-[#2A2428] selection:bg-[#F8EDE8] selection:text-[#7D3024]";
 const showChatbot = true;
+const relatedData = getServiceRelatedData("web-development");
 const schemaJson = getServiceSchema({
   serviceKey: "web-development",
   serviceName: seo.title,
@@ -42,7 +45,13 @@ const schemaJson = getServiceSchema({
 >
   <!-- END: SiteHeader / Navigation -->
 
-  <Breadcrumb currentPage="Web Development" />
+  <Breadcrumb
+    items={[
+      { name: "Home", url: "/" },
+      { name: "Services", url: "/services" },
+      { name: "Web Development" }
+    ]}
+  />
 
   <!-- BEGIN: HeroSection -->
   <section
@@ -56,9 +65,12 @@ const schemaJson = getServiceSchema({
         <!-- Left Content Column (Compact & Minimal for 100vh Laptop Viewport Fit) -->
         <div class="lg:col-span-7 flex flex-col justify-center">
           <h1 class="font-display text-3xl sm:text-4xl lg:text-[40px] font-extrabold leading-[1.16] tracking-tight mb-3 text-neutral-950">
+            Web Development
+          </h1>
+          <p class="font-display text-xl sm:text-2xl font-bold leading-snug tracking-tight mb-3 text-stone-700">
             Create a Website That <span class="text-[#7D3024]">Captures Attention</span>, Builds Trust &amp;{" "}
             <span class="text-[#7D3024]">Drives Action</span>
-          </h1>
+          </p>
 
           <!-- Concise Value Narrative -->
           <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-4 max-w-xl">
@@ -973,5 +985,6 @@ const schemaJson = getServiceSchema({
   </section>
   <!-- END: CTA Section -->
 
-  <!-- BEGIN: Footer Section -->
+  <!-- BEGIN: Related Enterprise Solutions & Guides -->
+  <RelatedServicesAndGuides services={relatedData.services} guides={relatedData.guides} />
 </Layout>

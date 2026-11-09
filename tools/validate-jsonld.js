@@ -180,3 +180,4 @@ console.log(`Errors found: ${errors}`);
 console.log(`======================================================`);
 
 if (errors > 0) process.exit(1);
+

@@ -68,13 +68,13 @@ const relatedServices = getBlogRelatedServices(slug);
           <span>&larr;</span>
           <span>Back to all articles</span>
         </a>
-        <div class="hidden sm:flex items-center gap-2">
-          <a href="/blog" class="hover:text-[#7D3024] transition-colors">
-            Blog
-          </a>
-          <span>/</span>
-          <span class="text-stone-800 font-semibold">{post.data.categoryPill}</span>
-        </div>
+        <nav aria-label="Breadcrumb" class="hidden sm:flex items-center gap-1.5 text-xs text-stone-500">
+          <a href="/" class="hover:text-stone-900 transition-colors">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog" class="hover:text-stone-900 transition-colors">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span class="text-[#7D3024] font-semibold truncate max-w-[240px] md:max-w-xs">{post.data.title}</span>
+        </nav>
       </div>
 
       <!-- Main Article Header -->

@@ -10,8 +10,12 @@
   </url>
 
   <!-- ==========================================
-       2. CORE SERVICES (DIRECT SITELINK TARGETS)
+       2. SERVICES HUB & CORE SERVICES
        ========================================== -->
+  <url>
+    <loc>https://salowtech.com/services</loc>
+    <lastmod>2026-11-09</lastmod>
+  </url>
   <url>
     <loc>https://salowtech.com/crm-development</loc>
     <lastmod>2026-11-08</lastmod>

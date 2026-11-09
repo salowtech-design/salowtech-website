@@ -6,8 +6,10 @@ import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
 import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedServicesAndGuides from "../components/RelatedServicesAndGuides.astro";
 import { pagesSEO } from "../data/seo";
 import { getServiceSchema } from "../data/schema";
+import { getServiceRelatedData } from "../data/serviceGuides";
 
 const seo = pagesSEO.erpDevelopment;
 const title = seo.title;
@@ -19,6 +21,7 @@ const ogTitle = seo.title;
 const ogDescription = seo.description;
 const bodyClass = "bg-cream-200 text-slate-800 font-sans antialiased selection:bg-maroon selection:text-white";
 const showChatbot = true;
+const relatedData = getServiceRelatedData("erp-development");
 const schemaJson = getServiceSchema({
   serviceKey: "erp-development",
   serviceName: seo.title,
@@ -42,7 +45,13 @@ const schemaJson = getServiceSchema({
 >
   <!-- END: SiteHeader / Navigation -->
 
-  <Breadcrumb currentPage="ERP Development" />
+  <Breadcrumb
+    items={[
+      { name: "Home", url: "/" },
+      { name: "Services", url: "/services" },
+      { name: "ERP Development" }
+    ]}
+  />
 
   <!-- BEGIN: HeroSection -->
   <section class="relative pt-28 sm:pt-36 pb-16 lg:pt-36 lg:pb-24 overflow-hidden" data-purpose="hero-section">
@@ -52,9 +61,12 @@ const schemaJson = getServiceSchema({
         <div class="lg:col-span-7 flex flex-col justify-center">
           <!-- Main Hero Headline: Compact & stylish -->
           <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug sm:leading-snug lg:leading-tight mb-4">
-            Synchronize Operations with{" "}
-            <span class="font-serif italic font-bold text-maroon block sm:inline">Modern ERP Solutions</span>
+            ERP Development
           </h1>
+          <p class="text-base sm:text-lg text-stone-600 font-medium mb-4">
+            Synchronize Operations with{" "}
+            <span class="font-serif italic font-bold text-maroon block sm:inline">Modern Cloud ERP Solutions</span>
+          </p>
 
           <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
           <div class="p-4 sm:p-5 rounded-2xl bg-[#FAF7F2] border border-[#E8E1D3] text-stone-700 text-xs sm:text-sm leading-relaxed mb-6 max-w-xl" data-purpose="aeo-direct-answer">
@@ -1334,6 +1346,6 @@ const schemaJson = getServiceSchema({
   </section>
   <!-- END: CTA Section -->
 
-  <!-- BEGIN: SiteFooter -->
-  <!-- BEGIN: Footer Section -->
+  <!-- BEGIN: Related Enterprise Solutions & Guides -->
+  <RelatedServicesAndGuides services={relatedData.services} guides={relatedData.guides} />
 </Layout>

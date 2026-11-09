@@ -54,6 +54,27 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.salowtech.com"
+        }
+      ],
+      "destination": "https://salowtech.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/saas-development",
+      "destination": "/web-development",
+      "permanent": true
+    },
+    {
+      "source": "/saas-development.html",
+      "destination": "/web-development",
+      "permanent": true
+    },
+    {
       "source": "/SalowTech_video:num(\\d+).mp4",
       "destination": "/assets/SalowTech_video:num.mp4",
       "permanent": true

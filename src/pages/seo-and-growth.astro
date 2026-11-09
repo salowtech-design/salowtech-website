@@ -6,8 +6,10 @@ import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
 import ServiceVideoShowcase from "../components/ServiceVideoShowcase.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import RelatedServicesAndGuides from "../components/RelatedServicesAndGuides.astro";
 import { pagesSEO } from "../data/seo";
 import { getServiceSchema } from "../data/schema";
+import { getServiceRelatedData } from "../data/serviceGuides";
 
 const seo = pagesSEO.seoAndGrowth;
 const title = seo.title;
@@ -19,6 +21,7 @@ const ogTitle = seo.title;
 const ogDescription = seo.description;
 const bodyClass = "bg-cream-100 text-slate-800 antialiased selection:bg-maroon-800 selection:text-white";
 const showChatbot = true;
+const relatedData = getServiceRelatedData("seo-and-growth");
 const schemaJson = getServiceSchema({
   serviceKey: "seo-and-growth",
   serviceName: seo.title,
@@ -43,7 +46,13 @@ const schemaJson = getServiceSchema({
   <!-- END: SiteHeader / Navigation -->
 
   <main>
-    <Breadcrumb currentPage="SEO & Growth" />
+    <Breadcrumb
+      items={[
+        { name: "Home", url: "/" },
+        { name: "Services", url: "/services" },
+        { name: "SEO & Growth" }
+      ]}
+    />
 
     <!-- BEGIN: HeroSection -->
     <section class="relative pt-28 sm:pt-36 pb-16 lg:pb-20 overflow-hidden bg-cream-50" data-purpose="hero-section">
@@ -54,9 +63,12 @@ const schemaJson = getServiceSchema({
           <div class="lg:col-span-7 space-y-6">
             <!-- Main Title -->
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.12] tracking-tight">
+              SEO &amp; Growth
+            </h1>
+            <p class="text-xl sm:text-2xl font-bold text-slate-800 leading-snug">
               Dominate Search Rankings &amp; Accelerate{" "}
               <span class="italic font-serif text-maroon-800">Digital Growth</span>
-            </h1>
+            </p>
 
             <!-- Direct Answer AEO Block (Machine & Answer Engine Optimization) -->
             <div class="p-4 sm:p-5 rounded-2xl bg-white/90 border border-cream-200 text-slate-700 text-xs sm:text-sm leading-relaxed shadow-xs" data-purpose="aeo-direct-answer">
@@ -911,6 +923,9 @@ const schemaJson = getServiceSchema({
       </div>
     </section>
     <!-- END: CTA Section -->
+
+    <!-- BEGIN: Related Enterprise Solutions & Guides -->
+    <RelatedServicesAndGuides services={relatedData.services} guides={relatedData.guides} />
   </main>
 
   <!-- BEGIN: Footer Section -->

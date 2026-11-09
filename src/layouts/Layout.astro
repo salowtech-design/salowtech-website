@@ -59,6 +59,8 @@ const finalOgDescription = ogDescription || description;
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="application-name" content="Salowtech" />
+    <meta name="apple-mobile-web-app-title" content="Salowtech" />
     {keywords && <meta name="keywords" content={keywords} />}
     {
       noindex ? (
@@ -89,11 +91,13 @@ const finalOgDescription = ogDescription || description;
     <meta name="twitter:image" content={ogImage} />
 
     <!-- Favicons & Mobile Icons (Google Sitelinks & Favicon Guidelines Compliant) -->
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48 32x32" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Preload Critical Fonts -->
     <link

@@ -43,111 +43,16 @@ const { activePath = "" } = Astro.props;
       </span>
     </a>
 
-    <!-- Desktop Nav Items -->
+    <!-- Desktop Nav Items: Plain <a href> links for crawlable sitelinks hierarchy -->
     <nav class="hidden md:flex items-center space-x-1 sm:space-x-2 text-sm font-medium text-neutral-700 ml-auto mr-4">
-      <!-- Company Dropdown -->
-      <div class="relative group/company">
-        <button
-          type="button"
-          id="company-menu-btn"
-          aria-expanded="false"
-          aria-haspopup="true"
-          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors cursor-pointer font-medium text-sm focus:outline-none"
-        >
-          <span>Company</span>
-          <svg
-            class="w-3.5 h-3.5 text-neutral-500 transition-transform duration-200 group-hover/company:rotate-180 group-focus-within/company:rotate-180"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        <!-- Dropdown Card -->
-        <div
-          id="company-dropdown-panel"
-          role="menu"
-          aria-orientation="vertical"
-          class="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-full pt-2.5 z-50 w-72 sm:w-80 opacity-0 pointer-events-none translate-y-2 group-hover/company:opacity-100 group-hover/company:pointer-events-auto group-hover/company:translate-y-0 group-focus-within/company:opacity-100 group-focus-within/company:pointer-events-auto group-focus-within/company:translate-y-0 transition-all duration-200 ease-out"
-        >
-          <div class="bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(43,35,26,0.12)] border border-[#E8E1D3] p-3 backdrop-blur-xl">
-            <div class="flex items-center gap-3 px-3 py-2.5 mb-1 border-b border-[#EFEAE1]">
-              <div class="w-9 h-9 rounded-full bg-[#F8EDE8] border border-[#7D3024]/15 flex items-center justify-center text-[#7D3024] flex-shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
-              </div>
-              <span class="font-bold text-base text-[#1C1A17] tracking-tight">Company</span>
-            </div>
-
-            <div class="flex flex-col space-y-0.5">
-              <a
-                href="/about-us"
-                class={`flex items-center gap-3.5 px-3 py-2.5 rounded-xl hover:bg-[#F5EFEB] text-left transition-colors duration-150 group/item ${activePath === "/about-us" ? "bg-[#F5EFEB]" : ""}`}
-              >
-                <div class="w-6 flex items-center justify-center text-[#7D3024] flex-shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.8"
-                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
-                    />
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="text-sm font-semibold text-neutral-900 group-hover/item:text-[#7D3024] transition-colors leading-tight">
-                    About Us
-                  </span>
-                  <span class="text-xs text-neutral-500 font-normal mt-0.5 leading-snug">
-                    Who we are and what drives us
-                  </span>
-                </div>
-              </a>
-
-              <a
-                href="/testimonials"
-                class={`flex items-center gap-3.5 px-3 py-2.5 rounded-xl hover:bg-[#F5EFEB] text-left transition-colors duration-150 group/item ${activePath === "/testimonials" ? "bg-[#F5EFEB]" : ""}`}
-              >
-                <div class="w-6 flex items-center justify-center text-[#7D3024] flex-shrink-0">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="1.8"
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                </div>
-                <div class="flex flex-col">
-                  <span class="text-sm font-semibold text-neutral-900 group-hover/item:text-[#7D3024] transition-colors leading-tight">
-                    Testimonials
-                  </span>
-                  <span class="text-xs text-neutral-500 font-normal mt-0.5 leading-snug">
-                    Verified client feedback &amp; delivery
-                  </span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Services Dropdown -->
+      <!-- Services (Top-Level Sitelink Target + Flyout Menu) -->
       <div class="relative group/services">
-        <button
-          type="button"
+        <a
+          href="/services"
           id="services-menu-btn"
           aria-expanded="false"
           aria-haspopup="true"
-          class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors cursor-pointer font-medium text-sm focus:outline-none"
+          class={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors cursor-pointer font-medium text-sm focus:outline-none ${activePath === "/services" || activePath.startsWith("/services") ? "text-black bg-neutral-100 font-semibold" : ""}`}
         >
           <span>Services</span>
           <svg
@@ -158,7 +63,7 @@ const { activePath = "" } = Astro.props;
           >
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
-        </button>
+        </a>
 
         <!-- Dropdown Card -->
         <div
@@ -171,18 +76,21 @@ const { activePath = "" } = Astro.props;
             data-lenis-prevent
             class="bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(43,35,26,0.12)] border border-[#E8E1D3] p-3 backdrop-blur-xl max-h-[82vh] overflow-y-auto"
           >
-            <div class="flex items-center gap-3 px-3 py-2.5 mb-1 border-b border-[#EFEAE1]">
-              <div class="w-9 h-9 rounded-full bg-[#F8EDE8] border border-[#7D3024]/15 flex items-center justify-center text-[#7D3024] flex-shrink-0">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.8"
-                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                  />
-                </svg>
+            <div class="flex items-center justify-between px-3 py-2.5 mb-1 border-b border-[#EFEAE1]">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-[#F8EDE8] border border-[#7D3024]/15 flex items-center justify-center text-[#7D3024] flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                    />
+                  </svg>
+                </div>
+                <span class="font-bold text-base text-[#1C1A17] tracking-tight">Our Services</span>
               </div>
-              <span class="font-bold text-base text-[#1C1A17] tracking-tight">Our Services</span>
+              <a href="/services" class="text-xs font-semibold text-[#7D3024] hover:underline">All Services &rarr;</a>
             </div>
 
             <div class="flex flex-col space-y-0.5">
@@ -400,6 +308,18 @@ const { activePath = "" } = Astro.props;
       </div>
 
       <a
+        class={`px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors ${activePath === "/about-us" ? "text-black bg-neutral-100 font-semibold" : ""}`}
+        href="/about-us"
+      >
+        About Us
+      </a>
+      <a
+        class={`px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors ${activePath === "/testimonials" ? "text-black bg-neutral-100 font-semibold" : ""}`}
+        href="/testimonials"
+      >
+        Testimonials
+      </a>
+      <a
         class={`px-3.5 py-1.5 rounded-md text-neutral-700 hover:text-black hover:bg-neutral-100 transition-colors ${activePath === "/blog" ? "text-black bg-neutral-100 font-semibold" : ""}`}
         href="/blog"
       >
@@ -478,7 +398,10 @@ const { activePath = "" } = Astro.props;
       </div>
 
       <div class="border-t border-[#EFEAE1] pt-3">
-        <span class="text-xs font-bold uppercase tracking-wider text-[#7D3024] px-2 block mb-2">Services</span>
+        <a href="/services" class="text-xs font-bold uppercase tracking-wider text-[#7D3024] px-2 block mb-2 hover:underline flex items-center justify-between">
+          <span>Services</span>
+          <span class="text-[11px] font-semibold text-stone-500">View All &rarr;</span>
+        </a>
         <div class="grid grid-cols-1 gap-1">
           <a
             href="/web-development"

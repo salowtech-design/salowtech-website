@@ -12,7 +12,7 @@ export function getOrganizationEntity() {
     "@id": `${siteConfig.siteUrl}/#organization`,
     name: "Salowtech",
     legalName: siteConfig.legalName,
-    alternateName: ["Salow Technologies", "Salowtech Technologies"],
+    alternateName: ["Salow Technologies", "Salowtech Technologies", "Salow Tech"],
     url: `${siteConfig.siteUrl}/`,
     logo: {
       "@type": "ImageObject",
@@ -55,8 +55,9 @@ export function getWebSiteEntity() {
     "@id": `${siteConfig.siteUrl}/#website`,
     url: `${siteConfig.siteUrl}/`,
     name: "Salowtech",
-    alternateName: ["Salow Technologies", "Salowtech Technologies"],
+    alternateName: "Salow Technologies",
     description: siteConfig.meta.defaultDescription,
+    inLanguage: "en",
     publisher: {
       "@id": `${siteConfig.siteUrl}/#organization`
     }
@@ -77,12 +78,67 @@ export function getBreadcrumbList(items: { name: string; url: string }[]) {
 
 export function getHomeSchema() {
   const faq = getFAQPageSchema("home", siteConfig.siteUrl);
-  const graph = [getOrganizationEntity(), getWebSiteEntity()];
+  const homeWebPage = {
+    "@type": "WebPage",
+    "@id": `${siteConfig.siteUrl}/#webpage`,
+    url: `${siteConfig.siteUrl}/`,
+    name: "Salowtech | Custom Software, CRM, ERP and App Development",
+    description: siteConfig.meta.defaultDescription,
+    inLanguage: "en",
+    isPartOf: {
+      "@id": `${siteConfig.siteUrl}/#website`
+    },
+    about: {
+      "@id": `${siteConfig.siteUrl}/#organization`
+    }
+  };
+
+  const graph: any[] = [getOrganizationEntity(), getWebSiteEntity(), homeWebPage];
   if (faq) graph.push(faq as any);
 
   return {
     "@context": "https://schema.org",
     "@graph": graph
+  };
+}
+
+export function getServicesHubSchema() {
+  const url = `${siteConfig.siteUrl}/services`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#webpage`,
+        url: url,
+        name: "Services | Salowtech",
+        description:
+          "Sovereign enterprise software engineering services. Custom ERP, CRM, web platforms, mobile apps, HRM, AI voice, and search growth.",
+        isPartOf: {
+          "@id": `${siteConfig.siteUrl}/#website`
+        },
+        about: {
+          "@id": `${siteConfig.siteUrl}/#organization`
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Salowtech Engineering Services",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Web Development", url: `${siteConfig.siteUrl}/web-development` },
+            { "@type": "ListItem", position: 2, name: "Mobile App Development", url: `${siteConfig.siteUrl}/mobile-app-development` },
+            { "@type": "ListItem", position: 3, name: "ERP Development", url: `${siteConfig.siteUrl}/erp-development` },
+            { "@type": "ListItem", position: 4, name: "CRM Development", url: `${siteConfig.siteUrl}/crm-development` },
+            { "@type": "ListItem", position: 5, name: "HRM & Payroll", url: `${siteConfig.siteUrl}/hrm-payroll` },
+            { "@type": "ListItem", position: 6, name: "AI Voice Assistant", url: `${siteConfig.siteUrl}/ai-voice-assistant` },
+            { "@type": "ListItem", position: 7, name: "SEO & Growth", url: `${siteConfig.siteUrl}/seo-and-growth` }
+          ]
+        }
+      },
+      getBreadcrumbList([
+        { name: "Home", url: `${siteConfig.siteUrl}/` },
+        { name: "Services", url: url }
+      ])
+    ]
   };
 }
 
@@ -108,13 +164,11 @@ export function getServiceSchema(opts: {
         name: "Salowtech",
         url: `${siteConfig.siteUrl}/`
       },
-      areaServed: {
-        "@type": "Country",
-        name: "India"
-      }
+      areaServed: "Worldwide"
     },
     getBreadcrumbList([
       { name: "Home", url: `${siteConfig.siteUrl}/` },
+      { name: "Services", url: `${siteConfig.siteUrl}/services` },
       { name: opts.breadcrumbTitle, url: serviceUrl }
     ])
   ];
@@ -207,8 +261,88 @@ export function getTestimonialsSchema() {
   };
 }
 
-export function getBlogIndexSchema() {
+export function getBlogIndexSchema(posts?: any[]) {
   const url = `${siteConfig.siteUrl}/blog`;
+  const articleItems =
+    posts && posts.length > 0
+      ? posts.map((post: any, index: number) => {
+          const slug = post.data?.id || post.id || post.slug;
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            name: post.data?.title || slug,
+            url: `${siteConfig.siteUrl}/blog/${slug}`
+          };
+        })
+      : [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "AI Voice Assistant Customer Support",
+            url: `${siteConfig.siteUrl}/blog/ai-voice-assistant-customer-support`
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Business Automation Repetitive Tasks",
+            url: `${siteConfig.siteUrl}/blog/business-automation-repetitive-tasks`
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Cloud ERP Security Checklist",
+            url: `${siteConfig.siteUrl}/blog/cloud-erp-security-checklist`
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: "Custom vs Ready Made Mobile App",
+            url: `${siteConfig.siteUrl}/blog/custom-vs-ready-made-mobile-app`
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
+            name: "ERP vs CRM vs HRM Guide",
+            url: `${siteConfig.siteUrl}/blog/erp-vs-crm-vs-hrm-guide`
+          },
+          {
+            "@type": "ListItem",
+            position: 6,
+            name: "Google SEO Ranking 2026",
+            url: `${siteConfig.siteUrl}/blog/google-seo-ranking-2026`
+          },
+          {
+            "@type": "ListItem",
+            position: 7,
+            name: "High Converting Business Website",
+            url: `${siteConfig.siteUrl}/blog/high-converting-business-website`
+          },
+          {
+            "@type": "ListItem",
+            position: 8,
+            name: "Manage Customers CRM Pipeline",
+            url: `${siteConfig.siteUrl}/blog/manage-customers-crm-pipeline`
+          },
+          {
+            "@type": "ListItem",
+            position: 9,
+            name: "Omnichannel Customer Support Hub",
+            url: `${siteConfig.siteUrl}/blog/omnichannel-customer-support-hub`
+          },
+          {
+            "@type": "ListItem",
+            position: 10,
+            name: "PostgreSQL TimescaleDB Financial Vault",
+            url: `${siteConfig.siteUrl}/blog/postgresql-timescaledb-financial-vault`
+          },
+          {
+            "@type": "ListItem",
+            position: 11,
+            name: "What is HRM Software",
+            url: `${siteConfig.siteUrl}/blog/what-is-hrm-software`
+          }
+        ];
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -223,6 +357,12 @@ export function getBlogIndexSchema() {
           "@id": `${siteConfig.siteUrl}/#organization`,
           name: "Salowtech",
           url: `${siteConfig.siteUrl}/`
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          name: "Salowtech Engineering Articles",
+          numberOfItems: articleItems.length,
+          itemListElement: articleItems
         }
       },
       getBreadcrumbList([
