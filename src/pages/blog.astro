@@ -201,7 +201,7 @@ const categories = [
       {posts.map((post, index) => {
         const theme = colorThemes[index % colorThemes.length];
         const searchContent =
-          `${post.data.title} ${post.data.excerpt} ${post.data.category} ${post.data.categoryPill} ${post.data.author.name}`.toLowerCase();
+          `${post.data.title} ${post.data.excerpt} ${post.data.category} ${post.data.categoryPill} Salowtech Engineering`.toLowerCase();
 
         return (
           <>
@@ -261,9 +261,7 @@ const categories = [
                   </div>
 
                   <div class="card-meta">
-                    <span class="card-author">
-                      {post.data.author ? post.data.author.name : "Salowtech Engineering"}
-                    </span>
+                    <span class="card-author">Salowtech Engineering</span>
                     <span class="card-date">{post.data.date}</span>
                   </div>
                 </div>

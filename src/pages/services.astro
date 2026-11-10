@@ -1,12 +1,15 @@
 ---
 /**
- * Services Hub Page: Top-level parent directory for Salowtech core engineering verticals.
- * Establishes hierarchical parent-child structure for Google organic sitelinks.
+ * Services Hub Page: Upgraded Sovereign Engineering Services
+ * Reference: High-end SaaS layout with modern 3D icon cards, stats impact banner,
+ * transparent engagement tiers, and hierarchical links for Google organic sitelinks.
  */
 import Layout from "../layouts/Layout.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
+import { Image } from "astro:assets";
 import { pagesSEO } from "../data/seo";
 import { getServicesHubSchema } from "../data/schema";
+import salowtechMascot from "../assets/salowtech_mascot_3d.png";
 
 const seo = pagesSEO.services;
 const title = seo.title;
@@ -20,6 +23,9 @@ const servicesList = [
     slug: "/web-development",
     tag: "High-Speed Web Platforms",
     badge: "Web Systems",
+    iconBg: "bg-blue-50 border-blue-200/80 text-blue-600",
+    gradient: "from-blue-500/10 to-indigo-500/5",
+    accentColor: "#2563EB",
     summary:
       "Modern cloud web apps, custom SaaS portals, and scalable cloud architectures engineered for sub-second TTFB, zero layout shift, and resilient performance.",
     features: [
@@ -28,13 +34,17 @@ const servicesList = [
       "Custom SaaS architectures & REST/GraphQL APIs",
       "Multi-tenant database security & RBAC"
     ],
-    ctaText: "Explore Web Development"
+    ctaText: "Explore Web Development",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="m9 16 3-3 3 3"/></svg>`
   },
   {
     title: "Mobile App Development",
     slug: "/mobile-app-development",
     tag: "iOS & Android",
     badge: "Mobile Apps",
+    iconBg: "bg-purple-50 border-purple-200/80 text-purple-600",
+    gradient: "from-purple-500/10 to-pink-500/5",
+    accentColor: "#9333EA",
     summary:
       "Native iOS, Android, and Flutter mobile applications built for fluid 120 FPS animations, offline-first SQLite sync, and mission-critical reliability.",
     features: [
@@ -43,13 +53,17 @@ const servicesList = [
       "Biometric authentication & secure keychain vaults",
       "Strict App Store & Google Play compliance SLAs"
     ],
-    ctaText: "Explore Mobile App Development"
+    ctaText: "Explore Mobile App Development",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`
   },
   {
     title: "ERP Development",
     slug: "/erp-development",
     tag: "Supply Chain & Operations",
     badge: "Enterprise ERP",
+    iconBg: "bg-emerald-50 border-emerald-200/80 text-emerald-600",
+    gradient: "from-emerald-500/10 to-teal-500/5",
+    accentColor: "#059669",
     summary:
       "Sovereign cloud ERP systems integrating multi-warehouse inventory, double-entry financial accounting, and procurement without per-seat licensing fees.",
     features: [
@@ -58,13 +72,17 @@ const servicesList = [
       "Automated vendor procurement & PO workflows",
       "PostgreSQL row-level security & encrypted data vaults"
     ],
-    ctaText: "Explore ERP Development"
+    ctaText: "Explore ERP Development",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg>`
   },
   {
     title: "CRM Development",
     slug: "/crm-development",
     tag: "Revenue & Sales Operations",
     badge: "Sales CRM",
+    iconBg: "bg-amber-50 border-amber-200/80 text-amber-600",
+    gradient: "from-amber-500/10 to-orange-500/5",
+    accentColor: "#D97706",
     summary:
       "Tailored CRM software built for multi-channel sales pipelines, lead routing automation, real-time quotations, and WhatsApp Business API integration.",
     features: [
@@ -73,13 +91,17 @@ const servicesList = [
       "Official WhatsApp Cloud API conversational sync",
       "Detailed conversion analytics & revenue forecasts"
     ],
-    ctaText: "Explore CRM Development"
+    ctaText: "Explore CRM Development",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
   },
   {
     title: "HRM & Payroll",
     slug: "/hrm-payroll",
     tag: "Workforce & Compliance",
     badge: "Workforce Platform",
+    iconBg: "bg-rose-50 border-rose-200/80 text-rose-600",
+    gradient: "from-rose-500/10 to-red-500/5",
+    accentColor: "#E11D48",
     summary:
       "Automate biometric attendance, statutory tax deductions, leave approvals, and multi-tier salary disbursements with 100% data sovereignty.",
     features: [
@@ -88,13 +110,17 @@ const servicesList = [
       "Self-service employee portals for leave & slips",
       "Single-click batch payroll disbursement bank exports"
     ],
-    ctaText: "Explore HRM & Payroll"
+    ctaText: "Explore HRM & Payroll",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`
   },
   {
     title: "AI Voice Assistant",
     slug: "/ai-voice-assistant",
     tag: "Conversational Telephony",
     badge: "AI Telephony",
+    iconBg: "bg-cyan-50 border-cyan-200/80 text-cyan-600",
+    gradient: "from-cyan-500/10 to-blue-500/5",
+    accentColor: "#0891B2",
     summary:
       "Low-latency conversational voice bots and automated call assistants providing 24/7 customer support, inbound routing, and CRM timeline sync.",
     features: [
@@ -103,13 +129,17 @@ const servicesList = [
       "Asterisk/FreeSWITCH SIP trunk telephony integration",
       "Automated CRM call recording & transcript sync"
     ],
-    ctaText: "Explore AI Voice Assistant"
+    ctaText: "Explore AI Voice Assistant",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>`
   },
   {
     title: "SEO & Growth",
     slug: "/seo-and-growth",
     tag: "Search & Generative Optimization",
     badge: "Organic Search",
+    iconBg: "bg-[#FAF3F1] border-[#E8D2CF] text-[#7D3024]",
+    gradient: "from-[#7D3024]/10 to-amber-500/5",
+    accentColor: "#7D3024",
     summary:
       "Technical SEO, Core Web Vitals optimization, and structured search architecture engineered to dominate high-intent Google rankings and AI engine discovery.",
     features: [
@@ -118,7 +148,8 @@ const servicesList = [
       "Generative Engine Optimization (GEO) for ChatGPT & Perplexity",
       "Authoritative technical content & internal linking models"
     ],
-    ctaText: "Explore SEO & Growth"
+    ctaText: "Explore SEO & Growth",
+    iconSvg: `<svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="m11 8 2 2-2 2"/></svg>`
   }
 ];
 ---
@@ -134,101 +165,283 @@ const servicesList = [
 >
   <Breadcrumb currentPage="Services" />
 
-  <!-- Hero Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 sm:pt-40 pb-16">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FAF3F1] border border-[#E8D2CF] text-[#7D3024] text-xs font-semibold uppercase tracking-wider mb-4">
-        <span class="w-2 h-2 rounded-full bg-[#7D3024]"></span>
-        <span>Sovereign Software Engineering</span>
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-serif text-neutral-950 font-normal tracking-tight mb-5 leading-tight">
-        Services
-      </h1>
-      <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
-        We engineer bespoke enterprise software platforms with 100% intellectual property ownership, zero recurring SaaS license taxes, and lifetime code maintainability.
-      </p>
-    </div>
+  <!-- ================= HERO SECTION (Upgraded with Soft Gradient Aura) ================= -->
+  <section class="relative pt-32 sm:pt-40 pb-20 overflow-hidden">
+    <!-- Ambient Gradient Backdrops -->
+    <div class="pointer-events-none absolute top-12 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-gradient-to-r from-[#FAF3F1] via-[#F6EEFA] to-[#FAF7F2] rounded-full blur-3xl opacity-75 -z-10"></div>
+    <div class="pointer-events-none absolute top-40 right-10 w-72 h-72 bg-gradient-to-br from-amber-100/40 to-transparent rounded-full blur-2xl -z-10"></div>
 
-    <!-- Services Grid (7 Core Capabilities) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-      {servicesList.map((svc, idx) => (
-        <article
-          class={`group bg-white rounded-3xl p-7 sm:p-8 border border-[#E8E1D3] shadow-[0_4px_20px_-4px_rgba(43,35,26,0.04)] hover:shadow-xl hover:border-[#7D3024]/40 transition-all duration-300 flex flex-col justify-between ${
-            idx === 6 ? "md:col-span-2 lg:col-span-3 lg:max-w-xl lg:mx-auto" : ""
-          }`}
-        >
-          <div>
-            <div class="flex items-center justify-between gap-3 mb-4">
-              <span class="text-xs font-bold text-[#7D3024] uppercase tracking-wider bg-[#FAF3F1] px-3 py-1 rounded-full border border-[#E8D2CF]">
-                {svc.badge}
-              </span>
-              <span class="text-xs text-stone-400 font-mono">0{idx + 1}</span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FAF3F1] border border-[#E8D2CF] text-[#7D3024] text-xs font-bold uppercase tracking-widest mb-5 shadow-2xs">
+          <span class="w-2 h-2 rounded-full bg-[#7D3024] animate-pulse"></span>
+          <span>Sovereign Software Services</span>
+        </div>
+
+        <!-- Main Display Heading -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-neutral-950 tracking-tight mb-6 leading-[1.15]">
+          Feel The Power Of Technology <br class="hidden sm:inline" />
+          <span class="italic font-normal text-[#7D3024]">Software Services</span>
+        </h1>
+
+        <p class="text-stone-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto">
+          We engineer bespoke enterprise platforms with 100% intellectual property ownership, zero recurring SaaS seat taxes, and lifetime code maintainability.
+        </p>
+      </div>
+
+      <!-- ================= SERVICES GRID (7 Modern Cards with 3D Icons & Arrow Pills) ================= -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {servicesList.map((svc, idx) => (
+          <article
+            class={`group relative bg-white rounded-3xl p-7 sm:p-8 border border-[#E8E1D3] shadow-[0_4px_24px_-4px_rgba(43,35,26,0.05)] hover:shadow-2xl hover:border-[#7D3024]/40 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between overflow-hidden ${
+              idx === 6 ? "md:col-span-2 lg:col-span-3 lg:max-w-2xl lg:mx-auto w-full" : ""
+            }`}
+          >
+            <!-- Ambient Card Glow on Hover -->
+            <div class={`pointer-events-none absolute top-0 right-0 w-36 h-36 bg-gradient-to-br ${svc.gradient} rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500`}></div>
+
+            <div>
+              <!-- Top Row: Icon Box & Number Indicator -->
+              <div class="flex items-center justify-between gap-3 mb-6">
+                <div class={`w-14 h-14 rounded-2xl flex items-center justify-center border shadow-xs transition-transform duration-300 group-hover:scale-110 ${svc.iconBg}`} set:html={svc.iconSvg} />
+                <span class="text-xs text-stone-400 font-mono tracking-wider font-semibold">0{idx + 1}</span>
+              </div>
+
+              <!-- Badge Tag -->
+              <div class="mb-2">
+                <span class="text-[11px] font-bold text-[#7D3024] uppercase tracking-wider bg-[#FAF3F1] px-2.5 py-1 rounded-md border border-[#E8D2CF]">
+                  {svc.badge}
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-3 leading-snug">
+                <a href={svc.slug} class="focus:outline-none">
+                  {svc.title}
+                </a>
+              </h2>
+
+              <!-- Description -->
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-6">
+                {svc.summary}
+              </p>
+
+              <!-- Deliverables Checklist -->
+              <ul class="space-y-2.5 mb-6 border-t border-stone-100 pt-5">
+                {svc.features.map((feat) => (
+                  <li class="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700">
+                    <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{feat}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 group-hover:text-[#7D3024] transition-colors mb-3 leading-snug">
-              <a href={svc.slug} class="focus:outline-none">
-                {svc.title}
+            <!-- Bottom Row: Sleek Round/Pill Arrow Action Button -->
+            <div class="pt-5 border-t border-stone-100 mt-auto flex items-center justify-between">
+              <a
+                href={svc.slug}
+                class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-neutral-900 group-hover:text-[#7D3024] transition-colors"
+              >
+                <span>{svc.ctaText}</span>
               </a>
-            </h2>
+              <a
+                href={svc.slug}
+                aria-label={`View ${svc.title} details`}
+                class="w-10 h-10 rounded-full bg-gradient-to-r from-neutral-900 to-[#7D3024] group-hover:from-[#7D3024] group-hover:to-[#A34335] text-white flex items-center justify-center shadow-md group-hover:scale-110 transition-all duration-300"
+              >
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
 
-            <p class="text-stone-600 text-sm leading-relaxed mb-6">
-              {svc.summary}
-            </p>
+      <!-- ================= STATS IMPACT BANNER (Reference: Soften Stat Bar) ================= -->
+      <div class="mt-20 rounded-3xl bg-gradient-to-r from-[#FAF3F1] via-[#FAF7F2] to-[#F3ECF8] border border-[#E8DCDA] p-8 sm:p-12 shadow-[0_8px_30px_-6px_rgba(125,48,36,0.06)] relative overflow-hidden">
+        <div class="pointer-events-none absolute -right-10 -bottom-10 w-64 h-64 bg-[#7D3024]/5 rounded-full blur-2xl"></div>
 
-            <ul class="space-y-2.5 mb-6 border-t border-stone-100 pt-5">
-              {svc.features.map((feat) => (
-                <li class="flex items-start gap-2.5 text-xs sm:text-sm text-stone-700">
-                  <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>{feat}</span>
-                </li>
-              ))}
-            </ul>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+          <!-- Stat 1 -->
+          <div>
+            <p class="text-3xl sm:text-5xl font-black font-serif text-[#7D3024] tracking-tight">480<span class="text-neutral-900 font-sans">+</span></p>
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-600 mt-1">Sprints Delivered</p>
           </div>
+          <!-- Stat 2 -->
+          <div>
+            <p class="text-3xl sm:text-5xl font-black font-serif text-neutral-950 tracking-tight">99.98<span class="text-[#7D3024] font-sans">%</span></p>
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-600 mt-1">Platform Reliability</p>
+          </div>
+          <!-- Stat 3 -->
+          <div>
+            <p class="text-3xl sm:text-5xl font-black font-serif text-[#7D3024] tracking-tight">100<span class="text-neutral-900 font-sans">%</span></p>
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-600 mt-1">IP Ownership Transfer</p>
+          </div>
+          <!-- Stat 4 -->
+          <div>
+            <p class="text-3xl sm:text-5xl font-black font-serif text-neutral-950 tracking-tight">&lt;400<span class="text-[#7D3024] font-sans">ms</span></p>
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-stone-600 mt-1">Voice &amp; API Latency</p>
+          </div>
+        </div>
+      </div>
 
-          <div class="pt-5 border-t border-stone-100 mt-auto">
+      <!-- ================= TRANSPARENT ENGAGEMENT & ARCHITECTURE MODELS ================= -->
+      <div class="mt-24">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-[#7D3024] block mb-2">
+            Engagement &amp; Architecture Delivery
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-serif text-neutral-950 font-normal tracking-tight">
+            Transparent Sovereign Engineering Tiers
+          </h2>
+          <p class="text-stone-600 text-xs sm:text-sm mt-3 leading-relaxed">
+            Choose the delivery framework that fits your roadmap. Every tier guarantees 100% intellectual property transfer and lifetime maintainability.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Tier 1: Sprint Pod -->
+          <div class="bg-white rounded-3xl p-8 border border-stone-200/90 shadow-md hover:border-[#7D3024]/40 hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold text-stone-600 uppercase tracking-widest bg-stone-100 px-3 py-1 rounded-full">
+                  Agile Sprint Model
+                </span>
+                <span class="text-xs font-bold text-[#7D3024]">2-Week Cadence</span>
+              </div>
+              <h3 class="text-2xl font-bold text-neutral-950 mb-2 font-display">Dedicated Sprint Pod</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-6">
+                Fast-paced MVP build, custom feature development, or high-performance frontend engineering with senior developers.
+              </p>
+
+              <ul class="space-y-3 mb-8 border-t border-stone-100 pt-6 text-xs sm:text-sm text-stone-700">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Dedicated Senior Full-Stack Pod</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Bi-weekly production releases &amp; demo reviews</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Full Git repository &amp; CI/CD pipeline ownership</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Zero per-seat licensing or ongoing vendor lock-in</span>
+                </li>
+              </ul>
+            </div>
+
             <a
-              href={svc.slug}
-              class="inline-flex items-center justify-between w-full text-sm font-semibold text-[#7D3024] group-hover:text-[#5C2017] transition-colors"
+              href="/contact-us"
+              class="w-full text-center py-3.5 px-6 rounded-2xl bg-neutral-900 hover:bg-[#7D3024] text-white text-sm font-semibold tracking-tight transition-colors shadow-sm"
             >
-              <span>{svc.ctaText}</span>
-              <span class="group-hover:translate-x-1.5 transition-transform duration-200" aria-hidden="true">&rarr;</span>
+              Start Sprint Pod Consultation &rarr;
             </a>
           </div>
-        </article>
-      ))}
-    </div>
 
-    <!-- Sovereign Engineering Advantage -->
-    <div class="mt-20 p-8 sm:p-12 rounded-3xl bg-[#FAF7F2] border border-[#E8E1D3]">
-      <div class="max-w-3xl">
-        <span class="text-xs font-semibold uppercase tracking-widest text-[#7D3024] block mb-2">
-          The Sovereign Advantage
-        </span>
-        <h3 class="text-2xl sm:text-3xl font-serif text-neutral-950 font-normal tracking-tight mb-4">
-          Why Enterprises Choose Custom Engineering Over Off-the-Shelf SaaS
-        </h3>
-        <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
-          Commercial SaaS applications trap growing companies with escalating per-seat fees, vendor lock-in, and generic workflows. Salowtech builds sovereign platforms designed around your exact business logic where you own 100% of the code, database schema, and intellectual property.
-        </p>
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a
-            href="/contact-us"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-sm font-semibold tracking-tight transition-all shadow-sm"
-          >
-            <span>Consult an Engineering Lead</span>
-            <span aria-hidden="true">&rarr;</span>
-          </a>
-          <a
-            href="/testimonials"
-            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-[#F5EFEB] border border-[#E8E1D3] text-neutral-900 text-sm font-semibold tracking-tight transition-all"
-          >
-            <span>Read Client Feedback</span>
-          </a>
+          <!-- Tier 2: Sovereign Enterprise Core -->
+          <div class="bg-gradient-to-b from-[#FAF7F2] to-white rounded-3xl p-8 border-2 border-[#7D3024]/40 shadow-xl relative flex flex-col justify-between overflow-hidden">
+            <div class="absolute top-4 right-5">
+              <span class="text-[10px] font-extrabold uppercase tracking-widest bg-[#7D3024] text-white px-3 py-1 rounded-full shadow-xs">
+                Most Popular
+              </span>
+            </div>
+
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-xs font-bold text-[#7D3024] uppercase tracking-widest bg-[#FAF3F1] px-3 py-1 rounded-full border border-[#E8D2CF]">
+                  Turnkey Enterprise Platform
+                </span>
+              </div>
+              <h3 class="text-2xl font-bold text-neutral-950 mb-2 font-display">Sovereign Enterprise Core</h3>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-6">
+                End-to-end cloud ERP, CRM, custom portal, or AI voice infrastructure tailored to your exact workflows and database rules.
+              </p>
+
+              <ul class="space-y-3 mb-8 border-t border-stone-200/70 pt-6 text-xs sm:text-sm text-stone-800">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>100% Bespoke Business Logic &amp; Schemas</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Unlimited users &amp; branches with zero per-seat taxes</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Encrypted data vaults with PostgreSQL Row-Level Security</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-[#7D3024] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                  <span>Dedicated SLA, security audit &amp; lifetime code guarantee</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="/contact-us"
+              class="w-full text-center py-3.5 px-6 rounded-2xl bg-[#7D3024] hover:bg-[#5C2017] text-white text-sm font-semibold tracking-tight transition-colors shadow-md"
+            >
+              Consult Enterprise Architects &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= SOVEREIGN MASCOT GUIDE CALLOUT ================= -->
+      <div class="mt-20 p-8 sm:p-12 rounded-3xl bg-[#FAF7F2] border border-[#E8E1D3] relative overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-8">
+            <span class="text-xs font-semibold uppercase tracking-widest text-[#7D3024] block mb-2">
+              The Sovereign Advantage
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-serif text-neutral-950 font-normal tracking-tight mb-4">
+              Why Enterprises Choose Custom Engineering Over Off-the-Shelf SaaS
+            </h3>
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed mb-6">
+              Commercial SaaS applications trap growing companies with escalating per-seat fees, vendor lock-in, and generic workflows. Salowtech builds sovereign platforms designed around your exact business logic where you own 100% of the code, database schema, and intellectual property.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a
+                href="/contact-us"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-sm font-semibold tracking-tight transition-all shadow-sm"
+              >
+                <span>Consult an Engineering Lead</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a
+                href="/testimonials"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-[#F5EFEB] border border-[#E8E1D3] text-neutral-900 text-sm font-semibold tracking-tight transition-all"
+              >
+                <span>Read Client Feedback</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mascot Illustration on Right -->
+          <div class="md:col-span-4 flex justify-center">
+            <div class="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center">
+              <div class="absolute inset-0 bg-[#7D3024]/10 rounded-full blur-2xl animate-pulse"></div>
+              <Image
+                src={salowtechMascot}
+                alt="Salowtech Mascot Sovereign Guide"
+                width={200}
+                height={200}
+                class="relative w-full h-full object-contain filter drop-shadow-lg salow-mascot-celebrate"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
-
