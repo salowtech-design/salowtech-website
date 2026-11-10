@@ -1025,27 +1025,21 @@ function initSmoothScroll() {
 
   if (!prefersReducedMotion && typeof Lenis !== 'undefined' && !lenis) {
     lenis = new Lenis({
-      duration: 1.15,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,
+      wheelMultiplier: 1.05,
+      touchMultiplier: 1.5,
+      smoothWheel: true,
+      smoothTouch: false,
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.0,
-      syncTouch: false,
-      smoothTouch: false,
       infinite: false
     });
     window.lenis = lenis;
 
-    // KYU: Lenis inertia scroll engine aur GSAP ticker ko ek synchronized rAF loop me chalate hain.
-    // Isse do alag requestAnimationFrame loops ke beech micro-stutters aur frame fighting nahi hoti,
-    // aur 120Hz high-refresh screens par buttery-smooth inertia scrolling aur scroll-driven animations milti hain.
     if (typeof gsap !== 'undefined' && gsap.ticker) {
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
       });
-      gsap.ticker.lagSmoothing(0);
     } else {
       function raf(time) {
         lenis.raf(time);

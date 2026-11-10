@@ -225,7 +225,8 @@ const servicesList = [
                   width={240}
                   height={240}
                   class="relative max-h-36 sm:max-h-40 w-auto object-contain filter drop-shadow-md group-hover:scale-108 group-hover:-translate-y-1 transition-all duration-300"
-                  loading="lazy"
+                  loading={idx < 3 ? "eager" : "lazy"}
+                  fetchpriority={idx < 3 ? "high" : "auto"}
                   decoding="async"
                 />
                 <!-- Index Counter Badge -->

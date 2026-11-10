@@ -56,29 +56,17 @@ const cleanHeading = headingHtml
     </div>
 
     <div class="cta-art" aria-hidden="true">
-      {typeof imageSrc === "string" ? (
-        <img
-          src={imageSrc}
-          alt="Salowtech Growth Illustration"
-          class="cta-img"
-          width="967"
-          height="1024"
-          loading="lazy"
-          decoding="async"
-        />
-      ) : (
-        <Image
-          src={imageSrc}
-          alt="Salowtech Growth Illustration"
-          class="cta-img"
-          width={967}
-          height={1024}
-          loading="lazy"
-          decoding="async"
-          format="webp"
-          quality={90}
-        />
-      )}
+      <Image
+        src={imageSrc || ctaIllustration}
+        alt="Salowtech Growth Illustration"
+        class="cta-img"
+        width={967}
+        height={1024}
+        loading="lazy"
+        decoding="async"
+        format="webp"
+        quality={90}
+      />
     </div>
   </div>
 </section>

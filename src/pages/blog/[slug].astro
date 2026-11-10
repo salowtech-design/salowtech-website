@@ -193,11 +193,11 @@ const relatedServices = getBlogRelatedServices(slug);
 
       <!-- Hero Cover Image -->
       <div class="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E8E2D6] shadow-sm mb-12 bg-stone-100">
-        <img
+        <Image
           src={post.data.image}
           alt={post.data.title}
-          width="1200"
-          height="675"
+          width={1200}
+          height={675}
           class="w-full aspect-[16/9] object-cover"
           loading="eager"
           decoding="async"
@@ -323,11 +323,11 @@ const relatedServices = getBlogRelatedServices(slug);
 
                   <div class="card-content">
                     <div class="card-thumb-wrap">
-                      <img
+                      <Image
                         src={rel.data.image}
                         alt={rel.data.title}
-                        width="400"
-                        height="225"
+                        width={400}
+                        height={225}
                         class="card-thumb-img"
                         loading="lazy"
                         decoding="async"

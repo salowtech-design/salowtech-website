@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import { pagesSEO } from "../data/seo";
@@ -239,11 +240,11 @@ const categories = [
                 <!-- Card Content -->
                 <div class="card-content">
                   <div class="card-thumb-wrap">
-                    <img
+                    <Image
                       src={post.data.image}
                       alt={post.data.title}
-                      width="400"
-                      height="225"
+                      width={400}
+                      height={225}
                       class="card-thumb-img"
                       loading="lazy"
                       decoding="async"

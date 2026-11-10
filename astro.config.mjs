@@ -6,6 +6,10 @@ export default defineConfig({
   output: "static",
   trailingSlash: "never",
   compressHTML: true,
+  image: {
+    domains: ["images.unsplash.com", "salowtech.com"],
+    remotePatterns: [{ protocol: "https" }]
+  },
   build: {
     format: "directory",
     inlineStylesheets: "auto"
