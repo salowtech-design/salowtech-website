@@ -4,8 +4,10 @@
  */
 
 export const siteConfig = {
-  name: "Salowtech",
-  legalName: "Salowtech Technologies",
+  name: "Salow Technologies",
+  brandName: "Salowtech",
+  legalName: "Salow Technologies",
+  alternateNames: ["Salowtech", "Salow Tech", "Salow Technologies India"],
   tagline: "Sovereign Software Platforms for India",
   siteUrl: "https://salowtech.com",
   contact: {
@@ -28,14 +30,15 @@ export const siteConfig = {
   social: {
     linkedin: "https://linkedin.com/company/salowtech",
     x: "https://x.com/salowtech",
-    github: "https://github.com/salowtech",
+    github: "https://github.com/salowtech-design",
+    githubRepo: "https://github.com/salowtech-design/salow-tech",
     instagram: "https://instagram.com/salowtech",
     clutch: "https://clutch.co/profile/salowtech"
   },
   meta: {
-    defaultTitle: "Salowtech - Sovereign Software Platforms & Enterprise Systems",
-    defaultDescription: "Salowtech architects sovereign multi-tenant SaaS platforms, enterprise ERPs, CRMs, and AI voice agents. 100% code ownership. Request a discovery proposal.",
-    defaultKeywords: "custom software development company India, enterprise ERP software development, custom CRM development, HRM payroll software India, native mobile app development, conversational AI voice assistant, enterprise software architecture, Surat, Bangalore",
+    defaultTitle: "Salow Technologies (Salowtech) — Sovereign Software Platforms & Enterprise Systems",
+    defaultDescription: "Salow Technologies (Salowtech) architects sovereign multi-tenant SaaS platforms, enterprise ERPs, CRMs, and AI voice agents. 100% code ownership. Request a discovery proposal.",
+    defaultKeywords: "Salow Technologies, Salowtech, Salow Tech, custom software development company India, enterprise ERP software development, custom CRM development, HRM payroll software India, native mobile app development, conversational AI voice assistant, enterprise software architecture, Surat, Bangalore",
     defaultOgImage: "https://salowtech.com/assets/salowtech_team_hero.jpg"
   }
 } as const;

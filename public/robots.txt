@@ -8,6 +8,32 @@ Allow: /
 Disallow: /api/
 Disallow: /crm-dashboard
 
+# Standard Search Engine Crawlers (Explicit Full Indexation Allowed)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /assets/
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
 # Generative AI Answer Engines & Grounding Bots (Full Retrieval Allowed)
 User-agent: GPTBot
 Allow: /
@@ -49,4 +75,5 @@ Allow: /
 Disallow: /api/
 Disallow: /crm-dashboard
 
+# Canonical Sitemaps & Context Feeds
 Sitemap: https://salowtech.com/sitemap.xml

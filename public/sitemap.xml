@@ -1,128 +1,222 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ==========================================
+  <!-- ======================================================================
        1. ROOT BRAND ENTITY (HOMEPAGE)
-       ========================================== -->
+       ====================================================================== -->
   <url>
     <loc>https://salowtech.com/</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/salowtech_team_hero.jpg</image:loc>
+      <image:title>Salow Technologies Core Engineering Team</image:title>
+      <image:caption>Salow Technologies software architects building sovereign cloud platforms</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/salowtech_logo_square.png</image:loc>
+      <image:title>Salowtech Official Brand Vector</image:title>
+    </image:image>
   </url>
 
-  <!-- ==========================================
-       2. SERVICES HUB & CORE SERVICES
-       ========================================== -->
+  <!-- ======================================================================
+       2. CORE SOVEREIGN ENGINEERING SERVICES (PRIORITY 0.9)
+       ====================================================================== -->
   <url>
     <loc>https://salowtech.com/services</loc>
-    <lastmod>2026-11-09</lastmod>
-  </url>
-  <url>
-    <loc>https://salowtech.com/crm-development</loc>
-    <lastmod>2026-11-08</lastmod>
-  </url>
-  <url>
-    <loc>https://salowtech.com/erp-development</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://salowtech.com/web-development</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_web.png</image:loc>
+      <image:title>Sovereign Web Application Engineering</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://salowtech.com/mobile-app-development</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_mobile.png</image:loc>
+      <image:title>Native iOS, Android and Flutter Mobile App Development</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://salowtech.com/crm-development</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_crm.png</image:loc>
+      <image:title>Custom Omnichannel CRM Engineering</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://salowtech.com/erp-development</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_erp.png</image:loc>
+      <image:title>Enterprise Cloud ERP Software Solutions</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://salowtech.com/hrm-payroll</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_hrm.png</image:loc>
+      <image:title>Biometric HRM and Statutory Payroll Software</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://salowtech.com/ai-voice-assistant</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_ai.png</image:loc>
+      <image:title>Sub-400ms SIP Conversational AI Voice Telephony</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://salowtech.com/seo-and-growth</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/personas/sketch_growth.png</image:loc>
+      <image:title>Technical SEO and Generative Engine Optimization</image:title>
+    </image:image>
   </url>
 
-  <!-- ==========================================
-       3. COMPANY & AUTHORITY PAGES
-       ========================================== -->
+  <!-- ======================================================================
+       3. COMPANY AUTHORITY & TRUST PAGES (PRIORITY 0.8)
+       ====================================================================== -->
   <url>
     <loc>https://salowtech.com/about-us</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://salowtech.com/assets/salowtech_team_hero.jpg</image:loc>
+      <image:title>About Salow Technologies Engineering Doctrine</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://salowtech.com/contact-us</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salowtech.com/testimonials</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- ==========================================
-       4. LEGAL & TRUST
-       ========================================== -->
-  <url>
-    <loc>https://salowtech.com/privacy-policy</loc>
-    <lastmod>2026-11-08</lastmod>
-  </url>
-  <url>
-    <loc>https://salowtech.com/terms-and-conditions</loc>
-    <lastmod>2026-11-08</lastmod>
-  </url>
-
-  <!-- ==========================================
-       5. ENGINEERING INSIGHTS & ARTICLES
-       ========================================== -->
+  <!-- ======================================================================
+       4. DEEP TECHNICAL ARTICLES & KNOWLEDGE BASE (PRIORITY 0.7)
+       ====================================================================== -->
   <url>
     <loc>https://salowtech.com/blog/ai-voice-assistant-customer-support</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/business-automation-repetitive-tasks</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/cloud-erp-security-checklist</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/custom-vs-ready-made-mobile-app</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/erp-vs-crm-vs-hrm-guide</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/google-seo-ranking-2026</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/high-converting-business-website</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/manage-customers-crm-pipeline</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/omnichannel-customer-support-hub</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/postgresql-timescaledb-financial-vault</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salowtech.com/blog/what-is-hrm-software</loc>
-    <lastmod>2026-11-08</lastmod>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ======================================================================
+       5. LEGAL & COMPLIANCE PAGES (PRIORITY 0.3)
+       ====================================================================== -->
+  <url>
+    <loc>https://salowtech.com/privacy-policy</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://salowtech.com/terms-and-conditions</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

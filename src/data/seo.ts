@@ -19,11 +19,12 @@ export interface PageSEO {
 
 export const pagesSEO: Record<string, PageSEO> = {
   home: {
-    title: "Salowtech | Custom Software, CRM, ERP and App Development",
+    title: "Salow Technologies (Salowtech) — Sovereign Software, CRM & ERP Engineering",
     description:
-      "Salowtech builds sovereign custom ERPs, CRMs, web platforms, and mobile apps with 100% code ownership. Partner with our engineering team today.",
+      "Salow Technologies (Salowtech) builds sovereign custom ERPs, CRMs, web platforms, and mobile apps with 100% code ownership. Partner with our engineering team today.",
     canonicalPath: "/",
-    h1: "Salowtech — Sovereign Enterprise Software Development"
+    h1: "Salow Technologies — Sovereign Enterprise Software Development",
+    keywords: "Salow Technologies, Salowtech, Salow Tech, sovereign software engineering, custom CRM development, enterprise ERP development, Surat software company"
   },
   services: {
     title: "Services | Salowtech",

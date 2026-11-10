@@ -10,15 +10,21 @@ export function getOrganizationEntity() {
   return {
     "@type": "Organization",
     "@id": `${siteConfig.siteUrl}/#organization`,
-    name: "Salowtech",
-    legalName: siteConfig.legalName,
-    alternateName: ["Salow Technologies", "Salowtech Technologies", "Salow Tech"],
+    name: "Salow Technologies",
+    legalName: "Salow Technologies",
+    alternateName: ["Salowtech", "Salow Tech", "Salow Technologies India"],
+    brand: {
+      "@type": "Brand",
+      name: "Salowtech",
+      alternateName: "Salow Technologies",
+      url: `${siteConfig.siteUrl}/`
+    },
     url: `${siteConfig.siteUrl}/`,
     logo: {
       "@type": "ImageObject",
       "@id": `${siteConfig.siteUrl}/#logo`,
       url: `${siteConfig.siteUrl}/assets/salowtech_logo_square.png`,
-      caption: "Salowtech Logo",
+      caption: "Salow Technologies (Salowtech) Logo",
       width: "1024",
       height: "1024"
     },
@@ -40,9 +46,11 @@ export function getOrganizationEntity() {
       }
     ],
     sameAs: [
+      "https://github.com/salowtech-design",
+      "https://github.com/salowtech-design/salow-tech",
+      "https://github.com/salowtech-design/salowtech-website",
       "https://linkedin.com/company/salowtech",
       "https://x.com/salowtech",
-      "https://github.com/salowtech",
       "https://instagram.com/salowtech",
       "https://clutch.co/profile/salowtech"
     ]
@@ -54,8 +62,8 @@ export function getWebSiteEntity() {
     "@type": "WebSite",
     "@id": `${siteConfig.siteUrl}/#website`,
     url: `${siteConfig.siteUrl}/`,
-    name: "Salowtech",
-    alternateName: "Salow Technologies",
+    name: "Salow Technologies",
+    alternateName: ["Salowtech", "Salow Tech"],
     description: siteConfig.meta.defaultDescription,
     inLanguage: "en",
     publisher: {

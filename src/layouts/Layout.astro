@@ -284,23 +284,16 @@ const finalOgDescription = ogDescription || description;
           var iframeObserver = new MutationObserver(function (mutations) {
             for (var i = 0; i < mutations.length; i++) {
               var m = mutations[i];
-              if (m.type === "attributes" && m.target && m.target.nodeName === "IFRAME") {
-                var role = m.target.getAttribute("role");
-                if (role === "presentation" || role === "none") {
-                  m.target.removeAttribute("role");
-                }
-              } else if (m.addedNodes) {
+              if (m.addedNodes && m.addedNodes.length > 0) {
                 for (var j = 0; j < m.addedNodes.length; j++) {
                   sanitizeIframe(m.addedNodes[j]);
                 }
               }
             }
           });
-          iframeObserver.observe(document.documentElement, {
+          iframeObserver.observe(document.body || document.documentElement, {
             childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ["role"]
+            subtree: true
           });
         }
 
