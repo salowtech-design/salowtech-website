@@ -4,13 +4,19 @@ const { verifyRecaptcha } = require('../tools/recaptcha-verify.js');
 const crm = require('../tools/crm-backend.js');
 
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://anxehjlbdpzxthpmacjt.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SECRET_KEY || process.env.SUPABASE_PUBLISHABLE_KEY || '';
+const SUPABASE_KEY = 
+  process.env.SUPABASE_SERVICE_ROLE_KEY || 
+  process.env.SUPABASE_SECRET_KEY || 
+  process.env.SUPABASE_PUBLISHABLE_KEY || 
+  process.env.SUPABASE_ANON_KEY || 
+  process.env.SUPABASE_KEY || 
+  'sb_publishable_jhHLsKKyDHszbtVSvvEftQ_DI8YvTkZ';
 const ADMIN_TOKEN = process.env.CRM_ADMIN_TOKEN || process.env.WEBHOOK_VERIFY_TOKEN || 'salowtech_crm_token_2026';
 
 // In-memory sliding window rate limiter
 const rateLimitMap = new Map();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
-const MAX_REQUESTS_PER_WINDOW = 10;
+const MAX_REQUESTS_PER_WINDOW = 20;
 
 function checkRateLimit(ip) {
   const now = Date.now();
@@ -47,15 +53,12 @@ function verifyAdminAuth(req) {
   const tokenHeader = req.headers['x-admin-token'] || '';
   const token = authHeader.startsWith('Bearer ') ? authHeader.slice(7).trim() : tokenHeader.trim();
 
-  // SEC-FIX: Do NOT rely on req.headers.host for localhost bypass (prevents Host Header Injection).
-  // In development, only allow unauthenticated access if explicitly in non-production AND local loopback IP.
   const remoteIp = (req.socket && req.socket.remoteAddress) || '';
   const isLocalDev = process.env.NODE_ENV === 'development' && (remoteIp === '127.0.0.1' || remoteIp === '::1');
   if (isLocalDev && !ADMIN_TOKEN) {
     return true;
   }
 
-  // Enforce secure token match
   return Boolean(ADMIN_TOKEN && token && token === ADMIN_TOKEN);
 }
 
@@ -150,7 +153,7 @@ export default async function handler(req, res) {
     });
   }
 
-  // 2. POST /api/leads — Public Intake with Anti-Spam & Rate Limiting
+  // 2. POST /api/leads — Public Intake with Anti-Spam & Supabase Persistence
   if (req.method === 'POST') {
     const clientIp = (req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1').split(',')[0].trim();
 
@@ -206,10 +209,39 @@ export default async function handler(req, res) {
         recaptchaScore
       };
 
-      const localResult = crm.createLead(payload);
-      const lead = localResult.lead;
+      // Create lead via CRM helper
+      let localResult;
+      try {
+        localResult = crm.createLead(payload);
+      } catch (crmErr) {
+        console.warn('Local CRM backend fallback:', crmErr.message);
+        const fallbackLead = {
+          id: `LEAD-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).substring(2, 6).toUpperCase()}`,
+          createdAt: new Date().toISOString(),
+          name: rawName,
+          phone: rawPhone,
+          email: rawEmail,
+          message: rawMessage,
+          service: rawService,
+          sourcePage: rawSource,
+          status: 'New',
+          recaptchaVerified,
+          recaptchaScore,
+          notes: []
+        };
+        localResult = {
+          lead: fallbackLead,
+          adminWhatsAppUrl: crm.generateWhatsAppAlertUrl(fallbackLead),
+          clientChatUrl: crm.generateClientGreetingUrl(fallbackLead),
+          adminPhone: '+91 63517 88935'
+        };
+      }
 
-      // Write to Supabase securely via Service Role Key
+      const lead = localResult.lead;
+      let supabaseSynced = false;
+      let supabaseError = null;
+
+      // Primary Persistence: Insert directly into Supabase 'leads' table
       if (SUPABASE_KEY) {
         try {
           const supabasePayload = {
@@ -240,16 +272,26 @@ export default async function handler(req, res) {
             body: JSON.stringify(supabasePayload)
           });
 
-          if (!supaRes.ok) {
-            console.error('Supabase write error:', await supaRes.text());
+          if (supaRes.ok) {
+            supabaseSynced = true;
+            console.log(`[Supabase] Lead ${lead.id} successfully recorded into database.`);
+          } else {
+            const errBody = await supaRes.text();
+            supabaseError = errBody;
+            console.error('[Supabase] Insert failed:', supaRes.status, errBody);
           }
         } catch (supaErr) {
-          console.error('Failed to insert into Supabase:', supaErr.message);
+          supabaseError = supaErr.message;
+          console.error('[Supabase] Network/connection error:', supaErr.message);
         }
       }
 
       return res.status(201).json({
         success: true,
+        database: {
+          synced: supabaseSynced,
+          error: supabaseError ? 'Supabase write error' : null
+        },
         recaptcha: { verified: recaptchaVerified, score: recaptchaScore },
         ...localResult
       });

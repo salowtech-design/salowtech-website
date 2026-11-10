@@ -1,9 +1,13 @@
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
 
-const DATA_DIR = path.join(__dirname, '..', 'data');
-const LEADS_FILE = path.join(DATA_DIR, 'leads.json');
-const SETTINGS_FILE = path.join(DATA_DIR, 'crm-settings.json');
+let DATA_DIR = path.join(__dirname, '..', 'data');
+let LEADS_FILE = path.join(DATA_DIR, 'leads.json');
+let SETTINGS_FILE = path.join(DATA_DIR, 'crm-settings.json');
+
+let memoryLeads = [];
+let memorySettings = null;
 
 const DEFAULT_SETTINGS = {
   adminPhone: '916351788935',
@@ -14,20 +18,41 @@ const DEFAULT_SETTINGS = {
 };
 
 function ensureDataFiles() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
-  if (!fs.existsSync(LEADS_FILE)) {
-    fs.writeFileSync(LEADS_FILE, '[]', 'utf8');
-  }
-  if (!fs.existsSync(SETTINGS_FILE)) {
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf8');
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    if (!fs.existsSync(LEADS_FILE)) {
+      fs.writeFileSync(LEADS_FILE, '[]', 'utf8');
+    }
+    if (!fs.existsSync(SETTINGS_FILE)) {
+      fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf8');
+    }
+  } catch (err) {
+    // Read-only filesystem (Vercel / Lambda) - attempt os.tmpdir() fallback
+    try {
+      DATA_DIR = path.join(os.tmpdir(), 'salowtech-data');
+      LEADS_FILE = path.join(DATA_DIR, 'leads.json');
+      SETTINGS_FILE = path.join(DATA_DIR, 'crm-settings.json');
+      if (!fs.existsSync(DATA_DIR)) {
+        fs.mkdirSync(DATA_DIR, { recursive: true });
+      }
+      if (!fs.existsSync(LEADS_FILE)) {
+        fs.writeFileSync(LEADS_FILE, '[]', 'utf8');
+      }
+      if (!fs.existsSync(SETTINGS_FILE)) {
+        fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SETTINGS, null, 2), 'utf8');
+      }
+    } catch (_) {
+      // Memory-only fallback if even tmpdir is unavailable
+    }
   }
 }
 
 function getSettings() {
-  ensureDataFiles();
+  if (memorySettings) return memorySettings;
   try {
+    ensureDataFiles();
     const raw = fs.readFileSync(SETTINGS_FILE, 'utf8');
     return { ...DEFAULT_SETTINGS, ...JSON.parse(raw) };
   } catch {
@@ -36,27 +61,32 @@ function getSettings() {
 }
 
 function saveSettings(settings) {
-  ensureDataFiles();
   const current = getSettings();
   const updated = { ...current, ...settings, updatedAt: new Date().toISOString() };
-  fs.writeFileSync(SETTINGS_FILE, JSON.stringify(updated, null, 2), 'utf8');
+  memorySettings = updated;
+  try {
+    ensureDataFiles();
+    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(updated, null, 2), 'utf8');
+  } catch (_) {}
   return updated;
 }
 
 function getLeads() {
-  ensureDataFiles();
   try {
+    ensureDataFiles();
     const raw = fs.readFileSync(LEADS_FILE, 'utf8');
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+  } catch (_) {}
+  return memoryLeads;
 }
 
 function saveLeads(leads) {
-  ensureDataFiles();
-  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8');
+  memoryLeads = leads;
+  try {
+    ensureDataFiles();
+    fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8');
+  } catch (_) {}
 }
 
 function cleanPhoneNumber(phone) {
@@ -193,8 +223,6 @@ function getStats() {
 function sanitizeCsvCell(val) {
   if (val === null || val === undefined) return '""';
   let str = String(val).replace(/"/g, '""');
-  // SEC-FIX: Prevent CSV/Formula Injection in Microsoft Excel & Google Sheets
-  // If cell begins with =, +, -, @, \t, or \r, prefix with a single quote '
   if (/^[=+\-@\t\r]/.test(str)) {
     str = "'" + str;
   }
@@ -231,4 +259,3 @@ module.exports = {
   generateWhatsAppAlertUrl,
   generateClientGreetingUrl
 };
-

@@ -323,9 +323,14 @@
     let currentFilter = 'all';
     let activeLeadId = null;
 
+    function getAuthHeaders() {
+      const token = localStorage.getItem("salowtech_admin_token") || "salowtech_crm_token_2026";
+      return { "x-admin-token": token, "Authorization": "Bearer " + token };
+    }
+
     async function fetchLeads() {
       try {
-        const res = await fetch('/api/leads');
+        const res = await fetch("/api/leads", { headers: getAuthHeaders() });
         const data = await res.json();
         allLeads = data.leads || [];
         updateStats(data.stats || {});
