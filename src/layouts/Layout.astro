@@ -99,6 +99,16 @@ const finalOgDescription = ogDescription || description;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
+    <!-- Resource Hints & DNS Preconnects for Microsecond Asset Delivery -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://anxehjllbdpzxxthpmqjt.supabase.co" crossorigin />
+    <link rel="dns-prefetch" href="https://anxehjllbdpzxxthpmqjt.supabase.co" />
+
     <!-- Preload Critical Fonts -->
     <link
       rel="preload"
@@ -119,20 +129,53 @@ const finalOgDescription = ogDescription || description;
     <link rel="stylesheet" href="/css/fonts.css" />
     <script is:inline>
       document.documentElement.classList.add("js");
+      // Microsecond Instant Navigation Prefetcher
+      (function() {
+        if (typeof window === 'undefined') return;
+        var prefetched = new Set();
+        function prefetch(url) {
+          if (!url || prefetched.has(url)) return;
+          if (url.indexOf(window.location.origin) !== 0 && url.indexOf('/') !== 0) return;
+          if (url.indexOf('#') !== -1 || url.match(/\.(pdf|zip|mp4|png|jpg|jpeg|webp)$/i)) return;
+          prefetched.add(url);
+          var link = document.createElement('link');
+          link.rel = 'prefetch';
+          link.href = url;
+          document.head.appendChild(link);
+        }
+        document.addEventListener('pointerover', function(e) {
+          var a = e.target && e.target.closest('a');
+          if (a && a.href) prefetch(a.href);
+        }, { passive: true });
+        document.addEventListener('touchstart', function(e) {
+          var a = e.target && e.target.closest('a');
+          if (a && a.href) prefetch(a.href);
+        }, { passive: true });
+      })();
     </script>
 
-    <!-- FontAwesome 6 Icons -->
+    <!-- FontAwesome 6 Icons (Async non-blocking load) -->
     <link
-      rel="stylesheet"
+      rel="preload"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </noscript>
 
     <!-- Stylesheets (Build-time Tailwind + Custom Styles) -->
     <link rel="stylesheet" href="/css/lenis.css" />
     <link rel="stylesheet" href="/css/tailwind.css" />
-    <link rel="stylesheet" href="/css/styles.css?v=20261030_v2" />
+    <link rel="stylesheet" href="/css/styles.css?v=20261111_v1" />
 
     {schemaJson && <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />}
 

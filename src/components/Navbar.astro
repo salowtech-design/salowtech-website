@@ -419,7 +419,7 @@ const { activePath = "" } = Astro.props;
     <!-- Right CTAs -->
     <div class="flex items-center gap-3 flex-shrink-0">
       <a
-        href="#lead-capture"
+        href={activePath === "/" || activePath === "" ? "#lead-capture" : "/contact-us"}
         class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-neutral-950 hover:bg-neutral-800 text-white text-xs sm:text-sm font-semibold tracking-tight shadow-sm transition-all hover:shadow-md hover:scale-[1.02]"
       >
         <span>Get Started</span>
@@ -533,7 +533,7 @@ const { activePath = "" } = Astro.props;
 
       <div class="border-t border-[#EFEAE1] pt-3">
         <a
-          href="#lead-capture"
+          href={activePath === "/" || activePath === "" ? "#lead-capture" : "/contact-us"}
           class="w-full flex items-center justify-center gap-2 py-3 px-5 rounded-full bg-neutral-950 text-white font-semibold text-sm shadow-md"
         >
           <span>Get Started</span>

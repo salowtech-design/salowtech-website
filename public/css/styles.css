@@ -12469,4 +12469,29 @@ html {
   box-shadow: 0 36px 100px -12px rgba(125, 48, 36, 0.28), 0 0 0 1px rgba(125, 48, 36, 0.25);
 }
 
+/* ==========================================================================
+   Microsecond Perceived Latency & Instant Touch Ergonomics
+   - Eliminates 300ms mobile click delay with touch-action: manipulation
+   - GPU-accelerated tactile response on all buttons & links
+   ========================================================================== */
+html, body {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a, button, [role="button"], input[type="submit"], input[type="button"], select, summary {
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button, a.btn, .btn-primary, [role="button"], input[type="submit"] {
+  will-change: transform;
+  transition: transform 60ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 80ms ease, background-color 100ms ease;
+}
+
+button:active, a.btn:active, .btn-primary:active, [role="button"]:active, input[type="submit"]:active {
+  transform: scale(0.975) translateZ(0) !important;
+}
+
 
