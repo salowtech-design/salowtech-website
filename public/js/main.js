@@ -1186,28 +1186,17 @@ function initSmoothScroll() {
    11. Lead Intake Form Controller
    -------------------------------------------------------------------------- */
 function initLeadForm() {
-  const form = document.querySelector('#lead-intake-form') || document.querySelector('#lead-capture form');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    if (!submitBtn) return;
-
-    const originalContent = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <svg class="w-4 h-4 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-      </svg>
-      <span>Request Received!</span>
-    `;
-
-    setTimeout(() => {
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalContent;
-    }, 3500);
+  const forms = document.querySelectorAll('#lead-intake-form, #lead-capture form, form[data-purpose="quote-form"], #architecture-consultation-form, .contacts__form, form');
+  forms.forEach(form => {
+    const hasPhone = form.querySelector('input[type="tel"], input[name="phone"], input[id*="phone"], input[placeholder*="Phone" i]');
+    const isQuoteOrContact = form.id === 'lead-intake-form' || form.getAttribute('data-purpose') === 'quote-form' || form.classList.contains('contacts__form');
+    if ((hasPhone || isQuoteOrContact) && !form._leadBound) {
+      form._leadBound = true;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        window.handleQuoteFormSubmit(form);
+      });
+    }
   });
 }
 
@@ -2962,28 +2951,7 @@ function initContactsSection() {
   document.querySelectorAll('.contacts__form').forEach((form) => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const btn = form.querySelector('.contacts__form-btn');
-      const responseEl = form.querySelector('.contacts__form-response');
-
-      if (btn) btn.classList.add('is-loading');
-      if (responseEl) {
-        responseEl.className = 'contacts__form-response';
-        responseEl.style.display = 'none';
-      }
-
-      setTimeout(() => {
-        if (btn) btn.classList.remove('is-loading');
-        if (responseEl) {
-          responseEl.className = 'contacts__form-response is-success';
-          responseEl.textContent = 'Thank you! Your project enquiry has been submitted. Our team will contact you shortly.';
-          responseEl.style.display = 'block';
-        }
-        form.reset();
-        const defaultSelect = form.querySelector('.c-select__label');
-        if (defaultSelect) defaultSelect.textContent = 'Where you know us from?';
-        const fileText = form.querySelector('.file-text');
-        if (fileText) fileText.textContent = 'Attach File';
-      }, 700);
+      window.handleQuoteFormSubmit(form);
     });
   });
 }
@@ -3255,7 +3223,7 @@ window.handleQuoteFormSubmit = async function(form) {
   const nameInput = form.querySelector('input[name="name"], input[id*="name"], input[placeholder*="Name" i], input[type="text"]:not([name="_gotcha"]):not([name="website_hp"]):not([name="bot_field"]):not([tabindex="-1"])');
   const phoneInput = form.querySelector('input[name="phone"], input[id*="phone"], input[type="tel"], input[placeholder*="Phone" i], input[type="text"][placeholder*="Phone" i]');
   const emailInput = form.querySelector('input[name="email"], input[id*="email"], input[type="email"], input[placeholder*="Email" i]');
-  const messageInput = form.querySelector('textarea, input[name="message"], input[id*="msg"], input[id*="message"]');
+  const messageInput = form.querySelector('textarea, input[name="message"], input[id*="msg"], input[id*="message"], input[id*="notes"]');
   const honeypotInput = form.querySelector('input[name="_gotcha"], input[name="website_hp"], input[name="bot_field"]');
 
   const name = nameInput ? nameInput.value.trim() : '';

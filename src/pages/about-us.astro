@@ -15,6 +15,7 @@ import cs10 from "../assets/about/culture-slider-10.png";
 import cs11 from "../assets/about/culture-slider-11.png";
 import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
+import salowtechMascot from "../assets/salowtech_mascot_3d.png";
 import Breadcrumb from "../components/Breadcrumb.astro";
 import { pagesSEO } from "../data/seo";
 import { getAboutSchema } from "../data/schema";
@@ -573,10 +574,15 @@ const schemaJson = getAboutSchema();
                   Architecture roadmap &amp; sprint estimate in 24 hours
                 </p>
               </div>
-              <div class="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center text-amber-500 shadow-2xs flex-shrink-0">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                  <path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" />
-                </svg>
+              <div class="w-10 h-10 rounded-full bg-[#FAF7F2] border border-[#7D3024]/20 p-1 flex items-center justify-center shadow-xs overflow-hidden shrink-0" title="Salowtech Mascot">
+                <Image
+                  src={salowtechMascot}
+                  alt="Salowtech Mascot"
+                  width={40}
+                  height={40}
+                  class="w-full h-full object-contain"
+                  loading="eager"
+                />
               </div>
             </div>
 
