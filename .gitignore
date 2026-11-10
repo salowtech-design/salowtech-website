@@ -30,6 +30,8 @@ scratch/
 .agent/
 .agents/
 _snapshots/
+AGENTS.md
+GEMINI.md
 
 # Binary & 3D archives
 *.zip

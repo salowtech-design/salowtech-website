@@ -1,24 +1,64 @@
-# Host Level 301 Redirect (www to non-www)
-https://www.salowtech.com/* https://salowtech.com/:splat 301
+# ==============================================================================
+# SALOW TECHNOLOGIES (salowtech.com) - EDGE 301 REDIRECTS (RFC 7231 Compliant)
+# Resolves: 20 Pages with Redirects, 10 404 Errors, and 1 Redirect Error
+# ==============================================================================
 
-# Blog Post Legacy URL 301 Redirects
-/blog-post.html /blog 301
-/blog-post /blog 301
-/blog.html /blog 301
+# 1. Host Canonicalization (www to non-www)
+https://www.salowtech.com/* https://salowtech.com/:splat 301!
 
-# Subpage Canonical 301 Redirects
-/about /about-us 301
-/contact /contact-us 301
-/pricing /saas-development-cost 301
-/erp-solutions /erp-development 301
-/erp-solutions.html /erp-development 301
-/seo-digital-growth /seo-and-growth 301
-/seo-digital-growth.html /seo-and-growth 301
-/app-development /mobile-app-development 301
-/app-development.html /mobile-app-development 301
-/terms /terms-and-conditions 301
-/terms-of-service /terms-and-conditions 301
-/tos /terms-and-conditions 301
-/terms.html /terms-and-conditions 301
-/privacy /privacy-policy 301
-/privacy.html /privacy-policy 301
+# 2. Root Index HTML Canonicalization
+/index.html / 301!
+
+# 3. Pricing & SaaS Cost 404 Remediation (Fixes 404 & Redirect Chains)
+/pricing /services 301!
+/pricing.html /services 301!
+/saas-development-cost /services 301!
+/saas-development /web-development 301!
+/saas-development.html /web-development 301!
+
+# 4. Legacy Pages & Dead Link (404) Remediation
+/portfolio /services 301!
+/portfolio.html /services 301!
+/case-studies /testimonials 301!
+/case-studies.html /testimonials 301!
+/careers /about-us 301!
+/team /about-us 301!
+/hello.html /about-us 301!
+/roadmap-3-steps.html / 301!
+/showcase-section.html / 301!
+
+# 5. Core Services Legacy & HTML Extensions
+/about /about-us 301!
+/about.html /about-us 301!
+/contact /contact-us 301!
+/contact.html /contact-us 301!
+/services.html /services 301!
+/testimonials.html /testimonials 301!
+/erp-solutions /erp-development 301!
+/erp-solutions.html /erp-development 301!
+/erp.html /erp-development 301!
+/crm.html /crm-development 301!
+/hrm.html /hrm-payroll 301!
+/seo-digital-growth /seo-and-growth 301!
+/seo-digital-growth.html /seo-and-growth 301!
+/seo.html /seo-and-growth 301!
+/app-development /mobile-app-development 301!
+/app-development.html /mobile-app-development 301!
+/web-development.html /web-development 301!
+/mobile-app-development.html /mobile-app-development 301!
+/ai-voice-assistant.html /ai-voice-assistant 301!
+
+# 6. Blog & Single Article Legacy Redirects (Eliminates Redirect Loop)
+/blog.html /blog 301!
+/blog-post /blog 301!
+/blog-post.html /blog 301!
+
+# 7. Legal Pages
+/terms /terms-and-conditions 301!
+/terms-of-service /terms-and-conditions 301!
+/tos /terms-and-conditions 301!
+/terms.html /terms-and-conditions 301!
+/terms-and-conditions.html /terms-and-conditions 301!
+/privacy /privacy-policy 301!
+/privacy.html /privacy-policy 301!
+/privacy-policy.html /privacy-policy 301!

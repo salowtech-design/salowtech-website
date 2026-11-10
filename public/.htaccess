@@ -1,0 +1,56 @@
+# ==============================================================================
+# SALOW TECHNOLOGIES (salowtech.com) - APACHE 301 REDIRECTS & CANONICAL RULES
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Force HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Canonicalize www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.salowtech\.com$ [NC]
+  RewriteRule ^(.*)$ https://salowtech.com/$1 [L,R=301]
+
+  # 3. Strip index.html to Root
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html\ HTTP/
+  RewriteRule ^(.*)index\.html$ https://salowtech.com/$1 [R=301,L]
+
+  # 4. Strip .html extension
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)\.html\ HTTP/
+  RewriteRule ^(.*)\.html$ https://salowtech.com/$1 [R=301,L]
+
+  # 5. Core 301 Redirect Mappings (Fixes 404s & Redirect Errors)
+  RewriteRule ^pricing/?$ /services [R=301,L]
+  RewriteRule ^saas-development-cost/?$ /services [R=301,L]
+  RewriteRule ^saas-development/?$ /web-development [R=301,L]
+  RewriteRule ^portfolio/?$ /services [R=301,L]
+  RewriteRule ^case-studies/?$ /testimonials [R=301,L]
+  RewriteRule ^careers/?$ /about-us [R=301,L]
+  RewriteRule ^team/?$ /about-us [R=301,L]
+  RewriteRule ^about/?$ /about-us [R=301,L]
+  RewriteRule ^contact/?$ /contact-us [R=301,L]
+  RewriteRule ^erp-solutions/?$ /erp-development [R=301,L]
+  RewriteRule ^seo-digital-growth/?$ /seo-and-growth [R=301,L]
+  RewriteRule ^app-development/?$ /mobile-app-development [R=301,L]
+  RewriteRule ^blog-post/?$ /blog [R=301,L]
+  RewriteRule ^terms/?$ /terms-and-conditions [R=301,L]
+  RewriteRule ^terms-of-service/?$ /terms-and-conditions [R=301,L]
+  RewriteRule ^tos/?$ /terms-and-conditions [R=301,L]
+  RewriteRule ^privacy/?$ /privacy-policy [R=301,L]
+
+  # 6. Remove Trailing Slashes for Non-Directories (except root)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} (.+)/$
+  RewriteRule ^ %1 [R=301,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

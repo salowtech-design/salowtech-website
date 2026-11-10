@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import mascotExplaining from "../assets/mascot_explaining.png";
+import salowtechMascot3d from "../assets/salowtech_mascot_3d.png";
 import ctaIllustration from "../assets/cta_illustration_cream.png";
 import salowtechLogo from "../assets/salowtech_logo.png";
 import Breadcrumb from "../components/Breadcrumb.astro";
@@ -140,7 +141,7 @@ const schemaJson = getServiceSchema({
                 <p class="text-[11px] text-stone-500 mt-0.5">HRM roadmap &amp; sprint estimate in 24 hours</p>
               </div>
               <div class="w-8 h-8 rounded-full bg-[#FAF7F2] border border-[#7D3024]/20 p-0.5 flex items-center justify-center shadow-xs overflow-hidden shrink-0" title="Salowtech Mascot">
-                <img src="/assets/salowtech_mascot_3d.png" alt="Salowtech Mascot" class="w-full h-full object-contain" />
+                <Image src={salowtechMascot3d} alt="Salowtech Mascot" width={32} height={32} class="w-full h-full object-contain" loading="lazy" />
               </div>
             </div>
             <form class="space-y-2.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">

@@ -1,5 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
+import { Image } from "astro:assets";
+import salowtechMascot3d from "../../assets/salowtech_mascot_3d.png";
 import Layout from "../../layouts/Layout.astro";
 import { blogArticlesSEO } from "../../data/seo";
 import { getBlogPostingSchema } from "../../data/schema";
@@ -230,14 +232,13 @@ const relatedServices = getBlogRelatedServices(slug);
       <!-- Editorial & Engineering Overview (No Individual Person) -->
       <div class="mt-16 pt-8 border-t border-[#E8E2D6] flex items-center gap-5 bg-white p-6 sm:p-7 rounded-2xl border border-stone-200/80 shadow-2xs">
         <div class="w-14 h-14 rounded-2xl bg-[#FAF7F2] border border-[#7D3024]/20 p-1 flex items-center justify-center shrink-0 shadow-xs">
-          <img
-            src="/assets/salowtech_mascot_3d.png"
+          <Image
+            src={salowtechMascot3d}
             alt="Salowtech Engineering"
-            width="48"
-            height="48"
+            width={48}
+            height={48}
             class="w-full h-full object-contain"
             loading="lazy"
-            decoding="async"
           />
         </div>
         <div>

@@ -65,6 +65,26 @@
       "permanent": true
     },
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/saas-development-cost",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
       "source": "/saas-development",
       "destination": "/web-development",
       "permanent": true
@@ -75,12 +95,57 @@
       "permanent": true
     },
     {
-      "source": "/SalowTech_video:num(\\d+).mp4",
-      "destination": "/assets/SalowTech_video:num.mp4",
+      "source": "/portfolio",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies",
+      "destination": "/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies.html",
+      "destination": "/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/hello.html",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/roadmap-3-steps.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/showcase-section.html",
+      "destination": "/",
       "permanent": true
     },
     {
       "source": "/about",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
       "destination": "/about-us",
       "permanent": true
     },
@@ -90,18 +155,18 @@
       "permanent": true
     },
     {
-      "source": "/index.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/pricing",
+      "source": "/contact.html",
       "destination": "/contact-us",
       "permanent": true
     },
     {
-      "source": "/saas-development-cost",
-      "destination": "/contact-us",
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials.html",
+      "destination": "/testimonials",
       "permanent": true
     },
     {
@@ -115,12 +180,32 @@
       "permanent": true
     },
     {
+      "source": "/erp.html",
+      "destination": "/erp-development",
+      "permanent": true
+    },
+    {
+      "source": "/crm.html",
+      "destination": "/crm-development",
+      "permanent": true
+    },
+    {
+      "source": "/hrm.html",
+      "destination": "/hrm-payroll",
+      "permanent": true
+    },
+    {
       "source": "/seo-digital-growth",
       "destination": "/seo-and-growth",
       "permanent": true
     },
     {
       "source": "/seo-digital-growth.html",
+      "destination": "/seo-and-growth",
+      "permanent": true
+    },
+    {
+      "source": "/seo.html",
       "destination": "/seo-and-growth",
       "permanent": true
     },
@@ -132,6 +217,36 @@
     {
       "source": "/app-development.html",
       "destination": "/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/web-development.html",
+      "destination": "/web-development",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-app-development.html",
+      "destination": "/mobile-app-development",
+      "permanent": true
+    },
+    {
+      "source": "/ai-voice-assistant.html",
+      "destination": "/ai-voice-assistant",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/blog-post.html",
+      "destination": "/blog",
       "permanent": true
     },
     {
@@ -155,12 +270,22 @@
       "permanent": true
     },
     {
+      "source": "/terms-and-conditions.html",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
       "source": "/privacy",
       "destination": "/privacy-policy",
       "permanent": true
     },
     {
       "source": "/privacy.html",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.html",
       "destination": "/privacy-policy",
       "permanent": true
     }
