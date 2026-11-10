@@ -29,25 +29,35 @@ Unfortunately, the majority of B2B websites suffer from systemic architectural d
 
 Research across top-tier enterprise SaaS platforms confirms a direct mathematical correlation between site performance and transaction velocity. Every 100-millisecond reduction in page latency lifts conversions by **1.1%**, while sub-second cold starts double user engagement depth.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               HIGH-CONVERTING SOVEREIGN WEB ARCHITECTURE               │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_web.png" alt="High-Converting Web Architecture" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">High-Converting Sovereign Web Architecture</h4>
+      <p class="text-xs text-stone-500 m-0">Sub-100ms TTFB Edge Delivery + Zero Client-Side Hydration Overhead</p>
+    </div>
+  </div>
 
- [ Edge CDN (Cloudflare / Vercel Edge) ]
-              │  <-- Sub-100ms TTFB globally via Stale-While-Revalidate
-              ▼
-   ┌─────────────────────────────────────┐
-   │ 100% Server-Rendered Semantic HTML  │  <-- Zero JS Hydration Penalty
-   └─────────────────────────────────────┘
-              │
-     ┌────────┴────────┐
-     ▼                 ▼
-┌──────────────┐ ┌──────────────┐
-│  Typography  │ │ Lead Intake  │  <-- 4 Focused Fields + Client-Side Microsecond Validation
-│  & Contrast  │ │  Micro-UI    │  <-- Direct Supabase Persistence & Instant Feedback
-└──────────────┘ └──────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">01. Edge Network</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Sub-100ms TTFB</div>
+      <p class="text-xs text-stone-600 m-0">Global Edge CDN caches statically pre-rendered assets with Stale-While-Revalidate headers.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">02. Islands Engine</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Zero-JS Reading Experience</div>
+      <p class="text-xs text-stone-600 m-0">Prose and typography render as pure semantic HTML with zero JavaScript hydration blocking the main thread.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">03. High-Velocity Intake</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Frictionless 4-Field Form</div>
+      <p class="text-xs text-stone-600 m-0">Instant microsecond validation, optimistic UI feedback, and background database logging.</p>
+    </div>
+  </div>
+</div>
 
 ---
 

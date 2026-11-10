@@ -29,36 +29,40 @@ In high-concurrency systems processing thousands of transactions per second, app
 
 In modern sovereign engineering, financial integrity is enforced **inside the database engine itself** using strict mathematical constraints, serializable transactions, and append-only cryptographic hash chaining.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│             SOVEREIGN IMMUTABLE FINANCIAL LEDGER ARCHITECTURE          │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_erp.png" alt="Financial Ledger Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Immutable Financial Ledger Architecture</h4>
+      <p class="text-xs text-stone-500 m-0">PostgreSQL serializable isolation, zero-balance triggers, and TimescaleDB compression</p>
+    </div>
+  </div>
 
- [ Inbound Financial Transaction ]
-                 │
-                 ▼
- ┌────────────────────────────────┐
- │ PostgreSQL Serializable Engine │  <-- Isolation: Zero Write Skew
- └────────────────────────────────┘
-                 │
-                 ▼
- ┌────────────────────────────────┐
- │  Journal Entry Atomic Boundary │  <-- Multi-Leg Balance: SUM(Debits) - SUM(Credits) = 0
- └────────────────────────────────┘
-                 │
-     ┌───────────┴───────────┐
-     ▼                       ▼
-┌──────────────┐       ┌──────────────┐
-│ SHA-256 Hash │       │  TimescaleDB │  <-- Chunked Hypertables (RAM Cache)
-│ Chaining     │       │ Compression  │  <-- 92% Disk Savings on Historical Records
-└──────────────┘       └──────────────┘
-     │                       │
-     └───────────┬───────────┘
-                 ▼
- ┌────────────────────────────────┐
- │   Immutable Audit-Proof Vault  │
- └────────────────────────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">01. Isolation</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Serializable Engine</div>
+      <p class="text-xs text-stone-600 m-0">Zero write skew, phantom read prevention, and strict concurrency safety.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">02. Conservation</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Deferred Triggers</div>
+      <p class="text-xs text-stone-600 m-0">Mathematical validation: SUM(Debits) - SUM(Credits) = 0 before any transaction commit.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">03. Audit Chain</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">SHA-256 Hashes</div>
+      <p class="text-xs text-stone-600 m-0">Cryptographic hash pointers link entries into an immutable tamper-evident chain.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">04. Time-Series</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">TimescaleDB Chunks</div>
+      <p class="text-xs text-stone-600 m-0">100,000+ writes/second with 92% columnar disk compression on closed accounting periods.</p>
+    </div>
+  </div>
+</div>
 
 ---
 

@@ -34,34 +34,40 @@ Research indicates that **64% of enterprise customers abandon vendors** primaril
 
 A sovereign omnichannel hub unifies every voice call, WhatsApp chat, and email thread into one chronological, real-time customer timeline.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               SOVEREIGN OMNICHANNEL UNIFIED HUB ARCHITECTURE           │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_ai.png" alt="Omnichannel Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Sovereign Omnichannel Hub Architecture</h4>
+      <p class="text-xs text-stone-500 m-0">Converging WhatsApp, voice telephony, and email into an append-only timeline</p>
+    </div>
+  </div>
 
-  [ WhatsApp API ]       [ Voice PBX / SIP ]       [ Inbound Email ]
-         │                        │                        │
-         ▼                        ▼                        ▼
-  ┌──────────────────────────────────────────────────────────────┐
-  │         Ingestion Gateway (Webhooks & Event Parsers)         │
-  └──────────────────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-  ┌──────────────────────────────────────────────────────────────┐
-  │        Entity Resolution Engine (Phone/Email Deduplication)  │
-  └──────────────────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-  ┌──────────────────────────────────────────────────────────────┐
-  │     Sovereign PostgreSQL Data Core (Append-Only Event Store) │
-  └──────────────────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-  ┌──────────────────────────────────────────────────────────────┐
-  │    Real-Time WebSocket Agent Cockpit (Sub-50ms Latency)      │
-  │    (WhatsApp + Call Logs + Email Threads + Internal Notes)   │
-  └──────────────────────────────────────────────────────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">01. Touchpoints</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Multi-Channel Ingestion</div>
+      <p class="text-xs text-stone-600 m-0">Official WhatsApp Cloud API, Asterisk/FreeSWITCH SIP trunks, and Postmark inbound email.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">02. Entity Resolution</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Identity Stitching</div>
+      <p class="text-xs text-stone-600 m-0">Deterministic phone and email deduplication matches all interactions to a single unified corporate profile.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">03. Event Core</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">PostgreSQL Vault</div>
+      <p class="text-xs text-stone-600 m-0">Append-only message store, AES-256 encrypted call audio, and sub-35ms full-text search.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">04. Agent Cockpit</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Real-Time WebSockets</div>
+      <p class="text-xs text-stone-600 m-0">Unified interface showing live conversation stream, CRM history, and one-click multi-channel reply.</p>
+    </div>
+  </div>
+</div>
 
 ---
 

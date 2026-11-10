@@ -56,25 +56,35 @@ Off-the-shelf templates fail immediately when network packets drop. At best, the
 
 A custom sovereign mobile platform implements a **Local-First SQLite Engine** paired with Conflict-Free Replicated Data Types (CRDTs):
 
-```
-┌────────────────────────────────────────────────────────┐
-│                   Mobile Client                        │
-│                                                        │
-│  UI Layer ──► Local SQLite Vault ──► Local Mutation Log│
-│                     │                       │          │
-└─────────────────────┼───────────────────────┼──────────┘
-                      │                       │ (Background Sync)
-                      ▼                       ▼
-            [AES-256 Encrypted]       Network Monitor
-                                              │
-                      ┌───────────────────────┘
-                      ▼
-┌────────────────────────────────────────────────────────┐
-│                  Salowtech Cloud                       │
-│                                                        │
-│  Ingestion Gateway ──► Conflict Resolver ──► Postgres  │
-└────────────────────────────────────────────────────────┘
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-5">
+    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_mobile.png" alt="Mobile Sync Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Deterministic Offline-First Engine</h4>
+      <p class="text-xs text-stone-500 m-0">Local-First SQLite Vault + CRDT Network Conflict Resolution</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">01. Local Finality</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Sub-4ms Instant Writes</div>
+      <p class="text-xs text-stone-600 m-0">Every barcode scan or order write commits to the encrypted device SQLite database instantly without blocking the UI.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">02. Mutation Log</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Monotonic Vector Clocks</div>
+      <p class="text-xs text-stone-600 m-0">Mutations are ordered chronologically with cryptographic checksums, ready for background upload.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">03. Cloud Resolver</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Idempotent Flush</div>
+      <p class="text-xs text-stone-600 m-0">When signal returns, a smart background worker flushes batches with zero duplicate transactions or lost records.</p>
+    </div>
+  </div>
+</div>
 
 1. **Local Transaction Finality:** Every write (such as recording a sales order or scanning a barcode) commits immediately to the local encrypted SQLite database in `< 4ms`.
 2. **Deterministic Mutation Ledger:** Mutations are appended to an immutable chronological queue with monotonic vector clocks.
@@ -99,19 +109,29 @@ Templates cannot expose these low-level native platform bridges without fragile 
 
 When evaluating capital expenditures, decision-makers often compare initial quote figures ($12,000 for a white-label template versus $35,000 for a custom engineered system). However, calculating the **True Total Cost of Ownership across a 3-Year Lifecycle** shows a stark divergence:
 
-```
-Year 1:
-  Template: $12,000 initial + $18,000 SaaS platform seat taxes + $8,000 plugin workarounds = $38,000
-  Custom:   $38,000 capital build + $0 seat taxes + $3,600 cloud hosting = $41,600
-
-Year 2:
-  Template: $24,000 seat expansion + $14,000 custom feature bolt-ons = $38,000 (Total: $76,000)
-  Custom:   $0 seat taxes + $4,800 server scaling + $6,000 routine improvements = $10,800 (Total: $52,400)
-
-Year 3:
-  Template: Mandatory complete architectural rewrite ($45,000) + $32,000 ongoing fees = $77,000 (Total: $153,000)
-  Custom:   $0 seat taxes + $5,400 maintenance = $5,400 (Total: $57,800)
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-white p-6 sm:p-7 shadow-sm">
+  <div class="flex items-center justify-between pb-4 border-b border-[#E8E2D6] mb-5">
+    <span class="text-xs font-bold text-neutral-900 font-display">3-Year Cumulative TCO Model</span>
+    <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">Save $95,200 (62% Less)</span>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+    <div class="bg-[#FAF7F2] rounded-2xl p-4 border border-[#E8E2D6]/80">
+      <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider block mb-1">Year 01 Cost</span>
+      <div class="text-stone-600 mb-1">Template: <span class="line-through text-red-500">$38,000</span> (Build + Seat Tax)</div>
+      <div class="font-bold text-neutral-900">Custom: $41,600 (Capex + $0 Seats)</div>
+    </div>
+    <div class="bg-[#FAF7F2] rounded-2xl p-4 border border-[#E8E2D6]/80">
+      <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider block mb-1">Year 02 Cost</span>
+      <div class="text-stone-600 mb-1">Template: <span class="line-through text-red-500">$76,000</span> (Seat Escalation)</div>
+      <div class="font-bold text-neutral-900">Custom: $52,400 (Cumulative)</div>
+    </div>
+    <div class="bg-[#FAF7F2] rounded-2xl p-4 border border-[#E8E2D6]/80">
+      <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider block mb-1">Year 03 Final Total</span>
+      <div class="text-stone-600 mb-1">Template: <span class="line-through text-red-500">$153,000</span> (Rewrite tax)</div>
+      <div class="font-bold text-emerald-700">Custom: $57,800 Total (100% IP)</div>
+    </div>
+  </div>
+</div>
 
 **Net 3-Year Enterprise Savings with Custom Build: $95,200 (62% lower total expenditure)**, combined with 100% intellectual property ownership that adds tangible enterprise valuation to your company balance sheet.
 
@@ -133,27 +153,38 @@ Custom applications engineered by Salowtech strictly adhere to Human Interface G
 
 When you partner with Salowtech's sovereign mobile pod, development follows a strict 10-week agile cadence:
 
-```
-Week 01-02: Architecture Sprint
-  - Database entity modeling & SQLite offline cache strategy
-  - Figma interactive component library & design tokens
-  - Hardware API interface contract specifications
-
-Week 03-05: Core Native Engineering
-  - Bi-directional sync bus & network state machine
-  - Native BLE & biometric hardware bridges
-  - Secure Enclave JWT token storage
-
-Week 06-08: Feature Implementation & ERP/CRM Integration
-  - Enterprise catalog, order booking, and real-time inventory telemetry
-  - Push notification pipelines (APNs & FCM via automated workers)
-  - Role-based authorization & multi-warehouse partition logic
-
-Week 09-10: Stress Testing, Hardening & Store Certification
-  - 120 FPS frame profiling on low-end test devices
-  - Penetration testing, OWASP Mobile Top 10 security audit
-  - Production App Store & Google Play deployment
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-white p-6 sm:p-8 shadow-sm">
+  <div class="space-y-4">
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">01</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Weeks 01–02: Architecture &amp; Offline Cache Design</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Database schema modeling, SQLite cache strategy, Figma token systems, and native hardware API contracts.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">02</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Weeks 03–05: Native Engineering &amp; Hardware Bridges</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Bi-directional sync state machine, thermal printer BLE drivers, biometric Secure Enclave key storage.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">03</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Weeks 06–08: ERP/CRM Integration &amp; Order Booking</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Real-time inventory telemetry, APNs &amp; FCM push pipelines, and multi-warehouse role partitions.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="w-8 h-8 rounded-full bg-[#7D3024] text-white flex items-center justify-center font-bold text-xs shrink-0">04</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Weeks 09–10: 120 FPS Profiling &amp; Store Launch</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Frame rate optimization on low-end test devices, OWASP security audit, and 100% App Store approval.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 

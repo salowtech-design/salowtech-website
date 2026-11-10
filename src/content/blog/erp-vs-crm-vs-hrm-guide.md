@@ -49,20 +49,36 @@ Understanding the exact data models and primary objectives of each platform ensu
 
 Attempting to implement a full ERP, CRM, and HRM simultaneously across an organization is a recipe for operational gridlock. Engineering teams must triage based on the acute financial bottleneck:
 
-```
-                      [Where is your business losing money?]
-                                        │
-           ┌────────────────────────────┼────────────────────────────┐
-           ▼                            ▼                            ▼
-  [Leads are ignored;          [Warehouses have stock       [HR spends 7 days/mo
-   sales reps lack pipeline     discrepancies; POs don't     on Excel attendance;
-   visibility; WhatsApp is      match bank payouts;          employees complain of
-   untracked]                   cost margins unknown]        salary mistakes]
-           │                            │                            │
-           ▼                            ▼                            ▼
-   DEPLOY CRM FIRST             DEPLOY ERP FIRST             DEPLOY HRM FIRST
-(Immediate Top-Line ROI)     (Immediate Bottom-Line Save)   (Risk & Compliance SLA)
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="text-center max-w-lg mx-auto mb-6">
+    <span class="text-[11px] font-bold text-[#7D3024] uppercase tracking-widest block mb-1">Architecture Triage</span>
+    <h4 class="text-lg font-bold text-neutral-900 m-0 font-display">Where is your business losing margin?</h4>
+    <p class="text-xs text-stone-600 mt-1">Diagnose your acute operational bottleneck to establish the correct build order.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-2xs">
+      <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xs mb-3">CRM</div>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Leads Ignored / Stalled</div>
+      <p class="text-xs text-stone-600 mb-3">WhatsApp chats untracked; reps take hours to reply; quotes forgotten.</p>
+      <span class="inline-block w-full text-center px-2.5 py-1.5 rounded-xl bg-amber-500/10 text-amber-800 text-[11px] font-bold">Deploy CRM First (Top-Line ROI)</span>
+    </div>
+
+    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-2xs">
+      <div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xs mb-3">ERP</div>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Stockouts &amp; Leaking Cash</div>
+      <p class="text-xs text-stone-600 mb-3">Warehouses have phantom stock; POs mismatched; profit margins unknown.</p>
+      <span class="inline-block w-full text-center px-2.5 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-800 text-[11px] font-bold">Deploy ERP First (Margin Save)</span>
+    </div>
+
+    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-2xs">
+      <div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-xs mb-3">HRM</div>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Payroll Frictions &amp; Errors</div>
+      <p class="text-xs text-stone-600 mb-3">HR spends a week on Excel; PF/ESIC compliance risks; late salary disbursals.</p>
+      <span class="inline-block w-full text-center px-2.5 py-1.5 rounded-xl bg-purple-500/10 text-purple-800 text-[11px] font-bold">Deploy HRM First (Compliance SLA)</span>
+    </div>
+  </div>
+</div>
 
 ### Scenario A: Build CRM First if Revenue Velocity is Bottlenecked
 - **Symptoms:** High marketing spend on Meta/Google Ads, but sales reps take 4+ hours to contact inquiries. Deals slip through cracks because quotes are trapped in sales reps' private WhatsApp chats.
@@ -82,39 +98,68 @@ Attempting to implement a full ERP, CRM, and HRM simultaneously across an organi
 
 When companies purchase three disconnected commercial SaaS tools (e.g., Salesforce for CRM, NetSuite for ERP, and BambooHR for HRM), they fall directly into the **Multi-SaaS Trap**:
 
-```
-Salesforce ($150/user/mo)  ──┐
-                             ├─► Zapier / MuleSoft Integration Layer ($35,000/yr)
-NetSuite ($999/mo + user)   ──┤   (Fragile webhooks, sync latency, field mapping bugs)
-                             │
-Workday / Bamboo ($12/user)──┘
-─────────────────────────────────────────────────────────────────────────────
-Total 3-Year Cost for 150 Users: Over $340,000 in subscription taxes alone!
-```
+<div class="my-8 rounded-3xl border border-red-200/80 bg-gradient-to-br from-red-50/50 via-white to-amber-50/40 p-6 sm:p-7 shadow-sm">
+  <div class="flex items-center justify-between pb-3 border-b border-red-100 mb-4">
+    <span class="text-xs font-bold text-red-700 uppercase tracking-wider">The Commercial SaaS Tax</span>
+    <span class="px-2.5 py-1 rounded-full bg-red-100 text-red-800 text-[11px] font-bold">Over $340,000 / 3 Years</span>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+    <div class="bg-white p-3 rounded-xl border border-red-100">
+      <span class="font-bold text-neutral-900 block">Salesforce CRM</span>
+      <span class="text-stone-500">$150 / user / mo</span>
+    </div>
+    <div class="bg-white p-3 rounded-xl border border-red-100">
+      <span class="font-bold text-neutral-900 block">NetSuite ERP</span>
+      <span class="text-stone-500">$999/mo + $99/user</span>
+    </div>
+    <div class="bg-white p-3 rounded-xl border border-red-100">
+      <span class="font-bold text-neutral-900 block">Integration Layer</span>
+      <span class="text-stone-500">$35,000/yr (MuleSoft / Zapier)</span>
+    </div>
+  </div>
+</div>
 
 ### The Salowtech Unified Sovereign Architecture
 Rather than paying continuous software taxes, Salowtech engineers a **unified, event-driven modular architecture**:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Unified Web & Mobile UI                      │
-├────────────────────┬───────────────────────┬────────────────────┤
-│  CRM Workspace     │    ERP Workspace      │   HRM Workspace    │
-└─────────┬──────────┴───────────┬───────────┴──────────┬─────────┘
-          │                      │                      │
-          ▼                      ▼                      ▼
-┌─────────────────────────────────────────────────────────────────┐
-│           High-Performance Event Bus (Kafka / Redis)            │
-└────────────────────────────────┬────────────────────────────────┘
-                                 │
-                                 ▼
-┌─────────────────────────────────────────────────────────────────┐
-│            PostgreSQL Master Sovereign Database Vault           │
-│                                                                 │
-│  • Schema: crm_*        • Schema: erp_*        • Schema: hrm_*  │
-│  • Strict Row-Level Security (RLS) & Multi-Tenant Partitioning   │
-└─────────────────────────────────────────────────────────────────┘
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_crm.png" alt="Sovereign Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Sovereign Unified Enterprise Core</h4>
+      <p class="text-xs text-stone-500 m-0">Unified Web &amp; Mobile UI on a high-speed Redis Event Bus and PostgreSQL</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">Pillar 01</span>
+      <div class="text-sm font-bold text-neutral-900">CRM Workspace</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">Inbound WhatsApp, pipeline velocity, automated proposals.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">Pillar 02</span>
+      <div class="text-sm font-bold text-neutral-900">ERP Workspace</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">Multi-warehouse stock, PO approvals, double-entry ledger.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">Pillar 03</span>
+      <div class="text-sm font-bold text-neutral-900">HRM Workspace</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">Biometric clock-ins, statutory tax payroll, mobile ESS.</p>
+    </div>
+  </div>
+
+  <div class="bg-neutral-900 text-white rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="font-bold">PostgreSQL Master Sovereign Vault</span>
+      <span class="text-stone-400">(`crm_*`, `erp_*`, `hrm_*` schemas with RLS)</span>
+    </div>
+    <span class="text-emerald-400 font-mono text-[11px]">&lt; 5ms Internal Event Sync</span>
+  </div>
+</div>
 
 1. **Zero Integration Latency:** When a deal marks `CLOSED_WON` in the CRM module, an event automatically generates an authorized `SalesOrder` inside the ERP module in `< 5ms`.
 2. **Unified Commission Reconciliation:** The sales rep's commission calculated in the CRM feeds seamlessly into the HRM payroll ledger without manual CSV re-uploads.
@@ -126,22 +171,31 @@ Rather than paying continuous software taxes, Salowtech engineers a **unified, e
 
 Salowtech structures multi-pillar deployments in disciplined, non-disruptive stages:
 
-```
-Phase 1: Core Database & Primary Bottleneck (Weeks 01-08)
-  - Engineer unified PostgreSQL database schema & RBAC authentication.
-  - Implement and deploy the highest-priority module (e.g., Sales CRM).
-  - Transition frontline staff and verify daily user adoption.
-
-Phase 2: Secondary Operational Pillar (Weeks 09-16)
-  - Deploy the second module (e.g., Multi-Warehouse Cloud ERP).
-  - Connect automated event hooks between CRM deals and ERP fulfillment.
-  - Integrate supplier procurement workflows and accounts payable ledgers.
-
-Phase 3: Workforce, Compliance & Autonomous Intelligence (Weeks 17-24)
-  - Integrate biometric hardware punch ingestion and automated payroll.
-  - Deploy AI Voice Assistants for customer support and lead follow-up.
-  - Conduct final penetration testing and SOC 2 security compliance sign-off.
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-white p-6 sm:p-8 shadow-sm">
+  <div class="space-y-4">
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">01</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Phase 01: Core Database &amp; Primary Bottleneck (Weeks 01–08)</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Unified PostgreSQL schema &amp; RBAC auth, rapid deployment of highest-friction module (e.g. Sales CRM), and staff transition.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">02</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Phase 02: Secondary Operational Pillar (Weeks 09–16)</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Deploy Multi-Warehouse Cloud ERP, connect CRM-to-ERP event hooks, and automate vendor PO procurement.</p>
+      </div>
+    </div>
+    <div class="flex items-start gap-4">
+      <span class="w-8 h-8 rounded-full bg-[#7D3024] text-white flex items-center justify-center font-bold text-xs shrink-0">03</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Phase 03: Workforce, Compliance &amp; AI (Weeks 17–24)</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Biometric attendance hardware sync, automated tax payroll, and AI voice support agent cutover.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 

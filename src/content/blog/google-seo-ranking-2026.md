@@ -28,30 +28,47 @@ Today, businesses compete across two distinct but interconnected discovery chann
 
 To win organic sitelinks on Google while simultaneously being cited as the definitive primary source by AI engines, software platforms must be built on rigid technical foundations. Here are 10 proven, production-tested directives for dominating modern search.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│               MODERN DUAL-ENGINE SEARCH ARCHITECTURE (2026)            │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_web.png" alt="Search Architecture" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Modern Dual-Engine Search Architecture</h4>
+      <p class="text-xs text-stone-500 m-0">Simultaneous optimization for Google Core Vitals and AI Answer Engines</p>
+    </div>
+  </div>
 
-                     [ User Search Query ]
-                               │
-               ┌───────────────┴───────────────┐
-               ▼                               ▼
-     [ Traditional Google SERP ]       [ AI Synthesis Engine ]
-     (RankBrain, MUM, Core Vitals)     (Perplexity, ChatGPT, Claude)
-               │                               │
-               ▼                               ▼
-    Topical Authority Hubs             Verifiable Entity Graphs
-    Clean <a href> Link Graph          Direct Definition Blocks
-    INP < 150ms / LCP < 1.0s           Strict JSON-LD Schema
-               │                               │
-               └───────────────┬───────────────┘
-                               ▼
-               ┌───────────────────────────────┐
-               │ Sovereign High-Ranking Domain │
-               │ (Clean Server-Rendered HTML)  │
-               └───────────────────────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Channel 1: Traditional Google SERP -->
+    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-2xs">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-[10px] font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Algorithmic SERP</span>
+        <span class="text-[10px] text-stone-400 font-semibold">Google &amp; Bing</span>
+      </div>
+      <div class="text-sm font-bold text-neutral-900 mb-2">Core Web Vitals &amp; PageRank</div>
+      <ul class="space-y-1.5 text-xs text-stone-600 m-0 p-0 list-none">
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>INP &lt; 150ms &amp; LCP &lt; 1.0s Speed</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Topical Authority Hubs &amp; Spoke Clusters</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>Clean Server-Rendered HTML Links</li>
+      </ul>
+    </div>
+
+    <!-- Channel 2: AI Answer Engines (GEO) -->
+    <div class="bg-white rounded-2xl p-5 border border-stone-200/80 shadow-2xs">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-[10px] font-bold text-purple-600 bg-purple-50 px-2.5 py-0.5 rounded-full uppercase tracking-wider">Generative Engine (GEO)</span>
+        <span class="text-[10px] text-stone-400 font-semibold">Perplexity, ChatGPT, Gemini</span>
+      </div>
+      <div class="text-sm font-bold text-neutral-900 mb-2">Entity Graphs &amp; Fact Density</div>
+      <ul class="space-y-1.5 text-xs text-stone-600 m-0 p-0 list-none">
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Connected Schema.org JSON-LD Entities</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>High-Entropy Definitions in First 40 Words</li>
+        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>Empirical Data Tables &amp; Benchmarks</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 ---
 

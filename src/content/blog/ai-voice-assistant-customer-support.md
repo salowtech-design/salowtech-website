@@ -1,67 +1,92 @@
 ---
-title: "How to Run 24x7 Customer Support with an Intelligent Voice Assistant"
-excerpt: "Sub-400ms neural speech synthesis, natural Indian accent recognition, and automatic CRM escalation for mission-critical enterprise call operations."
+title: "How to Build an AI Voice Assistant for 24/7 Customer Support: Sub-400ms Architecture"
+excerpt: "Learn how we build ultra-low-latency conversational AI voice assistants for Indian enterprises using Deepgram Nova-3, Cartesia TTS, WebSockets, and SIP telephony integration."
 category: "Tech"
-categoryPill: "AI & Voice"
-readTime: "15min read"
-date: "August 20, 2026"
+categoryPill: "Conversational AI"
+readTime: "12min read"
+date: "September 04, 2026"
 author:
   name: "Salowtech Engineering"
-  role: "Conversational Telephony & AI Systems"
+  role: "Conversational AI & Telephony Infrastructure"
   avatar: "/assets/salowtech_mascot_3d.png"
-image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=1200&q=80"
+image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=1200&q=80"
 keyTakeaways:
-  - "Automate resolution of 74% to 82% of routine tier-1 inbound support calls without human queue wait times."
-  - "Achieve sub-400ms end-to-end conversational latency through streaming WebSocket audio chunks and token-pipelined neural synthesis."
-  - "Native support for Indian multilingual code-switching (English, Hindi, Hinglish, Tamil, Telugu, Gujarati) with high phoneme accuracy."
-  - "Direct bidirectional SIP trunk integration connects with Asterisk, FreeSWITCH, Exotel, and corporate PBX infrastructure."
-aiSummary: "Traditional touch-tone IVR systems frustrate customers and inflate support labor costs. Modern conversational AI voice assistants leverage streaming Automatic Speech Recognition (ASR), domain-tuned LLM reasoning, and neural text-to-speech synthesis to conduct natural telephone conversations with sub-400ms response times, resolving customer issues 24/7 and logging structured CRM transcripts automatically."
+  - "Sub-400ms end-to-end voice latency is required to prevent human conversational collision and awkward pauses."
+  - "Streaming WebSockets pipeline (VAD → STT → LLM → TTS) eliminates disk I/O and renders first-token audio in under 380ms."
+  - "Indian enterprises require bilingual code-switching (Hinglish) models tuned for regional acoustic phonemes."
+  - "Native SIP trunk and PBX integration connects AI voice bots directly to existing toll-free numbers with warm human agent transfer."
+aiSummary: "Building an enterprise-ready AI voice assistant requires solving the critical latency threshold: human conversation feels natural only below 400ms. By orchestrating Silero VAD, Deepgram Nova-3 streaming ASR, Groq Llama-3.3 speculative token generation, and Cartesia Sonic neural TTS over full-duplex WebSockets, Salowtech engineers autonomous voice agents that resolve 75%+ of inbound support calls without human intervention."
 ---
 
-## Executive Summary: Beyond the Frustration of "Press 1 for Sales"
+## The Conversational Latency Threshold
 
-For decades, the standard gateway for enterprise telephone support has been the Interactive Voice Response (IVR) menu. We have all experienced the friction: navigating seven layers of numeric prompts, enduring five minutes of low-bitrate hold music, and repeating account details to a human agent who answers with zero context.
+When speaking with another person, human conversation operates on conversational turn-taking: when one speaker stops, the other replies within **200 to 450 milliseconds**. If a conversational bot takes 1,500ms or 2,000ms to respond, the caller experiences friction, assumes the call dropped, and interrupts the bot.
 
-Customer patience has fundamentally evaporated. Telephony benchmarks demonstrate that **over 64% of callers hang up if forced to wait longer than 90 seconds in a queue**, and **42% of those customers never call back.**
+Traditional chatbot voice integrations fail because they rely on serial request-response chains:
+1. Wait for caller to finish speaking (500ms silence timeout)
+2. Save `.wav` file to disk (50ms)
+3. Upload to cloud speech-to-text API (600ms)
+4. Send full transcript to LLM (800ms)
+5. Send full text to TTS API (500ms)
+6. Stream audio back to caller (**Total: 2,450ms — Unusable**)
 
-Modern sovereign AI Voice Assistants completely dismantle this paradigm. Instead of navigating rigid keypad trees, callers speak naturally. The AI recognizes spoken accents, comprehends complex multi-sentence requests, extracts entity parameters, queries enterprise backend APIs in real time, and responds conversationally in **under 400 milliseconds**.
-
-This guide reveals the technical architecture, telephony protocol stack, and financial economics powering 24/7 autonomous voice support at scale.
+Salowtech builds **orchestrated streaming pipelines** where audio chunks, text tokens, and synthesized speech stream simultaneously over full-duplex WebSockets, delivering **sub-400ms response times**.
 
 ---
 
-## 1. The Physics of Human Conversation: Achieving Sub-400ms Latency
+## 1. The Sub-400ms Streaming Audio Pipeline
 
-In human verbal conversation, the average pause between speakers is between **200ms and 450ms**. If an automated voice system takes 1.5 seconds to reply, the caller perceives an uncomfortable awkward silence, often prompting them to say *"Hello? Are you still there?"* which interrupts the bot's turn-taking state machine.
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#E8E2D6]">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 p-2 flex items-center justify-center shrink-0">
+        <img src="/assets/personas/sketch_ai.png" alt="Voice AI Core" class="w-full h-full object-contain" />
+      </div>
+      <div>
+        <h4 class="text-base font-bold text-neutral-900 font-display m-0">Sub-400ms Voice Orchestration</h4>
+        <p class="text-xs text-stone-500 m-0">Zero-disk streaming pipeline over binary WebSockets</p>
+      </div>
+    </div>
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold tracking-tight">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      Total Pipeline: ~380ms
+    </span>
+  </div>
 
-Achieving natural sub-400ms end-to-end voice latency requires an **orchestrated streaming pipeline**:
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 pt-6">
+    <!-- Step 1 -->
+    <div class="rounded-2xl bg-white border border-stone-200/80 p-4 shadow-2xs relative">
+      <div class="text-[10px] font-bold text-amber-600 uppercase tracking-wider mb-1">Step 01</div>
+      <div class="text-sm font-bold text-neutral-900 mb-1">Voice Activity (VAD)</div>
+      <div class="text-xs text-stone-600 mb-2">Silero VAD detects speech boundaries &amp; caller interruptions.</div>
+      <span class="inline-block px-2 py-0.5 rounded bg-amber-50 text-[11px] font-semibold text-amber-700">20 – 40ms</span>
+    </div>
 
-```
-Caller Speaks ──► Audio Stream (μ-law 8kHz / Opus 16kHz)
-                         │
-                         ▼
-┌────────────────────────────────────────────────────────┐
-│ 1. Voice Activity Detection (VAD)            [20 - 40ms]
-│    • Detects speech boundaries via Silero VAD           │
-└────────────────────────┬───────────────────────────────┘
-                         ▼
-┌────────────────────────────────────────────────────────┐
-│ 2. Streaming Speech-to-Text (ASR)           [110 - 160ms]
-│    • Deepgram Nova-3 / Whisper Streaming Websocket      │
-└────────────────────────┬───────────────────────────────┘
-                         ▼
-┌────────────────────────────────────────────────────────┐
-│ 3. Speculative LLM Token Generation          [90 - 140ms]
-│    • Domain-tuned prompt; generates first sentence token│
-└────────────────────────┬───────────────────────────────┘
-                         ▼
-┌────────────────────────────────────────────────────────┐
-│ 4. Neural Text-to-Speech (TTS)              [80 - 120ms]
-│    • ElevenLabs / Cartesia streaming audio synthesis    │
-└────────────────────────┬───────────────────────────────┘
-                         ▼
-Voice Streams Back to Caller Ear               [Total: ~380ms]
-```
+    <!-- Step 2 -->
+    <div class="rounded-2xl bg-white border border-stone-200/80 p-4 shadow-2xs relative">
+      <div class="text-[10px] font-bold text-blue-600 uppercase tracking-wider mb-1">Step 02</div>
+      <div class="text-sm font-bold text-neutral-900 mb-1">Streaming ASR</div>
+      <div class="text-xs text-stone-600 mb-2">Deepgram Nova-3 acoustic models transcribe phonemes in real time.</div>
+      <span class="inline-block px-2 py-0.5 rounded bg-blue-50 text-[11px] font-semibold text-blue-700">110 – 160ms</span>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="rounded-2xl bg-white border border-stone-200/80 p-4 shadow-2xs relative">
+      <div class="text-[10px] font-bold text-purple-600 uppercase tracking-wider mb-1">Step 03</div>
+      <div class="text-sm font-bold text-neutral-900 mb-1">Speculative LLM</div>
+      <div class="text-xs text-stone-600 mb-2">Domain reasoning engine yields first sentence token immediately.</div>
+      <span class="inline-block px-2 py-0.5 rounded bg-purple-50 text-[11px] font-semibold text-purple-700">90 – 140ms</span>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="rounded-2xl bg-white border border-stone-200/80 p-4 shadow-2xs relative">
+      <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider mb-1">Step 04</div>
+      <div class="text-sm font-bold text-neutral-900 mb-1">Neural TTS Stream</div>
+      <div class="text-xs text-stone-600 mb-2">Cartesia Sonic audio synthesis streams natural voice directly back.</div>
+      <span class="inline-block px-2 py-0.5 rounded bg-emerald-50 text-[11px] font-semibold text-emerald-700">80 – 120ms</span>
+    </div>
+  </div>
+</div>
 
 ### Key Engineering Optimizations:
 1. **Full-Duplex WebSockets:** Audio is never recorded to temporary `.wav` disk files. It streams continuously as raw binary PCM chunks over secure WebSockets.
@@ -89,28 +114,42 @@ Salowtech's sovereign voice pipeline addresses this through **Acoustic Phoneme M
 
 A voice assistant is only as useful as its connectivity to the global telephone network. Salowtech integrates voice engines directly into standard enterprise telephony:
 
-```
-┌────────────────────────────────────────────────────────┐
-│               Public Switched Telephone Network (PSTN) │
-└──────────────────────────┬─────────────────────────────┘
-                           │ (Incoming Call to Toll-Free / DID)
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│   SIP Trunk Provider (Tata Tele / Airtel / Exotel)     │
-└──────────────────────────┬─────────────────────────────┘
-                           │ (SIP Protocol via UDP/TLS)
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│   Telephony Gateway (Asterisk / FreeSWITCH / LiveKit)  │
-│   • Manages RTP audio streaming & jitter buffer        │
-│   • Handles SIP REFER for warm human agent transfers   │
-└──────────────────────────┬─────────────────────────────┘
-                           │ (Binary Audio WebSockets)
-                           ▼
-┌────────────────────────────────────────────────────────┐
-│   Salowtech Neural Voice Orchestrator                  │
-└────────────────────────────────────────────────────────┘
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-[#FAF7F2] p-6 sm:p-8 shadow-sm">
+  <div class="text-center max-w-lg mx-auto mb-6">
+    <span class="text-[11px] font-bold text-[#7D3024] uppercase tracking-widest block mb-1">Carrier Grade Telephony</span>
+    <h4 class="text-lg font-bold text-neutral-900 m-0">Native SIP Protocol Bridge</h4>
+    <p class="text-xs text-stone-600 mt-1">Connects to your existing toll-free and corporate DID phone lines with zero hardware changes.</p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+    <!-- Telephony PSTN -->
+    <div class="bg-white rounded-2xl border border-stone-200/80 p-5 shadow-2xs">
+      <div class="w-10 h-10 mx-auto rounded-full bg-stone-100 flex items-center justify-center mb-2 text-stone-700">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      </div>
+      <div class="text-xs font-bold text-neutral-900">Public PSTN Inbound</div>
+      <div class="text-[11px] text-stone-500 mt-0.5">Toll-free 1800 numbers &amp; DIDs</div>
+    </div>
+
+    <!-- SIP Switchboard -->
+    <div class="bg-white rounded-2xl border border-stone-200/80 p-5 shadow-2xs relative">
+      <div class="w-10 h-10 mx-auto rounded-full bg-blue-50 flex items-center justify-center mb-2 text-blue-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      </div>
+      <div class="text-xs font-bold text-neutral-900">FreeSWITCH / Asterisk PBX</div>
+      <div class="text-[11px] text-stone-500 mt-0.5">RTP streaming &amp; Jitter Buffer</div>
+    </div>
+
+    <!-- Neural Engine -->
+    <div class="bg-white rounded-2xl border border-stone-200/80 p-5 shadow-2xs">
+      <div class="w-10 h-10 mx-auto rounded-full bg-emerald-50 flex items-center justify-center mb-2 text-emerald-600">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+      </div>
+      <div class="text-xs font-bold text-neutral-900">Salowtech Voice Core</div>
+      <div class="text-[11px] text-stone-500 mt-0.5">Real-time LLM reasoning &amp; tools</div>
+    </div>
+  </div>
+</div>
 
 By supporting native SIP signaling, our voice bots run on your existing enterprise phone numbers. No new numbers required, no forced app downloads for customers.
 
@@ -120,24 +159,44 @@ By supporting native SIP signaling, our voice bots run on your existing enterpri
 
 While AI voice assistants successfully resolve 75%+ of tier-1 support queries (order status, branch timings, booking confirmations, invoice requests), complex grievances and high-value VIP negotiations require human touch.
 
-When an escalation trigger occurs (caller sentiment becomes frustrated or the caller explicitly requests a supervisor), Salowtech executes a **SIP REFER Warm Transfer**:
+When an escalation trigger occurs (caller sentiment becomes frustrated or the caller explicitly requests a supervisor), Salowtech executes an instantaneous **SIP REFER Warm Transfer**:
 
-```
-[Caller on Line]
-       │
-       ▼ (Escalation Trigger: Sentiment < 0.25)
-[AI Bot]: "I understand this requires special attention. Connecting you directly with our senior support manager..."
-       │
-       ▼ (Background SIP REFER Transfer to Human Agent Dashboard)
-┌────────────────────────────────────────────────────────┐
-│               Agent Screen Pops in < 1.2s              │
-├────────────────────────────────────────────────────────┤
-│ • Caller: Rajesh Mehta (+91 98250 XXXXX)               │
-│ • Sentiment: Frustrated (Delivery delayed 48hrs)       │
-│ • Real-time Call Transcript Summary                    │
-│ • Suggested Resolution: Waive freight + 10% coupon     │
-└────────────────────────────────────────────────────────┘
-```
+<div class="my-8 rounded-3xl border border-[#7D3024]/20 bg-gradient-to-br from-white via-[#FAF7F2] to-[#F5EFEB] p-6 sm:p-7 shadow-sm">
+  <div class="flex items-center justify-between pb-4 border-b border-[#E8E2D6] mb-4">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-[#7D3024]/10 flex items-center justify-center text-[#7D3024]">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z"/></svg>
+      </div>
+      <div>
+        <span class="text-xs font-bold text-neutral-900 block font-display">Live Agent Screen Pop</span>
+        <span class="text-[11px] text-stone-500">Autonomous Warm Transfer</span>
+      </div>
+    </div>
+    <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
+      Screen Pop in &lt; 1.2s
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+    <div class="bg-white rounded-xl p-3 border border-stone-200/80">
+      <span class="text-stone-400 block text-[10px] uppercase font-bold">Caller Context</span>
+      <span class="font-semibold text-neutral-900">Verified Corporate Account #98250</span>
+      <span class="text-stone-500 block text-[11px] mt-0.5">Primary Hub: Mumbai Regional DC</span>
+    </div>
+    <div class="bg-white rounded-xl p-3 border border-stone-200/80">
+      <span class="text-stone-400 block text-[10px] uppercase font-bold">Sentiment Detection</span>
+      <span class="font-semibold text-amber-700 flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+        Escalated: Frustrated (Delivery delayed 48hrs)
+      </span>
+      <span class="text-stone-500 block text-[11px] mt-0.5">Sentiment Index: 0.18 / 1.00</span>
+    </div>
+    <div class="bg-white rounded-xl p-3 border border-stone-200/80 sm:col-span-2">
+      <span class="text-stone-400 block text-[10px] uppercase font-bold">Suggested Instant Resolution</span>
+      <span class="font-semibold text-emerald-800">Auto-authorized: Waive express freight charge + credit 10% next invoice coupon.</span>
+    </div>
+  </div>
+</div>
 
 The human agent answers the call already knowing the customer's identity, order details, and emotional context. The customer **never repeats themselves.**
 
@@ -160,39 +219,54 @@ Evaluating the operational cost of managing a 20-seat inbound customer support c
 
 ## 6. Implementation Timeline: From Architecture to Live Calls
 
-Deploying a production-grade enterprise voice assistant follows a 6-week phased path:
+Deploying a production-grade enterprise voice assistant follows a structured 6-week phased path:
 
-```
-Week 01: Knowledge Base & Telephony SIP Binding
-  - Connect SIP trunk credentials and toll-free DID routing.
-  - Ingest enterprise knowledge base, product manuals, and FAQ documents.
-
-Week 02: Prompt Engineering & Guardrail Calibration
-  - Define system persona, speech cadences, and pronunciation dictionaries.
-  - Implement PII redaction guardrails and prohibited response boundaries.
-
-Week 03: Backend API Tool Calling & CRM Webhooks
-  - Integrate live ERP/CRM endpoints for real-time order lookups.
-  - Configure SMS/WhatsApp post-call confirmation delivery.
-
-Week 04-05: Acoustic Latency Tuning & Human Agent Warm Transfer
-  - Optimize WebSocket audio jitter buffers and VAD silence thresholds.
-  - Test live SIP REFER handoffs with frontline human support teams.
-
-Week 06: Production Cutover & Telemetry Monitoring
-  - Gradual traffic rollout: 15% ──► 50% ──► 100% of inbound calls.
-  - Real-time Grafana dashboard tracking latency, sentiment, and resolution rate.
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-white p-6 sm:p-8 shadow-sm">
+  <div class="space-y-4">
+    <!-- Phase 1 -->
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">01</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Week 01: Telephony SIP Binding &amp; Knowledge Ingestion</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Connect SIP trunk credentials, configure toll-free routing, and ingest enterprise documentation into a semantic vector index.</p>
+      </div>
+    </div>
+    <!-- Phase 2 -->
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">02</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Week 02: Prompt Engineering &amp; Guardrail Calibration</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Calibrate phonetic pronunciations, regional accents, and rigorous PII redaction security guardrails.</p>
+      </div>
+    </div>
+    <!-- Phase 3 -->
+    <div class="flex items-start gap-4 pb-4 border-b border-stone-100">
+      <span class="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center font-bold text-xs text-neutral-900 shrink-0">03</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Week 03: Live CRM &amp; Tool Calling Integration</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Wire real-time order status endpoints, booking databases, and post-call WhatsApp notification dispatchers.</p>
+      </div>
+    </div>
+    <!-- Phase 4 -->
+    <div class="flex items-start gap-4">
+      <span class="w-8 h-8 rounded-full bg-[#7D3024] text-white flex items-center justify-center font-bold text-xs shrink-0">04</span>
+      <div>
+        <h5 class="text-sm font-bold text-neutral-900 m-0">Week 04–06: Latency Tuning, Agent Handoff, &amp; Cutover</h5>
+        <p class="text-xs text-stone-600 m-0 mt-0.5">Fine-tune sub-400ms jitter buffers, validate live SIP REFER warm handoffs, and launch with continuous telemetry.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ---
 
 ## Frequently Asked Questions
 
-### Can the voice assistant make outbound calls for appointment reminders and payment follow-ups?
-Yes. The platform supports high-concurrency automated outbound campaigns. You can upload or API-trigger calling queues for payment reminders, shipping confirmations, and VIP feedback interviews with automated CRM result logging.
+### Can the voice bot handle background noise and Indian road traffic?
+Yes. We deploy client-side and server-side spectral noise suppression algorithms that isolate human vocal frequencies and filter out traffic horns, café noise, and office chatter.
 
-### Is call recording compliant with Indian regulatory and privacy standards?
-Yes. All incoming calls can include automated compliance announcements (*"This call is recorded for quality and training purposes"*). Audio files and transcripts are stored in encrypted S3/R2 storage with AES-256 encryption, fully compliant with the Indian DPDP Act 2023.
+### What telephony carriers do you support?
+We support all major SIP trunk providers including Tata Tele Business Services, Airtel, Jio, Exotel, Twilio, and Vonage. The bot connects seamlessly with your existing PBX without replacing phone numbers.
 
-### What happens if the customer has poor cellular reception with static?
-Our audio gateway incorporates neural noise suppression and dynamic spectral subtraction. Background ambient road traffic, factory machinery, or wind noise is filtered out before reaching the speech recognition engine.
+### Can the AI bot book appointments and collect payments?
+Yes. By linking with your enterprise calendar and payment gateway (Razorpay, Stripe), the voice bot can send an instant payment link via SMS/WhatsApp during the call and verify completion before ending the session.

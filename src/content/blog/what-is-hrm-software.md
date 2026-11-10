@@ -31,36 +31,40 @@ Every monthly payroll cycle turns into a high-stress administrative emergency:
 
 A tailored sovereign HRM platform automates the entire operational pipeline, turning a 5-day payroll headache into a 10-minute automated review.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   SOVEREIGN ENTERPRISE HRM ARCHITECTURE                │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-6">
+    <div class="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/mascot_explaining.png" alt="Sovereign HRM Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">Sovereign Enterprise HRM Architecture</h4>
+      <p class="text-xs text-stone-500 m-0">Multi-modal biometric attendance, statutory tax engine, and automated banking disbursals</p>
+    </div>
+  </div>
 
- [ Multi-Modal Attendance Ingestion ]
- (Biometric Fingerprint Devices, Mobile GPS Geofencing, Facial Scan)
-                 │
-                 ▼
- ┌────────────────────────────────┐
- │ Fastify Ingestion Gateway      │  <-- Real-Time Device Sync (ZKTeco / eSSL)
- └────────────────────────────────┘
-                 │
-                 ▼
- ┌────────────────────────────────┐
- │ Shift & Leave Balancing Engine │  <-- Automated Overtime, Comp-Off, & Leaves
- └────────────────────────────────┘
-                 │
-                 ▼
- ┌────────────────────────────────┐
- │ Statutory Payroll Core Engine  │  <-- PF, ESIC, PT, TDS, Gratuity Calculation
- └────────────────────────────────┘
-                 │
-     ┌───────────┴───────────┐
-     ▼                       ▼
-┌──────────────┐       ┌──────────────┐
-│  NACH / NEFT │       │  WhatsApp &  │  <-- AES-256 Encrypted PDF Payslips
-│  Bank Export │       │  ESS Portal  │  <-- Employee Self-Service Mobile Dashboard
-└──────────────┘       └──────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">01. Ingestion</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Biometric &amp; GPS</div>
+      <p class="text-xs text-stone-600 m-0">Direct socket connections to ZKTeco/eSSL hardware + geofenced mobile clock-ins with anti-spoofing.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider block mb-1">02. Shifts &amp; Leaves</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Balancing Engine</div>
+      <p class="text-xs text-stone-600 m-0">Automated overtime calculations, rotational shift allowances, and manager leave approvals.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">03. Statutory Core</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">1-Click Payroll</div>
+      <p class="text-xs text-stone-600 m-0">Deterministic PF, ESIC, Professional Tax, TDS/Form 16, and gratuity calculations.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">04. Disbursal &amp; ESS</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Bank NACH &amp; WhatsApp</div>
+      <p class="text-xs text-stone-600 m-0">Single-click corporate banking payout export + AES-256 encrypted PDF payslips sent via WhatsApp.</p>
+    </div>
+  </div>
+</div>
 
 ---
 

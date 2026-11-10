@@ -32,34 +32,46 @@ Beyond the raw labor expense—which routinely exceeds $75,000 annually for a 20
 
 Programmatic workflow automation replaces fragile human copy-paste chains with sovereign, event-driven microservices that execute deterministically in milliseconds.
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                   SOVEREIGN WORKFLOW EVENT BUS ARCHITECTURE             │
-└────────────────────────────────────────────────────────────────────────┘
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-[#E8E2D6]">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 p-2 flex items-center justify-center shrink-0">
+        <img src="/assets/personas/sketch_web.png" alt="Event Bus Engine" class="w-full h-full object-contain" />
+      </div>
+      <div>
+        <h4 class="text-base font-bold text-neutral-900 font-display m-0">Sovereign Workflow Event Bus</h4>
+        <p class="text-xs text-stone-500 m-0">Asynchronous, fault-tolerant enterprise orchestration</p>
+      </div>
+    </div>
+    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold tracking-tight">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      99.99% Guaranteed Delivery
+    </span>
+  </div>
 
- [ Incoming Webhook / Event ]
-              │
-              ▼
-   ┌───────────────────────┐
-   │ Fastify / Hono Router │  <-- HMAC Signature Verification & Auth
-   └───────────────────────┘
-              │
-              ▼
-   ┌───────────────────────┐
-   │ Redis / BullMQ Queue  │  <-- Idempotency Check & Concurrency Throttling
-   └───────────────────────┘
-              │
-     ┌────────┴────────┐
-     ▼                 ▼
-┌─────────────┐   ┌─────────────┐
-│ OCR Worker  │   │ Sync Worker │  <-- Exponential Backoff & Circuit Breakers
-└─────────────┘   └─────────────┘
-     │                 │
-     ▼                 ▼
-┌───────────────────────────────────────────────────────────┐
-│     PostgreSQL Sovereign Core (Audit Logs & State Sync)   │
-└───────────────────────────────────────────────────────────┘
-```
+  <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 pt-6">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider block mb-1">01. Ingestion</span>
+      <div class="text-sm font-bold text-neutral-900">Fastify / Hono Router</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">HMAC signature verification and sub-50ms token authentication.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">02. Queue Buffer</span>
+      <div class="text-sm font-bold text-neutral-900">Redis &amp; BullMQ</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">Idempotency checks, rate throttling, and backpressure management.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">03. Workers</span>
+      <div class="text-sm font-bold text-neutral-900">Isolated Pods</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">OCR parsers, payment dispatchers, and state sync with auto-retries.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider block mb-1">04. Ledger Core</span>
+      <div class="text-sm font-bold text-neutral-900">PostgreSQL Vault</div>
+      <p class="text-xs text-stone-500 mt-1 m-0">Immutable audit trails, historical journals, and real-time state sync.</p>
+    </div>
+  </div>
+</div>
 
 ---
 

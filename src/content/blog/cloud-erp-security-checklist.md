@@ -32,22 +32,35 @@ Commercial off-the-shelf ERP platforms often bundle legacy architectures with co
 
 Traditional ERP deployments suffer from three catastrophic structural vulnerabilities:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│               Common ERP Threat Vectors                         │
-├────────────────────────────────┬────────────────────────────────┤
-│ Vector                         │ Real-World Exploit Scenario    │
-├────────────────────────────────┼────────────────────────────────┤
-│ 1. Flat Internal Permissions   │ Warehouse staff viewing total  │
-│                                │ corporate company margins.     │
-├────────────────────────────────┼────────────────────────────────┤
-│ 2. Mutable SQL Update History  │ Disgruntled accountant altering│
-│                                │ vendor bank IBAN before batch. │
-├────────────────────────────────┼────────────────────────────────┤
-│ 3. Unencrypted Backup Dumps    │ Stolen database backup leak    │
-│                                │ exposing all pricing secrets.  │
-└────────────────────────────────┴────────────────────────────────┘
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-8 shadow-sm">
+  <div class="flex items-center gap-3 pb-5 border-b border-[#E8E2D6] mb-5">
+    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 p-2 flex items-center justify-center shrink-0">
+      <img src="/assets/personas/sketch_erp.png" alt="ERP Security Core" class="w-full h-full object-contain" />
+    </div>
+    <div>
+      <h4 class="text-base font-bold text-neutral-900 font-display m-0">ERP Threat Vector Analysis</h4>
+      <p class="text-xs text-stone-500 m-0">Critical failure points in legacy and commercial ERP deployments</p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-red-600 uppercase tracking-wider block mb-1">Threat 01: Flat Permissions</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Coarse Data Bleed</div>
+      <p class="text-xs text-stone-600 m-0">Warehouse operations staff accidentally accessing executive margin data and supplier markups.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider block mb-1">Threat 02: Mutable SQL</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Silent Balance Tampering</div>
+      <p class="text-xs text-stone-600 m-0">Compromised credentials executing destructive UPDATE queries to alter supplier bank accounts prior to batch disbursal.</p>
+    </div>
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs">
+      <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider block mb-1">Threat 03: Backup Leaks</span>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Unencrypted Snapshot Exposure</div>
+      <p class="text-xs text-stone-600 m-0">Leaked development database snapshots exposing unencrypted financial ledgers and customer PII.</p>
+    </div>
+  </div>
+</div>
 
 Securing enterprise operations requires moving from perimeter-only network defenses to **Zero-Trust Defense-in-Depth**, where every database read, update, and API query is independently authenticated, authorized, and cryptographically verified.
 
@@ -83,22 +96,50 @@ Double-entry accounting and warehouse inventory records must never be updated wi
 
 To prevent malicious database administrators or compromised credentials from silently modifying historical balances, Salowtech engineers an **append-only cryptographic hash chain**:
 
-```
-[Genesis Block]
-   Hash: 0000...
-       │
-       ▼
-[Entry #1001: RM Purchase $45,000]
-   PrevHash: 0000...
-   DataHash: SHA256(timestamp + debit_acct + credit_acct + amount)
-   BlockSignature: HMAC-SHA256(DataHash + PrevHash)
-       │
-       ▼
-[Entry #1002: Batch Transfer to Factory A]
-   PrevHash: BlockSignature(#1001)
-   DataHash: SHA256(...)
-   BlockSignature: HMAC-SHA256(DataHash + PrevHash)
-```
+<div class="my-8 rounded-3xl border border-[#E8E2D6] bg-gradient-to-br from-[#FAF7F2] via-white to-[#F7F2EC] p-6 sm:p-7 shadow-sm">
+  <div class="flex items-center justify-between pb-4 border-b border-[#E8E2D6] mb-5">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-700">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+      </div>
+      <div>
+        <span class="text-xs font-bold text-neutral-900 block font-display">Cryptographic Audit Chain</span>
+        <span class="text-[11px] text-stone-500">Append-Only SHA-256 Ledger Verification</span>
+      </div>
+    </div>
+    <span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold">
+      Tamper-Proof Guarantee
+    </span>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- Block 1001 -->
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs relative">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Entry #1001</span>
+        <span class="text-[10px] text-stone-400 font-mono">Status: Verified</span>
+      </div>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Raw Material Inward ($45,000)</div>
+      <div class="text-[11px] text-stone-500 font-mono bg-stone-50 p-2 rounded-lg mt-2 break-all">
+        DataHash: SHA256(timestamp + ledger_lines)<br/>
+        BlockSignature: 7f8a92b...e319c
+      </div>
+    </div>
+
+    <!-- Block 1002 -->
+    <div class="bg-white rounded-2xl p-4 border border-stone-200/80 shadow-2xs relative">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Entry #1002</span>
+        <span class="text-[10px] text-stone-400 font-mono">Chained to #1001</span>
+      </div>
+      <div class="text-xs font-bold text-neutral-900 mb-1">Batch Transfer: Plant B ($45,000)</div>
+      <div class="text-[11px] text-stone-500 font-mono bg-stone-50 p-2 rounded-lg mt-2 break-all">
+        PrevHash: 7f8a92b...e319c<br/>
+        BlockSignature: 4b29f01...d88a1
+      </div>
+    </div>
+  </div>
+</div>
 
 If an unauthorized party directly edits a past balance in the database table, the cryptographic chain immediately breaks. Continuous automated cron auditors alert the Chief Technology Officer and compliance directors within seconds.
 
