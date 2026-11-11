@@ -1,8 +1,10 @@
-const esbuild = require('esbuild');
 const fs = require('fs');
 const path = require('path');
+const { createRequire } = require('module');
 
 const rootDir = path.resolve(__dirname, '..');
+const rootRequire = createRequire(path.join(rootDir, 'package.json'));
+const esbuild = rootRequire('esbuild');
 
 async function minifyAssets() {
   console.log('Minifying CSS and JS assets with esbuild...');

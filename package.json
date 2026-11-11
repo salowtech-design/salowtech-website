@@ -13,10 +13,11 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "astro": "^5.1.0"
+    "astro": "^7.4.10"
   },
   "devDependencies": {
     "@typescript-eslint/parser": "^8.72.1",
+    "esbuild": "^0.28.2",
     "eslint": "^10.14.0",
     "eslint-plugin-astro": "^3.2.1",
     "prettier": "^3.9.10",
