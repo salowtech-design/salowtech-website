@@ -1201,80 +1201,7 @@ const schemaJson = getTestimonialsSchema();
                 ></textarea>
               </div>
 
-              <!-- Trust / NDA Badge -->
-              <div class="p-2.5 bg-[#F9F9F9] border border-stone-200 rounded-lg flex items-center justify-between text-[11px] text-stone-600">
-                <span class="flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                  <span>100% Strict Mutual NDA Protected</span>
-                </span>
-                <span class="font-bold text-neutral-800">Verified</span>
-              </div>
-              <!-- Google reCAPTCHA v3 Protection Badge -->
-              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
-                <span class="flex items-center gap-2 font-medium text-stone-700">
-                  <svg
-                    class="w-4 h-4 text-[#1a73e8]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                    />
-                  </svg>
-                  <span>Protected by Google reCAPTCHA v3</span>
-                </span>
-                <span class="text-[11px] text-stone-400">
-                  <a
-                    href="https://policies.google.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:underline hover:text-stone-600 transition-colors"
-                  >
-                    Privacy
-                  </a>
-                  <span class="mx-1">&bull;</span>
-                  <a
-                    href="https://policies.google.com/terms"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:underline hover:text-stone-600 transition-colors"
-                  >
-                    Terms
-                  </a>
-                </span>
-              </div>
-
-              <!-- Submit Button -->
-              <button id="lead-submit-btn" class="btn-salow-submit" type="submit">
-                <span class="btn-salow-logo-mark">
-                  <Image
-                    src={salowtechLogo}
-                    width={24}
-                    height={24}
-                    alt="Salowtech"
-                    loading="lazy"
-                    decoding="async"
-                    format="webp"
-                    quality={90}
-                  />
-                </span>
-                <span class="btn-salow-text">SUBMIT REQUEST</span>
-                <span class="btn-salow-arrow">&rarr;</span>
-              </button>
-            </form>
-          </div>
-        </div>
+              
       </div>
     </section>
     <!-- Subtle Luxury Transition Divider -->
@@ -1445,19 +1372,14 @@ const schemaJson = getTestimonialsSchema();
     </div>
     <!-- END: testimonials-page-backdrop -->
 
-    <!-- 2. Elevated Glassmorphic Coming Soon Showcase Card (Blog-Matched Hover Feel) -->
-    <div class="relative z-20 max-w-2xl w-full my-auto testimonials-glass-card rounded-3xl p-8 sm:p-12 text-center overflow-hidden">
-      <!-- Ambient Luxury Glow Orbs -->
-      <div class="absolute -top-24 -right-24 w-72 h-72 bg-[#7D3024]/12 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+    <!-- 2. Elevated Glassmorphic Coming Soon Showcase Card (Clean Human Craftsmanship) -->
+    <div class="relative z-20 max-w-2xl w-full my-auto testimonials-glass-card rounded-3xl p-8 sm:p-12 text-center overflow-hidden border border-[#E8E1D3] bg-white/95 backdrop-blur-2xl shadow-[0_24px_64px_-12px_rgba(43,35,26,0.14)]">
       <!-- 3D Mascot Illustration -->
       <div class="relative w-36 h-36 sm:w-44 sm:h-44 mx-auto mb-6 flex items-center justify-center">
-        <div class="absolute inset-0 bg-gradient-to-tr from-[#7D3024]/15 to-transparent rounded-full blur-2xl animate-pulse"></div>
         <Image
           src={mascotExplaining}
           alt="Salowtech Official Mascot"
-          class="relative w-full h-full object-contain filter drop-shadow-xl hover:scale-105 transition-transform duration-300 salow-mascot-celebrate"
+          class="relative w-full h-full object-contain filter drop-shadow-md hover:scale-105 transition-transform duration-300 salow-mascot-celebrate"
           loading="eager"
           width={180}
           height={180}

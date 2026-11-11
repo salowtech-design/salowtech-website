@@ -104,10 +104,16 @@ const finalOgDescription = ogDescription || description;
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://anxehjllbdpzxxthpmqjt.supabase.co" crossorigin />
-    <link rel="dns-prefetch" href="https://anxehjllbdpzxxthpmqjt.supabase.co" />
+
+    {canonicalPath === "/" && (
+      <link
+        rel="preload"
+        href="/assets/clouds_hero_poster.webp"
+        as="image"
+        type="image/webp"
+        fetchpriority="high"
+      />
+    )}
 
     <!-- Preload Critical Fonts -->
     <link
@@ -172,10 +178,12 @@ const finalOgDescription = ogDescription || description;
       />
     </noscript>
 
-    <!-- Stylesheets (Build-time Tailwind + Custom Styles) -->
-    <link rel="stylesheet" href="/css/lenis.css" />
+    <!-- Inline Lenis Reset for Zero-Delay Smooth Scrolling -->
+    <style is:inline>
+      html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}.lenis.lenis-stopped{overflow:hidden}.lenis.lenis-smooth iframe{pointer-events:none}
+    </style>
     <link rel="stylesheet" href="/css/tailwind.css" />
-    <link rel="stylesheet" href="/css/styles.css?v=20261111_v1" />
+    <link rel="stylesheet" href="/css/styles.min.css?v=20261111_v1" />
 
     {schemaJson && <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />}
 
@@ -242,7 +250,7 @@ const finalOgDescription = ogDescription || description;
         }
       })();
     </script>
-    <script is:inline src="/js/main.js?v=20261110_v3" defer></script>
+    <script is:inline src="/js/main.min.js?v=20261111_v1" defer></script>
 
     <script is:inline>
       // Accessibility: Sanitize dynamic iframes (e.g. reCAPTCHA role="presentation" W3C ARIA violation)

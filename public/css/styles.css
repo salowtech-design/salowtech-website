@@ -6113,21 +6113,6 @@ header a[href*="lead-capture"]:hover::after {
   animation: haloPulse 4s 2.6s ease-in-out infinite;
 }
 
-.orbit-center-hub {
-  animation: hubGentleBreath 5s ease-in-out infinite alternate;
-  box-shadow: 0 16px 40px -10px rgba(125, 48, 36, 0.22);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.orbit-center-hub:hover {
-  transform: translate(-50%, -50%) scale(1.06);
-}
-
-@keyframes hubGentleBreath {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  100% { transform: translate(-50%, -50%) scale(1.03); }
-}
-
 .orbit-node {
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
@@ -6528,6 +6513,15 @@ table.deliverables-table tbody tr:hover {
 @keyframes haloPulse {
   0% { transform: translate(-50%, -50%) scale(0.97); opacity: 0.65; }
   100% { transform: translate(-50%, -50%) scale(1.04); opacity: 1; }
+}
+
+@keyframes hubGentleBreath {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.03);
+  }
 }
 
 /* Center Brand Pill Hub */

@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
-    "vercel-build": "astro build",
+    "build": "node tools/minify-assets.js && astro build",
+    "vercel-build": "node tools/minify-assets.js && astro build",
     "preview": "astro preview",
     "crm": "node tools/server.js",
     "lint": "eslint .",

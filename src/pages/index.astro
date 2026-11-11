@@ -48,11 +48,12 @@ const schemaJson = getHomeSchema();
         loop
         playsinline
         preload="metadata"
-        poster="/assets/clouds_hero_poster.jpg"
+        poster="/assets/clouds_hero_poster.webp"
         aria-hidden="true"
         tabindex="-1"
       >
         <source src="/assets/clouds_hero_clean.mp4" type="video/mp4" />
+        <track kind="captions" src="data:text/vtt,WEBVTT" srclang="en" label="English" default />
       </video>
 
       <div class="hero__content">
@@ -121,7 +122,7 @@ const schemaJson = getHomeSchema();
                 alt="HTML"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -145,7 +146,7 @@ const schemaJson = getHomeSchema();
                 alt="CSS"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -169,7 +170,7 @@ const schemaJson = getHomeSchema();
                 alt="JavaScript"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -193,7 +194,7 @@ const schemaJson = getHomeSchema();
                 alt="TypeScript"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -217,7 +218,7 @@ const schemaJson = getHomeSchema();
                 alt="React"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -241,7 +242,7 @@ const schemaJson = getHomeSchema();
                 alt="Next.js"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -265,7 +266,7 @@ const schemaJson = getHomeSchema();
                 alt="Node.js"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -289,7 +290,7 @@ const schemaJson = getHomeSchema();
                 alt="Express.js"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -313,7 +314,7 @@ const schemaJson = getHomeSchema();
                 alt="Python"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -337,7 +338,7 @@ const schemaJson = getHomeSchema();
                 alt="Java"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -361,7 +362,7 @@ const schemaJson = getHomeSchema();
                 alt="Git"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -385,7 +386,7 @@ const schemaJson = getHomeSchema();
                 alt="GitHub"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -409,7 +410,7 @@ const schemaJson = getHomeSchema();
                 alt="VS Code"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -433,7 +434,7 @@ const schemaJson = getHomeSchema();
                 alt="Figma"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -457,7 +458,7 @@ const schemaJson = getHomeSchema();
                 alt="Tailwind CSS"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -481,7 +482,7 @@ const schemaJson = getHomeSchema();
                 alt="Bootstrap"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -505,7 +506,7 @@ const schemaJson = getHomeSchema();
                 alt="Docker"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -529,7 +530,7 @@ const schemaJson = getHomeSchema();
                 alt="MongoDB"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -553,7 +554,7 @@ const schemaJson = getHomeSchema();
                 alt="MySQL"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -577,7 +578,7 @@ const schemaJson = getHomeSchema();
                 alt="Firebase"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -601,7 +602,7 @@ const schemaJson = getHomeSchema();
                 alt="Postman"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -625,7 +626,7 @@ const schemaJson = getHomeSchema();
                 alt="Sass"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -649,7 +650,7 @@ const schemaJson = getHomeSchema();
                 alt="NPM"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -673,7 +674,7 @@ const schemaJson = getHomeSchema();
                 alt="Yarn"
                 width="48"
                 height="48"
-                loading="eager"
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -1078,12 +1079,12 @@ const schemaJson = getHomeSchema();
                   <Image
                     src={sketchWeb}
                     alt="Web & Platforms Architectural Blueprint"
-                    width={560}
-                    height={520}
+                    width={240}
+                    height={220}
                     loading="lazy"
                     decoding="async"
                     format="webp"
-                    quality={90}
+                    quality={80}
                     class="am-personas-hero-illustration"
                   />
                 </a>
@@ -1106,12 +1107,12 @@ const schemaJson = getHomeSchema();
                   <Image
                     src={sketchMobile}
                     alt="Mobile Apps Architectural Blueprint"
-                    width={560}
-                    height={520}
+                    width={240}
+                    height={220}
                     loading="lazy"
                     decoding="async"
                     format="webp"
-                    quality={90}
+                    quality={80}
                     class="am-personas-hero-illustration"
                   />
                   <div class="am-personas-gradient is-leaders">
@@ -1238,12 +1239,12 @@ const schemaJson = getHomeSchema();
                   <Image
                     src={sketchCrm}
                     alt="CRM & Revenue Architectural Blueprint"
-                    width={560}
-                    height={520}
+                    width={240}
+                    height={220}
                     loading="lazy"
                     decoding="async"
                     format="webp"
-                    quality={90}
+                    quality={80}
                     class="am-personas-hero-illustration"
                   />
                 </a>
@@ -1266,12 +1267,12 @@ const schemaJson = getHomeSchema();
                   <Image
                     src={sketchErp}
                     alt="Enterprise ERP Architectural Blueprint"
-                    width={560}
-                    height={520}
+                    width={240}
+                    height={220}
                     loading="lazy"
                     decoding="async"
                     format="webp"
-                    quality={90}
+                    quality={80}
                     class="am-personas-hero-illustration"
                   />
                   <div class="am-personas-gradient is-revops">
@@ -1346,12 +1347,12 @@ const schemaJson = getHomeSchema();
                   <Image
                     src={sketchAi}
                     alt="AI & Voice Agents Architectural Blueprint"
-                    width={560}
-                    height={520}
+                    width={240}
+                    height={220}
                     loading="lazy"
                     decoding="async"
                     format="webp"
-                    quality={90}
+                    quality={80}
                     class="am-personas-hero-illustration"
                   />
                   <div class="am-personas-gradient is-marketers">
@@ -2109,9 +2110,9 @@ const schemaJson = getHomeSchema();
                 <i></i>
               </div>
               <div class="main">
-                <h4>
+                <div class="mockup-header font-bold text-xs uppercase tracking-wider text-stone-700 mb-1">
                   Leads <small>Last 30 days</small>
-                </h4>
+                </div>
                 <div class="kp">
                   <div>
                     New<b>312</b>
@@ -2229,7 +2230,7 @@ const schemaJson = getHomeSchema();
               <span>hr.teamworks.app</span>
             </div>
             <div class="pv hr">
-              <h4>Today's attendance</h4>
+              <div class="mockup-header font-bold text-xs uppercase tracking-wider text-stone-700 mb-1">Today's attendance</div>
               <div class="p">
                 <i></i>Aarav Mehta<em>Present</em>
               </div>
@@ -2297,11 +2298,12 @@ const schemaJson = getHomeSchema();
             class="w-full h-full object-cover block rounded-2xl sm:rounded-3xl lg:rounded-[36px]"
             controls
             playsinline
-            preload="metadata"
-            poster="/assets/home_video_cover.jpg"
+            preload="none"
+            poster="/assets/home_video_cover.webp"
           >
             <source src="/assets/Salowtech_Promo_Video_v2.mp4" type="video/mp4" />
             <source src="/assets/SalowTech_video1.mp4" type="video/mp4" />
+            <track kind="captions" src="data:text/vtt,WEBVTT" srclang="en" label="English" default />
             Your browser does not support the video tag.
           </video>
 
@@ -2393,7 +2395,7 @@ const schemaJson = getHomeSchema();
           <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-[0_12px_40px_-10px_rgba(43,35,26,0.08)] border border-[#E8E3D7] relative">
             <div class="flex items-center justify-between mb-5">
               <div>
-                <h2 class="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">Request A Quote</h2>
+                <h3 class="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight">Request A Quote</h3>
                 <p class="text-xs sm:text-sm text-stone-500 mt-1">Web roadmap &amp; sprint estimate in 24 hours</p>
               </div>
               <div class="w-10 h-10 rounded-full bg-[#FAF7F2] border border-[#7D3024]/20 p-1 flex items-center justify-center shadow-xs overflow-hidden shrink-0" title="Salowtech Mascot">
@@ -2474,21 +2476,7 @@ const schemaJson = getHomeSchema();
                 ></textarea>
               </div>
 
-              <!-- Trust / NDA Badge -->
-              <div class="px-3.5 py-2.5 bg-[#FAF9F6] border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600">
-                <span class="flex items-center gap-2">
-                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                  <span class="font-medium">100% Strict Mutual NDA Protected</span>
-                </span>
-                <span class="font-bold text-neutral-900">Verified</span>
-              </div>
+
               <!-- Google reCAPTCHA v3 Protection Badge -->
               <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
                 <span class="flex items-center gap-2 font-medium text-stone-700">

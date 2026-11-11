@@ -26,13 +26,13 @@ const { activePath = "" } = Astro.props;
         id="navbar-logo"
         src={salowtechLogo}
         alt="Salowtech"
-        width={120}
-        height={40}
+        width={80}
+        height={32}
         loading="eager"
         fetchpriority="high"
         decoding="async"
         format="webp"
-        quality={95}
+        quality={80}
         class="h-10 w-auto object-contain group-hover:scale-95 transition-all duration-300"
       />
       <span
@@ -68,8 +68,6 @@ const { activePath = "" } = Astro.props;
         <!-- Dropdown Card -->
         <div
           id="company-dropdown-panel"
-          role="menu"
-          aria-orientation="vertical"
           class="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-full pt-2.5 z-50 w-72 sm:w-80 opacity-0 pointer-events-none translate-y-2 group-hover/company:opacity-100 group-hover/company:pointer-events-auto group-hover/company:translate-y-0 group-focus-within/company:opacity-100 group-focus-within/company:pointer-events-auto group-focus-within/company:translate-y-0 transition-all duration-200 ease-out"
         >
           <div class="bg-white rounded-2xl shadow-[0_20px_50px_-10px_rgba(43,35,26,0.12)] border border-[#E8E1D3] p-3 backdrop-blur-xl">
@@ -163,8 +161,6 @@ const { activePath = "" } = Astro.props;
         <!-- Dropdown Card -->
         <div
           id="services-dropdown-panel"
-          role="menu"
-          aria-orientation="vertical"
           class="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-full pt-2.5 z-50 w-80 sm:w-96 opacity-0 pointer-events-none translate-y-2 group-hover/services:opacity-100 group-hover/services:pointer-events-auto group-hover/services:translate-y-0 group-focus-within/services:opacity-100 group-focus-within/services:pointer-events-auto group-focus-within/services:translate-y-0 transition-all duration-200 ease-out"
         >
           <div

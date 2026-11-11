@@ -139,8 +139,8 @@ salowtech-platform/
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/salowtech/salowtech-platform.git
-cd salowtech-platform
+git clone https://github.com/salowtech-design/salow-tech.git
+cd salow-tech
 npm install
 ```
 
