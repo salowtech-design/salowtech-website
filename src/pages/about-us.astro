@@ -1,798 +1,681 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import teamHeroImg from "../assets/salowtech_team_hero.jpg";
-import cs1 from "../assets/about/culture-slider-1.png";
-import cs2 from "../assets/about/culture-slider-2.png";
-import cs3 from "../assets/about/culture-slider-3.png";
-import cs4 from "../assets/about/culture-slider-4.png";
-import cs5 from "../assets/about/culture-slider-5.png";
-import cs6 from "../assets/about/culture-slider-6.png";
-import cs7 from "../assets/about/culture-slider-7.png";
-import cs8 from "../assets/about/culture-slider-8.png";
-import cs9 from "../assets/about/culture-slider-9.png";
-import cs10 from "../assets/about/culture-slider-10.png";
-import cs11 from "../assets/about/culture-slider-11.png";
-import ctaIllustration from "../assets/cta_illustration_cream.png";
-import salowtechLogo from "../assets/salowtech_logo.png";
-import salowtechMascot from "../assets/salowtech_mascot_3d.png";
-import Breadcrumb from "../components/Breadcrumb.astro";
+import founder1 from "../assets/founder_1_blacktee.jpg";
+import founder2 from "../assets/founder_2_blacktee.jpg";
+import founder3 from "../assets/founder_3_blacktee.jpg";
+import mascotImg from "../assets/salowtech_mascot_3d.png";
 import { pagesSEO } from "../data/seo";
 import { getAboutSchema } from "../data/schema";
 
 const seo = pagesSEO.aboutUs;
-const title = seo.title;
-const description = seo.description;
-const keywords =
-  "about Salowtech, sovereign software engineering, IT consulting firm India, enterprise software architects, software engineering studio Surat Bangalore, custom software developers India";
-const canonicalPath = seo.canonicalPath;
-const ogTitle = seo.title;
-const ogDescription = seo.description;
-const bodyClass = "selection:bg-neutral-900 selection:text-white min-h-screen";
-const showChatbot = true;
 const schemaJson = getAboutSchema();
 ---
 
 <Layout
-  title={title}
-  description={description}
-  keywords={keywords}
-  canonicalPath={canonicalPath}
-  ogTitle={ogTitle}
-  ogDescription={ogDescription}
-  bodyClass={bodyClass}
-  showChatbot={showChatbot}
+  title={seo.title}
+  description={seo.description}
+  keywords="about Salowtech, sovereign software engineering, IT consulting firm India, enterprise software architects, software engineering studio Surat Bangalore, custom software developers India"
+  canonicalPath={seo.canonicalPath}
+  ogTitle={seo.title}
+  ogDescription={seo.description}
+  bodyClass="selection:bg-[#7D3024] selection:text-[#FAF7F0] min-h-screen bg-[#FAF7F0] text-[#1C1713]"
+  showChatbot={true}
+  showPreFooterCTA={false}
   schemaJson={schemaJson}
 >
-  <!-- ================= MAIN CONTENT ================= -->
-  <Breadcrumb currentPage="About Us" />
-  <main class="relative w-full pt-20">
-    <!-- ================= 1. HERO SECTION (hello.html Specification) ================= -->
-    <section class="max-w-6xl mx-auto px-6 pt-24 pb-20 about-hero-enter">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
-        <div class="lg:col-span-7">
-          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-5">
-            Salow Technologies
-          </p>
-          <h1 class="editorial-headline text-5xl sm:text-6xl md:text-7xl lg:text-[76px] text-neutral-950 font-normal mb-4">
-            About Us
-          </h1>
-          <p class="text-xl sm:text-2xl text-stone-600 font-serif italic">
-            Built by people who care about the details.
-          </p>
-        </div>
-        <div class="lg:col-span-5 pb-2">
-          <p class="text-lg sm:text-xl text-neutral-600 leading-relaxed font-normal">
-            We are a focused team of software engineers and system designers creating sovereign enterprise platforms
-            that feel inevitable &mdash; simple on the surface, powerful underneath.
-          </p>
-        </div>
-      </div>
 
-      <!-- Founders Photo & Architecture Team (Refined & Elegantly Sized) -->
-      <div class="mt-10 sm:mt-12 max-w-2xl sm:max-w-3xl mx-auto">
-        <div class="rounded-2xl sm:rounded-3xl p-2 sm:p-2.5 bg-white border border-[#E8E1D3] shadow-sm overflow-hidden group">
-          <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-[#FAF7F2]">
-            <Image
-              src={teamHeroImg}
-              alt="Salowtech Core Architects & Founders"
-              class="w-full h-[320px] sm:h-[400px] lg:h-[480px] object-cover rounded-3xl border border-stone-200/80 shadow-[0_20px_50px_-15px_rgba(43,35,26,0.14)]"
-              width={1200}
-              height={480}
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              format="webp"
-              quality={92}
-            />
-          </div>
-        </div>
+<div class="sw-about">
+<div id="swGrain"></div>
+<div id="swProgress"></div>
 
-        <!-- Core Architects Typography (No box, elegant font) -->
-        <div class="mt-4 text-center">
-          <p class="text-xs sm:text-sm uppercase tracking-[0.22em] font-semibold text-[#7D3024] font-sans">
-            Core Architects
-          </p>
-          <p class="text-base sm:text-lg font-serif italic text-neutral-700 mt-1">
-            Founders of Salowtech &mdash; Sovereign Software Engineering
-          </p>
-        </div>
-      </div>
-    </section>
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="swHero">
+  <div class="sw-watermark" id="swWatermark">salow</div>
+  <div class="sw-eyebrow" id="swEyebrow"><span class="sw-dot"></span><span>About us — Salow Technologies</span></div>
+  <h1 class="sw-h1" id="swH1">Software that works as hard as <em>you do.<svg id="swSwash" viewBox="0 0 140 20" aria-hidden="true"><path id="swSwashPath" d="M4 14 Q 40 4 72 10 T 136 8" fill="none" stroke="#ff501a" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/></svg></em></h1>
+  <p id="swHeroSub">We are Salowtech, a small team of engineers and designers in Surat, India. We build websites, apps, CRM, ERP and AI tools for growing businesses.</p>
+  <div id="swHeroMeta">
+    <a class="sw-btnPrimary" href="/contact">Start a conversation <span>→</span></a>
+    <a class="sw-btnGhost" href="/services">See what we make</a>
+  </div>
+  <div id="swBadge">
+    <svg viewBox="0 0 132 132"><defs><path id="swCirc" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
+    <text><textPath href="#swCirc" textLength="313" lengthAdjust="spacingAndGlyphs">Made in Surat • Since 2026 •</textPath></text></svg>
+    <div class="sw-star">✦</div>
+  </div>
+  <div id="swMascotShadow"></div>
+  <div id="swMascotHero"><Image src={mascotImg} alt="Salowtech mascot" width={280} height={280} loading="eager" /></div>
+  <div id="swBubble">Hi! Welcome to Salowtech</div>
+  <div id="swScrollHint"><span>Scroll</span><span class="sw-line"><i></i></span></div>
+</section>
 
-    <!-- Subtle Hairline Divider -->
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="h-px bg-stone-300/60"></div>
+<!-- ═══════════════ HERO MARQUEE ═══════════════ -->
+<div id="swHeroMarquee"><div class="sw-mq" id="swMq1"></div></div>
+
+<!-- ═══════════════ STATEMENT ═══════════════ -->
+<div id="swStmtWrap"><section id="swStmt"><div>
+  <div class="sw-kick">Why we exist</div>
+  <p id="swStmtP">Most software is <span class="sw-hl">too complicated.</span> Too many buttons. Too many screens. We started Salowtech to build the <span class="sw-it">opposite</span> — software that feels simple, saves your time, and grows with your business.</p>
+</div></section></div>
+
+<!-- ═══════════════ STORY ═══════════════ -->
+<section id="swStory">
+  <div class="sw-rules"></div>
+  <div class="sw-grid">
+    <div>
+      <h2><span class="sw-rl"><span>Started small.</span></span><span class="sw-rl"><span><em>Thinking long.</em></span></span></h2>
     </div>
+    <div class="sw-body">
+      <p class="sw-rlP">In 2026, three friends in Surat started Salowtech with one belief: <strong>good software should feel obvious.</strong></p>
+      <p class="sw-rlP">No outside investors. No shortcuts. No middle managers. Just honest engineering work, one client at a time — for factories, shops, and fast-growing companies across India.</p>
+      <p class="sw-rlP">Every project is a long-term partnership to us, <strong>never a one-time deal.</strong></p>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= 2. WHAT DRIVES US (hello.html Specification) ================= -->
-    <section class="max-w-6xl mx-auto px-6 py-24 sm:py-28 animate-on-scroll">
-      <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-14">What drives us</p>
-
-      <div class="grid md:grid-cols-3 gap-10 lg:gap-14">
-        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
-            01
-          </div>
-          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Precision</h3>
-          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
-            Every line of code and every interaction is intentional. We refuse to ship complexity for the sake of
-            features. Architectural clarity is our permanent default.
-          </p>
-        </div>
-
-        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
-            02
-          </div>
-          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Partnership</h3>
-          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
-            We embed with your core leadership. Your operational goals become our roadmap. We measure engineering
-            success only by the measurable enterprise outcomes we create together.
-          </p>
-        </div>
-
-        <div class="soft-card rounded-3xl p-8 sm:p-10 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-[#FAF3F1] border border-[#E8D2CF] flex items-center justify-center mb-6 text-[#7D3024] font-bold text-base">
-            03
-          </div>
-          <h3 class="text-2xl font-bold mb-3.5 text-neutral-900 tracking-tight">Permanence</h3>
-          <p class="text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
-            We engineer systems meant to compound for decades &mdash; maintainable, scalable, and free from rented
-            technical debt. Short-term vendor lock-in has zero place at Salowtech.
-          </p>
-        </div>
+<!-- ═══════════════ TEAM / FOUNDERS ═══════════════ -->
+<section id="swTeam">
+  <div class="sw-head">
+    <h2><span class="sw-rl"><span>Meet the</span></span><span class="sw-rl"><span><em>founders.</em></span></span></h2>
+    <div class="sw-cap">Surat, Gujarat — 100% bootstrapped</div>
+  </div>
+  <div id="swFounders">
+    <div class="sw-fcard">
+      <div class="sw-fphw"><span class="sw-fnum">01</span><div class="sw-fph"><Image src={founder1} alt="Ayush Dubey" width={480} height={530} style="object-position:center 18%" loading="lazy" /></div></div>
+      <div class="sw-ftext">
+        <div class="sw-fghost">01</div>
+        <div class="sw-fname">Ayush Dubey</div>
+        <div class="sw-frole">Founder — Decision Maker</div>
+        <div class="sw-frule"></div>
+        <div class="sw-fbio">He sets the direction and makes the final call on every big decision. When something big must be decided, it lands on his desk.</div>
       </div>
-    </section>
-
-    <!-- ================= 3. OUR STORY + METRICS (hello.html Specification) ================= -->
-    <section class="max-w-6xl mx-auto px-6 py-12 animate-on-scroll">
-      <div class="grid lg:grid-cols-12 gap-10 items-stretch">
-        <!-- Story Card -->
-        <div class="lg:col-span-7 soft-card rounded-3xl p-8 sm:p-12 bg-white flex flex-col justify-center">
-          <h2 class="editorial-headline text-4xl sm:text-5xl mb-6 text-neutral-950 font-normal">Our Story</h2>
-          <div class="space-y-5 text-neutral-600 leading-relaxed text-base sm:text-lg font-normal">
-            <p>
-              Most software is overcomplicated. Bloated interfaces, endless configuration screens, and subscription
-              tools that create more manual work than they save. We saw this pattern repeat across Indian enterprises
-              and decided to engineer differently.
-            </p>
-            <p>
-              We started with an uncompromising belief: the best enterprise platforms feel obvious in hindsight. They
-              remove operational friction instead of adding unnecessary features. They respect the operator's time and
-              the engineer's craft in equal measure.
-            </p>
-            <p>
-              Today, we partner with ambitious manufacturing plants, retail logistics, and high-growth enterprises to
-              design software that compounds in value over years &mdash; not just quarters. Every client engagement is
-              treated as a permanent sovereign partnership, never a disposable transaction.
-            </p>
-          </div>
-        </div>
-
-        <!-- Metrics Cards Stack -->
-        <div class="lg:col-span-5 flex flex-col justify-between gap-5">
-          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
-            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-950 font-sans">2021</p>
-            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">Founded in Surat, Gujarat</p>
-          </div>
-          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
-            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-[#7D3024] font-sans">40+</p>
-            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">Senior Engineering Specialists</p>
-          </div>
-          <div class="soft-card rounded-3xl p-8 bg-white flex-1 flex flex-col justify-center">
-            <p class="text-4xl sm:text-5xl font-bold tracking-tight text-neutral-950 font-sans">Zero VC</p>
-            <p class="text-neutral-500 mt-1.5 text-base sm:text-lg font-medium">100% Bootstrapped &amp; Sovereign</p>
-          </div>
-        </div>
+    </div>
+    <div class="sw-fcard">
+      <div class="sw-fphw"><span class="sw-fnum">02</span><div class="sw-fph"><Image src={founder2} alt="Saladi Siddharth" width={480} height={530} style="object-position:center 15%" loading="lazy" /></div></div>
+      <div class="sw-ftext">
+        <div class="sw-fghost">02</div>
+        <div class="sw-fname">Saladi Siddharth</div>
+        <div class="sw-frole">Co-Founder — Growth</div>
+        <div class="sw-frule"></div>
+        <div class="sw-fbio">The core brain behind growth — he turns good work into new clients. He finds the people who need us and shows them what we can do.</div>
       </div>
-    </section>
-
-    <!-- ================= 4. HOW WE WORK (hello.html Specification) ================= -->
-    <section class="max-w-6xl mx-auto px-6 py-24 sm:py-28 animate-on-scroll">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <div class="lg:col-span-5">
-          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-4">How we work</p>
-          <h2 class="editorial-headline text-4xl sm:text-5xl leading-tight text-neutral-950 font-normal">
-            A calm, deliberate process designed for clarity.
-          </h2>
-          <p class="text-neutral-600 text-base sm:text-lg mt-5 leading-relaxed font-normal">
-            We reject chaotic agency churn. We work directly with founders and CTOs with zero junior middle-managers.
-          </p>
-        </div>
-
-        <div class="lg:col-span-7 space-y-8">
-          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
-            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">01</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Deep Discovery</h3>
-              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                We start by mapping the actual physical workflow, edge cases, and compliance constraints. No hasty
-                assumptions. No rushed, inaccurate estimates.
-              </p>
-            </div>
-          </div>
-
-          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
-            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">02</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Focused Execution</h3>
-              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                Dedicated senior squad. Daily automated staging builds. Complete transparency in Discord and GitHub. We
-                ship production increments, not slide-deck theatre.
-              </p>
-            </div>
-          </div>
-
-          <div class="soft-card rounded-3xl p-8 bg-white flex items-start gap-6">
-            <div class="text-3xl sm:text-4xl font-serif text-[#7D3024] font-normal leading-none pt-1">03</div>
-            <div>
-              <h3 class="text-xl font-bold mb-2 text-neutral-900 tracking-tight">Long-term Ownership</h3>
-              <p class="text-neutral-600 text-base sm:text-lg leading-relaxed">
-                We stay accountable for the lifetime of your deployment. Comprehensive codemaps, on-premise
-                infrastructure handover, and 24/7 SLA stewardship are included by design.
-              </p>
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="sw-fcard">
+      <div class="sw-fphw"><span class="sw-fnum">03</span><div class="sw-fph"><Image src={founder3} alt="Akif Hussain" width={480} height={530} style="object-position:center 12%" loading="lazy" /></div></div>
+      <div class="sw-ftext">
+        <div class="sw-fghost">03</div>
+        <div class="sw-fname">Akif Hussain</div>
+        <div class="sw-frole">Co-Founder — Support &amp; Management</div>
+        <div class="sw-frule"></div>
+        <div class="sw-fbio">He keeps every project on track and every client looked after. If you work with us, he makes sure nothing slips.</div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- ================= 5. CULTURE & VALUES INFINITE GALLERY ================= -->
-    <section class="py-16 overflow-hidden bg-[#FAF7F2]" aria-label="Culture photo gallery">
-      <div class="max-w-6xl mx-auto px-6 mb-10 text-center">
-        <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-3">Our Culture</p>
-        <h2 class="editorial-headline text-3xl sm:text-4xl text-neutral-950 font-normal">
-          Craft in action &mdash; inside the Salowtech engineering studio.
-        </h2>
-      </div>
+<!-- ═══════════════ STATS ═══════════════ -->
+<section id="swStats">
+  <div class="sw-big">facts</div>
+  <div class="sw-kick">Salowtech in numbers</div>
+  <div class="sw-grid">
+    <div class="sw-stat"><div class="sw-bar"></div><div class="sw-num" data-count="2026" data-plain="1">0</div><div class="sw-lb">Founded in Surat, Gujarat</div></div>
+    <div class="sw-stat"><div class="sw-bar"></div><div class="sw-num" data-count="3">0</div><div class="sw-lb">Founders, one focused team</div></div>
+    <div class="sw-stat"><div class="sw-bar"></div><div class="sw-num" data-count="100" data-suffix="%">0</div><div class="sw-lb">Bootstrapped — no outside money</div></div>
+    <div class="sw-stat"><div class="sw-bar"></div><div class="sw-num" data-count="24" data-suffix="h">0</div><div class="sw-lb">Fixed-scope roadmap after we talk</div></div>
+  </div>
+</section>
 
-      <!-- Top Row Marquee -->
-      <div class="overflow-hidden w-full mb-6 relative">
-        <div class="marquee-track-horizontal flex items-center gap-6">
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs1}
-              alt="Salowtech culture snapshot 1"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs2}
-              alt="Salowtech culture snapshot 2"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs3}
-              alt="Salowtech culture snapshot 3"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs4}
-              alt="Salowtech culture snapshot 4"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs5}
-              alt="Salowtech culture snapshot 5"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <!-- Loop Duplicates -->
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs1}
-              alt="Salowtech culture snapshot 1"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs2}
-              alt="Salowtech culture snapshot 2"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs3}
-              alt="Salowtech culture snapshot 3"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs4}
-              alt="Salowtech culture snapshot 4"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs5}
-              alt="Salowtech culture snapshot 5"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-        </div>
-      </div>
+<!-- ═══════════════ VALUES ═══════════════ -->
+<div id="swValuesWrap">
+  <div id="swValuesKick"><div class="sw-k">What drives us</div><h2>Three things we <em>never compromise.</em></h2></div>
+  <section class="sw-vcard sw-v1"><div class="sw-inner">
+    <svg class="sw-ill" viewBox="0 0 220 180" fill="none" stroke="#1C1713" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M28 152 Q84 146 138 151 T206 149" opacity=".9"/><path d="M40 159 Q112 154 192 157" stroke-width="2.5" opacity=".3"/>
+      <path d="M116 120 Q152 116 188 120"/><path d="M126 120 L124 148 M180 120 L182 148"/>
+      <g id="prChar1"><circle cx="60" cy="56" r="16"/><path d="M45 52 Q46 38 61 37 Q76 38 76 54"/><circle cx="55" cy="56" r="1.8" fill="#1C1713" stroke="none"/><circle cx="66" cy="56" r="1.8" fill="#1C1713" stroke="none"/><path d="M56 64 Q61 68 66 64" stroke-width="3"/><path d="M61 73 Q59 96 60 116"/><path d="M60 116 Q51 130 49 148 M60 116 Q69 130 71 148"/><path d="M61 82 Q79 88 92 97"/><path d="M61 84 Q48 96 45 108"/></g>
+      <g id="prMag"><circle cx="106" cy="86" r="13" stroke="#7D3024" stroke-width="4.5"/><path d="M97 94 L90 100" stroke="#7D3024" stroke-width="5"/><path d="M100 80 Q104 76 110 77" stroke-width="2.5" opacity=".6"/></g>
+      <circle cx="152" cy="106" r="9" stroke="#7D3024"/><path d="M152 95 v-5 M152 117 v5 M141 106 h-5 M163 106 h5" stroke="#7D3024" stroke-width="2.5" opacity=".55"/>
+      <circle id="prBlink" cx="152" cy="106" r="3.4" fill="#ff501a" stroke="none"/>
+      <path d="M172 66 l2.4 6.4 6.4 2.4 -6.4 2.4 -2.4 6.4 -2.4 -6.4 -6.4 -2.4 6.4 -2.4 Z" fill="#ff501a" stroke="none" opacity=".9"/>
+    </svg>
+    <div class="sw-vnum">01</div>
+    <div><h3>Precision</h3><p>We sweat the small things — every screen, every click, every line of code — so your team never has to fight the software.</p></div>
+    <div class="sw-foot"><span>Simple on the surface</span><span>Powerful underneath ✦</span></div>
+    <div class="sw-shade"></div>
+  </div></section>
+  <section class="sw-vcard sw-v2"><div class="sw-inner">
+    <svg class="sw-ill" viewBox="0 0 220 180" fill="none" stroke="#FAF7F0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M24 152 Q84 146 140 151 T210 149" opacity=".9"/><path d="M38 159 Q112 154 196 157" stroke-width="2.5" opacity=".3"/>
+      <g><circle cx="52" cy="56" r="15"/><path d="M38 52 Q39 39 53 38 Q67 39 67 53"/><circle cx="56" cy="54" r="1.8" fill="#FAF7F0" stroke="none"/><path d="M53 62 Q57 65 61 62" stroke-width="3"/><path d="M52 72 Q50 96 51 116"/><path d="M51 116 Q43 130 41 148 M51 116 Q59 130 61 148"/><path d="M52 82 Q72 88 92 94"/></g>
+      <g><circle cx="168" cy="56" r="15"/><path d="M154 53 Q154 39 168 38 Q182 39 183 52"/><circle cx="164" cy="54" r="1.8" fill="#FAF7F0" stroke="none"/><path d="M159 62 Q163 65 167 62" stroke-width="3"/><path d="M168 72 Q170 96 169 116"/><path d="M169 116 Q161 130 159 148 M169 116 Q177 130 179 148"/><path d="M168 82 Q148 88 128 94"/></g>
+      <g id="ptShake"><path d="M92 94 Q100 86 110 88 Q120 86 128 94"/><path d="M98 98 Q110 92 122 98" stroke-width="3"/><path d="M86 82 Q82 76 78 74 M134 82 Q138 76 142 74" stroke-width="2.5" opacity=".55"/></g>
+      <path id="ptSpark" d="M0 -11 L3 -3 11 0 3 3 0 11 -3 3 -11 0 -3 -3 Z" fill="#ff501a" stroke="none"/>
+    </svg>
+    <div class="sw-vnum">02</div>
+    <div><h3>Partnership</h3><p>We work inside your business, not outside it. Your goals become our roadmap, and we only win when you win.</p></div>
+    <div class="sw-foot"><span>Zero middle-managers</span><span>Founders only ✦</span></div>
+    <div class="sw-shade"></div>
+  </div></section>
+  <section class="sw-vcard sw-v3"><div class="sw-inner">
+    <svg class="sw-ill" viewBox="0 0 220 180" fill="none" stroke="#1C1713" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M24 152 Q84 146 140 151 T210 149" opacity=".9"/><path d="M38 159 Q112 154 196 157" stroke-width="2.5" opacity=".3"/>
+      <g id="pmTree"><path d="M152 148 Q149 122 151 100" stroke="#581C15"/><path d="M129 88 Q122 68 140 62 Q145 48 160 54 Q177 51 178 69 Q188 82 173 92 Q160 102 146 95 Q131 100 129 88 Z" stroke="#581C15"/><path d="M151 112 Q140 106 136 98 M151 116 Q162 110 166 102" stroke="#581C15" stroke-width="3"/></g>
+      <g id="pmChar"><circle cx="66" cy="62" r="15"/><path d="M52 58 Q53 45 67 44 Q81 45 81 59"/><circle cx="70" cy="60" r="1.8" fill="#1C1713" stroke="none"/><path d="M67 68 Q71 71 75 68" stroke-width="3"/><path d="M66 78 Q64 100 65 120"/><path d="M65 120 Q57 132 55 148 M65 120 Q73 132 75 148"/><path d="M66 88 Q86 96 100 106"/></g>
+      <g id="pmCan"><path d="M96 104 Q110 99 120 105 L118 122 Q107 127 98 121 Z"/><path d="M119 109 Q131 106 137 98"/><path d="M99 108 Q92 104 90 98" stroke-width="3"/></g>
+      <circle id="wd1" cx="140" cy="104" r="2.4" fill="#ff501a" stroke="none"/><circle id="wd2" cx="145" cy="104" r="2.2" fill="#ff501a" stroke="none"/><circle id="wd3" cx="149" cy="104" r="2.4" fill="#ff501a" stroke="none"/>
+    </svg>
+    <div class="sw-vnum">03</div>
+    <div><h3>Permanence</h3><p>We build software meant to last for years, not months — easy to maintain, easy to grow, and fully owned by you.</p></div>
+    <div class="sw-foot"><span>No rented tech debt</span><span>You own the code ✦</span></div>
+    <div class="sw-shade"></div>
+  </div></section>
+</div>
 
-      <!-- Bottom Row Marquee (Reverse) -->
-      <div class="overflow-hidden w-full relative">
-        <div class="marquee-track-reverse flex items-center gap-6">
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs6}
-              alt="Salowtech culture snapshot 6"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs7}
-              alt="Salowtech culture snapshot 7"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs8}
-              alt="Salowtech culture snapshot 8"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs9}
-              alt="Salowtech culture snapshot 9"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs10}
-              alt="Salowtech culture snapshot 10"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs11}
-              alt="Salowtech culture snapshot 11"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <!-- Loop Duplicates -->
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs6}
-              alt="Salowtech culture snapshot 6"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs7}
-              alt="Salowtech culture snapshot 7"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs8}
-              alt="Salowtech culture snapshot 8"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-          <div class="w-72 h-48 rounded-2xl overflow-hidden soft-card flex-shrink-0 bg-stone-100">
-            <Image
-              src={cs9}
-              alt="Salowtech culture snapshot 9"
-              class="w-full h-full object-cover"
-              width={288}
-              height={192}
-              loading="lazy"
-              decoding="async"
-              format="webp"
-              quality={88}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- ═══════════════ HOW WE WORK ═══════════════ -->
+<section id="swHow">
+  <div class="sw-head"><div class="sw-k">How we work</div><h2>A calm process, <em>from hello to launch.</em></h2></div>
+  <div id="swHowSteps">
+    <div id="swHowLine"><i></i></div>
+    <div class="sw-cols">
+      <div class="sw-hstep"><div class="sw-pt">1</div><h4>We listen first</h4><p>We map how your business actually runs — the daily work, the edge cases — before writing a single line of code.</p></div>
+      <div class="sw-hstep"><div class="sw-pt">2</div><h4>We build in the open</h4><p>You see real progress every single day. No surprises at the end, no theatre in between.</p></div>
+      <div class="sw-hstep"><div class="sw-pt">3</div><h4>We stay after launch</h4><p>Lifetime support and customisations are built in from day one. Your software is never abandoned.</p></div>
+    </div>
+  </div>
+</section>
 
+<!-- ═══════════════ CTA ═══════════════ -->
+<section id="swCta">
+  <div class="sw-mqBack"><div class="sw-mq" id="swMq3"></div></div>
+  <span class="sw-spark" style="--sx:12%;--sy:22%;--d:0">✦</span>
+  <span class="sw-spark" style="--sx:85%;--sy:18%;--d:1.7">✦</span>
+  <span class="sw-spark" style="--sx:74%;--sy:66%;--d:3.1">✦</span>
+  <span class="sw-spark" style="--sx:20%;--sy:72%;--d:4.4">✦</span>
+  <span class="sw-spark" style="--sx:50%;--sy:10%;--d:2.5">✦</span>
+  <h2 id="swCtaH2"><span class="sw-rl"><span>Let's build</span></span> <span class="sw-rl"><span><em>yours.</em></span></span></h2>
+  <p class="sw-sub">Tell us what your business needs. You get a fixed-scope plan and a clear price within 24 hours — protected by a mutual NDA.</p>
+  <a class="sw-btnLight" href="/contact">Start a conversation <span>→</span></a>
+  <a class="sw-mail" href="mailto:contact@salowtech.com">contact@salowtech.com</a>
+  <div id="swMascotCta"><Image src={mascotImg} alt="Salowtech mascot" width={220} height={220} loading="lazy" /></div>
+</section>
 
-    <!-- ================= 7. CLOSING & STANDARDIZED QUOTE FORM ================= -->
-    <section class="max-w-6xl mx-auto px-6 py-20 sm:py-28 animate-on-scroll" id="contact">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        <!-- Left Closing Statement (hello.html Specification) -->
-        <div class="lg:col-span-6">
-          <p class="text-xs sm:text-sm font-semibold tracking-widest text-[#7D3024] uppercase mb-4">
-            Start a conversation
-          </p>
-          <h2 class="editorial-headline text-4xl sm:text-5xl md:text-6xl text-neutral-950 font-normal leading-[1.08] mb-6">
-            We don’t chase trends.
-            <br />
-            We compound quality.
-          </h2>
-          <p class="text-neutral-600 text-lg leading-relaxed mb-8 max-w-lg">
-            If you’re looking for an engineering partner who values depth over noise and long-term sovereignty over
-            quick hacks, we should talk.
-          </p>
+</div><!-- /.sw-about -->
 
-          <div class="space-y-4 text-sm text-neutral-700">
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
-                &check;
-              </span>
-              <span>Fixed-scope enterprise roadmaps delivered in under 24 hours</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
-                &check;
-              </span>
-              <span>100% mutual NDA signed prior to code audits</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-6 h-6 rounded-full bg-[#FAF3F1] text-[#7D3024] flex items-center justify-center font-bold text-xs">
-                &check;
-              </span>
-              <span>Full source-code repository ownership transferred on day one</span>
-            </div>
-          </div>
-        </div>
+<style is:global>
+/* ══════════════════════════════════════════════════════════
+   SALOWTECH ABOUT PAGE — SCOPED CSS (ported from hello.astro)
+   All rules scoped under .sw-about to prevent global conflicts
+   ══════════════════════════════════════════════════════════ */
+:root{--sw-cream:#FAF7F0;--sw-beige:#F5F1E8;--sw-maroon:#7D3024;--sw-maroon-deep:#581C15;--sw-ink:#1C1713;--sw-accent:#ff501a;--sw-sand:#c8b99d;--sw-border:#E8E3D7;--sw-tan:#D2C1AF;--sw-serif:'Instrument Serif',Georgia,serif;--sw-sans:'Plus Jakarta Sans',system-ui,sans-serif}
+.sw-about{position:relative;background:var(--sw-cream);color:var(--sw-ink);font-family:var(--sw-sans);overflow-x:clip;-webkit-font-smoothing:antialiased}
+.sw-about *{box-sizing:border-box}
+.sw-about h1,.sw-about h2,.sw-about h3,.sw-about h4,.sw-about p{margin:0;padding:0}
+.sw-about section{content-visibility:visible!important;contain-intrinsic-size:auto!important}
+.sw-about ::selection{background:var(--sw-maroon);color:var(--sw-cream)}
+.sw-about img{max-width:100%;height:auto}
 
-        <!-- Right Standardized Request A Quote Form -->
-        <div class="lg:col-span-6">
-          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 shadow-[0_20px_50px_-10px_rgba(125, 48, 36,0.08)]">
-            <div class="flex items-center justify-between mb-4">
-              <div>
-                <h3 class="text-xl sm:text-2xl font-bold text-neutral-900 tracking-tight font-sans">Request A Quote</h3>
-                <p class="text-xs sm:text-sm text-stone-500 mt-0.5">
-                  Architecture roadmap &amp; sprint estimate in 24 hours
-                </p>
-              </div>
-              <div class="w-10 h-10 rounded-full bg-[#FAF7F2] border border-[#7D3024]/20 p-1 flex items-center justify-center shadow-xs overflow-hidden shrink-0" title="Salowtech Mascot">
-                <Image
-                  src={salowtechMascot}
-                  alt="Salowtech Mascot"
-                  width={40}
-                  height={40}
-                  class="w-full h-full object-contain"
-                  loading="eager"
-                />
-              </div>
-            </div>
+/* grain */
+#swGrain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:200;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");animation:swGrain 1.2s steps(4) infinite}
+@keyframes swGrain{0%{transform:translate(0,0)}25%{transform:translate(-2%,1%)}50%{transform:translate(1%,-2%)}75%{transform:translate(-1%,2%)}100%{transform:translate(0,0)}}
 
-            <form class="space-y-3.5" onsubmit="event.preventDefault(); handleQuoteFormSubmit(this);">
-              <!-- Honeypot anti-spam trap (invisible to humans and screen-readers) -->
-              <div class="hidden" aria-hidden="true" style="display:none !important;">
-                <input type="text" name="_gotcha" id="about-gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
-              </div>
-              <div>
-                <label class="sr-only" for="about-name">
-                  Name*
-                </label>
-                <input
-                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
-                  id="about-name"
-                  name="name"
-                  placeholder="Name*"
-                  required=""
-                  type="text"
-                />
-              </div>
-              <div>
-                <label class="sr-only" for="about-phone">
-                  Phone No*
-                </label>
-                <input
-                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
-                  id="about-phone"
-                  name="phone"
-                  placeholder="Phone No*"
-                  required=""
-                  type="tel"
-                />
-              </div>
-              <div>
-                <label class="sr-only" for="about-email">
-                  Email*
-                </label>
-                <input
-                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none"
-                  id="about-email"
-                  name="email"
-                  placeholder="Email*"
-                  required=""
-                  type="email"
-                />
-              </div>
-              <div>
-                <label class="sr-only" for="about-msg">
-                  Type Your Message*
-                </label>
-                <textarea
-                  class="w-full px-4 py-3 text-sm bg-[#F8FAFC] border border-stone-200 rounded-xl focus:ring-2 focus:ring-[#7D3024] focus:border-[#7D3024] focus:bg-white transition placeholder:text-stone-400 text-stone-800 outline-none resize-none"
-                  id="about-msg"
-                  name="message"
-                  placeholder="Type Your Message*"
-                  required=""
-                  rows="3"
-                ></textarea>
-              </div>
+/* progress bar */
+#swProgress{position:fixed;left:0;top:0;height:2px;width:100%;background:var(--sw-maroon);transform-origin:left;transform:scaleX(0);z-index:9999;pointer-events:none}
 
-              <!-- Trust / NDA Badge -->
-              <div class="px-3.5 py-2.5 bg-[#FAF9F6] border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600">
-                <span class="flex items-center gap-2">
-                  <svg class="w-3.5 h-3.5 text-[#7D3024]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                  <span class="font-medium">100% Strict Mutual NDA Protected</span>
-                </span>
-                <span class="font-bold text-neutral-900">Verified</span>
-              </div>
-              <!-- Google reCAPTCHA v3 Protection Badge -->
-              <div class="px-3.5 py-2.5 bg-white border border-stone-200 rounded-xl flex items-center justify-between text-xs text-stone-600 shadow-2xs">
-                <span class="flex items-center gap-2 font-medium text-stone-700">
-                  <svg
-                    class="w-4 h-4 text-[#1a73e8]"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-                    />
-                  </svg>
-                  <span>Protected by Google reCAPTCHA v3</span>
-                </span>
-                <span class="text-[11px] text-stone-400">
-                  <a
-                    href="https://policies.google.com/privacy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:underline hover:text-stone-600 transition-colors"
-                  >
-                    Privacy
-                  </a>
-                  <span class="mx-1">&bull;</span>
-                  <a
-                    href="https://policies.google.com/terms"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:underline hover:text-stone-600 transition-colors"
-                  >
-                    Terms
-                  </a>
-                </span>
-              </div>
+/* hero */
+#swHero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:0 clamp(20px,5vw,72px)}
+#swHero .sw-watermark{position:absolute;top:44%;left:50%;font-family:var(--sw-serif);font-size:clamp(300px,42vw,640px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(125,48,36,.13);pointer-events:none;white-space:nowrap;transform:translate(-50%,-50%)}
+.sw-eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--sw-maroon);margin-bottom:clamp(18px,3vh,34px)}
+.sw-eyebrow .sw-dot{width:9px;height:9px;border-radius:50%;background:var(--sw-maroon)}
+.sw-h1{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(52px,8.4vw,124px)!important;line-height:1.02!important;letter-spacing:-.015em!important;max-width:14ch;position:relative;z-index:2;color:var(--sw-ink)!important}
+.sw-h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.08em;margin-bottom:-.08em}
+.sw-h1 .wi{display:inline-block;will-change:transform,opacity}
+.sw-h1 em{font-style:italic;color:var(--sw-accent);position:relative;display:inline-block}
+#swSwash{position:absolute;left:-4%;bottom:-.22em;width:108%;height:.28em;overflow:visible}
+#swHeroSub{margin-top:clamp(20px,3.4vh,36px);max-width:44ch;font-size:clamp(15px,1.25vw,18px)!important;line-height:1.65;color:rgba(28,23,19,.72);font-weight:500;position:relative;z-index:2}
+#swHeroMeta{margin-top:clamp(24px,4vh,44px);display:flex;gap:14px;align-items:center;position:relative;z-index:2}
+.sw-btnPrimary{display:inline-flex;align-items:center;gap:10px;background:var(--sw-maroon);color:var(--sw-cream);padding:16px 30px;border-radius:100px;font-weight:700;font-size:14px;letter-spacing:.02em;text-decoration:none;box-shadow:0 18px 40px -14px rgba(125,48,36,.5)}
+.sw-btnGhost{display:inline-flex;align-items:center;gap:10px;color:var(--sw-ink);padding:16px 8px;font-weight:600;font-size:14px;text-decoration:none;border-bottom:1.5px solid var(--sw-ink)}
+#swBadge{position:absolute;right:clamp(60px,9vw,150px);top:24%;width:132px;height:132px;z-index:3}
+#swBadge svg{width:100%;height:100%;overflow:visible}
+#swBadge text{font-size:11.2px;font-weight:700;letter-spacing:.24em;fill:var(--sw-maroon);text-transform:uppercase;font-family:var(--sw-sans)}
+#swBadge .sw-star{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--sw-accent)}
+#swMascotHero{position:absolute;right:clamp(24px,6vw,110px);bottom:16%;width:clamp(120px,15vw,210px);z-index:4;will-change:transform}
+#swMascotShadow{position:absolute;right:clamp(24px,6vw,110px);bottom:calc(16% - 22px);width:clamp(100px,12vw,170px);height:22px;border-radius:50%;background:rgba(88,28,21,.22);filter:blur(7px);z-index:3}
+#swMascotHero img{width:100%;height:auto;filter:drop-shadow(0 24px 30px rgba(88,28,21,.25))}
+#swBubble{position:absolute;right:clamp(140px,17vw,290px);bottom:38%;z-index:5;background:#fff;border:1.5px solid var(--sw-ink);border-radius:18px 18px 4px 18px;padding:12px 18px;font-weight:600;font-size:15px;box-shadow:5px 6px 0 rgba(28,23,19,.9);white-space:nowrap;transform-origin:bottom right}
+#swScrollHint{position:absolute;left:clamp(20px,5vw,72px);bottom:110px;display:flex;align-items:center;gap:12px;font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(28,23,19,.55);z-index:3}
+#swScrollHint .sw-line{width:1.5px;height:44px;background:rgba(28,23,19,.25);position:relative;overflow:hidden}
+#swScrollHint .sw-line i{position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--sw-maroon)}
+@media(max-width:700px){#swBadge{right:20px;top:13%;width:92px;height:92px}#swMascotHero{right:4px;bottom:12.5%;width:100px}#swMascotShadow{right:8px;bottom:calc(12.5% - 14px);width:82px;height:14px}#swBubble{display:none}#swScrollHint{display:none}}
 
-              <!-- Submit Button -->
-              <div class="pt-1">
-                <button type="submit" class="btn-salow-submit">
-                  <span class="btn-salow-logo-mark">
-                    <Image
-                      src={salowtechLogo}
-                      width={24}
-                      height={24}
-                      alt="Salowtech"
-                      loading="lazy"
-                      decoding="async"
-                      format="webp"
-                      quality={90}
-                    />
-                  </span>
-                  <span class="btn-salow-text">SUBMIT REQUEST</span>
-                  <span class="btn-salow-arrow">&rarr;</span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+/* marquee */
+#swHeroMarquee{position:relative;background:var(--sw-maroon);color:var(--sw-cream);overflow:hidden;padding:20px 0;transform:rotate(-1.2deg) scale(1.02);z-index:6;box-shadow:0 20px 50px -20px rgba(88,28,21,.4)}
+.sw-mq{display:flex;white-space:nowrap;will-change:transform}
+.sw-mq span{font-family:var(--sw-serif);font-size:clamp(20px,2.1vw,30px);letter-spacing:.06em;padding:0 26px;display:inline-flex;align-items:center;gap:26px}
+.sw-mq .sw-st{color:var(--sw-accent);font-size:.8em}
 
-    <!-- ================= 8. CTA SECTION ================= -->
-    <section class="cta-wrap" id="cta-section">
-      <div class="cta-card">
-        <div class="cta-text">
-          <h2>
-            Choose SalowTech.
-            <br />
-            Accelerate business growth.
-          </h2>
-          <a href="#contact" class="cta-btn">
-            Start Your Journey &rarr;
-          </a>
-          <ul class="cta-points">
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 12l5 5L20 6" />
-              </svg>
-              Custom AI solutions for your business
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 12l5 5L20 6" />
-              </svg>
-              Fast setup and delivery
-            </li>
-            <li>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 12l5 5L20 6" />
-              </svg>
-              Dedicated support after launch
-            </li>
-          </ul>
-        </div>
+/* statement */
+#swStmtWrap{position:relative;height:320vh}
+#swStmt{position:sticky;top:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:0 clamp(20px,9vw,140px);background:var(--sw-cream)}
+#swStmt .sw-kick{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sw-accent);margin-bottom:28px}
+#swStmt p{font-family:var(--sw-serif)!important;font-size:clamp(30px,4.3vw,60px)!important;line-height:1.22!important;letter-spacing:-.01em;max-width:22ch}
+#swStmt p .sw-sw{display:inline-block;transition:none}
+#swStmt p .sw-hl{color:var(--sw-maroon)}
+#swStmt p .sw-it{font-style:italic;color:var(--sw-maroon)}
 
-        <div class="cta-art" aria-hidden="true">
-          <Image
-            src={ctaIllustration}
-            alt="Salowtech Growth Illustration"
-            class="cta-img"
-            width={967}
-            height={1024}
-            loading="lazy"
-            decoding="async"
-            format="webp"
-            quality={90}
-          />
-        </div>
-      </div>
-    </section>
-  </main>
+/* story */
+#swStory{position:relative;padding:clamp(80px,14vh,150px) clamp(20px,5vw,72px);background:var(--sw-beige);overflow:hidden;border-top:1px solid var(--sw-border);border-bottom:1px solid var(--sw-border)}
+#swStory .sw-rules{position:absolute;inset:0;pointer-events:none;background-image:repeating-linear-gradient(90deg,rgba(28,23,19,.045) 0 1px,transparent 1px 128px)}
+#swStory .sw-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,6vw,90px);max-width:1280px;margin:0 auto;align-items:start}
+#swStory h2{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(44px,5.6vw,84px)!important;line-height:1.04!important;letter-spacing:-.02em!important}
+#swStory h2 em{font-style:italic;color:var(--sw-maroon)}
+.sw-rl{display:block;overflow:hidden}
+.sw-rl>span{display:inline-block;will-change:transform}
+#swStory .sw-body p{font-size:clamp(15px,1.3vw,19px)!important;line-height:1.75;color:rgba(28,23,19,.78);margin-bottom:22px;font-weight:500;max-width:52ch}
+#swStory .sw-body strong{color:var(--sw-maroon)}
+@media(max-width:820px){#swStory .sw-grid{grid-template-columns:1fr}}
 
-  <!-- ================= FOOTER ================= -->
+/* team */
+#swTeam{position:relative;background:var(--sw-cream);padding:clamp(80px,13vh,140px) clamp(20px,5vw,72px) clamp(60px,9vh,100px)}
+#swTeam .sw-head{max-width:1120px;margin:0 auto 56px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+#swTeam h2{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(40px,5vw,74px)!important;line-height:1.05!important;letter-spacing:-.02em!important}
+#swTeam h2 em{font-style:italic;color:var(--sw-maroon)}
+#swTeam .sw-cap{font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(28,23,19,.55)}
+#swFounders{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(100px,16vh,180px)}
+.sw-fcard{position:relative;display:grid;grid-template-columns:clamp(240px,26vw,310px) 1fr;gap:clamp(36px,5.5vw,90px);align-items:center;will-change:transform}
+.sw-fcard:nth-child(even){grid-template-columns:1fr clamp(240px,26vw,310px)}
+.sw-fcard:nth-child(even) .sw-fphw{order:2;margin-left:auto}
+.sw-fphw{position:relative;width:100%;max-width:310px}
+.sw-fcard .sw-fph{aspect-ratio:3/3.35;border-radius:24px;overflow:hidden;background:var(--sw-beige);border:1px solid var(--sw-border);box-shadow:0 30px 65px -25px rgba(88,28,21,.36)}
+.sw-fcard .sw-fph>img{width:100%;height:100%;object-fit:cover;filter:saturate(.94) contrast(1.04);will-change:transform}
+.sw-fnum{position:absolute;top:14px;left:14px;z-index:2;background:var(--sw-cream);border:1px solid var(--sw-border);border-radius:100px;padding:5px 13px;font-family:var(--sw-serif);font-size:14px;color:var(--sw-maroon);box-shadow:0 6px 16px -6px rgba(28,23,19,.3)}
+.sw-ftext{position:relative}
+.sw-fghost{font-family:var(--sw-serif);font-size:clamp(100px,10vw,160px);line-height:.78;color:rgba(125,48,36,.09);margin:0 0 -26px -6px;user-select:none;pointer-events:none}
+.sw-frule{width:46px;height:2px;background:var(--sw-accent);margin:0 0 16px;transform-origin:left}
+.sw-fname{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(32px,3.4vw,54px)!important;letter-spacing:-.015em;line-height:1.04}
+.sw-frole{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sw-maroon);margin:10px 0 14px}
+.sw-fbio{font-size:15.5px;line-height:1.65;color:rgba(28,23,19,.74);font-weight:500;max-width:46ch}
+@media(max-width:820px){.sw-fcard{grid-template-columns:1fr;gap:22px}.sw-fcard:nth-child(even) .sw-fphw{order:0;margin-left:0}.sw-fcard .sw-fph{aspect-ratio:4/4.1;border-radius:22px}.sw-fghost{font-size:88px;margin-bottom:-18px}.sw-fbio{font-size:14.5px}}
+
+/* stats */
+#swStats{background:linear-gradient(135deg,#7d3024,#5c2017);color:var(--sw-cream);padding:clamp(80px,13vh,140px) clamp(20px,5vw,72px);position:relative;overflow:hidden}
+#swStats .sw-big{position:absolute;top:-4%;left:50%;transform:translateX(-50%);font-family:var(--sw-serif);font-size:clamp(180px,26vw,400px);color:rgba(250,247,240,.05);white-space:nowrap;pointer-events:none;line-height:1}
+#swStats .sw-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(24px,3vw,48px);position:relative}
+.sw-stat .sw-num{font-family:var(--sw-serif)!important;font-size:clamp(54px,6vw,96px)!important;line-height:1;color:var(--sw-cream);letter-spacing:-.02em}
+.sw-stat .sw-lb{margin-top:14px;font-size:clamp(12px,1vw,14px)!important;font-weight:600;line-height:1.6;color:rgba(250,247,240,.85);max-width:20ch}
+.sw-stat+.sw-stat{border-left:1px solid rgba(250,247,240,.16);padding-left:clamp(18px,2.4vw,40px)}
+.sw-stat .sw-bar{width:44px;height:2px;background:var(--sw-accent);margin-bottom:20px;transform-origin:left}
+#swStats .sw-kick{max-width:1280px;margin:0 auto 56px;font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sw-accent);position:relative}
+@media(max-width:820px){#swStats .sw-grid{grid-template-columns:1fr 1fr;gap:40px 24px}.sw-stat+.sw-stat{border-left:0;padding-left:0}}
+
+/* values */
+#swValuesWrap{position:relative;background:var(--sw-cream)}
+.sw-vcard{position:relative;height:100vh;display:flex;align-items:center;justify-content:center;padding:0 clamp(20px,5vw,72px)}
+.sw-vcard .sw-inner{position:relative;overflow:hidden;width:100%;max-width:1180px;min-height:min(62vh,560px);border-radius:clamp(20px,2.6vw,36px);padding:clamp(36px,6vw,84px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,5vw,80px);align-content:center;box-shadow:0 40px 90px -30px rgba(88,28,21,.28);will-change:transform;border:1px solid rgba(28,23,19,.08)}
+.sw-vcard .sw-shade{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0}
+.sw-v1 .sw-shade{background:#FAF7F0}.sw-v2 .sw-shade{background:#581C15}.sw-v3 .sw-shade{background:#FAF7F0}
+.sw-vcard .sw-foot{grid-column:1/-1;border-top:1.5px solid rgba(28,23,19,.14);padding-top:20px;display:flex;justify-content:space-between;gap:12px;font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.sw-v2 .sw-foot{border-color:rgba(250,247,240,.28);color:rgba(250,247,240,.8)}
+.sw-v3 .sw-foot{border-color:rgba(88,28,21,.25);color:rgba(88,28,21,.75)}
+.sw-vcard .sw-vnum{font-family:var(--sw-serif);font-size:clamp(90px,13vw,220px);line-height:.9;letter-spacing:-.03em}
+.sw-vcard h3{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(38px,4.6vw,68px)!important;letter-spacing:-.02em;margin-bottom:18px}
+.sw-vcard p{font-size:clamp(15px,1.25vw,19px)!important;line-height:1.7;max-width:46ch;font-weight:500}
+.sw-v1 .sw-inner{background:#fff;border-top:1.5px solid rgba(255,255,255,.9)}.sw-v1 .sw-vnum{color:rgba(125,48,36,.16)}.sw-v1 h3{color:var(--sw-maroon)}.sw-v1 p{color:rgba(28,23,19,.75)}
+.sw-v2 .sw-inner{background:linear-gradient(135deg,#7d3024,#5c2017);border-top:1.5px solid rgba(250,247,240,.22)}.sw-v2 .sw-vnum{color:rgba(250,247,240,.2)}.sw-v2 h3{color:var(--sw-cream)}.sw-v2 p{color:rgba(250,247,240,.85)}
+.sw-v3 .sw-inner{background:var(--sw-tan);border-top:1.5px solid rgba(255,255,255,.55)}.sw-v3 .sw-vnum{color:rgba(88,28,21,.18)}.sw-v3 h3{color:var(--sw-maroon-deep)}.sw-v3 p{color:rgba(88,28,21,.8)}
+#swValuesKick{padding:clamp(80px,12vh,130px) clamp(20px,5vw,72px) 10px;text-align:center}
+#swValuesKick .sw-k{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sw-accent);margin-bottom:16px}
+#swValuesKick h2{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(40px,5vw,74px)!important;letter-spacing:-.02em}
+#swValuesKick h2 em{font-style:italic;color:var(--sw-maroon)}
+.sw-vcard .sw-ill{position:absolute;top:clamp(22px,3.4vw,42px);right:clamp(24px,3.6vw,48px);width:clamp(150px,15vw,220px);height:auto;z-index:2}
+@media(max-width:700px){.sw-vcard .sw-inner{grid-template-columns:1fr;gap:8px}.sw-vcard .sw-vnum{font-size:88px}.sw-vcard .sw-ill{width:118px;top:18px;right:18px}}
+
+/* how */
+#swHow{background:var(--sw-beige);border-top:1px solid var(--sw-border);padding:clamp(90px,13vh,150px) clamp(20px,5vw,72px);position:relative;overflow:hidden}
+#swHow .sw-head{max-width:1180px;margin:0 auto 70px}
+#swHow .sw-k{font-size:12px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--sw-accent);margin-bottom:16px}
+#swHow h2{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(40px,5vw,74px)!important;letter-spacing:-.02em;line-height:1.05}
+#swHow h2 em{font-style:italic;color:var(--sw-maroon)}
+#swHowSteps{max-width:1180px;margin:0 auto;position:relative}
+#swHowLine{position:absolute;left:0;right:0;top:27px;height:2px;background:rgba(28,23,19,.12)}
+#swHowLine i{position:absolute;left:0;top:0;height:100%;width:0;background:var(--sw-maroon)}
+#swHowSteps .sw-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,60px)}
+.sw-hstep .sw-pt{width:56px;height:56px;border-radius:50%;background:var(--sw-cream);border:2px solid var(--sw-maroon);display:flex;align-items:center;justify-content:center;font-family:var(--sw-serif);font-size:22px;color:var(--sw-maroon);position:relative;z-index:2;margin-bottom:26px}
+.sw-hstep h4{font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(24px,2.2vw,32px)!important;margin-bottom:12px;letter-spacing:-.01em}
+.sw-hstep p{font-size:clamp(14px,1.1vw,16px)!important;line-height:1.7;color:rgba(28,23,19,.72);font-weight:500;max-width:34ch}
+@media(max-width:700px){#swHowSteps .sw-cols{grid-template-columns:1fr;gap:44px}#swHowLine{display:none}}
+
+/* cta */
+#swCta{position:relative;background:linear-gradient(135deg,#7d3024,#5c2017);color:var(--sw-cream);text-align:center;padding:clamp(110px,18vh,190px) clamp(20px,5vw,72px) clamp(90px,14vh,150px);overflow:hidden}
+#swCta .sw-mqBack{position:absolute;top:40%;left:0;right:0;opacity:.14;pointer-events:none}
+#swCta .sw-mqBack span{font-family:var(--sw-serif);font-size:clamp(90px,12vw,190px);white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px var(--sw-cream);padding:0 30px}
+#swCta h2{position:relative;font-family:var(--sw-serif)!important;font-weight:400!important;font-size:clamp(56px,9vw,140px)!important;letter-spacing:-.02em;line-height:1;z-index:2}
+#swCta h2 em{font-style:italic;color:var(--sw-accent)}
+#swCta .sw-sub{position:relative;margin:26px auto 40px;font-size:clamp(15px,1.3vw,19px)!important;line-height:1.7;color:rgba(250,247,240,.85);max-width:46ch;font-weight:500;z-index:2}
+.sw-btnLight{position:relative;z-index:2;display:inline-flex;align-items:center;gap:12px;background:var(--sw-cream);color:var(--sw-maroon);padding:20px 40px;border-radius:100px;font-weight:700;font-size:16px;text-decoration:none;box-shadow:0 24px 50px -16px rgba(0,0,0,.45)}
+#swCta .sw-mail{position:relative;z-index:2;display:block;margin-top:26px;color:var(--sw-sand);font-weight:600;letter-spacing:.04em;font-size:15px;text-decoration:none}
+#swMascotCta{position:absolute;left:clamp(16px,7vw,130px);bottom:-14px;width:clamp(110px,13vw,190px);z-index:3;will-change:transform}
+#swMascotCta img{width:100%;height:auto;filter:drop-shadow(0 -10px 26px rgba(0,0,0,.3))}
+.sw-spark{position:absolute;left:var(--sx);top:var(--sy);color:var(--sw-sand);font-size:clamp(14px,1.6vw,22px);z-index:2;pointer-events:none;will-change:transform,opacity}
+.sw-spark:nth-child(odd){color:var(--sw-accent)}
+@media(max-width:700px){#swMascotCta{left:auto;right:-8px;width:104px}}
+
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){
+  #swGrain{animation:none}
+  .sw-h1 .wi,.sw-rl>span,.sw-rlP,#swHeroSub,#swHeroMeta,
+  #swBadge,#swMascotHero,#swBubble,#swScrollHint,
+  .sw-fcard,.sw-fph,.sw-fph>img,.sw-fghost,.sw-frule,.sw-fname,.sw-frole,.sw-fbio,
+  .sw-stat .sw-lb,.sw-stat .sw-bar,.sw-hstep,.sw-spark,
+  #swCta .sw-sub,.sw-btnLight,#swCta .sw-mail,#swMascotCta{opacity:1!important;transform:none!important;clip-path:none!important}
+  #swSwashPath{stroke-dashoffset:0!important}
+  #swStmt p .sw-sw{opacity:1!important}
+}
+</style>
+
+<script is:inline>
+/* ═══════════════════════════════════════════════════════════
+   SALOWTECH ABOUT — DETERMINISTIC ANIMATION ENGINE
+   Ported from hello.astro reference. Everything is a pure
+   function of time t (seconds) and scroll position y (pixels).
+   ═══════════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+if(typeof window==='undefined')return;
+var prefersReduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+var clamp=function(v,a,b){if(a===undefined)a=0;if(b===undefined)b=1;return Math.min(b,Math.max(a,v))};
+var lerp=function(a,b,p){return a+(b-a)*p};
+var eoExpo=function(p){return p>=1?1:1-Math.pow(2,-10*p)};
+var eoCubic=function(p){return 1-Math.pow(1-p,3)};
+var eioCubic=function(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2};
+var eoBack=function(p){var c=1.70158,c3=c+1;return 1+c3*Math.pow(p-1,3)+c*Math.pow(p-1,2)};
+var spring=function(p){return 1-Math.cos(p*Math.PI*2.2)*Math.exp(-4.2*p)};
+
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+/* ---- split hero headline into words ---- */
+function splitWords(el){
+  if(!el)return[];
+  var walk=function(n){Array.prototype.slice.call(n.childNodes).forEach(function(c){
+    if(c.nodeType===3){
+      var frag=document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(function(part){
+        if(!part)return;
+        if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(' '));return}
+        var w=document.createElement('span');w.className='w';
+        var wi=document.createElement('span');wi.className='wi';wi.textContent=part;
+        w.appendChild(wi);frag.appendChild(w);
+      });
+      n.replaceChild(frag,c);
+    } else if(c.nodeType===1) walk(c);
+  })};walk(el);
+  return Array.prototype.slice.call(el.querySelectorAll('.wi'));
+}
+
+/* ---- split statement into words ---- */
+function splitStmt(el){
+  if(!el)return[];
+  var walk=function(n){Array.prototype.slice.call(n.childNodes).forEach(function(c){
+    if(c.nodeType===3){
+      var frag=document.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(function(part){
+        if(!part)return;
+        if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(' '));return}
+        var s=document.createElement('span');s.className='sw-sw';s.textContent=part;frag.appendChild(s);
+      });n.replaceChild(frag,c);
+    } else if(c.nodeType===1) walk(c);
+  })};walk(el);
+  return Array.prototype.slice.call(el.querySelectorAll('.sw-sw'));
+}
+
+var heroWords=splitWords($('#swH1'));
+var stmtWords=splitStmt($('#swStmtP'));
+
+/* ---- marquees ---- */
+var MQ1=['Web Development','Mobile Apps','CRM','ERP','HRM & Payroll','AI Voice','SEO & Growth'];
+var mq1El=$('#swMq1');
+if(mq1El) mq1El.innerHTML=Array(3).fill(MQ1.map(function(s){return '<span>'+s+'<i class="sw-st">✦</i></span>'}).join('')).join('');
+var MQ3=["Let's build yours","Salowtech","Let's build yours","Salowtech"];
+var mq3El=$('#swMq3');
+if(mq3El) mq3El.innerHTML=Array(2).fill(MQ3.map(function(s){return '<span>'+s+'</span>'}).join('')).join('');
+
+/* ---- geometry ---- */
+var G=null;
+function getY(){return window.lenis?window.lenis.scroll:(window.scrollY||window.pageYOffset||0)}
+function getStaticTop(el){
+  var top=0;
+  while(el){
+    top+=el.offsetTop||0;
+    el=el.offsetParent;
+  }
+  return top;
+}
+function measure(){
+  var q=function(s){var el=$(s);return el?getStaticTop(el):0};
+  var el=function(s){var e=$(s);return e?e.offsetHeight:0};
+  G={
+    vh:innerHeight,
+    stmtTop:q('#swStmtWrap'),stmtH:el('#swStmtWrap'),
+    storyTop:q('#swStory'),storyH:el('#swStory'),
+    teamTop:q('#swTeam'),teamH:el('#swTeam'),
+    foundersTop:q('#swFounders'),frowsH:el('#swFounders'),
+    frows:$$('.sw-fcard').map(function(c){return getStaticTop(c)}),
+    statsTop:q('#swStats'),statsH:el('#swStats'),
+    valuesTop:q('#swValuesWrap'),valuesH:el('#swValuesWrap'),
+    vcards:$$('.sw-vcard').map(function(e){return{top:getStaticTop(e),h:e.offsetHeight}}),
+    howTop:q('#swHow'),howH:el('#swHow'),
+    ctaTop:q('#swCta'),ctaH:el('#swCta'),
+    mq1W:mq1El?mq1El.scrollWidth/3:1000,
+    mq3W:mq3El?mq3El.scrollWidth/2:1000
+  };
+  G.maxY=Math.max(1,document.documentElement.scrollHeight-G.vh);
+}
+
+/* ---- per-frame render ---- */
+var lastY=0,velo=0;
+function render(t,y){
+  velo=lerp(velo,(y-lastY),0.35);lastY=y;
+  var vh=G.vh;
+
+  /* progress */
+  var prog=$('#swProgress');if(prog) prog.style.transform='scaleX('+clamp(y/G.maxY)+')';
+
+  /* ========= HERO ========= */
+  var heroP=clamp(y/vh);
+  var ey=$('#swEyebrow');
+  if(ey){
+    var ep=eoCubic(clamp((t-0.15)/0.7));
+    ey.style.opacity=ep*(1-clamp((heroP-0.15)/0.6));
+    ey.style.transform='translateY('+(1-ep)*18+'px)';
+  }
+  heroWords.forEach(function(w,i){
+    var p=clamp((t-0.35-i*0.085)/0.9),e=eoExpo(p);
+    w.style.transform='translateY('+(1-e)*112+'%) rotate('+(1-e)*7+'deg)';
+    w.style.opacity=p<=0?0:1;
+  });
+  var heroFade=clamp((heroP-0.15)/0.6);
+  var h1=$('#swH1');if(h1) h1.style.transform='translateY('+(-heroP*vh*0.22)+'px)';
+  var hs=$('#swHeroSub');if(hs){var sp=eoCubic(clamp((t-1.35)/0.9));hs.style.opacity=sp*(1-heroFade);hs.style.transform='translateY('+(1-sp)*26+'px)';}
+  var hm=$('#swHeroMeta');if(hm){var mp=eoCubic(clamp((t-1.6)/0.9));hm.style.opacity=mp*(1-heroFade);hm.style.transform='translateY('+(1-mp)*26+'px)';}
+  var wm=$('#swWatermark');if(wm) wm.style.transform='translate(calc(-50% + '+t*-14+'px), calc(-50% + '+(-heroP*vh*0.35)+'px))';
+  /* badge */
+  var bdg=$('#swBadge');
+  if(bdg){var bp=eoBack(clamp((t-1.8)/0.8));bdg.style.opacity=bp;
+    var bs=bdg.querySelector('svg');if(bs) bs.style.transform='rotate('+t*14+'deg) scale('+bp+')';
+    var bst=bdg.querySelector('.sw-star');if(bst) bst.style.transform='scale('+bp+') rotate('+(-t*20)+'deg)';}
+  /* swash */
+  var sw=eoCubic(clamp((t-1.75)/0.8));
+  var swp=$('#swSwashPath');if(swp) swp.setAttribute('stroke-dashoffset',100*(1-sw));
+  /* mascot */
+  var mp2=spring(clamp((t-2.0)/1.4));
+  var bob=Math.sin(t*2.1)*9;
+  var tilt=clamp(velo*0.25,-14,14);
+  var mh=$('#swMascotHero');if(mh){mh.style.transform='translateY('+((1-mp2)*260+bob)+'px) rotate('+(Math.sin(t*1.4)*3+tilt)+'deg) scale('+mp2+')';mh.style.opacity=clamp((t-2.0)/0.3);}
+  var sh=$('#swMascotShadow');if(sh){sh.style.opacity=clamp((t-2.0)/0.4)*(1-heroFade)*(0.9-bob*0.02);sh.style.transform='scaleX('+(1-bob*0.006)+')';}
+  var arr=$('#swHeroMeta .sw-btnPrimary span');if(arr) arr.style.transform='translateX('+Math.max(0,Math.sin(t*2.4))*4+'px)';
+  /* bubble */
+  var bb=spring(clamp((t-2.9)/1.1));
+  var bub=$('#swBubble');if(bub){bub.style.transform='scale('+bb+')';bub.style.opacity=clamp((t-2.9)/0.25);}
+  /* scroll hint */
+  var sHint=$('#swScrollHint');if(sHint){sHint.style.opacity=clamp((t-2.4)/0.6)*(1-heroFade*2);
+    var shl=sHint.querySelector('.sw-line i');if(shl) shl.style.top=((t*0.7)%1.6-0.6)*100+'%';}
+
+  /* ========= MARQUEES ========= */
+  var sk=clamp(velo*0.55,-16,16);
+  if(mq1El) mq1El.style.transform='translateX('+(-((t*70)%G.mq1W))+'px) skewX('+sk+'deg)';
+  if(mq3El) mq3El.style.transform='translateX('+(-((t*40)%G.mq3W))+'px)';
+
+  /* ========= STATEMENT ========= */
+  var stP=clamp((y-G.stmtTop)/(G.stmtH-vh));
+  stmtWords.forEach(function(w,i){
+    var p=clamp((stP*1.15-i/stmtWords.length)*stmtWords.length/4);
+    w.style.opacity=lerp(0.13,1,p);
+  });
+
+  /* ========= STORY ========= */
+  revLines('#swStory',y,vh);
+  var storyP=clamp((y+vh-G.storyTop)/(vh+G.storyH));
+  var rules=$('#swStory .sw-rules');if(rules) rules.style.transform='translateY('+(storyP-0.5)*-40+'px)';
+
+  /* ========= FOUNDERS ========= */
+  revLines('#swTeam',y,vh);
+  $$('.sw-fcard').forEach(function(c,i){
+    var rt=G.frows[i];if(!rt)return;
+    var base=clamp((y+vh*0.82-rt)/560);
+    var p=eoCubic(base);
+    var ti=(i%2?0.8:-0.8)*p;
+    c.style.opacity=clamp(base*1.6);c.style.transform='translateY('+(1-p)*52+'px) rotate('+ti+'deg)';
+    var ph=c.querySelector('.sw-fph');
+    if(ph) ph.style.clipPath='inset('+(1-eoCubic(clamp(base*1.15)))*100+'% 0 0 0)';
+    var phImg=c.querySelector('.sw-fph>img');
+    if(phImg) phImg.style.transform='scale('+lerp(1.12,1,eoCubic(clamp(base*1.15)))+')';
+    var ghost=c.querySelector('.sw-fghost');if(ghost) ghost.style.opacity=eoCubic(clamp(base));
+    var rule=c.querySelector('.sw-frule');if(rule) rule.style.transform='scaleX('+eoCubic(clamp(base-0.28))+')';
+    var textEls=c.querySelectorAll('.sw-fname,.sw-frole,.sw-fbio');
+    for(var j=0;j<textEls.length;j++){
+      var q=eoCubic(clamp(base-0.14-j*0.10));
+      textEls[j].style.opacity=q;textEls[j].style.transform='translateY('+(1-q)*20+'px)';
+    }
+  });
+
+  /* ========= STATS ========= */
+  var staP=eoExpo(clamp((y+vh*0.72-G.statsTop)/(vh*0.55)));
+  $$('.sw-stat .sw-num').forEach(function(n){
+    var target=+n.dataset.count;
+    if(n.dataset.plain) n.textContent=Math.round(lerp(1999,target,staP));
+    else n.textContent=Math.round(target*staP)+(n.dataset.suffix||'');
+  });
+  $$('.sw-stat .sw-bar').forEach(function(b){b.style.transform='scaleX('+staP+')'});
+  $$('.sw-stat .sw-lb').forEach(function(l){l.style.opacity=staP;l.style.transform='translateY('+(1-staP)*16+'px)'});
+  var sk2=$('#swStats .sw-kick');if(sk2) sk2.style.opacity=clamp((y+vh*0.85-G.statsTop)/200);
+  var sbig=$('#swStats .sw-big');if(sbig) sbig.style.transform='translateX(calc(-50% + '+(y-G.statsTop)*-0.06+'px))';
+
+  /* ========= VALUES STACKING CARDS ========= */
+  var valEnd = G.valuesTop + G.valuesH - vh;
+  $$('.sw-vcard').forEach(function(el,i){
+    var c=G.vcards[i];if(!c)return;
+    var inner=el.querySelector('.sw-inner');if(!inner)return;
+    var entering=clamp((y+vh-c.top)/vh);
+    var next=G.vcards[i+1];
+    var covered=0;
+    if(next) covered=clamp((y-(next.top-vh))/vh);
+    var maxPin=Math.max(0,valEnd - c.top);
+    var pinTy=clamp(y-c.top,0,maxPin);
+    inner.style.transform='translateY('+(pinTy+lerp(90,0,eoCubic(clamp(entering))))+'px) scale('+lerp(1,0.93,eioCubic(covered))+')';
+    inner.style.opacity=1;
+    var shade=inner.querySelector('.sw-shade');
+    if(shade) shade.style.opacity=eioCubic(covered)*0.55;
+  });
+
+  /* ========= SVG CHARACTER ANIMATIONS ========= */
+  var mg=document.getElementById('prMag');if(mg) mg.setAttribute('transform','rotate('+5*Math.sin(t*1.6)+' 96 96)');
+  var pbk=document.getElementById('prBlink');if(pbk) pbk.setAttribute('opacity',0.3+0.7*Math.abs(Math.sin(t*2.2)));
+  var pc1=document.getElementById('prChar1');if(pc1) pc1.setAttribute('transform','translate(0 '+1.5*Math.sin(t*1.3)+')');
+  var shk=document.getElementById('ptShake');if(shk) shk.setAttribute('transform','translate(0 '+1.7*Math.sin(t*5.5)+')');
+  var spk=document.getElementById('ptSpark');if(spk){var s=0.85+0.25*Math.sin(t*2.4);spk.setAttribute('transform','translate(110 52) scale('+s+') rotate('+9*Math.sin(t*1.1)+')');spk.setAttribute('opacity',0.75+0.25*Math.sin(t*2.4));}
+  var pmc=document.getElementById('pmChar');if(pmc) pmc.setAttribute('transform','translate(0 '+1.5*Math.sin(t*1.2+1)+')');
+  var pmcn=document.getElementById('pmCan');if(pmcn) pmcn.setAttribute('transform','rotate('+(-4-4*Math.sin(t*1.2))+' 108 112)');
+  var pmt=document.getElementById('pmTree');if(pmt) pmt.setAttribute('transform','rotate('+2.2*Math.sin(t*0.9)+' 151 148)');
+  for(var di=1;di<=3;di++){var wd=document.getElementById('wd'+di);if(wd){var q2=((t*0.85)+di*0.37)%1;wd.setAttribute('cy',104+38*q2);wd.setAttribute('opacity',Math.sin(Math.PI*clamp(q2)));}}
+
+  /* ========= HOW ========= */
+  var howP=clamp((y+vh*0.6-G.howTop)/(vh*0.8));
+  var hl=$('#swHowLine i');if(hl) hl.style.width=eoCubic(howP)*100+'%';
+  $$('.sw-hstep').forEach(function(s,i){
+    var p=eoCubic(clamp(howP*2.2-i*0.45));
+    s.style.opacity=p;s.style.transform='translateY('+(1-p)*40+'px)';
+  });
+  revLines('#swHow',y,vh);
+
+  /* ========= CTA ========= */
+  revLines('#swCta',y,vh);
+  var ctaP=eoCubic(clamp((y+vh*0.55-G.ctaTop)/(vh*0.6)));
+  var cs=$('#swCta .sw-sub');if(cs){cs.style.opacity=ctaP;cs.style.transform='translateY('+(1-ctaP)*26+'px)';}
+  var bp2=spring(clamp((y+vh*0.45-G.ctaTop)/(vh*0.5)));
+  var bl=$('.sw-btnLight');if(bl){bl.style.transform='scale('+bp2+')';bl.style.opacity=clamp((y+vh*0.5-G.ctaTop)/(vh*0.4));}
+  var ml=$('#swCta .sw-mail');if(ml) ml.style.opacity=clamp((y+vh*0.35-G.ctaTop)/(vh*0.4));
+  var mcp=spring(clamp((y+vh*0.75-G.ctaTop)/(vh*0.7)));
+  var mcta=$('#swMascotCta');if(mcta){mcta.style.transform='translateY('+((1-mcp)*180+Math.sin(t*2.3)*6)+'px) rotate('+Math.sin(t*1.8)*4+'deg)';mcta.style.opacity=clamp((y+vh*0.75-G.ctaTop)/(vh*0.3));}
+  $$('.sw-spark').forEach(function(s,i){
+    var d=parseFloat(getComputedStyle(s).getPropertyValue('--d'))||i*1.3;
+    s.style.transform='translateY('+Math.sin(t*1.25+d)*10+'px) rotate('+Math.sin(t*0.9+d)*20+'deg) scale('+(0.85+0.3*Math.sin(t*1.6+d))+')';
+    s.style.opacity=(0.45+0.4*Math.sin(t*1.4+d))*ctaP;
+  });
+}
+
+/* ---- line reveals ---- */
+function revLines(secSel,y,vh){
+  var sec=$(secSel);if(!sec)return;
+  var top=getStaticTop(sec);
+  var rls=sec.querySelectorAll('.sw-rl>span');
+  for(var i=0;i<rls.length;i++){
+    var p=eoExpo(clamp((y+vh*0.82-top-80)/380-i*0.14));
+    rls[i].style.transform='translateY('+(1-p)*110+'%)';
+  }
+  var rlps=sec.querySelectorAll('.sw-rlP');
+  for(var j=0;j<rlps.length;j++){
+    var p2=eoCubic(clamp((y+vh*0.72-top-140)/300-j*0.16));
+    rlps[j].style.opacity=p2;rlps[j].style.transform='translateY('+(1-p2)*28+'px)';
+  }
+}
+
+/* ---- boot ---- */
+var booted=false;
+function boot(){
+  if(booted)return;
+  booted=true;
+  measure();
+  if(prefersReduced){render(8,getY());return;}
+  render(0,0);
+  var start=performance.now();
+  var loop=function(now){
+    var t=(now-start)/1000;
+    var y=getY();
+    render(t,y);
+    requestAnimationFrame(loop);
+  };
+  requestAnimationFrame(loop);
+  addEventListener('resize',function(){measure()});
+}
+
+if(document.readyState==='complete'||document.readyState==='interactive'){
+  boot();
+}else{
+  addEventListener('DOMContentLoaded',boot);
+}
+
+if(document.fonts && document.fonts.ready){
+  document.fonts.ready.then(function(){
+    measure();
+  });
+}
+window.addEventListener('load',function(){
+  measure();
+});
+})();
+</script>
+
 </Layout>

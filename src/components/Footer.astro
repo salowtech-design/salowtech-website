@@ -18,16 +18,18 @@ import { siteConfig } from "../data/site";
         <a class="brand" href="/" aria-label="Salowtech Home">
           <Image
             src={salowtechLogo}
-            width={140}
-            height={42}
+            width={46}
+            height={32}
             alt="Salowtech Logo"
             loading="lazy"
             decoding="async"
             format="webp"
             quality={95}
-            class="h-8 w-auto object-contain"
+            class="h-8 sm:h-9 w-auto max-w-[48px] object-contain shrink-0"
           />
-          <span>Salowtech</span>
+          <span class="block text-xl sm:text-2xl font-bold tracking-tight text-neutral-950 font-sans">
+            Salowtech
+          </span>
         </a>
         <p class="about">
           We engineer the sovereign software platforms that power the next generation of India. Lifetime maintenance
