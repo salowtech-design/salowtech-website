@@ -12488,4 +12488,15 @@ button:active, a.btn:active, .btn-primary:active, [role="button"]:active, input[
   transform: scale(0.975) translateZ(0) !important;
 }
 
+input, textarea, select {
+  touch-action: manipulation;
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  transition: border-color 40ms ease, box-shadow 40ms ease;
+}
+
 

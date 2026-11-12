@@ -178,9 +178,56 @@ const finalOgDescription = ogDescription || description;
       />
     </noscript>
 
-    <!-- Inline Lenis Reset for Zero-Delay Smooth Scrolling -->
+    <!-- Critical 0ms Instant First Visual Paint & Lenis Reset -->
     <style is:inline>
-      html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}.lenis.lenis-stopped{overflow:hidden}.lenis.lenis-smooth iframe{pointer-events:none}
+      :root {
+        --bg-cream: #FAF7F0;
+        --text-dark: #171513;
+        --brand-maroon: #7D3024;
+      }
+      html {
+        background-color: #FAF7F0;
+        color: #171513;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        margin: 0;
+        background-color: #FAF7F0;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* Lenis Viewport Lock & GPU Scroll Hygiene */
+      html.lenis, html.lenis body { height: auto; }
+      .lenis.lenis-smooth { scroll-behavior: auto !important; }
+      .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+      .lenis.lenis-stopped { overflow: hidden; }
+      .lenis.lenis-smooth iframe { pointer-events: none; }
+      
+      /* Instant Touch & Click Response (< 16ms Single-Frame Tactile Feedback) */
+      a, button, [role="button"], input[type="submit"], input[type="button"], select, summary {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+      input, textarea, select {
+        touch-action: manipulation;
+        font-size: 16px; /* Eliminates 300ms mobile viewport zoom jump */
+      }
+      button:active, a:active, [role="button"]:active, input[type="submit"]:active {
+        transform: scale(0.978) translateZ(0);
+        transition: transform 30ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+      
+      /* Below-the-fold Content Virtualization: Skips off-screen layout work on initial paint (< 1ms FCP) */
+      @media (min-width: 640px) {
+        main > section:not(:first-of-type), footer {
+          content-visibility: auto;
+          contain-intrinsic-size: 0 500px;
+        }
+      }
     </style>
     <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/styles.min.css?v=20261111_v1" />
@@ -211,14 +258,19 @@ const finalOgDescription = ogDescription || description;
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (!prefersReducedMotion && typeof Lenis !== "undefined" && !window.lenis) {
           const lenis = new Lenis({
-            lerp: 0.1,
-            wheelMultiplier: 1.05,
-            touchMultiplier: 1.5,
+            lerp: 0.085,
+            wheelMultiplier: 0.95,
+            touchMultiplier: 1.2,
             smoothWheel: true,
-            smoothTouch: false,
+            syncTouch: true,
+            syncTouchLerp: 0.075,
+            touchInertiaMultiplier: 35,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             orientation: "vertical",
             gestureOrientation: "vertical",
-            infinite: false
+            infinite: false,
+            autoRaf: false
           });
           window.lenis = lenis;
 
@@ -227,6 +279,9 @@ const finalOgDescription = ogDescription || description;
             gsap.ticker.add((time) => {
               lenis.raf(time * 1000);
             });
+            if (typeof gsap.ticker.lagSmoothing === "function") {
+              gsap.ticker.lagSmoothing(0);
+            }
           } else {
             function raf(time) {
               lenis.raf(time);

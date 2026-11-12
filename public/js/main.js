@@ -1025,14 +1025,19 @@ function initSmoothScroll() {
 
   if (!prefersReducedMotion && typeof Lenis !== 'undefined' && !lenis) {
     lenis = new Lenis({
-      lerp: 0.1,
-      wheelMultiplier: 1.05,
-      touchMultiplier: 1.5,
+      lerp: 0.085,
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.2,
       smoothWheel: true,
-      smoothTouch: false,
+      syncTouch: true,
+      syncTouchLerp: 0.075,
+      touchInertiaMultiplier: 35,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
-      infinite: false
+      infinite: false,
+      autoRaf: false
     });
     window.lenis = lenis;
 
@@ -1040,6 +1045,9 @@ function initSmoothScroll() {
       gsap.ticker.add((time) => {
         lenis.raf(time * 1000);
       });
+      if (typeof gsap.ticker.lagSmoothing === 'function') {
+        gsap.ticker.lagSmoothing(0);
+      }
     } else {
       function raf(time) {
         lenis.raf(time);
